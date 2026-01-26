@@ -2,6 +2,7 @@ from typing import Any
 
 import os
 import pathlib
+import shutil
 import subprocess
 
 
@@ -18,6 +19,10 @@ def void(*_: Any) -> None:
 
 
 def link(source: PathLike, destination: PathLike):
+    if CI:
+        shutil.copytree(f"{source}", f"{destination}", dirs_exist_ok=True)
+        return
+
     if os.name == "nt":
         subprocess.run(
             ["mklink", "/D", destination, source], shell=True, capture_output=True
