@@ -46,7 +46,7 @@ jobs:
         dotnet tool restore
         uv sync
         uv run tooling sync
-    - uses: godot-gdunit-labs/gdUnit4-action@v1.2.2
+    - uses: godot-gdunit-labs/gdUnit4-action@v1
       with:
         godot-version: 4.5.1
         godot-net: true
