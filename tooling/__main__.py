@@ -86,7 +86,7 @@ def sync():
 
     try:
         subprocess.run(
-            ["godotenv", "addons", "install"], check=True, capture_output=True
+            ["dotnet", "godotenv", "addons", "install"], check=True, capture_output=True
         )
     except subprocess.CalledProcessError as error:
         if error.returncode != 1:
