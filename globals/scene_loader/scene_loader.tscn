@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b247eh0ylvanh"]
+
+[ext_resource type="Script" uid="uid://7x2thwckin8n" path="res://globals/scene_loader/scene_loader.gd" id="1_6nhed"]
+[ext_resource type="PackedScene" uid="uid://cox8d5iph2kbf" path="res://scenes/loading/default/default.tscn" id="2_yh0k1"]
+
+[node name="SceneLoader" type="Node"]
+script = ExtResource("1_6nhed")
+cached = Dictionary[String, PackedScene]({
+"loading_screen:default": ExtResource("2_yh0k1")
+})
+metadata/_custom_type_script = "uid://7x2thwckin8n"

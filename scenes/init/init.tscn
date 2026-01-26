@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctsxekgl0djvv"]
+
+[ext_resource type="Script" uid="uid://dnu54rk1scrwj" path="res://scenes/init/init.gd" id="1_mbfq6"]
+[ext_resource type="PackedScene" uid="uid://38chuk10ugey" path="res://scenes/menus/splash/splash.tscn" id="2_b5ra7"]
+
+[node name="Init" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mbfq6")
+target_scene = ExtResource("2_b5ra7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck8tgq0ei3l85"]
+
+[ext_resource type="Theme" uid="uid://crvja8wk885dj" path="res://data/themes/kenney/ui_pack/kenneyUI.tres" id="1_nc847"]
+
+[node name="Button" type="Button"]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+theme = ExtResource("1_nc847")
+text = "Play"

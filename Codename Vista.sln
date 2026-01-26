@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Codename Vista", "Codename Vista.csproj", "{664E2EA9-DCE1-4A69-9182-45E0F94948DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{664E2EA9-DCE1-4A69-9182-45E0F94948DA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://bxqlpsf3d83bb"]
+
+[ext_resource type="Texture2D" uid="uid://cie1dsdwv3kha" path="res://data/themes/oinky55/fantasy_ui/assets/buttons/wood_button_normal.png" id="1_x6wxq"]
+
+[resource]
+texture = ExtResource("1_x6wxq")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 15, 17)

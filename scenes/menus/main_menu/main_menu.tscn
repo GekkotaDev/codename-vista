@@ -1,0 +1,359 @@
+[gd_scene load_steps=25 format=3 uid="uid://br0sa0sf4nt1s"]
+
+[ext_resource type="PackedScene" uid="uid://dklgyfe27ebpo" path="res://assets/skies/stylized/scenes/day_sky.tscn" id="1_0ebjn"]
+[ext_resource type="AudioStream" uid="uid://c3gfp3i4q5chr" path="res://assets/audio/music/newgrounds/buoy/176303_CLOUDCLIMBER.mp3" id="2_0jpat"]
+[ext_resource type="Script" uid="uid://crevuamtq0x1e" path="res://nodes/shader_controller.gd" id="2_88r3n"]
+[ext_resource type="Texture2D" uid="uid://d3b11agmx72q8" path="res://assets/logos/codename_vista/logo_dark_shadows.png" id="2_ob46e"]
+[ext_resource type="Theme" uid="uid://crvja8wk885dj" path="res://data/themes/kenney/ui_pack/kenneyUI.tres" id="2_qwqm5"]
+[ext_resource type="Script" uid="uid://gm7esj552ibi" path="res://scenes/menus/main_menu/ui.gd" id="2_uqeha"]
+[ext_resource type="Shader" uid="uid://dwewwwic7qux2" path="res://assets/shaders/blur/blur.gdshader" id="3_dc6ug"]
+[ext_resource type="PackedScene" uid="uid://ck8tgq0ei3l85" path="res://views/Button.tscn" id="3_uqeha"]
+[ext_resource type="Resource" uid="uid://spl41xpo6vid" path="res://scenes/menus/main_menu/ui_model.tres" id="4_x31ro"]
+[ext_resource type="Script" uid="uid://bsufjcw4lsn2a" path="res://addons/proton_control_animation/src/animations/slide.gd" id="5_7j6ce"]
+[ext_resource type="Script" uid="uid://hwir6cu7vwa2" path="res://libraries/ui/nodes/animation/animation_controller.gd" id="5_7ufuu"]
+[ext_resource type="Script" uid="uid://doh0f6x2cdghd" path="res://addons/proton_control_animation/src/animations/fade.gd" id="5_q0yg5"]
+[ext_resource type="Script" uid="uid://b4hvmk8t0qkgu" path="res://addons/proton_control_animation/src/proton_control_animation.gd" id="8_627ab"]
+[ext_resource type="Script" uid="uid://dvxagcnncr3df" path="res://libraries/router/nodes/visibility_router_node.gd" id="9_8xfgt"]
+[ext_resource type="PackedScene" uid="uid://ctjbih4uoct3e" path="res://scenes/menus/main_menu/save_selection/save_selection.tscn" id="11_88r3n"]
+[ext_resource type="Texture2D" uid="uid://dpwmvdwygome" path="res://assets/backgrounds/live/images/vivid/fire.png" id="15_8xfgt"]
+[ext_resource type="Texture2D" uid="uid://hc7acjw63npy" path="res://assets/backgrounds/live/images/vivid/waves.png" id="16_7ufuu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3nv00"]
+shader = ExtResource("3_dc6ug")
+shader_parameter/blur_size = Vector2(4, 2)
+
+[sub_resource type="Resource" id="Resource_qwqm5"]
+script = ExtResource("5_7j6ce")
+from = 3
+from_global_position = Vector2(0, -1080)
+from_local_offset = Vector2(0, 1080)
+to = 1
+metadata/_custom_type_script = "uid://bsufjcw4lsn2a"
+
+[sub_resource type="Resource" id="Resource_q0yg5"]
+script = ExtResource("5_7j6ce")
+from = 1
+to = 3
+to_local_offset = Vector2(0, 1080)
+metadata/_custom_type_script = "uid://bsufjcw4lsn2a"
+
+[sub_resource type="Resource" id="Resource_88r3n"]
+script = ExtResource("5_q0yg5")
+to = 1.0
+metadata/_custom_type_script = "uid://doh0f6x2cdghd"
+
+[sub_resource type="Resource" id="Resource_dc6ug"]
+script = ExtResource("5_q0yg5")
+metadata/_custom_type_script = "uid://doh0f6x2cdghd"
+
+[sub_resource type="Shader" id="Shader_3nv00"]
+code = "/* 
+Earthbound battle backgrounds shader with scrolling effect and palette cycling like in the original game.
+@retr0_dev
+	
+Apply the shader to a TextureRect or a Sprite. Use a texture with some shapes in a transparent background for best results.
+You can then use a ColorRect or another method to paint the background.
+You can use the shader on multiple TextureRects and obtain a double-buffer effect tweaking the values for each one, remember to Make Unique the shader material.
+*/
+shader_type canvas_item;
+
+uniform float screen_height = 640.0;
+uniform float amplitude = 0.075;
+uniform float frequency = 10.0;
+uniform float speed = 2.0;
+uniform float amplitude_vertical = 0.0;
+uniform float frequency_vertical = 0.0;
+uniform float speed_vertical = 0.0;
+uniform vec2 scroll_direction = vec2(0.0, 0.0);
+uniform float scrolling_speed = 0.08;
+uniform bool enable_palette_cycling = false;
+uniform sampler2D palette;
+uniform float palette_speed = 0.1;
+
+void fragment()
+{
+	float diff_x = amplitude * sin((frequency * UV.y) + (speed * TIME));
+	float diff_y = amplitude_vertical * sin((frequency_vertical * UV.y)  + (speed_vertical * TIME));
+	vec2 scroll = scroll_direction * TIME * scrolling_speed;
+	vec4 tex = texture(TEXTURE, vec2(UV.x + diff_x, UV.y + diff_y) + scroll);
+	float palette_swap = mod(tex.r - TIME * palette_speed, 1.0);
+	
+	if (enable_palette_cycling)
+	{
+		COLOR = vec4(texture(palette, vec2(palette_swap, 0)).rgb, tex.a);
+	}
+	else COLOR = tex;
+	COLOR = mix(vec4(0.0), COLOR, float(int(UV.y * screen_height) % 2));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ufuu"]
+shader = SubResource("Shader_3nv00")
+shader_parameter/screen_height = 540.0
+shader_parameter/amplitude = 0.075
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 0.075
+shader_parameter/frequency_vertical = 10.0
+shader_parameter/speed_vertical = 4.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.1
+
+[node name="MainMenu" type="Node"]
+
+[node name="WorldViewportContainer" type="SubViewportContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="WorldViewport" type="SubViewport" parent="WorldViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="WorldSpaceRoot" type="Node3D" parent="WorldViewportContainer/WorldViewport"]
+
+[node name="DynamicSky" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot" instance=ExtResource("1_0ebjn")]
+
+[node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot"]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 0, 0)
+current = true
+
+[node name="ShaderController" type="Node" parent="." node_paths=PackedStringArray("shaders")]
+script = ExtResource("2_88r3n")
+shaders = {
+"blur": NodePath("Panel")
+}
+metadata/_custom_type_script = "uid://crevuamtq0x1e"
+
+[node name="Panel" type="Panel" parent="ShaderController"]
+material = SubResource("ShaderMaterial_3nv00")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InterfaceViewportContainer" type="SubViewportContainer" parent="."]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_qwqm5")
+stretch = true
+
+[node name="Animations" type="Node" parent="InterfaceViewportContainer"]
+
+[node name="MainMenu" type="Node" parent="InterfaceViewportContainer/Animations"]
+
+[node name="In" type="Node" parent="InterfaceViewportContainer/Animations/MainMenu" node_paths=PackedStringArray("animations")]
+script = ExtResource("5_7ufuu")
+animations = [NodePath("SlideIn")]
+metadata/_custom_type_script = "uid://hwir6cu7vwa2"
+
+[node name="SlideIn" type="Node" parent="InterfaceViewportContainer/Animations/MainMenu/In" node_paths=PackedStringArray("target", "start_trigger_source", "stop_trigger_source")]
+script = ExtResource("8_627ab")
+target = NodePath("../../../../View/MainMenu/MainMenu")
+animation = SubResource("Resource_qwqm5")
+start_trigger_source = NodePath("../../../../View/MainMenu/MainMenu")
+stop_trigger_source = NodePath("../../../../View/MainMenu/MainMenu")
+metadata/_custom_type_script = "uid://b4hvmk8t0qkgu"
+
+[node name="Out" type="Node" parent="InterfaceViewportContainer/Animations/MainMenu" node_paths=PackedStringArray("animations")]
+script = ExtResource("5_7ufuu")
+animations = [NodePath("SlideOut")]
+metadata/_custom_type_script = "uid://hwir6cu7vwa2"
+
+[node name="SlideOut" type="Node" parent="InterfaceViewportContainer/Animations/MainMenu/Out" node_paths=PackedStringArray("target", "start_trigger_source", "stop_trigger_source")]
+script = ExtResource("8_627ab")
+target = NodePath("../../../../View/MainMenu/MainMenu")
+animation = SubResource("Resource_q0yg5")
+start_trigger_source = NodePath("../../../../View/MainMenu/MainMenu")
+stop_trigger_source = NodePath("../../../../View/MainMenu/MainMenu")
+metadata/_custom_type_script = "uid://b4hvmk8t0qkgu"
+
+[node name="SaveSelection" type="Node" parent="InterfaceViewportContainer/Animations"]
+
+[node name="In" type="Node" parent="InterfaceViewportContainer/Animations/SaveSelection" node_paths=PackedStringArray("animations")]
+script = ExtResource("5_7ufuu")
+animations = [NodePath("FadeIn")]
+metadata/_custom_type_script = "uid://hwir6cu7vwa2"
+
+[node name="FadeIn" type="Node" parent="InterfaceViewportContainer/Animations/SaveSelection/In" node_paths=PackedStringArray("target", "start_trigger_source", "stop_trigger_source")]
+script = ExtResource("8_627ab")
+target = NodePath("../../../../View/SaveSelection")
+animation = SubResource("Resource_88r3n")
+start_trigger_source = NodePath("../../../../View/SaveSelection")
+stop_trigger_source = NodePath("../../../../View/SaveSelection")
+metadata/_custom_type_script = "uid://b4hvmk8t0qkgu"
+
+[node name="Out" type="Node" parent="InterfaceViewportContainer/Animations/SaveSelection" node_paths=PackedStringArray("animations")]
+script = ExtResource("5_7ufuu")
+animations = [NodePath("FadeOut")]
+metadata/_custom_type_script = "uid://hwir6cu7vwa2"
+
+[node name="FadeOut" type="Node" parent="InterfaceViewportContainer/Animations/SaveSelection/Out" node_paths=PackedStringArray("target", "start_trigger_source", "stop_trigger_source")]
+script = ExtResource("8_627ab")
+target = NodePath("../../../../View/SaveSelection")
+animation = SubResource("Resource_dc6ug")
+start_trigger_source = NodePath("../../../../View/SaveSelection")
+stop_trigger_source = NodePath("../../../../View/SaveSelection")
+metadata/_custom_type_script = "uid://b4hvmk8t0qkgu"
+
+[node name="Audio" type="Node" parent="InterfaceViewportContainer"]
+
+[node name="Music" type="Node" parent="InterfaceViewportContainer/Audio"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="InterfaceViewportContainer/Audio/Music"]
+stream = ExtResource("2_0jpat")
+autoplay = true
+parameters/looping = true
+
+[node name="Router" type="Node" parent="InterfaceViewportContainer" node_paths=PackedStringArray("in_transition", "out_transition")]
+script = ExtResource("9_8xfgt")
+in_transition = NodePath("../Animations/MainMenu/In")
+out_transition = NodePath("../Animations/MainMenu/Out")
+metadata/_custom_type_script = "uid://dvxagcnncr3df"
+
+[node name="VisibilityRouterNode" type="Node" parent="InterfaceViewportContainer/Router"]
+metadata/_custom_type_script = "uid://cdpjndn6wmhid"
+
+[node name="View" type="SubViewport" parent="InterfaceViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MainMenu" type="Control" parent="InterfaceViewportContainer/View" node_paths=PackedStringArray("router", "nodes")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_uqeha")
+router = NodePath("")
+nodes = {
+"play_button": NodePath("MainMenu/VBoxContainer/PlayButton"),
+"quit_button": NodePath("MainMenu/VBoxContainer/QuitButton"),
+"settings_button": NodePath("MainMenu/VBoxContainer/SettingsButton")
+}
+resource_model = ExtResource("4_x31ro")
+
+[node name="MainMenu" type="VBoxContainer" parent="InterfaceViewportContainer/View/MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="TextureRect" type="TextureRect" parent="InterfaceViewportContainer/View/MainMenu/MainMenu"]
+visible = false
+texture_filter = 2
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+texture = ExtResource("2_ob46e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InterfaceViewportContainer/View/MainMenu/MainMenu"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="PlayButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu/VBoxContainer" instance=ExtResource("3_uqeha")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="SettingsButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu/VBoxContainer" instance=ExtResource("3_uqeha")]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu/VBoxContainer" instance=ExtResource("3_uqeha")]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="MainMenu2" type="VBoxContainer" parent="InterfaceViewportContainer/View/MainMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InterfaceViewportContainer/View/MainMenu/MainMenu2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 8
+
+[node name="PlayButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu2/VBoxContainer" instance=ExtResource("3_uqeha")]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="SettingsButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu2/VBoxContainer" instance=ExtResource("3_uqeha")]
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu2/VBoxContainer" instance=ExtResource("3_uqeha")]
+layout_mode = 2
+text = "Quit
+"
+
+[node name="SaveSelection" parent="InterfaceViewportContainer/View" instance=ExtResource("11_88r3n")]
+visible = false
+
+[node name="Control" type="Control" parent="InterfaceViewportContainer/View"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="InterfaceViewportContainer/View/Control"]
+material = SubResource("ShaderMaterial_7ufuu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_8xfgt")
+
+[node name="TextureRect2" type="TextureRect" parent="InterfaceViewportContainer/View/Control"]
+material = SubResource("ShaderMaterial_7ufuu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -2.0
+offset_right = 1880.0
+offset_bottom = 1038.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_7ufuu")

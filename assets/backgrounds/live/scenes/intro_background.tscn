@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c820k1v2g61vm"]
+
+[ext_resource type="PackedScene" uid="uid://10neawd6ayqk" path="res://views/live_background/live_background.tscn" id="1_5u5n1"]
+[ext_resource type="Texture2D" uid="uid://b87bvw2aunkkr" path="res://assets/backgrounds/live/images/monochrome/recursion.png" id="2_hmlp2"]
+[ext_resource type="Material" uid="uid://bvsi8fsiod7ow" path="res://assets/backgrounds/live/materials/y.tres" id="2_msjxb"]
+[ext_resource type="Material" uid="uid://lo2grt723bok" path="res://assets/backgrounds/live/materials/y_reversed.tres" id="4_1sbb0"]
+
+[node name="IntroBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LiveBackground" parent="." instance=ExtResource("1_5u5n1")]
+layout_mode = 1
+background_color = Color(1, 0, 0, 1)
+background_shader = ExtResource("2_msjxb")
+background_texture = ExtResource("2_hmlp2")
+foreground_shader = ExtResource("4_1sbb0")
+foreground_texture = ExtResource("2_hmlp2")

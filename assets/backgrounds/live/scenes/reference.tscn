@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://cig4vu4we6bu1"]
+
+[ext_resource type="Texture2D" uid="uid://3cfwnq88ipg4" path="res://assets/backgrounds/live/images/monochrome/interlace.png" id="1_im75g"]
+[ext_resource type="Shader" uid="uid://fl77iuir6gti" path="res://assets/shaders/trip/mother.gdshader" id="2_qq0me"]
+[ext_resource type="Material" uid="uid://ci08dlfm6247r" path="res://assets/backgrounds/live/materials/x_wobble.tres" id="2_rfyqr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qq0me"]
+shader = ExtResource("2_qq0me")
+shader_parameter/screen_height = 640.0
+shader_parameter/amplitude = -0.5
+shader_parameter/frequency = -10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 0.75
+shader_parameter/frequency_vertical = -10.0
+shader_parameter/speed_vertical = 2.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.08
+shader_parameter/enable_palette_cycling = false
+shader_parameter/palette_speed = 0.1
+
+[node name="ReferenceBackground" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StaticTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_im75g")
+
+[node name="WeaveBG" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_qq0me")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_im75g")
+
+[node name="WeaveFG" type="TextureRect" parent="."]
+material = ExtResource("2_rfyqr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_im75g")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmcbhj6ud3w2w"]
+
+[ext_resource type="Script" uid="uid://bh4wadpx8pwn5" path="res://scenes/cutscenes/vision/vision.gd" id="1_fly3u"]
+[ext_resource type="PackedScene" uid="uid://c820k1v2g61vm" path="res://assets/backgrounds/live/scenes/intro_background.tscn" id="1_j5bu6"]
+
+[node name="Vision" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fly3u")
+
+[node name="IntroBackground" parent="." instance=ExtResource("1_j5bu6")]
+layout_mode = 1

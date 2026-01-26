@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://i15ut4xc6twj"]
+
+[ext_resource type="StyleBox" uid="uid://c0uvtwuwthdoh" path="res://data/themes/oinky55/fantasy_ui/styles/button/wood/disabled.tres" id="1_tvkpk"]
+[ext_resource type="StyleBox" uid="uid://bxqlpsf3d83bb" path="res://data/themes/oinky55/fantasy_ui/styles/button/wood/normal.tres" id="2_jylet"]
+[ext_resource type="StyleBox" uid="uid://b16pfuqunonqs" path="res://data/themes/oinky55/fantasy_ui/styles/button/wood/hover.tres" id="3_s7s6r"]
+[ext_resource type="StyleBox" uid="uid://uu5unwcpf5o7" path="res://data/themes/oinky55/fantasy_ui/styles/button/wood/pressed.tres" id="4_0ahm7"]
+[ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="5_82xeb"]
+
+[resource]
+default_font = ExtResource("5_82xeb")
+Button/styles/disabled = ExtResource("1_tvkpk")
+Button/styles/focus = ExtResource("2_jylet")
+Button/styles/hover = ExtResource("3_s7s6r")
+Button/styles/normal = ExtResource("2_jylet")
+Button/styles/pressed = ExtResource("4_0ahm7")

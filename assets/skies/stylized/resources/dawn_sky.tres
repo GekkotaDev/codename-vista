@@ -1,0 +1,38 @@
+[gd_resource type="Sky" load_steps=6 format=3 uid="uid://cq1v4gkybf1i"]
+
+[ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/skies/stylized/shaders/stylized_sky.gdshader" id="1_t8676"]
+[ext_resource type="Texture2D" uid="uid://cnj11ljjj03yq" path="res://assets/skies/stylized/resources/cloud_noise.tres" id="2_y6nlp"]
+
+[sub_resource type="Curve" id="Curve_8c1sw"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15168539, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.75280905), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_7pdsn"]
+curve = SubResource("Curve_8c1sw")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rmc8"]
+shader = ExtResource("1_t8676")
+shader_parameter/cloud_shape_sampler = ExtResource("2_y6nlp")
+shader_parameter/cloud_noise_sampler = ExtResource("2_y6nlp")
+shader_parameter/cloud_curves = SubResource("CurveTexture_7pdsn")
+shader_parameter/clouds_samples = 32
+shader_parameter/shadow_sample = 4
+shader_parameter/clouds_density = 0.40000000596048
+shader_parameter/clouds_scale = 1.0
+shader_parameter/clouds_smoothness = 0.03999999910592
+shader_parameter/clouds_light_color = Color(1, 0.7607843, 0.6745098, 1)
+shader_parameter/clouds_shadow_intensity = 1.0
+shader_parameter/high_clouds_sampler = ExtResource("2_y6nlp")
+shader_parameter/high_clouds_density = 0.20000000298024
+shader_parameter/top_color = Color(0.93333334, 0.6509804, 0.54901963, 1)
+shader_parameter/bottom_color = Color(0.7921569, 0.4745098, 0.6039216, 1)
+shader_parameter/sun_scatter = Color(0.32156864, 0.32156864, 0.32156864, 1)
+shader_parameter/astro_tint = Color(0.70980394, 0.6392157, 0.4117647, 1)
+shader_parameter/astro_scale = 9.000000134110799
+shader_parameter/astro_intensity = 3.0
+shader_parameter/stars_intensity = 0.80000001192096
+shader_parameter/shooting_stars_intensity = 0.0
+shader_parameter/shooting_star_tint = Color(0, 0, 0, 1)
+
+[resource]
+sky_material = SubResource("ShaderMaterial_2rmc8")

@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://ctjbih4uoct3e"]
+
+[ext_resource type="Theme" uid="uid://dwfwn8g5gvg5x" path="res://data/themes/default.tres" id="1_tcrai"]
+[ext_resource type="Script" uid="uid://c0o0a2j0plvs0" path="res://scenes/menus/main_menu/save_selection/ui.gd" id="2_krn2i"]
+[ext_resource type="Texture2D" uid="uid://bwh16kwr6xrj6" path="res://assets/lib/Kenney/UI/Fantasy UI Borders/PNG/Default/Panel/panel-008.png" id="2_v1lt3"]
+[ext_resource type="Script" uid="uid://wv0euqyyvlqq" path="res://nodes/router/router_node.gd" id="2_wd1n3"]
+[ext_resource type="PackedScene" uid="uid://ck8tgq0ei3l85" path="res://views/Button.tscn" id="3_wd1n3"]
+
+[node name="SaveSelection" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tcrai")
+script = ExtResource("2_krn2i")
+
+[node name="Router" type="Node" parent="."]
+script = ExtResource("2_wd1n3")
+metadata/_custom_type_script = "uid://bb3jlup6u17pg"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+texture = ExtResource("2_v1lt3")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Save1" parent="HBoxContainer/VBoxContainer" instance=ExtResource("3_wd1n3")]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 2
+text = ""
+
+[node name="Save2" parent="HBoxContainer/VBoxContainer" instance=ExtResource("3_wd1n3")]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 2
+text = ""
+
+[node name="Save3" parent="HBoxContainer/VBoxContainer" instance=ExtResource("3_wd1n3")]
+custom_minimum_size = Vector2(480, 240)
+layout_mode = 2
+text = ""
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Select" type="Label" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Select"
+
+[node name="Back" type="Label" parent="MarginContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Back"

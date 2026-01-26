@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SceneLoaderTarget" load_steps=2 format=3 uid="uid://2os8mjxsoha3"]
+
+[ext_resource type="Script" uid="uid://bgi24ggjne3rg" path="res://resources/scene_loader_taget.gd" id="1_msvh6"]
+
+[resource]
+script = ExtResource("1_msvh6")
+path = "res://scenes/menus/main_menu/main_menu.tscn"
+metadata/_custom_type_script = "uid://bgi24ggjne3rg"

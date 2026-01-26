@@ -1,0 +1,52 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+    ],
+    "extensions": {
+        "recommendations": [
+            "charliermarsh.ruff",
+            "DoHe.godot-format",
+            "geequlim.godot-tools",
+            "ms-dotnettools.csharp",
+            "ms-dotnettools.vscode-dotnet-runtime",
+        ]
+    },
+    "settings": {
+        "[gdscript]": {
+            "editor.tabSize": 4,
+            "editor.insertSpaces": false
+        },
+        "[markdown]": {
+            "editor.wordWrap": "bounded",
+            "editor.wordWrapColumn": 90
+        },
+
+        "dotnet.server.useOmnisharp": false,
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4,
+
+        "dotnet.defaultSolution": "Codename Vista.sln",
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.expand": false,
+        "explorer.fileNesting.patterns": {
+            //   "addons.jsonc": "*.csproj, *.sln",
+              "project.godot": "export_presets.cfg, icon.svg",
+              "pyproject.toml": ".python-version, mkdocs.yml, uv.lock, *.py",
+              "*.tres": "${capture}.gd, ${capture}.cs",
+              "*.tscn": "${capture}.gd, ${capture}.cs",
+        },
+        "files.exclude": {
+            ".void": true,
+            "data.pandora": true,
+            "**/*.import": true,
+            "**/*.uid": true
+        },
+
+        "yaml.customTags": [
+            "!ENV sequence",
+            "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
+        ],
+    }
+}

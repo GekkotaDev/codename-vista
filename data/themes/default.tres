@@ -1,0 +1,103 @@
+[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dwfwn8g5gvg5x"]
+
+[ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="1_caqeb"]
+[ext_resource type="Texture2D" uid="uid://uxc2vxf2gdq4" path="res://assets/lib/Kenney/UI/Fantasy UI Borders/PNG/Default/Transparent center/panel-transparent-center-009.png" id="2_51pqm"]
+[ext_resource type="Texture2D" uid="uid://basea7qeg1br" path="res://assets/lib/Kenney/UI/Fantasy UI Borders/PNG/Default/Transparent border/panel-transparent-border-009.png" id="3_aqe8w"]
+[ext_resource type="Texture2D" uid="uid://umm8gavbmqus" path="res://assets/lib/Kenney/UI/Fantasy UI Borders/PNG/Default/Panel/panel-009.png" id="4_lfaim"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eupr3"]
+texture = ExtResource("2_51pqm")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7ho7c"]
+texture = ExtResource("3_aqe8w")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_is47l"]
+texture = ExtResource("3_aqe8w")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_agcvn"]
+texture = ExtResource("4_lfaim")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(0, 0, 48, 48)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3tknh"]
+texture = ExtResource("2_51pqm")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
+[sub_resource type="Gradient" id="Gradient_51pqm"]
+colors = PackedColorArray(0.7764706, 0.7764706, 0.7764706, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aqe8w"]
+gradient = SubResource("Gradient_51pqm")
+width = 8
+height = 8
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_aqe8w"]
+colors = PackedColorArray(0.4509804, 0.4509804, 0.4509804, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lfaim"]
+gradient = SubResource("Gradient_aqe8w")
+width = 8
+height = 8
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.5)
+
+[sub_resource type="Gradient" id="Gradient_eupr3"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7ho7c"]
+gradient = SubResource("Gradient_eupr3")
+width = 8
+height = 8
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_is47l"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+Button/font_sizes/font_size = 20
+Button/fonts/font = ExtResource("1_caqeb")
+Button/styles/disabled = SubResource("StyleBoxTexture_eupr3")
+Button/styles/focus = SubResource("StyleBoxTexture_7ho7c")
+Button/styles/hover = SubResource("StyleBoxTexture_is47l")
+Button/styles/normal = SubResource("StyleBoxTexture_agcvn")
+Button/styles/pressed = SubResource("StyleBoxTexture_3tknh")
+HSlider/icons/grabber = SubResource("GradientTexture2D_aqe8w")
+HSlider/icons/grabber_disabled = SubResource("GradientTexture2D_lfaim")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture2D_7ho7c")
+HSlider/styles/slider = SubResource("StyleBoxFlat_is47l")
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_caqeb")
+RichTextLabel/font_sizes/bold_font_size = 20
+RichTextLabel/font_sizes/bold_italics_font_size = 20
+RichTextLabel/font_sizes/italics_font_size = 20
+RichTextLabel/font_sizes/mono_font_size = 20
+RichTextLabel/font_sizes/normal_font_size = 20

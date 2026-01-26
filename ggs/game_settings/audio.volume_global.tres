@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettingVolumeGlobal" load_steps=2 format=3 uid="uid://cr4px1ojxxd72"]
+
+[ext_resource type="Script" uid="uid://dq3huoayl6vyr" path="res://resources/settings/audio/global_volume.gd" id="1_qtc4d"]
+
+[resource]
+resource_name = "volume.global"
+script = ExtResource("1_qtc4d")
+key = "volume.global"
+section = "audio"
+default = 1.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingVolumeSFX" load_steps=2 format=3 uid="uid://gkivktwbvl0n"]
+
+[ext_resource type="Script" uid="uid://pqj70gyq0vut" path="res://resources/settings/audio/sfx_volume.gd" id="1_gds3m"]
+
+[resource]
+resource_name = "volume.sfx"
+script = ExtResource("1_gds3m")
+key = "volume.sfx"
+section = "audio"
+default = 1.0
+metadata/_custom_type_script = "uid://pqj70gyq0vut"

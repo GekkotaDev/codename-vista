@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dby2wmf80m5s7"]
+
+[ext_resource type="Sky" uid="uid://ddsf5cmntrd7d" path="res://assets/skies/stylized/resources/consternation_sky.tres" id="1_3vutd"]
+
+[sub_resource type="Environment" id="Environment_dfoy5"]
+background_mode = 2
+sky = ExtResource("1_3vutd")
+adjustment_enabled = true
+adjustment_saturation = 1.5
+
+[node name="DynamicSky" type="WorldEnvironment"]
+environment = SubResource("Environment_dfoy5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-1, 8.742277e-08, 3.8213705e-15, 0, -4.3711385e-08, 0.99999994, 8.742278e-08, 0.99999994, 4.3711385e-08, 0, 0, 0)
+shadow_enabled = true

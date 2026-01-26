@@ -1,0 +1,397 @@
+[gd_scene load_steps=17 format=3 uid="uid://38chuk10ugey"]
+
+[ext_resource type="Script" uid="uid://50qs2x8uwim6" path="res://scenes/menus/splash/splash.gd" id="1_xtuk2"]
+[ext_resource type="Theme" uid="uid://dwfwn8g5gvg5x" path="res://data/themes/default.tres" id="1_y4437"]
+[ext_resource type="Shader" uid="uid://dfeowineoarly" path="res://scenes/menus/splash/shaders/zoom.tres" id="2_jdmxl"]
+[ext_resource type="PackedScene" uid="uid://br0sa0sf4nt1s" path="res://scenes/menus/main_menu/main_menu.tscn" id="2_ncq3u"]
+[ext_resource type="Texture2D" uid="uid://cmknhlagpngq3" path="res://assets/logos/godot/original-large.png" id="2_wwhxh"]
+[ext_resource type="Texture2D" uid="uid://tth53oaa21vo" path="res://assets/logos/godot/made-with-godot-light.png" id="3_a6n0j"]
+[ext_resource type="AudioStream" uid="uid://cb22rw7k8q527" path="res://scenes/menus/splash/audio/sfx/fire.wav" id="3_mulaw"]
+[ext_resource type="Texture2D" uid="uid://2bjscya3sln" path="res://assets/logos/drakenstorm_studio/drakenstorm_icon.png" id="4_a6n0j"]
+[ext_resource type="Shader" uid="uid://d3d4n51npn20h" path="res://scenes/menus/splash/shaders/swirl.tres" id="4_m61hw"]
+[ext_resource type="Texture2D" uid="uid://cf7kknl28fi4j" path="res://assets/logos/drakenstorm_studio/drakenstorm_wordmark.png" id="5_m61hw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ncq3u"]
+shader = ExtResource("2_jdmxl")
+shader_parameter/zoom_scale = 1.0
+
+[sub_resource type="Animation" id="Animation_jdmxl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:splash_dev_logo_time")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:splash_dev_twist_time")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:splash_dev_zoom")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DevSplash/HBoxContainer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(347, 225)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DevSplash/HBoxContainer/WordmarkMargin/LogoWordmark:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("DevSplash/HBoxContainer/IconMargin/LogoIcon:material")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_ncq3u")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("DevSplash:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("EngineSplash:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("UniversitySplash:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xtuk2"]
+resource_name = "splash"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:splash_dev_zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DevSplash/HBoxContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2, 2.5),
+"transitions": PackedFloat32Array(-4, 1),
+"update": 0,
+"values": [Vector2(862, 405), Vector2(766.9999, 405)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DevSplash/HBoxContainer/WordmarkMargin/LogoWordmark:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 3),
+"transitions": PackedFloat32Array(-8, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DevSplash/HBoxContainer/IconMargin/LogoIcon:material")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [SubResource("ShaderMaterial_ncq3u"), null]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DevSplash:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5, 5.5),
+"transitions": PackedFloat32Array(-2, 2),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("EngineSplash:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(7.5, 8),
+"transitions": PackedFloat32Array(-2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("UniversitySplash:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(10, 11),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AudioStreamPlayer")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_mulaw")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/7/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mulaw"]
+_data = {
+&"RESET": SubResource("Animation_jdmxl"),
+&"splash": SubResource("Animation_xtuk2")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xtuk2"]
+shader = ExtResource("4_m61hw")
+shader_parameter/twist_strength = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jdmxl"]
+
+[node name="Splash" type="Control" node_paths=PackedStringArray("animation_player", "splash_dev_textures")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xtuk2")
+target_scene = ExtResource("2_ncq3u")
+animation_player = NodePath("AnimationPlayer")
+splash_dev_textures = [NodePath("DevSplash/HBoxContainer/IconMargin/LogoIcon")]
+splash_dev_zoom = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mulaw")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="UniversitySplash" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UniversitySplash"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UniversitySplash/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_y4437")
+theme_override_font_sizes/font_size = 32
+text = "a work in progress
+university thesis"
+horizontal_alignment = 1
+
+[node name="EngineSplash" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EngineSplash"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -98.0
+offset_right = 64.0
+offset_bottom = 98.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="EngineSplash/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+theme = ExtResource("1_y4437")
+theme_override_font_sizes/font_size = 24
+text = "a game"
+horizontal_alignment = 1
+
+[node name="LogoIcon" type="TextureRect" parent="EngineSplash/VBoxContainer"]
+texture_filter = 1
+clip_contents = true
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+texture = ExtResource("2_wwhxh")
+stretch_mode = 5
+
+[node name="LogoWordmark" type="TextureRect" parent="EngineSplash/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+texture = ExtResource("3_a6n0j")
+stretch_mode = 5
+
+[node name="DevSplash" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="DevSplash"]
+material = SubResource("ShaderMaterial_xtuk2")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -613.0
+offset_top = -315.0
+offset_right = -227.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 32
+
+[node name="IconMargin" type="MarginContainer" parent="DevSplash/HBoxContainer"]
+layout_mode = 2
+
+[node name="LogoIcon" type="TextureRect" parent="DevSplash/HBoxContainer/IconMargin"]
+material = SubResource("ShaderMaterial_ncq3u")
+custom_minimum_size = Vector2(170, 270)
+layout_mode = 2
+texture = ExtResource("4_a6n0j")
+expand_mode = 1
+
+[node name="WordmarkMargin" type="MarginContainer" parent="DevSplash/HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="LogoWordmark" type="TextureRect" parent="DevSplash/HBoxContainer/WordmarkMargin"]
+material = SubResource("ShaderMaterial_jdmxl")
+custom_minimum_size = Vector2(184, 226)
+layout_mode = 2
+texture = ExtResource("5_m61hw")
+expand_mode = 1

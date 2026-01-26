@@ -1,0 +1,87 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://d3d4n51npn20h"]
+
+[ext_resource type="Texture2D" uid="uid://2bjscya3sln" path="res://assets/logos/drakenstorm_studio/drakenstorm_icon.png" id="1_8pqva"]
+[ext_resource type="Script" uid="uid://8gscwps50lk7" path="res://addons/shaderV/uv/animated/swirlUV.gd" id="2_txeq7"]
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_8pqva"]
+parameter_name = "raster"
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_g506h"]
+expanded_output_ports = [0]
+source = 5
+texture = ExtResource("1_8pqva")
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_8pqva"]
+default_input_values = [1, Vector3(0.5, 0.5, 0), 2, 0.0, 3, 0.0]
+initialized = true
+script = ExtResource("2_txeq7")
+
+[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_gfhdv"]
+constant = Vector3(0.5, 0.5, 0)
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_tchdx"]
+parameter_name = "twist_strength"
+default_value_enabled = true
+default_value = 10.0
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_4vasa"]
+parameter_name = "twist_time"
+default_value_enabled = true
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float twist_strength = 10.0;
+uniform sampler2D raster;
+
+
+// SwirlUV
+#include \"res://addons/shaderV/uv/animated/swirlUV.gdshaderinc\"
+
+void fragment() {
+// Vector3Constant:7
+	vec3 n_out7p0 = vec3(0.500000, 0.500000, 0.000000);
+
+
+// FloatParameter:8
+	float n_out8p0 = twist_strength;
+
+
+	vec3 n_out3p0;
+// SwirlUV:3
+	float n_in3p3 = 0.00000;
+	{
+		n_out3p0.xy = _swirlUVFunc(UV.xy, n_in3p3, n_out7p0.xy, n_out8p0);
+	}
+
+
+	vec4 n_out2p0;
+// Texture2D:2
+	n_out2p0 = texture(raster, vec2(n_out3p0.xy));
+	float n_out2p4 = n_out2p0.a;
+
+
+// Output:0
+	COLOR.rgb = vec3(n_out2p0.xyz);
+	COLOR.a = n_out2p4;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(2180, 1380)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_g506h")
+nodes/fragment/2/position = Vector2(1880, 1340)
+nodes/fragment/3/node = SubResource("VisualShaderNodeCustom_8pqva")
+nodes/fragment/3/position = Vector2(1620, 1380)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVec3Constant_gfhdv")
+nodes/fragment/7/position = Vector2(1200, 1260)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatParameter_tchdx")
+nodes/fragment/8/position = Vector2(1200, 1440)
+nodes/fragment/9/node = SubResource("VisualShaderNodeFloatParameter_4vasa")
+nodes/fragment/9/position = Vector2(1200, 2180)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTexture2DParameter_8pqva")
+nodes/fragment/11/position = Vector2(1200, 1740)
+nodes/fragment/connections = PackedInt32Array(7, 0, 3, 1, 3, 0, 2, 0, 8, 0, 3, 2, 2, 4, 0, 1, 2, 0, 0, 0, 11, 0, 2, 2)

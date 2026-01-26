@@ -1,0 +1,80 @@
+[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://dfeowineoarly"]
+
+[ext_resource type="Script" uid="uid://mua5cf1x1xw8" path="res://addons/shaderV/rgba/blur/zoomBlur.gd" id="1_xrbkw"]
+
+[sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_4yr1r"]
+default_input_values = [2, -1.0, 3, Vector3(0.5, 0.5, 0), 4, 20.0, 5, 0.005]
+initialized = true
+script = ExtResource("1_xrbkw")
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_27cwc"]
+constant = -1.0
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_xa6yc"]
+constant = 20.0
+
+[sub_resource type="VisualShaderNodeVec3Constant" id="VisualShaderNodeVec3Constant_6xcw1"]
+constant = Vector3(0.5, 0.5, 0)
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_m1wfc"]
+parameter_name = "zoom_scale"
+default_value_enabled = true
+
+[resource]
+code = "shader_type canvas_item;
+render_mode blend_mix;
+
+uniform float zoom_scale = 0.0;
+
+
+// ZoomBlur
+#include \"res://addons/shaderV/rgba/blur/zoomBlur.gdshaderinc\"
+
+void fragment() {
+// FloatConstant:5
+	float n_out5p0 = -1.000000;
+
+
+// Vector3Constant:7
+	vec3 n_out7p0 = vec3(0.500000, 0.500000, 0.000000);
+
+
+// FloatConstant:6
+	float n_out6p0 = 20.000000;
+
+
+// FloatParameter:8
+	float n_out8p0 = zoom_scale;
+
+
+	vec3 n_out3p0;
+	float n_out3p1;
+// ZoomBlur:3
+	{
+		vec4 n_out3p0n_out3p1 = _zoomBlurFunc(TEXTURE, UV.xy, int(n_out6p0), n_out7p0.xy, n_out8p0, n_out5p0);
+		n_out3p0 = n_out3p0n_out3p1.rgb;
+		n_out3p1 = n_out3p0n_out3p1.a;
+	}
+
+
+// Output:0
+	COLOR.rgb = n_out3p0;
+	COLOR.a = n_out3p1;
+
+
+}
+"
+mode = 1
+flags/light_only = false
+nodes/fragment/0/position = Vector2(540, 620)
+nodes/fragment/3/node = SubResource("VisualShaderNodeCustom_4yr1r")
+nodes/fragment/3/position = Vector2(290.28247, 623.5208)
+nodes/fragment/5/node = SubResource("VisualShaderNodeFloatConstant_27cwc")
+nodes/fragment/5/position = Vector2(30.28247, 603.5208)
+nodes/fragment/6/node = SubResource("VisualShaderNodeFloatConstant_xa6yc")
+nodes/fragment/6/position = Vector2(30.28247, 783.5208)
+nodes/fragment/7/node = SubResource("VisualShaderNodeVec3Constant_6xcw1")
+nodes/fragment/7/position = Vector2(-109.71753, 683.5208)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatParameter_m1wfc")
+nodes/fragment/8/position = Vector2(-40, 880)
+nodes/fragment/connections = PackedInt32Array(5, 0, 3, 2, 7, 0, 3, 3, 8, 0, 3, 5, 6, 0, 3, 4, 3, 1, 0, 1, 3, 0, 0, 0)
