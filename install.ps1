@@ -300,9 +300,12 @@ Write-Log "propose codebase changes for review before they're merged. This is" -
 Write-Log "particularly important to know when working collaboratively" -Type Info
 Write-Log " "
 Write-Log "This is something that happens 'transparently' (not something you" -Type Info
-Write-Log "would actively think about). Just make a branch like so" -Type Info
+Write-Log "would actively think about). Create a branch like so" -Type Info
 Write-Log " "
 Write-Log "git checkout -b <branch-name>"
+Write-Log " "
+Write-Log "Make sure you've done this before adding, commiting, and pushing or" -Type Info
+Write-Log "else you'll have to rebase or reset." -Type Info
 Write-Log " "
 Write-Log "I advise you make a descriptive name for the branch. Perhaps you're" -Type Info
 Write-Log "working on updating the save system and would like for someone else" -Type Info
@@ -311,6 +314,19 @@ Write-Log " "
 Write-Log "git checkout -b save-revamp"
 Write-Log " "
 Write-Log "You'll get to see it in action when you push your changes to origin" -Type Info
+Write-Log " "
+Write-Log "If you want to skip the review process then just switch back to the" -Type Info
+Write-Log "main branch before adding, commiting, pushing any code." -Type Info
+Write-Log " "
+Write-Log "git checkout main"
+Write-Log " "
+Write-Log "Here's a short guide on branching. (the website itself is very useful)" -Type Info
+Write-Log " "
+Write-Log "https://rogerdudler.github.io/git-guide/#branching"
+Write-Log " "
+Write-Log "And explanations of the flags -b and -d" -Type Info
+Write-Log " "
+Write-Log "-b creates a new branch and switches to that branch"
 Write-Log " "
 Read-Host "Press enter to continue."
 Write-Log " "
@@ -375,6 +391,9 @@ Write-Log "Where it can get tricky however are with merge conflicts. Oh no. This
 Write-Log "video by Philomatics might help" -Type Info
 Write-Log " "
 Write-Log "https://youtu.be/DloR0BOGNU0"
+Write-Log " "
+Write-Log "If you're fine with dropping all changes you've made in exchange for" -Type Info
+Write-Log "all the updates made in origin." -Type Info
 Write-Log " "
 Read-Host "Press enter to continue."
 Write-Log " "
