@@ -47,7 +47,7 @@ function Write-Log {
     else { Write-Output " $($Output)" }
 }
 
-function Write-Host {
+function Query-Host {
     param (
         [Parameter(Mandatory = $true)]
         [String]
@@ -202,7 +202,7 @@ Write-Log " "
 Write-Log " "
 Write-Log " "
 
-$lecture = Write-Host "Would you like a quick lecture on Git?" -Loop
+$lecture = Query-Host "Would you like a quick lecture on Git?" -Loop
 
 if ($lecture -eq $false) {
     Write-Log "Understandable, have a great day ✌️"
