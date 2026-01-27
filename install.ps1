@@ -43,8 +43,8 @@ function Write-Log {
         return
     }
 
-    if ($NoNewline -eq $true) { Write-Host -NoNewline " $($Output)" }
-    else { Write-Output " $($Output)" }
+    if ($NoNewline -eq $true) { Write-Host " $($Output)" -NoNewline  }
+    else { Write-Host " $($Output)" }
 }
 
 function Query-Host {
