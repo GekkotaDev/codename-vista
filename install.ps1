@@ -392,9 +392,6 @@ Write-Log "video by Philomatics might help" -Type Info
 Write-Log " "
 Write-Log "https://youtu.be/DloR0BOGNU0"
 Write-Log " "
-Write-Log "If you're fine with dropping all changes you've made in exchange for" -Type Info
-Write-Log "all the updates made in origin." -Type Info
-Write-Log " "
 Read-Host "Press enter to continue."
 Write-Log " "
 Write-Log " "
