@@ -1,3 +1,8 @@
+<!--
+  This is the Github repository.
+
+-->
+
 <hgroup>
   <h1 align="center">
     <code>CODENAME</code> <i>Vista</i>
@@ -25,19 +30,11 @@
   - [.NET SDK](https://dotnet.microsoft.com/en-us/download)
   - [Git](https://git-scm.com)
 
-  This is automatically taken care of by [`setup.ps1`](./setup.ps1)
+  You can automatically have this get set up by running the following command
+  in Powershell.
 
-  If you wish to use that instead clone the project onto a folder on your computer
-  and open up Powershell to run the following.
   ```pwsh
-  # cd means "Change Directory/Folder"
-  cd "path/to/the/project"
-  
-  # Verify if you're in the project folder
-  if (Test-Path project.godot) { echo "You're in the project folder ✅" }
-
-  # Run the setup script
-  ./setup.ps1
+  iex (iwr "https://raw.githubusercontent.com/GekkotaDev/codename-vista/refs/heads/main/install.ps1").Content
   ```
 </details>
 
