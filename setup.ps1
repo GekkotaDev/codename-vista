@@ -3,6 +3,8 @@
 # !/! SCROLL DOWN !/! #
 # !/!             !/! #
 #/////////////////////#
+$GodotVersion = "4.6"
+
 function Write-Log {
     param (
         [Parameter(Mandatory = $true)]
@@ -113,6 +115,13 @@ if (Test-Command "uv") {
     Write-Log "We use addons as to not code things from scratch" -Type Info
     Write-Log "https://godotengine.org/asset-library/asset"
     Write-Log " "
+}
+
+if (Test-Command "godot-mono") {
+    Write-Log "Installing Godot ${GodotVersion}" -Type Info
+    scoop install "godot-mono@${GodotVersion}"
+    Write-Log "Godot ${GodotVersion} installed." -Type Info
+    Write-Log "HINT: Enter 'godot-mono'"
 }
 
 

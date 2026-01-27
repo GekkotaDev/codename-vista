@@ -44,6 +44,8 @@
             "**/*.uid": true
         },
 
+        "godotTools.editorPath.godot4": "godot-mono",
+
         "yaml.customTags": [
             "!ENV sequence",
             "tag:yaml.org,2002:python/name:pymdownx.superfences.fence_code_format"
