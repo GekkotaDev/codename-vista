@@ -54,7 +54,7 @@ function Query-Host {
         $Output,
 
         [Parameter(Mandatory = $false)]
-        [Boolean]
+        [switch]
         $Loop = $true
     )
 
