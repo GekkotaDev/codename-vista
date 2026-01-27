@@ -16,7 +16,7 @@ function Write-Log {
 
         [Parameter(Mandatory = $false)]
         [Boolean]
-        $NoNewline = $true
+        $NoNewline = $false
     )
 
     if ($Output -eq " ") {
@@ -43,7 +43,7 @@ function Write-Log {
         return
     }
 
-    if ($NoNewline -eq $true) { Write-Output " $($Output)" -NoNewline }
+    if ($NoNewline -eq $true) { Write-Host -NoNewline " $($Output)" }
     else { Write-Output " $($Output)" }
 }
 
