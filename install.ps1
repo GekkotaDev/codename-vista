@@ -65,6 +65,10 @@ function Write-Host {
         if ($Result -eq "y") {
             return $true
         }
+
+        if ($Result -eq "n") {
+            return $false
+        } 
     }
 
     return $false
@@ -198,7 +202,7 @@ Write-Log " "
 Write-Log " "
 Write-Log " "
 
-$lecture = Write-Host "Would you like a quick lecture on Git?"
+$lecture = Write-Host "Would you like a quick lecture on Git?" -Loop
 
 if ($lecture -eq $false) {
     Write-Log "Understandable, have a great day ✌️"
