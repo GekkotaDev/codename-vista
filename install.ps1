@@ -346,9 +346,7 @@ Write-Log "git add libraries/battle_system/**/*.gd"
 Write-Log "git add ."
 Write-Log " "
 Write-Log "The last command in particular means 'I'm telling you I want you to" -Type Info
-Write-Log "to keep track of all the files I've just changed' but that's not" -Type Info
-Write-Log "recommended as it makes it difficult to give it a descriptive commit" -Type Info
-Write-Log "message. What's a commit you may ask?" -Type Info
+Write-Log "to keep track of all the files I've just changed'" -Type Info
 Write-Log " "
 Read-Host "Press enter to continue."
 Write-Log " "
@@ -362,6 +360,9 @@ Write-Log " "
 Write-Log "Here's how to commit. (not dating advice)" -Type Info
 Write-Log " "
 Write-Log 'git commit -m "implemented test for feature A"'
+Write-Log " "
+Write-Log "You can continue to add more files to commit separately if they're" -Type Info
+Write-Log "better suited to have their own commit message, or..." -Type Info
 Write-Log " "
 Read-Host "Press enter to continue."
 Write-Log " "
