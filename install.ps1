@@ -43,11 +43,11 @@ function Write-Log {
         return
     }
 
-    if ($NoNewline -eq $true) { Write-Host " $($Output)" -NoNewline  }
+    if ($NoNewline -eq $true) { Write-Host " $($Output)" -NoNewline }
     else { Write-Host " $($Output)" }
 }
 
-function Query-Host {
+function Enter-Host {
     param (
         [Parameter(Mandatory = $true)]
         [String]
@@ -55,7 +55,7 @@ function Query-Host {
 
         [Parameter(Mandatory = $false)]
         [switch]
-        $Loop = $true
+        $Loop
     )
 
     while ($Loop) {
@@ -202,7 +202,7 @@ Write-Log " "
 Write-Log " "
 Write-Log " "
 
-$lecture = Query-Host "Would you like a quick lecture on Git?" -Loop
+$lecture = Enter-Host "Would you like a quick lecture on Git?" -Loop
 
 if ($lecture -eq $false) {
     Write-Log "Understandable, have a great day ✌️"
