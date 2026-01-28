@@ -78,8 +78,8 @@
       "subfolder": "addons/licenses"
     },
     "limboai": {
-    //   "url": "https://github.com/limbonaut/limboai/releases/download/v1.5.2/limboai+v1.5.2.gdextension-4.4.zip",
-      "url": "https://github.com/limbonaut/limboai/actions/runs/21404572475/artifacts/5275847794",
+      // Wait for 1.6.0
+      "url": "https://github.com/limbonaut/limboai/releases/download/v1.5.2/limboai+v1.5.2.gdextension-4.4.zip",
       "source": "zip",
       "subfolder": "addons/limboai"
     },
