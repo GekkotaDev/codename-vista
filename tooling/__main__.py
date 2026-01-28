@@ -1,4 +1,4 @@
-from typing import Any, Callable, TypedDict, Literal
+from typing import Any, Callable, TypedDict, Literal, Annotated
 
 import json
 import pathlib
@@ -45,7 +45,7 @@ def setup():
 
 
 @app.command()
-def sync():
+def sync(skip_install: Annotated[bool, typer.Option] = False):
     """
     Update dependencies.
     """
@@ -85,9 +85,12 @@ def sync():
     print(f"{EMOJI_INFO}  [blue]Fetching dependencies...[/blue]")
 
     try:
-        subprocess.run(
-            ["dotnet", "godotenv", "addons", "install"], check=True, capture_output=True
-        )
+        if not skip_install:
+            subprocess.run(
+                ["dotnet", "godotenv", "addons", "install"],
+                check=True,
+                capture_output=True,
+            )
     except subprocess.CalledProcessError as error:
         if error.returncode != 1:
             print(f"[red]{error.stdout}[/red]")
@@ -127,11 +130,18 @@ def sync():
             continue
 
         # Resolve Godotenv's complicated remote zip management.
-        uuid = [
+        uuids = [
             directory.name
             for directory in os.scandir(cache / name)
             if directory.is_dir()
-        ][0]
+        ]
+
+        if len(uuids) < 1:
+            print(cache / name)
+            print([*os.scandir(cache / name)])
+            continue
+
+        uuid = uuids[0]
 
         if not f"{(cache / name / uuid / addon['subfolder']).parent}".endswith(
             "addons"
