@@ -8,12 +8,18 @@ const Model = preload("./ui_model.gd")
 @export var loading_screen: SceneLoaderTarget
 
 
-func _script(events: EventBus, _model: ResourceModel):
+func _script(events: EventBus, model: ResourceModel):
 	events.connect_of(
 		"play_button",
 		&"pressed",
 		func():
-			router.goto("play")
+			SceneManager.change_scene(loading_screen.path)
+
+			SceneLoader.enqueue(
+				model.scene_intro,
+				func(path: PackedScene):
+					SceneManager.change_scene(path)
+			)
 	)
 
 	events.connect_of(

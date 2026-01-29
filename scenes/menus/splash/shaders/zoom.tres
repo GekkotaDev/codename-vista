@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=7 format=3 uid="uid://dfeowineoarly"]
+[gd_resource type="VisualShader" format=3 uid="uid://dfeowineoarly"]
 
 [ext_resource type="Script" uid="uid://mua5cf1x1xw8" path="res://addons/shaderV/rgba/blur/zoomBlur.gd" id="1_xrbkw"]
 
@@ -21,49 +21,6 @@ parameter_name = "zoom_scale"
 default_value_enabled = true
 
 [resource]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-uniform float zoom_scale = 0.0;
-
-
-// ZoomBlur
-#include \"res://addons/shaderV/rgba/blur/zoomBlur.gdshaderinc\"
-
-void fragment() {
-// FloatConstant:5
-	float n_out5p0 = -1.000000;
-
-
-// Vector3Constant:7
-	vec3 n_out7p0 = vec3(0.500000, 0.500000, 0.000000);
-
-
-// FloatConstant:6
-	float n_out6p0 = 20.000000;
-
-
-// FloatParameter:8
-	float n_out8p0 = zoom_scale;
-
-
-	vec3 n_out3p0;
-	float n_out3p1;
-// ZoomBlur:3
-	{
-		vec4 n_out3p0n_out3p1 = _zoomBlurFunc(TEXTURE, UV.xy, int(n_out6p0), n_out7p0.xy, n_out8p0, n_out5p0);
-		n_out3p0 = n_out3p0n_out3p1.rgb;
-		n_out3p1 = n_out3p0n_out3p1.a;
-	}
-
-
-// Output:0
-	COLOR.rgb = n_out3p0;
-	COLOR.a = n_out3p1;
-
-
-}
-"
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(540, 620)

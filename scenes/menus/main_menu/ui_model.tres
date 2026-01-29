@@ -1,6 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://spl41xpo6vid"]
+[gd_resource type="Resource" format=3 uid="uid://spl41xpo6vid"]
 
 [ext_resource type="Script" uid="uid://dhgnlwp67xw14" path="res://scenes/menus/main_menu/ui_model.gd" id="1_65apj"]
+[ext_resource type="Script" uid="uid://bgi24ggjne3rg" path="res://resources/scene_loader_taget.gd" id="1_c0pt5"]
+
+[sub_resource type="Resource" id="Resource_c0pt5"]
+script = ExtResource("1_c0pt5")
+path = "res://scenes/cutscenes/visions/polaris_greeting/vision.tscn"
+metadata/_custom_type_script = "uid://bgi24ggjne3rg"
 
 [resource]
 script = ExtResource("1_65apj")
+scene_intro = SubResource("Resource_c0pt5")
