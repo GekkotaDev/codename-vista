@@ -210,10 +210,6 @@
         "url": "https://github.com/mathrick/godot-quick-layout-changer.git",
         "subfolder": "addons/quick_layout_changer"
     },
-    "R3.Godot": {
-        "url": "https://github.com/Cysharp/R3.git",
-        "subfolder": "src/R3.Godot/addons/R3.Godot"
-    },
     "resources_spreadsheet_view": {
         "url": "https://github.com/don-tnowe/godot-resources-as-sheets-plugin.git",
         "checkout": "master",
