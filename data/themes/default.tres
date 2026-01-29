@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=17 format=3 uid="uid://dwfwn8g5gvg5x"]
+[gd_resource type="Theme" format=3 uid="uid://dwfwn8g5gvg5x"]
 
 [ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="1_caqeb"]
 [ext_resource type="Texture2D" uid="uid://uxc2vxf2gdq4" path="res://assets/lib/Kenney/UI/Fantasy UI Borders/PNG/Default/Transparent center/panel-transparent-center-009.png" id="2_51pqm"]

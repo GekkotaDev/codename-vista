@@ -8,7 +8,7 @@ var poll_progress: float = -1.0
 var poll_state: ResourceLoader.ThreadLoadStatus = ResourceLoader.THREAD_LOAD_INVALID_RESOURCE
 
 @export var name: String = ""
-@export var path: String
+@export_file("*.tscn") var path: String
 
 
 func load():

@@ -1,4 +1,4 @@
-[gd_resource type="Sky" load_steps=7 format=3 uid="uid://cbl4hplw151w5"]
+[gd_resource type="Sky" format=3 uid="uid://cbl4hplw151w5"]
 
 [ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/skies/stylized/shaders/stylized_sky.gdshader" id="1_dwg1m"]
 [ext_resource type="Texture2D" uid="uid://dfbnikfkeltpi" path="res://assets/skies/stylized/sun.png" id="2_8c1sw"]

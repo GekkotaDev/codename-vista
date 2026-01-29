@@ -78,7 +78,7 @@ settings/addon_root_folder="res://.addons/godotenv/debug_draw_3d/55549FF5C5EDF45
 
 directories/dch_directory={}
 directories/dtl_directory={
-"init": "res://scenes/cutscenes/vision/dialog/init.dtl"
+"init": "res://scenes/cutscenes/visions/polaris_greeting/dialog/init.dtl"
 }
 layout/style_directory={}
 
