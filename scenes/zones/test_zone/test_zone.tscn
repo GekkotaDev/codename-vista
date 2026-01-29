@@ -1,3 +1,69 @@
 [gd_scene format=3 uid="uid://cebp73hqnnt5h"]
 
+[ext_resource type="Script" uid="uid://crevuamtq0x1e" path="res://nodes/shader_controller.gd" id="1_gf6xk"]
+[ext_resource type="Shader" uid="uid://dwewwwic7qux2" path="res://assets/shaders/blur/blur.gdshader" id="2_0kx83"]
+[ext_resource type="PackedScene" uid="uid://dklgyfe27ebpo" path="res://assets/skies/stylized/scenes/day_sky.tscn" id="3_wwgor"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjnkn"]
+shader = ExtResource("2_0kx83")
+shader_parameter/blur_size = Vector2(4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xu5se"]
+size = Vector3(32, 1, 8)
+
 [node name="TestZone" type="Node3D" unique_id=699052062]
+
+[node name="ShaderController" type="Node" parent="." unique_id=456259026 node_paths=PackedStringArray("shaders")]
+script = ExtResource("1_gf6xk")
+shaders = {
+"blur": NodePath("")
+}
+metadata/_custom_type_script = "uid://crevuamtq0x1e"
+
+[node name="Panel" type="Panel" parent="ShaderController" unique_id=267729128]
+material = SubResource("ShaderMaterial_wjnkn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WorldViewportContainer" type="SubViewportContainer" parent="." unique_id=820967309]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="WorldViewport" type="SubViewport" parent="WorldViewportContainer" unique_id=1239006005]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="WorldSpaceRoot" type="Node3D" parent="WorldViewportContainer/WorldViewport" unique_id=1346415493]
+
+[node name="DynamicSky" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot" unique_id=805771163 instance=ExtResource("3_wwgor")]
+
+[node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot" unique_id=574275781]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, -0.86602545, 0, 0.86602545, 0.49999997, 0, 0, 0)
+current = true
+
+[node name="LevelGeometry" type="Node3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot" unique_id=1049738436]
+
+[node name="FloorSection" type="Node3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot/LevelGeometry" unique_id=1199606491]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot/LevelGeometry/FloorSection" unique_id=2105189415]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot/LevelGeometry/FloorSection/CSGCombiner3D" unique_id=961143253]
+size = Vector3(32, 1, 8)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot/LevelGeometry/FloorSection" unique_id=1231837073]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldViewportContainer/WorldViewport/WorldSpaceRoot/LevelGeometry/FloorSection/StaticBody3D" unique_id=985229642]
+shape = SubResource("BoxShape3D_xu5se")
+debug_color = Color(0.23333327, 0.7, 0, 1)
+
+[node name="InterfaceViewportContainer" type="SubViewportContainer" parent="." unique_id=1486565657]
+offset_right = 40.0
+offset_bottom = 40.0
