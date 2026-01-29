@@ -157,6 +157,11 @@
       "source": "zip",
       "subfolder": "quest-system-2.0.1.4_4/addons/quest_system"
     },
+    "safe_resource_loader": {
+      "url": "https://github.com/derkork/godot-safe-resource-loader/archive/refs/tags/v0.3.0.zip",
+      "source": "zip",
+      "subfolder": "godot-safe-resource-loader-0.3.0/addons/safe_resource_loader"
+    },
     "scene_manager": {
       "url": "https://github.com/glass-brick/Scene-Manager/archive/refs/tags/v1.1.1.zip",
       "source": "zip",
