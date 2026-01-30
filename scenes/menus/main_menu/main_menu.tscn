@@ -172,8 +172,6 @@ in_transition = NodePath("../Animations/MainMenu/In")
 out_transition = NodePath("../Animations/MainMenu/Out")
 metadata/_custom_type_script = "uid://dvxagcnncr3df"
 
-[node name="VisibilityRouterNode" type="Node" parent="InterfaceViewportContainer/Router" unique_id=2102961073]
-
 [node name="View" type="SubViewport" parent="InterfaceViewportContainer" unique_id=1000197094]
 transparent_bg = true
 handle_input_locally = false
