@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cxvsxljruj5cy"]
+
+[ext_resource type="Script" uid="uid://dyst61n8tqsth" path="res://screens/settings/scenes/setting_selector.gd" id="1_18p8x"]
+
+[node name="SettingSelector" type="Node" unique_id=666022713]
+script = ExtResource("1_18p8x")
