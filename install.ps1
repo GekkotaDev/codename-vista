@@ -15,8 +15,8 @@ function Write-Log {
         $Type = "Log",
 
         [Parameter(Mandatory = $false)]
-        [Boolean]
-        $NoNewline = $false
+        [switch]
+        $NoNewline
     )
 
     if ($Output -eq " ") {
