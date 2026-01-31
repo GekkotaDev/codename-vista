@@ -4,7 +4,7 @@ class_name SaveFile
 extends Resource
 
 ##
-@export var collections: Dictionary[String, PersistedCollection]
+@export var collections: Dictionary[String, PersistedResource]
 
 @export_group("Version")
 ##
