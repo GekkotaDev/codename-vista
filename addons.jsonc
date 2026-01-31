@@ -57,6 +57,11 @@
       "source": "zip",
       "subfolder": "godot-game-settings-3.3.0/addons/ggs"
     },
+    "godot-git-plugin": {
+      "url": "https://github.com/godotengine/godot-git-plugin/releases/download/v3.2.1/godot-git-plugin-v3.2.1.zip",
+      "source": "zip",
+      "subfolder": "godot-git-plugin-v3.2.1/addons/godot-git-plugin"
+    },
     "godot_resource_groups": {
       "url": "https://github.com/derkork/godot-resource-groups/archive/refs/tags/v0.4.2.zip",
       "source": "zip",
