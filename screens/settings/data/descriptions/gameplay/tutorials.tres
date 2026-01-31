@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://bfiuyyixaieyr"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings/resources/setting_description.gd" id="1_xg577"]
+
+[resource]
+script = ExtResource("1_xg577")
+metadata/_custom_type_script = "uid://d07euhpatotko"

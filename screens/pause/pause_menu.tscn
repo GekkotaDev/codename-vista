@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dlmk5ppqaewky"]
 
+[ext_resource type="Script" uid="uid://dyot8c8rp60g" path="res://screens/pause/pause_menu.gd" id="1_uwwgw"]
+
 [node name="PauseMenu" type="Control" unique_id=1094208737]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uwwgw")
+
+[node name="Animations" type="Node" parent="." unique_id=2024640686]
+
+[node name="In" type="Node" parent="Animations" unique_id=1086430321]
+
+[node name="Out" type="Node" parent="Animations" unique_id=1241393935]

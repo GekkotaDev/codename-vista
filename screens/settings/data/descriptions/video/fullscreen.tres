@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://cd6dsmp2wxukt"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings/resources/setting_description.gd" id="1_58ox6"]
+
+[resource]
+script = ExtResource("1_58ox6")
+description = "Should the game be windowed or take up the entire screen?"
+metadata/_custom_type_script = "uid://d07euhpatotko"

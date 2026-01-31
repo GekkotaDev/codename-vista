@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://begy7g2vt1lj4"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings/resources/setting_description.gd" id="1_1vosg"]
+
+[resource]
+script = ExtResource("1_1vosg")
+description = "Automatically save the game at set checkpoints and/or at an interval"
+metadata/_custom_type_script = "uid://d07euhpatotko"

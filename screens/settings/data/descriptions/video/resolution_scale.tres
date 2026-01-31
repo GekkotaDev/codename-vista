@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://d00xjfu7hyo2s"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings/resources/setting_description.gd" id="1_sneiy"]
+
+[resource]
+script = ExtResource("1_sneiy")
+description = "Change the size of elements displayed on screen."
+metadata/_custom_type_script = "uid://d07euhpatotko"
