@@ -7,15 +7,11 @@ on:
         inputs:
             game_title:
                 type: string
-                description: Game title
+                description: Title of the game.
             godot_version:
                 type: string
-                description: Godot Engine version.
-                default: "4.5.1"
-            uv_version:
-                type: string
-                description: uv package manager version.
-                default: "0.9.5"
+                description: Godot Engine version (not enforced in build).
+                default: "4.6"
 
 permissions:
     contents: write
