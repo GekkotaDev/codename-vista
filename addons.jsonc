@@ -48,9 +48,9 @@
       "subfolder": "eye-dropper-8c2b6c83e13a4ab2b4664dcdb40d8f1a99279ddb/addons/eye_dropper"
     },
     "gdUnit4": {
-      "url": "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.1.0.zip",
+      "url": "https://github.com/godot-gdunit-labs/gdUnit4/archive/refs/tags/v6.1.1.zip",
       "source": "zip",
-      "subfolder": "gdUnit4-6.1.0/addons/gdUnit4"
+      "subfolder": "gdUnit4-6.1.1/addons/gdUnit4"
     },
     "ggs": {
       "url": "https://github.com/c16s8/godot-game-settings/archive/refs/tags/3.3.0.zip",
