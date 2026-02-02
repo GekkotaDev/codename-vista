@@ -1,57 +1,56 @@
 name: Unit and Integration Tests
 on:
-  push:
-  pull_request:
-  workflow_call:
-    inputs:
-      godot_version:
-        type: string
-        default: "4.5.1"
+    push:
+    pull_request:
+    workflow_call:
+        inputs:
+            godot_version:
+                type: string
+                default: "4.5.1"
 
-      uv_version:
-        type: string
-        default: "0.9.5"
+            uv_version:
+                type: string
+                default: "0.9.5"
 
 env:
-  CI_CD: true
+    CI_CD: true
 
 permissions:
-  contents: write
-
+    contents: write
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+    test:
+        runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version-file: ".python-version"
-    - name: Install uv
-      uses: astral-sh/setup-uv@v6
-      with:
-        # Install a specific version of uv.
-        version: 0.9.5
-        enable-cache: true
-    - name: Setup dotNET
-      uses: actions/setup-dotnet@v5
-      with:
-        dotnet-version: | 
-          8.0.x
-          9.0.x
-    - name: Install dependencies
-      run: |
-        dotnet tool restore
-        uv sync
-        uv run tooling sync
-    - uses: godot-gdunit-labs/gdUnit4-action@v1
-      with:
-        godot-version: 4.6
-        godot-net: true
-        godot-force-mono: true
-        paths: |
-          res://tests
-        timeout: 5
-        version: installed
+        steps:
+            - uses: actions/checkout@v4
+            - name: Set up Python
+              uses: actions/setup-python@v3
+              with:
+                  python-version: ">=3.13"
+            - name: Install uv
+              uses: astral-sh/setup-uv@v6
+              with:
+                  # Install a specific version of uv.
+                  version: 0.9.5
+                  enable-cache: true
+            - name: Setup dotNET
+              uses: actions/setup-dotnet@v5
+              with:
+                  dotnet-version: |
+                      8.0.x
+                      10.0.x
+            - name: Install dependencies
+              run: |
+                  dotnet tool restore
+                  uv sync
+                  uv run tooling sync
+            - uses: godot-gdunit-labs/gdUnit4-action@v1
+              with:
+                  godot-version: 4.6
+                  godot-net: true
+                  godot-force-mono: true
+                  paths: |
+                      res://tests
+                  timeout: 5
+                  version: installed
