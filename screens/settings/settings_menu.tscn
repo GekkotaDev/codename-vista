@@ -7,10 +7,15 @@
 [ext_resource type="Resource" uid="uid://jyu6je1pij2d" path="res://screens/settings/ui_model.tres" id="3_mknl8"]
 [ext_resource type="Script" uid="uid://dvxagcnncr3df" path="res://libraries/router/nodes/visibility_router_node.gd" id="4_i8jsc"]
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="8_iab33"]
+[ext_resource type="PackedScene" uid="uid://cxvsxljruj5cy" path="res://screens/settings/scenes/setting_selector.tscn" id="9_g58y5"]
 [ext_resource type="Resource" uid="uid://cr4px1ojxxd72" path="res://ggs/game_settings/audio.volume_global.tres" id="9_iab33"]
 [ext_resource type="Resource" uid="uid://bx0ff3efi05up" path="res://ggs/game_settings/audio.volume_music.tres" id="9_mknl8"]
 [ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="10_i8jsc"]
+[ext_resource type="Resource" uid="uid://cgh6m88woqluf" path="res://screens/settings/data/descriptions/audio/global_volume.tres" id="10_l0qwt"]
 [ext_resource type="Resource" uid="uid://gkivktwbvl0n" path="res://ggs/game_settings/audio.volume_sfx.tres" id="11_iqqkg"]
+[ext_resource type="Resource" uid="uid://5ur0okbohdov" path="res://screens/settings/data/descriptions/audio/music_volume.tres" id="12_vissv"]
+[ext_resource type="Resource" uid="uid://cgib3avg27fk3" path="res://screens/settings/data/descriptions/audio/sfx_volume.tres" id="14_8wqca"]
+[ext_resource type="Resource" uid="uid://vd138lrqr8g7" path="res://screens/settings/data/descriptions/audio/dialog_volume.tres" id="15_4r0dp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8irdy"]
 content_margin_left = 16.0
@@ -153,6 +158,11 @@ setting = ExtResource("9_iab33")
 override_plugin_settings = true
 override_apply_on_changed = true
 
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/GlobalSetting" unique_id=666022713 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("10_l0qwt")
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
+
 [node name="MusicSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings" unique_id=1895219325]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -166,6 +176,11 @@ text = "Music Volume"
 [node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/MusicSetting" unique_id=1473325969 instance=ExtResource("8_iab33")]
 layout_mode = 2
 setting = ExtResource("9_mknl8")
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/MusicSetting" unique_id=1475406418 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("12_vissv")
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="SFXSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings" unique_id=787824060]
 layout_mode = 2
@@ -181,6 +196,11 @@ text = "SFX Volume"
 layout_mode = 2
 setting = ExtResource("11_iqqkg")
 
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/SFXSetting" unique_id=135632016 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("14_8wqca")
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
+
 [node name="DialogSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings" unique_id=489086173]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -195,19 +215,10 @@ text = "Dialog Volume"
 layout_mode = 2
 setting = ExtResource("11_iqqkg")
 
-[node name="SpeakerSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings" unique_id=1286468370]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = -8
-
-[node name="Label" type="Label" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/SpeakerSetting" unique_id=1681677399]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Audio Output"
-
-[node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/SpeakerSetting" unique_id=1053879306 instance=ExtResource("8_iab33")]
-layout_mode = 2
-setting = ExtResource("11_iqqkg")
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/AudioSettings/DialogSetting" unique_id=704605999 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("15_4r0dp")
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="VideoSettings" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer" unique_id=436287783]
 visible = false
@@ -227,6 +238,10 @@ text = "Fullscreen"
 [node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/FullscreenSetting" unique_id=971287193]
 layout_mode = 2
 
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/FullscreenSetting" unique_id=892193305 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("..")
+
 [node name="ResolutionSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings" unique_id=26966320]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -240,6 +255,10 @@ text = "Resolution Scale"
 [node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/ResolutionSetting" unique_id=2055306906]
 layout_mode = 2
 
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/ResolutionSetting" unique_id=123306938 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("..")
+
 [node name="FPSSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings" unique_id=393780633]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -252,6 +271,10 @@ text = "FPS"
 
 [node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/FPSSetting" unique_id=721702291]
 layout_mode = 2
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/VideoSettings/FPSSetting" unique_id=1311585811 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("..")
 
 [node name="ControlsSettings" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer" unique_id=1925726956]
 visible = false
@@ -284,8 +307,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Autosave"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/AutosaveSetting" unique_id=133075657]
+[node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/AutosaveSetting" unique_id=1346194272 instance=ExtResource("8_iab33")]
 layout_mode = 2
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/AutosaveSetting" unique_id=899321175 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="SpeedrunTimerSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings" unique_id=62383847]
 layout_mode = 2
@@ -297,8 +324,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Speedrun Timer"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/SpeedrunTimerSetting" unique_id=536124168]
+[node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/SpeedrunTimerSetting" unique_id=1579490034 instance=ExtResource("8_iab33")]
 layout_mode = 2
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/SpeedrunTimerSetting" unique_id=333981525 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="TutorialSetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings" unique_id=1067359461]
 layout_mode = 2
@@ -310,8 +341,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Tutorials"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/TutorialSetting" unique_id=508613236]
+[node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/TutorialSetting" unique_id=367967960 instance=ExtResource("8_iab33")]
 layout_mode = 2
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/TutorialSetting" unique_id=818247177 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="DifficultySetting" type="VBoxContainer" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings" unique_id=481362073]
 layout_mode = 2
@@ -323,8 +358,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Difficulty"
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/DifficultySetting" unique_id=1595403638]
+[node name="Slider" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/DifficultySetting" unique_id=1704685943 instance=ExtResource("8_iab33")]
 layout_mode = 2
+
+[node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/DifficultySetting" unique_id=2100782725 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
+node_reference = NodePath("../Slider")
 
 [node name="DescriptionPanel" type="Panel" parent="HBoxContainer" unique_id=1623761222]
 custom_minimum_size = Vector2(500, 500)
