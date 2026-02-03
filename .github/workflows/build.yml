@@ -73,34 +73,34 @@ jobs:
                   name: windows_x86
                   path: windows_x86.zip
 
-    build-windows-arm:
-        needs: [setup]
-        name: Windows ARM Export
-        runs-on: ubuntu-24.04
-        container:
-            image: barichello/godot-ci:mono-4.6
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
+    # build-windows-arm:
+    #     needs: [setup]
+    #     name: Windows ARM Export
+    #     runs-on: ubuntu-24.04
+    #     container:
+    #         image: barichello/godot-ci:mono-4.6
+    #     steps:
+    #         - name: Checkout
+    #           uses: actions/checkout@v3
 
-            - name: Move export templates into position
-              run: |
-                  mkdir -v -p ~/.local/share/godot/export_templates
-                  mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
-            - name: Create staging directory
-              run: mkdir -v -p build/windows
+    #         - name: Move export templates into position
+    #           run: |
+    #               mkdir -v -p ~/.local/share/godot/export_templates
+    #               mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
+    #         - name: Create staging directory
+    #           run: mkdir -v -p build/windows
 
-            - name: Build for Windows ARM
-              run: godot -v --export-release --headless "Windows Desktop ARM" --path . --output "build/windows/${{ inputs.game_title }}.arm"
+    #         - name: Build for Windows ARM
+    #           run: godot -v --export-release --headless "Windows Desktop ARM" --path . --output "build/windows/${{ inputs.game_title }}.arm"
 
-            - name: Zip Windows ARM artifacts
-              run: zip -r windows_arm.zip build/windows
+    #         - name: Zip Windows ARM artifacts
+    #           run: zip -r windows_arm.zip build/windows
 
-            - name: Upload Windows ARM artifacts
-              uses: actions/upload-artifact@v4
-              with:
-                  name: windows_arm
-                  path: windows_arm.zip
+    #         - name: Upload Windows ARM artifacts
+    #           uses: actions/upload-artifact@v4
+    #           with:
+    #               name: windows_arm
+    #               path: windows_arm.zip
 
     build-linux-x86:
         needs: [setup]
@@ -131,34 +131,34 @@ jobs:
                   name: linux_x86
                   path: linux_x86.zip
 
-    build-linux-pi:
-        needs: [setup]
-        name: Linux Pi Export
-        runs-on: ubuntu-24.04
-        container:
-            image: barichello/godot-ci:mono-4.6
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
+    # build-linux-pi:
+    #     needs: [setup]
+    #     name: Linux Pi Export
+    #     runs-on: ubuntu-24.04
+    #     container:
+    #         image: barichello/godot-ci:mono-4.6
+    #     steps:
+    #         - name: Checkout
+    #           uses: actions/checkout@v3
 
-            - name: Move export templates into position
-              run: |
-                  mkdir -v -p ~/.local/share/godot/export_templates
-                  mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
-            - name: Create staging directory
-              run: mkdir -v -p build/linux
+    #         - name: Move export templates into position
+    #           run: |
+    #               mkdir -v -p ~/.local/share/godot/export_templates
+    #               mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
+    #         - name: Create staging directory
+    #           run: mkdir -v -p build/linux
 
-            - name: Build for Linux Pi
-              run: godot -v --export-release --headless "Linux Pi" --path . --output "build/linux/${{ inputs.game_title }}.arm"
+    #         - name: Build for Linux Pi
+    #           run: godot -v --export-release --headless "Linux Pi" --path . --output "build/linux/${{ inputs.game_title }}.arm"
 
-            - name: Zip Linux Pi artifacts
-              run: zip -r linux_pi.zip build/linux
+    #         - name: Zip Linux Pi artifacts
+    #           run: zip -r linux_pi.zip build/linux
 
-            - name: Upload Linux Pi artifacts
-              uses: actions/upload-artifact@v4
-              with:
-                  name: linux_pi
-                  path: linux_pi.zip
+    #         - name: Upload Linux Pi artifacts
+    #           uses: actions/upload-artifact@v4
+    #           with:
+    #               name: linux_pi
+    #               path: linux_pi.zip
 
     # build-macos-testing:
     #     needs: [setup]
@@ -223,9 +223,9 @@ jobs:
     release:
         needs: [
                 build-windows-x86,
-                build-windows-arm,
+                # build-windows-arm,
                 build-linux-x86,
-                build-linux-pi,
+                # build-linux-pi,
                 # build-macos-testing,
             ]
         runs-on: ubuntu-latest
@@ -253,20 +253,20 @@ jobs:
               with:
                   name: linux_x86
 
-            - name: Download Linux Pi artifacts
-              uses: actions/download-artifact@v5
-              with:
-                  name: linux_pi
+            # - name: Download Linux Pi artifacts
+            #   uses: actions/download-artifact@v5
+            #   with:
+            #       name: linux_pi
 
             - name: Download Windows x86 artifacts
               uses: actions/download-artifact@v5
               with:
                   name: windows_x86
 
-            - name: Download Windows ARM artifacts
-              uses: actions/download-artifact@v5
-              with:
-                  name: windows_arm
+            # - name: Download Windows ARM artifacts
+            #   uses: actions/download-artifact@v5
+            #   with:
+            #       name: windows_arm
 
             # - name: Download macOS (Testing) artifacts
             #   uses: actions/download-artifact@v5
@@ -308,16 +308,16 @@ jobs:
                   asset_name: ${{ inputs.game_title }}_linux_x86.zip
                   asset_content_type: application/zip
 
-            - name: Upload Linux Pi Release Asset
-              id: upload-linux-pi-release-asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: linux_pi.zip
-                  asset_name: ${{ inputs.game_title }}_linux_pi.zip
-                  asset_content_type: application/zip
+            # - name: Upload Linux Pi Release Asset
+            #   id: upload-linux-pi-release-asset
+            #   uses: actions/upload-release-asset@v1
+            #   env:
+            #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #   with:
+            #       upload_url: ${{ steps.create_release.outputs.upload_url }}
+            #       asset_path: linux_pi.zip
+            #       asset_name: ${{ inputs.game_title }}_linux_pi.zip
+            #       asset_content_type: application/zip
 
             - name: Upload Windows x86 Release Asset
               id: upload-windows-x86-release-asset
@@ -330,16 +330,16 @@ jobs:
                   asset_name: ${{ inputs.game_title }}_windows_x86.zip
                   asset_content_type: application/zip
 
-            - name: Upload Windows ARM Release Asset
-              id: upload-windows-arm-release-asset
-              uses: actions/upload-release-asset@v1
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ steps.create_release.outputs.upload_url }}
-                  asset_path: windows_arm.zip
-                  asset_name: ${{ inputs.game_title }}_windows_arm.zip
-                  asset_content_type: application/zip
+            # - name: Upload Windows ARM Release Asset
+            #   id: upload-windows-arm-release-asset
+            #   uses: actions/upload-release-asset@v1
+            #   env:
+            #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #   with:
+            #       upload_url: ${{ steps.create_release.outputs.upload_url }}
+            #       asset_path: windows_arm.zip
+            #       asset_name: ${{ inputs.game_title }}_windows_arm.zip
+            #       asset_content_type: application/zip
 
             # - name: Upload macOS Testing Release Asset
             #   id: upload-macos-testing-release-asset
