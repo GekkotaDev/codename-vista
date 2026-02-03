@@ -10,11 +10,14 @@ on:
                 description: Title of the game.
             godot_version:
                 type: string
-                description: Godot Engine version (not enforced in build).
+                description: Godot Engine version (used for export templates).
                 default: "4.6"
 
 permissions:
     contents: write
+
+env:
+    CI_CD: true
 
 jobs:
     setup:
@@ -357,6 +360,21 @@ jobs:
             #   uses: actions/upload-release-asset@v1
             #   env:
             #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            #   with:
+            #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+            #     asset_path: windows_arm.zip
+            #     asset_name: ${{ inputs.game_title }}_android.zip
+            #     asset_content_type: application/zip
+
+            #   with:
+            #     upload_url: ${{ steps.create_release.ous.up_url }}
+            #     asset_path:wind.zip
+            #     asset_name: ${{ inpgamele }}_andip
+            #     asset_content_type: application/zt_tyapplicatio/zip       # - name: Upload Android Release Asset
+            #   id:loadoid-release-asset
+            #   actis/upload-release-asset@v1
+            #   env:
+            #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             #   with:
             #     upload_url: ${{ steps.create_release.outputs.upload_url }}
             #     asset_path: windows_arm.zip
