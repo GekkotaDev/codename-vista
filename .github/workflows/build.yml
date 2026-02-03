@@ -65,7 +65,7 @@ jobs:
               run: mkdir -v -p build/windows
 
             - name: Build for Windows x86
-              run: godot -v --export-release --headless "Windows Desktop x86_64" --path . --output "build/windows/${{ inputs.game_title }}.x86_64"
+              run: godot -v --export-release --headless "Windows Desktop x86_64" --path . --output "build/windows/${{ inputs.game_title }}.x86_64.exe"
 
             - name: Zip Windows x86 artifacts
               run: zip -r windows_x86.zip build/windows
@@ -76,34 +76,34 @@ jobs:
                   name: windows_x86
                   path: windows_x86.zip
 
-    # build-windows-arm:
-    #     needs: [setup]
-    #     name: Windows ARM Export
-    #     runs-on: ubuntu-24.04
-    #     container:
-    #         image: barichello/godot-ci:mono-4.6
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v3
+    build-windows-arm:
+        needs: [setup]
+        name: Windows ARM Export
+        runs-on: ubuntu-24.04
+        container:
+            image: barichello/godot-ci:mono-4.6
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
 
-    #         - name: Move export templates into position
-    #           run: |
-    #               mkdir -v -p ~/.local/share/godot/export_templates
-    #               mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
-    #         - name: Create staging directory
-    #           run: mkdir -v -p build/windows
+            - name: Move export templates into position
+              run: |
+                  mkdir -v -p ~/.local/share/godot/export_templates
+                  mv /root/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono ~/.local/share/godot/export_templates/${{ inputs.godot_version }}.stable.mono
+            - name: Create staging directory
+              run: mkdir -v -p build/windows
 
-    #         - name: Build for Windows ARM
-    #           run: godot -v --export-release --headless "Windows Desktop ARM" --path . --output "build/windows/${{ inputs.game_title }}.arm"
+            - name: Build for Windows ARM
+              run: godot -v --export-release --headless "Windows Desktop ARM" --path . --output "build/windows/${{ inputs.game_title }}.arm.exe"
 
-    #         - name: Zip Windows ARM artifacts
-    #           run: zip -r windows_arm.zip build/windows
+            - name: Zip Windows ARM artifacts
+              run: zip -r windows_arm.zip build/windows
 
-    #         - name: Upload Windows ARM artifacts
-    #           uses: actions/upload-artifact@v4
-    #           with:
-    #               name: windows_arm
-    #               path: windows_arm.zip
+            - name: Upload Windows ARM artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                  name: windows_arm
+                  path: windows_arm.zip
 
     build-linux-x86:
         needs: [setup]
