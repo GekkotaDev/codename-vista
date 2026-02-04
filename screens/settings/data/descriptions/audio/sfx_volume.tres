@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_gsbhx")
+description = "Loudness of in-game sounds and noises."
 metadata/_custom_type_script = "uid://d07euhpatotko"

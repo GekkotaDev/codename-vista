@@ -16,6 +16,10 @@
 [ext_resource type="Resource" uid="uid://5ur0okbohdov" path="res://screens/settings/data/descriptions/audio/music_volume.tres" id="12_vissv"]
 [ext_resource type="Resource" uid="uid://cgib3avg27fk3" path="res://screens/settings/data/descriptions/audio/sfx_volume.tres" id="14_8wqca"]
 [ext_resource type="Resource" uid="uid://vd138lrqr8g7" path="res://screens/settings/data/descriptions/audio/dialog_volume.tres" id="15_4r0dp"]
+[ext_resource type="Resource" uid="uid://begy7g2vt1lj4" path="res://screens/settings/data/descriptions/gameplay/autosave.tres" id="16_4r0dp"]
+[ext_resource type="Resource" uid="uid://cqbfww77go5ro" path="res://screens/settings/data/descriptions/gameplay/speedrun_timer.tres" id="17_0vys1"]
+[ext_resource type="Resource" uid="uid://bfiuyyixaieyr" path="res://screens/settings/data/descriptions/gameplay/tutorials.tres" id="18_f5jjw"]
+[ext_resource type="Resource" uid="uid://dgwp4ctsa52ok" path="res://screens/settings/data/descriptions/gameplay/difficulty.tres" id="19_g8ncx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8irdy"]
 content_margin_left = 16.0
@@ -311,6 +315,7 @@ text = "Autosave"
 layout_mode = 2
 
 [node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/AutosaveSetting" unique_id=899321175 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("16_4r0dp")
 label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
 node_reference = NodePath("../Slider")
 
@@ -328,6 +333,7 @@ text = "Speedrun Timer"
 layout_mode = 2
 
 [node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/SpeedrunTimerSetting" unique_id=333981525 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("17_0vys1")
 label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
 node_reference = NodePath("../Slider")
 
@@ -345,6 +351,7 @@ text = "Tutorials"
 layout_mode = 2
 
 [node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/TutorialSetting" unique_id=818247177 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("18_f5jjw")
 label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
 node_reference = NodePath("../Slider")
 
@@ -362,6 +369,7 @@ text = "Difficulty"
 layout_mode = 2
 
 [node name="SettingSelector" parent="HBoxContainer/OptionsPanel/ScrollContainer/MarginContainer/GameplaySettings/DifficultySetting" unique_id=2100782725 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("9_g58y5")]
+description = ExtResource("19_g8ncx")
 label = NodePath("../../../../../../DescriptionPanel/RichTextLabel")
 node_reference = NodePath("../Slider")
 

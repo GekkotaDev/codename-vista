@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_gqnft")
+description = "Adjust difficulty to rewards ratio"
 metadata/_custom_type_script = "uid://d07euhpatotko"

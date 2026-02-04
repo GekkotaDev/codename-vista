@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_nlr2b")
+description = "Display a timer in-game"
 metadata/_custom_type_script = "uid://d07euhpatotko"

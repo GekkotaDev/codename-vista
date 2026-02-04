@@ -4,4 +4,5 @@
 
 [resource]
 script = ExtResource("1_nfvog")
+description = "Loudness of all sounds (e.g: music, dialog, sound effects, etc.)"
 metadata/_custom_type_script = "uid://d07euhpatotko"
