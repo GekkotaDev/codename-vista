@@ -6,12 +6,8 @@ extends Resource
 ##
 @export var collections: Dictionary[String, PersistedResource]
 
-@export_group("Version")
 ##
 @export var version: int = 0
-
-##
-@export var patch: int = 0
 
 
 ##
