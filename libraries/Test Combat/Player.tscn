@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dcgc4xl2tahe2"]
+
+[ext_resource type="Script" uid="uid://bdb6yvu2std04" path="res://libraries/Test Combat/Player.gd" id="1_27vqm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hgpx6"]
+size = Vector3(0.61, 1, 0.63)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j2jnw"]
+size = Vector3(0.61, 1, 0.63)
+
+[node name="Player" type="CharacterBody3D" unique_id=127769610]
+script = ExtResource("1_27vqm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=869181374]
+mesh = SubResource("BoxMesh_hgpx6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1650777097]
+shape = SubResource("BoxShape3D_j2jnw")

@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://cm815gjpo4vxa"]
+
+[ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player.tscn" id="1_ea5nn"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_cxtpr"]
+[ext_resource type="PackedScene" uid="uid://w2us70ol5e1u" path="res://libraries/Test Combat/Obstacle.tscn" id="2_rig7s"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_rig7s"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_f30n4"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_au8eq"]
+
+[sub_resource type="Sky" id="Sky_h7ncd"]
+sky_material = SubResource("ProceduralSkyMaterial_au8eq")
+
+[sub_resource type="Environment" id="Environment_2xuhx"]
+background_mode = 2
+sky = SubResource("Sky_h7ncd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ncd"]
+albedo_color = Color(0, 0.8235294, 0.6392157, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q7dt1"]
+material = SubResource("StandardMaterial3D_h7ncd")
+size = Vector3(100, 0, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_geawr"]
+size = Vector3(100, 0, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7rgj"]
+albedo_color = Color(0.6998844, 0.10889288, 0.36600083, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_geawr"]
+size = Vector3(0.61, 1, 0.63)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47l08"]
+
+[sub_resource type="Resource" id="Resource_ixwe8"]
+script = ExtResource("4_f30n4")
+
+[node name="World" type="Node3D" unique_id=878097969]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1461641482]
+environment = SubResource("Environment_2xuhx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=919040753]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.264296, 12.780855)
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1984898943]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1681535532]
+mesh = SubResource("BoxMesh_q7dt1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1924894019]
+shape = SubResource("BoxShape3D_geawr")
+
+[node name="Wall" type="StaticBody3D" parent="." unique_id=1910703182]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -2.4980073)
+
+[node name="Wall" type="MeshInstance3D" parent="Wall" unique_id=1725153874]
+transform = Transform3D(45.90074, 0, 0, 0, 15.054303, 0, 0, 0, 1, 0, 6.99, 0)
+material_override = SubResource("StandardMaterial3D_l7rgj")
+mesh = SubResource("BoxMesh_geawr")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall" unique_id=1462596738]
+transform = Transform3D(22.339, 0, 0, 0, 14.714642, 0, 0, 0, 1, -0.2046318, 7.1393776, 0)
+shape = SubResource("BoxShape3D_47l08")
+debug_color = Color(0.8292439, 0.15363508, 0.32069063, 1)
+
+[node name="Player" parent="." unique_id=127769610 instance=ExtResource("1_ea5nn")]
+
+[node name="Obstacle" parent="." unique_id=876568908 instance=ExtResource("2_rig7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.5, -0.19)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1909120161]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+top_level = true
+current = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1192816030]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_cxtpr")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1987642 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+top_level = true
+script = ExtResource("3_rig7s")
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_ixwe8")
+follow_offset = Vector3(0, 0, 1)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"

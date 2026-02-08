@@ -69,6 +69,7 @@ AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
+PhantomCameraManager="*uid://duq6jhf6unyis"
 
 [debug_draw_3d]
 
@@ -97,7 +98,7 @@ project/assembly_name="Codename Vista"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/pandora/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/pandora/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 
@@ -206,6 +207,7 @@ general/save_as_json=true
 2d/run_on_separate_thread=true
 3d/run_on_separate_thread=true
 3d/physics_engine="Jolt Physics"
+common/physics_interpolation=true
 
 [plugins]
 
