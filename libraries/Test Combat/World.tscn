@@ -1,10 +1,26 @@
 [gd_scene format=3 uid="uid://cm815gjpo4vxa"]
 
 [ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player.tscn" id="1_ea5nn"]
+[ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/Enemy.tscn" id="1_ixwe8"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_cxtpr"]
 [ext_resource type="PackedScene" uid="uid://w2us70ol5e1u" path="res://libraries/Test Combat/Obstacle.tscn" id="2_rig7s"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="3_rig7s"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="4_f30n4"]
+[ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/CombatManager.gd" id="6_f30n4"]
+
+[sub_resource type="GDScript" id="GDScript_ixwe8"]
+script/source = "extends Node3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_au8eq"]
 
@@ -37,6 +53,7 @@ size = Vector3(0.61, 1, 0.63)
 script = ExtResource("4_f30n4")
 
 [node name="World" type="Node3D" unique_id=878097969]
+script = SubResource("GDScript_ixwe8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1461641482]
 environment = SubResource("Environment_2xuhx")
@@ -66,7 +83,11 @@ transform = Transform3D(22.339, 0, 0, 0, 14.714642, 0, 0, 0, 1, -0.2046318, 7.13
 shape = SubResource("BoxShape3D_47l08")
 debug_color = Color(0.8292439, 0.15363508, 0.32069063, 1)
 
+[node name="Enemy" parent="." unique_id=702345917 instance=ExtResource("1_ixwe8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3582516, 0.5, 0)
+
 [node name="Player" parent="." unique_id=127769610 instance=ExtResource("1_ea5nn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Obstacle" parent="." unique_id=876568908 instance=ExtResource("2_rig7s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.5, -0.19)
@@ -94,3 +115,6 @@ follow_offset = Vector3(0, 0, 1)
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Combat" type="Node" parent="." unique_id=827569977]
+script = ExtResource("6_f30n4")

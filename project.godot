@@ -70,6 +70,7 @@ RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tsc
 NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
 PhantomCameraManager="*uid://duq6jhf6unyis"
+CombatManager="*uid://0d852gmtbwq0"
 
 [debug_draw_3d]
 

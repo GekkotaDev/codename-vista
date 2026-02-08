@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c523essl0o4p8"]
+
+[ext_resource type="Script" uid="uid://5s3pijmorx26" path="res://libraries/Test Combat/Enemy.gd" id="1_8d338"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8yi8j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8d338"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhvbt"]
+size = Vector3(5, 1, 1.5)
+
+[node name="Enemy" type="CharacterBody3D" unique_id=702345917]
+script = ExtResource("1_8d338")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1061484825]
+mesh = SubResource("BoxMesh_8yi8j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1817177400]
+shape = SubResource("BoxShape3D_8d338")
+
+[node name="DetectionRange" type="Area3D" parent="." unique_id=1586266644]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectionRange" unique_id=928944117]
+shape = SubResource("BoxShape3D_vhvbt")
+
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_area_3d_body_entered"]
