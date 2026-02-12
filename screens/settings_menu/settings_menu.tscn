@@ -5,7 +5,6 @@
 [ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="2_rkyh1"]
 [ext_resource type="PackedScene" uid="uid://dfepxjl44fyqo" path="res://ggs/components/reset_btn/component_reset_btn.tscn" id="3_0kubn"]
 [ext_resource type="Resource" uid="uid://cr4px1ojxxd72" path="res://ggs/game_settings/audio.volume_global.tres" id="3_a6bvn"]
-[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://ggs/components/option_list/component_option_list.tscn" id="3_alic8"]
 [ext_resource type="PackedScene" uid="uid://cxvsxljruj5cy" path="res://screens/settings_menu/scenes/setting_selector.tscn" id="3_ctt8j"]
 [ext_resource type="PackedScene" uid="uid://cww37aayk8gj6" path="res://ggs/components/apply_btn/component_apply_btn.tscn" id="4_alic8"]
 [ext_resource type="Resource" uid="uid://cgh6m88woqluf" path="res://screens/settings_menu/data/descriptions/audio/global_volume.tres" id="4_u032h"]
@@ -22,6 +21,7 @@
 [ext_resource type="Resource" uid="uid://d00xjfu7hyo2s" path="res://screens/settings_menu/data/descriptions/video/resolution.tres" id="15_ypv7y"]
 [ext_resource type="Resource" uid="uid://xw3vykgr2pbb" path="res://screens/settings_menu/data/descriptions/video/frame_rate.tres" id="16_14x7m"]
 [ext_resource type="Resource" uid="uid://52fqovn5wv8n" path="res://ggs/game_settings/video.reduced_motion.tres" id="16_l46rb"]
+[ext_resource type="PackedScene" uid="uid://1qpe22ky2s6y" path="res://ggs/components/arrow_list/component_arrow_list.tscn" id="18_8vkf2"]
 [ext_resource type="Resource" uid="uid://b6xqgaxdggus" path="res://ggs/game_settings/video.display_size.tres" id="19_8x8p1"]
 [ext_resource type="Resource" uid="uid://cqbfww77go5ro" path="res://screens/settings_menu/data/descriptions/gameplay/speedrun_timer.tres" id="19_b240a"]
 [ext_resource type="Resource" uid="uid://dveeylu22s4bw" path="res://ggs/game_settings/video.display_mode.tres" id="21_5s53o"]
@@ -81,9 +81,10 @@ theme_override_constants/separation = 8
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=1913699046]
 layout_mode = 2
 size_flags_horizontal = 4
-current_tab = 0
+current_tab = 1
 
 [node name="Audio" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=70395123]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -258,7 +259,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wjgle")
 text = "..."
 
 [node name="Video" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=71370764]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -341,9 +341,10 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 text = "Resolution"
 
-[node name="OptionList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=130214850 groups=["setting"] instance=ExtResource("3_alic8")]
+[node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=1948404448 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
 size_flags_horizontal = 3
+options = PackedStringArray("1920 x 1080", "1920 x 1200", "1680 x 1050")
 setting = ExtResource("19_8x8p1")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=1487502714 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]
@@ -361,9 +362,10 @@ layout_mode = 2
 text = "Display
 Scale"
 
-[node name="OptionList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=1705940564 groups=["setting"] instance=ExtResource("3_alic8")]
+[node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=2143402098 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
 size_flags_horizontal = 3
+options = PackedStringArray("0", "1", "1.25", "1.5", "1.75", "2", "0.5")
 setting = ExtResource("21_l46rb")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=1297189639 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]
@@ -381,9 +383,10 @@ layout_mode = 2
 text = "Window
 Mode"
 
-[node name="OptionList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=694586034 groups=["setting"] instance=ExtResource("3_alic8")]
+[node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=1094411996 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
 size_flags_horizontal = 3
+options = PackedStringArray("Fullscreen", "Borderless", "Windowed")
 setting = ExtResource("21_5s53o")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=226135202 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]
@@ -420,9 +423,9 @@ custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
 text = "Vsync"
 
-[node name="OptionList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=981664489 groups=["setting"] instance=ExtResource("3_alic8")]
+[node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=840011361 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
+options = PackedStringArray("Disabled", "Enabled", "Adaptive", "Mailbox")
 setting = ExtResource("25_8vkf2")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=962937019 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]

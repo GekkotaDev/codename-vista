@@ -1,24 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://1qpe22ky2s6y"]
+[gd_scene format=3 uid="uid://1qpe22ky2s6y"]
 
 [ext_resource type="Script" uid="uid://cl5eom2au4pkw" path="res://ggs/components/arrow_list/component_arrow_list.gd" id="1_cifu3"]
 
-[node name="ArrowList" type="MarginContainer"]
+[node name="ArrowList" type="MarginContainer" unique_id=366420121]
 offset_left = 143.0
 offset_right = 143.0
 offset_bottom = 40.0
+size_flags_horizontal = 3
 script = ExtResource("1_cifu3")
 
-[node name="HBox" type="HBoxContainer" parent="."]
+[node name="HBox" type="HBoxContainer" parent="." unique_id=709225676]
 layout_mode = 2
+theme_override_constants/separation = 8
 
-[node name="LeftBtn" type="Button" parent="HBox"]
+[node name="LeftBtn" type="Button" parent="HBox" unique_id=877295234]
 layout_mode = 2
 text = "<"
 
-[node name="OptionLabel" type="Label" parent="HBox"]
+[node name="OptionLabel" type="Label" parent="HBox" unique_id=1797590653]
 layout_mode = 2
 text = "OptionLabel"
 
-[node name="RightBtn" type="Button" parent="HBox"]
+[node name="RightBtn" type="Button" parent="HBox" unique_id=379624267]
 layout_mode = 2
 text = ">"
