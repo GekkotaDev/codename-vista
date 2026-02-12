@@ -1,17 +1,19 @@
 @tool
-class_name SettingAudioMute
+class_name SettingAudioGlobal
 extends GGSSetting
-## Sets the mute state of an audio bus.
+## Sets the volume of an audio bus.
 
 ## Target audio bus.
-var audio_bus: String = "Master"
+var audio_bus: String = "None"
 
 
 func _init() -> void:
-	type = TYPE_BOOL
-	default = false
+	type = TYPE_FLOAT
+	hint = PROPERTY_HINT_RANGE
+	hint_string = "0,1"
+	default = 0.80
 	section = "audio"
-	key = "mute"
+	key = "volume.global"
 
 
 func _get_property_list() -> Array:
@@ -25,9 +27,10 @@ func _get_property_list() -> Array:
 	]
 
 
-func apply(value: bool) -> void:
+func apply(value: float) -> void:
 	var bus_idx: int = AudioServer.get_bus_index(audio_bus)
-	AudioServer.set_bus_mute(bus_idx, value)
+	var volume_db: float = linear_to_db((value * 100) / 100)
+	AudioServer.set_bus_volume_db(bus_idx, volume_db)
 
 
 func _get_audio_bus_list() -> PackedStringArray:

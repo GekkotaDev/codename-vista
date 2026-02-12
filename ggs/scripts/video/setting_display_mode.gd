@@ -1,5 +1,6 @@
 @tool
 extends GGSSetting
+
 class_name SettingDisplayMode
 ## Changes display mode between fullscreen, borderless, and windowed.
 
@@ -13,6 +14,7 @@ func _init() -> void:
 	hint_string = "Fullscreen,Borderless,Windowed"
 	default = 2
 	section = "display"
+	key = "video.window_mode"
 
 
 func apply(value: int) -> void:

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://djigqeak4ej81"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings_menu/resources/setting_description.gd" id="1_847k8"]
+
+[resource]
+script = ExtResource("1_847k8")
+description = "How many audio channels to use?"
+metadata/_custom_type_script = "uid://d07euhpatotko"

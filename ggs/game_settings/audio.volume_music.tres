@@ -1,11 +1,10 @@
-[gd_resource type="Resource" script_class="SettingVolumeMusic" load_steps=2 format=3 uid="uid://bx0ff3efi05up"]
+[gd_resource type="Resource" script_class="SettingAudioMusic" format=3 uid="uid://bx0ff3efi05up"]
 
-[ext_resource type="Script" uid="uid://c1knl5bah0t3x" path="res://resources/settings/audio/music_volume.gd" id="1_ewixk"]
+[ext_resource type="Script" uid="uid://dto2sv7o4mosg" path="res://ggs/scripts/audio/setting_audio_music.gd" id="1_0t261"]
 
 [resource]
-resource_name = "music"
-script = ExtResource("1_ewixk")
-key = "music"
+resource_name = "volume.music"
+script = ExtResource("1_0t261")
+key = "volume.music"
 section = "audio"
-default = 1.0
-metadata/_custom_type_script = "uid://c1knl5bah0t3x"
+default = 1

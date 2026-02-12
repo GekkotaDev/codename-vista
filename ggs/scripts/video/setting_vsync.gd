@@ -1,5 +1,6 @@
 @tool
 extends GGSSetting
+
 class_name SettingVSync
 ## Changes VSync mode.
 
@@ -9,6 +10,7 @@ func _init() -> void:
 	hint_string = "Disabled,Enabled,Adaptive,Mailbox"
 	default = DisplayServer.VSYNC_ENABLED
 	section = "display"
+	key = "video.vsync"
 
 
 func apply(value: int) -> void:

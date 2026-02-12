@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettingAudioAmbient" format=3 uid="uid://1vnktg2pat6o"]
+
+[ext_resource type="Script" uid="uid://vh1xion8topa" path="res://ggs/scripts/audio/setting_audio_ambient.gd" id="1_xgi75"]
+
+[resource]
+resource_name = "volume.ambient"
+script = ExtResource("1_xgi75")
+key = "volume.ambient"
+section = "audio"
+default = 1.0

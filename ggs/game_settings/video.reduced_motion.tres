@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingReducedMotion" format=3 uid="uid://52fqovn5wv8n"]
+
+[ext_resource type="Script" uid="uid://dwvne0rhwnenr" path="res://ggs/scripts/video/setting_reduced_motion.gd" id="1_xux83"]
+
+[resource]
+resource_name = "video.reduced_motion"
+script = ExtResource("1_xux83")
+key = "video.reduced_motion"
+section = "display"
+default = false
+metadata/_custom_type_script = "uid://dwvne0rhwnenr"

@@ -1,10 +1,12 @@
 @tool
 extends GGSSetting
+
 class_name SettingDisplayScale
 ## Sets the window scale. The window will be resized by multiplying its dimensions by a flat number.
 
 ## List of available scales.
-@export var scales: Array[float]: set = _set_scales
+@export var scales: Array[float]:
+	set = _set_scales
 
 
 func _init() -> void:
@@ -12,6 +14,7 @@ func _init() -> void:
 	hint = PROPERTY_HINT_ENUM
 	default = 0
 	section = "display"
+	key = "video.window_scale"
 
 
 func _set_scales(value: Array[float]) -> void:

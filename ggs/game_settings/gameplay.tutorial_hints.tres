@@ -1,3 +1,10 @@
-[gd_resource type="Resource" format=3 uid="uid://cu66obuefxela"]
+[gd_resource type="Resource" script_class="SettingTutorialHints" format=3 uid="uid://cu66obuefxela"]
+
+[ext_resource type="Script" uid="uid://b3t8bntqy8v4t" path="res://ggs/scripts/gameplay/setting_tutorial_hints.gd" id="1_ecb8y"]
 
 [resource]
+resource_name = "tutorial_hints"
+script = ExtResource("1_ecb8y")
+key = "tutorial_hints"
+section = "gameplay"
+default = true

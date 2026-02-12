@@ -1,3 +1,10 @@
-[gd_resource type="Resource" format=3 uid="uid://b0e712l1jlyat"]
+[gd_resource type="Resource" script_class="SettingSpeedrunTimer" format=3 uid="uid://b0e712l1jlyat"]
+
+[ext_resource type="Script" uid="uid://dkcpvpmawmdh0" path="res://ggs/scripts/gameplay/setting_speedrun_timer.gd" id="1_0ichr"]
 
 [resource]
+resource_name = "speedrun_timer"
+script = ExtResource("1_0ichr")
+key = "speedrun_timer"
+section = "gameplay"
+default = true

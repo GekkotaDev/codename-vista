@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://dk824e1d6owqg"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings_menu/resources/setting_description.gd" id="1_xyuso"]
+
+[resource]
+script = ExtResource("1_xyuso")
+description = "Smooths out jagged edges in the graphics."
+metadata/_custom_type_script = "uid://d07euhpatotko"

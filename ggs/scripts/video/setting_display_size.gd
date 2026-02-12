@@ -1,10 +1,12 @@
 @tool
 extends GGSSetting
+
 class_name SettingDisplaySize
 ## Sets the window size. The window will be resized by setting its size to provided values.
 
 ## List of available sizes.
-@export var sizes: Array[Vector2]: set = _set_sizes
+@export var sizes: Array[Vector2]:
+	set = _set_sizes
 
 
 func _init() -> void:
@@ -12,6 +14,7 @@ func _init() -> void:
 	hint = PROPERTY_HINT_ENUM
 	default = 0
 	section = "display"
+	key = "video.window_size"
 
 
 func _set_sizes(value: Array[Vector2]) -> void:
