@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://cl5eom2au4pkw" path="res://ggs/components/arrow_list/component_arrow_list.gd" id="1_cifu3"]
 
 [node name="ArrowList" type="MarginContainer" unique_id=366420121]
-offset_left = 143.0
-offset_right = 143.0
+offset_right = 147.0
 offset_bottom = 40.0
 size_flags_horizontal = 3
 script = ExtResource("1_cifu3")
@@ -19,7 +18,10 @@ text = "<"
 
 [node name="OptionLabel" type="Label" parent="HBox" unique_id=1797590653]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "OptionLabel"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RightBtn" type="Button" parent="HBox" unique_id=379624267]
 layout_mode = 2

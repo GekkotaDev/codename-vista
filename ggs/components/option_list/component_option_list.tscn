@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7m6l0lvojrsj"]
+[gd_scene format=3 uid="uid://b7m6l0lvojrsj"]
 
 [ext_resource type="Script" uid="uid://ddc66oavcpel0" path="res://ggs/components/option_list/component_option_list.gd" id="1_5yk06"]
 
-[node name="OptionList" type="MarginContainer"]
+[node name="OptionList" type="MarginContainer" unique_id=1113786371]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_5yk06")
 
-[node name="Btn" type="OptionButton" parent="."]
+[node name="Btn" type="OptionButton" parent="." unique_id=760208210]
 layout_mode = 2
