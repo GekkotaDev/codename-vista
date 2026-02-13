@@ -1,15 +1,29 @@
+## Sets the max FPS of the game.
 @tool
+class_name SettingMaxFPS
 extends GGSSetting
 
-class_name SettingMaxFPS
-## Sets the max FPS of the game.
+enum FPS {
+	CINEMATIC,
+	HALVED,
+	SMOOTH,
+}
+
 
 func _init() -> void:
 	type = TYPE_INT
-	default = 60
+	hint = PROPERTY_HINT_ENUM
+	hint_string = "24,30,60"
+	default = 2
 	section = "display"
-	key = "video.fps"
+	key = "video.max_fps"
 
 
 func apply(value: int) -> void:
-	Engine.max_fps = value
+	match value:
+		FPS.CINEMATIC:
+			Engine.max_fps = 24
+		FPS.HALVED:
+			Engine.max_fps = 30
+		FPS.SMOOTH:
+			Engine.max_fps = 60

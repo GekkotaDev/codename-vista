@@ -13,34 +13,34 @@ extends Button
 
 
 func _ready() -> void:
-	pressed.connect(_on_pressed)
-	mouse_entered.connect(_on_mouse_entered)
-	focus_entered.connect(_on_focus_entered)
+    pressed.connect(_on_pressed)
+    mouse_entered.connect(_on_mouse_entered)
+    focus_entered.connect(_on_focus_entered)
 
 
 func _set_override_plugin_settings(value: bool) -> void:
-	override_plugin_settings = value
-	if not override_plugin_settings:
-		override_grab_focus_on_mouseover = false
+    override_plugin_settings = value
+    if not override_plugin_settings:
+        override_grab_focus_on_mouseover = false
 
 
 func _can_grab_focus_on_mouseover() -> bool:
-	if override_plugin_settings:
-		return override_grab_focus_on_mouseover
-	else:
-		return GGS.plugin_settings.components_grab_focus_on_mouseover
+    if override_plugin_settings:
+        return override_grab_focus_on_mouseover
+    else:
+        return GGS.plugin_settings.components_grab_focus_on_mouseover
 
 
 func _on_pressed() -> void:
-	get_tree().call_group(group, "reset_setting")
-	GGS.audio_activated.play()
+    get_tree().call_group(group, "reset_setting")
+    GGS.audio_activated.play()
 
 
 func _on_mouse_entered() -> void:
-	GGS.audio_mouse_entered.play()
-	if _can_grab_focus_on_mouseover():
-		grab_focus()
+    GGS.audio_mouse_entered.play()
+    if _can_grab_focus_on_mouseover():
+        grab_focus()
 
 
 func _on_focus_entered() -> void:
-	GGS.audio_focus_entered.play()
+    GGS.audio_focus_entered.play()
