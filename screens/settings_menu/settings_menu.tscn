@@ -30,6 +30,7 @@
 [ext_resource type="Resource" uid="uid://brdbtl82gil6e" path="res://screens/settings_menu/data/descriptions/gameplay/focus_loss_pause.tres" id="23_5s53o"]
 [ext_resource type="Resource" uid="uid://dh76kakn5bxel" path="res://ggs/game_settings/video.fps.tres" id="23_b240a"]
 [ext_resource type="Resource" uid="uid://46ne52avu2pf" path="res://ggs/game_settings/video.vsync.tres" id="25_8vkf2"]
+[ext_resource type="PackedScene" uid="uid://b7m6l0lvojrsj" path="res://ggs/components/option_list/component_option_list.tscn" id="26_8vkf2"]
 [ext_resource type="Resource" uid="uid://b0e712l1jlyat" path="res://ggs/game_settings/gameplay.speedrun_timer.tres" id="26_b240a"]
 [ext_resource type="Resource" uid="uid://cu66obuefxela" path="res://ggs/game_settings/gameplay.tutorial_hints.tres" id="28_8vkf2"]
 [ext_resource type="Resource" uid="uid://c6jdreu0863tb" path="res://ggs/game_settings/gameplay.focus_loss_pause.tres" id="30_ekwq5"]
@@ -343,7 +344,6 @@ text = "Resolution"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=1948404448 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("1920 x 1080", "1920 x 1200", "1680 x 1050")
 setting = ExtResource("19_8x8p1")
 
@@ -364,7 +364,6 @@ Scale"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=2143402098 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("0", "1", "1.25", "1.5", "1.75", "2", "0.5")
 setting = ExtResource("21_l46rb")
 
@@ -385,7 +384,6 @@ Mode"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=1094411996 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("Fullscreen", "Borderless", "Windowed")
 setting = ExtResource("21_5s53o")
 
@@ -426,6 +424,12 @@ text = "Vsync"
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=840011361 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
 options = PackedStringArray("Disabled", "Enabled", "Adaptive", "Mailbox")
+setting = ExtResource("25_8vkf2")
+
+[node name="OptionList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=1634214688 instance=ExtResource("26_8vkf2")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
 setting = ExtResource("25_8vkf2")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=962937019 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]
@@ -670,7 +674,6 @@ theme_override_constants/separation = 16
 alignment = 2
 
 [node name="ResetBtn" parent="VBoxContainer/HBoxContainer" unique_id=1964223319 instance=ExtResource("3_0kubn")]
-visible = false
 layout_mode = 2
 text = "Reset"
 group = "setting"
