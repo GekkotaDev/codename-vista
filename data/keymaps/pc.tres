@@ -1,0 +1,793 @@
+[gd_resource type="Resource" script_class="KeymapBinder" format=3 uid="uid://p4sq3vie1so8"]
+
+[ext_resource type="Script" uid="uid://fa8y3v74l3d" path="res://libraries/keymaps/resources/keymap_model.gd" id="1_gs46q"]
+[ext_resource type="Script" uid="uid://cs8nn1u4ud575" path="res://libraries/keymaps/resources/keymap_binder.gd" id="2_2n3xe"]
+[ext_resource type="Texture2D" uid="uid://csvdmd62co075" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_color_b.png" id="3_x1m57"]
+[ext_resource type="Texture2D" uid="uid://dwjwv50n5qkpc" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_color_a.png" id="4_cjvyo"]
+[ext_resource type="Texture2D" uid="uid://dtsovjok1mi2v" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_color_x.png" id="5_cijlr"]
+[ext_resource type="Texture2D" uid="uid://nxrp3su4m2aj" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_color_y.png" id="6_nn6uu"]
+[ext_resource type="Texture2D" uid="uid://c8t35d33cp4ct" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_back_icon.png" id="7_ber1c"]
+[ext_resource type="Texture2D" uid="uid://bqqw2qvtpskjt" path="res://assets/lib/Kenney/UI/Input Prompts/Steam Controller/Default/steam_button_start_icon.png" id="8_sug1n"]
+[ext_resource type="Texture2D" uid="uid://skllk4iki5na" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_side_l.png" id="9_ttmsa"]
+[ext_resource type="Texture2D" uid="uid://c5w4b1bydo6fh" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_side_r.png" id="10_v4lda"]
+[ext_resource type="Texture2D" uid="uid://ha04uhjak2af" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_lb.png" id="11_xa6tx"]
+[ext_resource type="Texture2D" uid="uid://cjqcwoxgymek2" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_rb.png" id="12_pejla"]
+[ext_resource type="Texture2D" uid="uid://bdu0q5rcohid0" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_dpad_up.png" id="13_g1pxo"]
+[ext_resource type="Texture2D" uid="uid://6gja1ysk2fcp" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_dpad_down.png" id="14_fryim"]
+[ext_resource type="Texture2D" uid="uid://c4y6i2vtcph8t" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_dpad_left.png" id="15_6lng6"]
+[ext_resource type="Texture2D" uid="uid://dpxmcva5bu5pg" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_dpad_right.png" id="16_6wbof"]
+[ext_resource type="Texture2D" uid="uid://dmainu8jtdb6i" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_l_horizontal.png" id="17_nk7ll"]
+[ext_resource type="Texture2D" uid="uid://cgo2vrqai142g" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_l_vertical.png" id="18_os3bl"]
+[ext_resource type="Texture2D" uid="uid://cagbo6tu3txpe" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_r_horizontal.png" id="19_jdtik"]
+[ext_resource type="Texture2D" uid="uid://b6l5kxr531npo" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_stick_r_vertical.png" id="20_ys3lw"]
+[ext_resource type="Texture2D" uid="uid://dkka7ppsjw1e0" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_lt.png" id="21_agk0a"]
+[ext_resource type="Texture2D" uid="uid://doc4lupgxu8od" path="res://assets/lib/Kenney/UI/Input Prompts/Xbox Series/Default/xbox_rt.png" id="22_80k34"]
+[ext_resource type="Texture2D" uid="uid://bccqswldpp74q" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_0.png" id="23_63wns"]
+[ext_resource type="Texture2D" uid="uid://g1r2gf0icjqr" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_1.png" id="24_uvrxd"]
+[ext_resource type="Texture2D" uid="uid://nm76od1mo2d6" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_2.png" id="25_yv2ju"]
+[ext_resource type="Texture2D" uid="uid://jeie8c4ra7uw" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_3.png" id="26_dmbsc"]
+[ext_resource type="Texture2D" uid="uid://bi0atpcekkikf" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_4.png" id="27_gnvwy"]
+[ext_resource type="Texture2D" uid="uid://c2hfp13y2inhb" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_5.png" id="28_fhx6b"]
+[ext_resource type="Texture2D" uid="uid://cxuhvpvpnvhi7" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_6.png" id="29_7ia5x"]
+[ext_resource type="Texture2D" uid="uid://bwfju27mh8x31" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_7.png" id="30_gengf"]
+[ext_resource type="Texture2D" uid="uid://jv0lkohmp7x1" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_8.png" id="31_f8reh"]
+[ext_resource type="Texture2D" uid="uid://c11118p1la7h1" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_9.png" id="32_85uwt"]
+[ext_resource type="Texture2D" uid="uid://i6m2ponk3a0q" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_a.png" id="33_w0fje"]
+[ext_resource type="Texture2D" uid="uid://46mrxuww2ing" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_b.png" id="34_sv801"]
+[ext_resource type="Texture2D" uid="uid://dlnx5fmmd0rom" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_c.png" id="35_c7wxu"]
+[ext_resource type="Texture2D" uid="uid://bc6ra7yg5wxwe" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_d.png" id="36_wyulg"]
+[ext_resource type="Texture2D" uid="uid://b5d01schsfi8y" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_e.png" id="37_dyj7g"]
+[ext_resource type="Texture2D" uid="uid://b1vlpigawyfo5" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f.png" id="38_dfp46"]
+[ext_resource type="Texture2D" uid="uid://b2l8b4ro2x6su" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_g.png" id="39_lr6em"]
+[ext_resource type="Texture2D" uid="uid://c80jjft1gciky" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_h.png" id="40_c4thd"]
+[ext_resource type="Texture2D" uid="uid://dvyfygkgh6u8e" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_i.png" id="41_qhy3w"]
+[ext_resource type="Texture2D" uid="uid://co7y6avowl3sf" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_j.png" id="42_68bqh"]
+[ext_resource type="Texture2D" uid="uid://cpekn0puv7yak" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_k.png" id="43_gyaa5"]
+[ext_resource type="Texture2D" uid="uid://om2k1kvaiyqt" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_l.png" id="44_a6hpd"]
+[ext_resource type="Texture2D" uid="uid://bguj4847ldgt" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_m.png" id="45_yq0p3"]
+[ext_resource type="Texture2D" uid="uid://d2ktkp7oalf4e" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_n.png" id="46_r0taf"]
+[ext_resource type="Texture2D" uid="uid://cq4kngssah6rb" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_o.png" id="47_xhp2x"]
+[ext_resource type="Texture2D" uid="uid://mo2vxvdiikeg" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_p.png" id="48_ucwum"]
+[ext_resource type="Texture2D" uid="uid://ml2mrbh0uk2k" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_q.png" id="49_10n7h"]
+[ext_resource type="Texture2D" uid="uid://dnwcskjsra7aw" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_r.png" id="50_3xape"]
+[ext_resource type="Texture2D" uid="uid://cd6oxb5i8m4vb" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_s.png" id="51_n74qi"]
+[ext_resource type="Texture2D" uid="uid://enuu68rfxo6p" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_t.png" id="52_t4qi7"]
+[ext_resource type="Texture2D" uid="uid://drfu4efmawyc4" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_u.png" id="53_gathx"]
+[ext_resource type="Texture2D" uid="uid://ckv507vn7ocll" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_v.png" id="54_ufmdj"]
+[ext_resource type="Texture2D" uid="uid://d31kaw0q8d373" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_w.png" id="55_sgwi6"]
+[ext_resource type="Texture2D" uid="uid://debtxiqfaukf" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_x.png" id="56_bo3mc"]
+[ext_resource type="Texture2D" uid="uid://ybooo8qviqme" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_y.png" id="57_epbou"]
+[ext_resource type="Texture2D" uid="uid://t21vyp3gse4p" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_z.png" id="58_7ij78"]
+[ext_resource type="Texture2D" uid="uid://c8gqvx6ej6egl" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_arrow_left.png" id="59_2y8bl"]
+[ext_resource type="Texture2D" uid="uid://cmn606uuy4gug" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_arrow_up.png" id="60_pnbvq"]
+[ext_resource type="Texture2D" uid="uid://dribeaf6njbom" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_arrow_right.png" id="61_rfs3g"]
+[ext_resource type="Texture2D" uid="uid://nu1l0roer17e" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_arrow_down.png" id="62_8k4ek"]
+[ext_resource type="Texture2D" uid="uid://dve8swunldntv" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f1.png" id="63_6gy3x"]
+[ext_resource type="Texture2D" uid="uid://b223v23athb72" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f2.png" id="64_cbd58"]
+[ext_resource type="Texture2D" uid="uid://t5ys2xxk6v6m" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f3.png" id="65_pakgh"]
+[ext_resource type="Texture2D" uid="uid://bnuoouovpdm15" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f4.png" id="66_62vhj"]
+[ext_resource type="Texture2D" uid="uid://dwyodx1lkf14a" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f5.png" id="67_qx3gx"]
+[ext_resource type="Texture2D" uid="uid://bxtw34dt4keh" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f6.png" id="68_a2akh"]
+[ext_resource type="Texture2D" uid="uid://d2j1g7u8und2k" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f7.png" id="69_b27xs"]
+[ext_resource type="Texture2D" uid="uid://dy3ubj5h74la8" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f8.png" id="70_7lf65"]
+[ext_resource type="Texture2D" uid="uid://c1eovykg5wvbx" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f9.png" id="71_xgq18"]
+[ext_resource type="Texture2D" uid="uid://3xhq2htfiw2p" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f10.png" id="72_1gh2g"]
+[ext_resource type="Texture2D" uid="uid://cu135khqurh3h" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f11.png" id="73_f5eaw"]
+[ext_resource type="Texture2D" uid="uid://cwm7ok8jkjv3s" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_f12.png" id="74_27ofu"]
+[ext_resource type="Texture2D" uid="uid://5jkgs3lxspfk" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_escape.png" id="75_vh0ox"]
+[ext_resource type="Texture2D" uid="uid://c7c211x3q7fw2" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_enter.png" id="76_foh11"]
+[ext_resource type="Texture2D" uid="uid://dwkc7mebhdej6" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_ctrl.png" id="77_yph64"]
+[ext_resource type="Texture2D" uid="uid://btm5u66i3jjf1" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_shift.png" id="78_75fbh"]
+[ext_resource type="Texture2D" uid="uid://cdd18ev71xdhg" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_alt.png" id="79_gx4fb"]
+[ext_resource type="Texture2D" uid="uid://bh0q1p8vureb2" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_space_icon.png" id="80_grlcj"]
+[ext_resource type="Texture2D" uid="uid://lxufhwi35oq5" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_win.png" id="81_1bsfh"]
+[ext_resource type="Texture2D" uid="uid://yaksthqdqwek" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_capslock.png" id="82_gsxyt"]
+[ext_resource type="Texture2D" uid="uid://c47ymr2rsl43o" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_tab_icon_alternative.png" id="83_wtbuy"]
+[ext_resource type="Texture2D" uid="uid://ba6q35c1aj4gh" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_minus.png" id="84_6yfr7"]
+[ext_resource type="Texture2D" uid="uid://bn7vmj3q5djtx" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_equals.png" id="85_r5sy1"]
+[ext_resource type="Texture2D" uid="uid://bwlj3ckaj43uq" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_bracket_open.png" id="86_i7b37"]
+[ext_resource type="Texture2D" uid="uid://bx4fliap3hnv8" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_bracket_close.png" id="87_jkqcg"]
+[ext_resource type="Texture2D" uid="uid://c6t40vo5f61rj" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_slash_back.png" id="88_qteml"]
+[ext_resource type="Texture2D" uid="uid://dxbhojfwanajy" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_semicolon.png" id="89_8nvan"]
+[ext_resource type="Texture2D" uid="uid://du5f2oqgg4u0v" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_apostrophe.png" id="90_6xkxg"]
+[ext_resource type="Texture2D" uid="uid://cxwg7sh0e23a1" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_comma.png" id="91_yaka4"]
+[ext_resource type="Texture2D" uid="uid://djs01md17noch" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_period.png" id="92_fbwlk"]
+[ext_resource type="Texture2D" uid="uid://i2f4jrlqkpvl" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_slash_forward.png" id="93_fqc1i"]
+[ext_resource type="Texture2D" uid="uid://bmavelmhegja7" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_backspace_icon_alternative.png" id="94_ijrho"]
+[ext_resource type="Texture2D" uid="uid://cp6dhoqos3yv1" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_insert.png" id="95_tbd50"]
+[ext_resource type="Texture2D" uid="uid://cfg7dfl2py6ph" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_home.png" id="96_r47mx"]
+[ext_resource type="Texture2D" uid="uid://c5d0ooatqrde7" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_delete.png" id="97_wagvf"]
+[ext_resource type="Texture2D" uid="uid://cf383f3oyhhvk" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_end.png" id="98_p46r1"]
+[ext_resource type="Texture2D" uid="uid://c8dr7o4gwlf2e" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_page_up.png" id="99_6ph15"]
+[ext_resource type="Texture2D" uid="uid://difk4rhhcrwra" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_page_down.png" id="100_klmdj"]
+[ext_resource type="Texture2D" uid="uid://t2tee6cor4jh" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_asterisk.png" id="101_dnfsv"]
+[ext_resource type="Texture2D" uid="uid://desvlgfp5lpmg" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_plus.png" id="102_80piu"]
+
+[sub_resource type="Resource" id="Resource_ftkx4"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("4_cjvyo")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_biqmd"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("3_x1m57")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_d56wn"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("5_cijlr")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_fohq1"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("6_nn6uu")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_n821v"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("7_ber1c")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_xl67j"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("8_sug1n")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_7iy2d"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("9_ttmsa")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_dihql"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("10_v4lda")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_h7ban"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("11_xa6tx")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_mklye"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("12_pejla")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_wou0p"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("13_g1pxo")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_lwbdu"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("14_fryim")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_qb77p"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("15_6lng6")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_7wo68"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("16_6wbof")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_pkeww"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("17_nk7ll")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_snofx"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("18_os3bl")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_18vwj"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("19_jdtik")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_v1rsn"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("20_ys3lw")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_qau0x"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("21_agk0a")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_8itn7"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("22_80k34")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_3vqp2"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("80_grlcj")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_o2c5o"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("90_6xkxg")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_dneg4"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("91_yaka4")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ihyna"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("84_6yfr7")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_bnujp"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("92_fbwlk")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_eodhg"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("93_fqc1i")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_2iqhw"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("23_63wns")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_cbsyy"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("24_uvrxd")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_d756e"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("25_yv2ju")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_fb7rt"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("26_dmbsc")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_47bdi"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("27_gnvwy")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_68ull"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("28_fhx6b")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_add0j"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("29_7ia5x")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_g1082"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("30_gengf")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_p67v6"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("31_f8reh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_q3ph5"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("32_85uwt")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_300ka"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("89_8nvan")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_lij5o"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("85_r5sy1")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ebttg"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("33_w0fje")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_rlo3x"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("34_sv801")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_blg4n"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("35_c7wxu")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_j4ylp"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("36_wyulg")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ludpy"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("37_dyj7g")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_65egr"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("38_dfp46")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_2mr4q"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("39_lr6em")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_1tce6"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("40_c4thd")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_e6f1b"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("41_qhy3w")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_wbcbh"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("42_68bqh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_kgqey"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("43_gyaa5")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_6pqh4"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("44_a6hpd")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_5sg5r"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("45_yq0p3")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_du867"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("46_r0taf")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_nk21c"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("47_xhp2x")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_vk7h3"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("48_ucwum")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_tgknm"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("49_10n7h")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_qnyng"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("50_3xape")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_yaibq"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("51_n74qi")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_pl1l5"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("52_t4qi7")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_hg3im"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("53_gathx")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_15atr"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("54_ufmdj")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_uqu2k"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("55_sgwi6")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_av6c2"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("56_bo3mc")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_vys1p"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("57_epbou")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_dq6uv"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("58_7ij78")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_lypsj"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("86_i7b37")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_r178i"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("88_qteml")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_g64mp"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("87_jkqcg")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_uvbah"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("75_vh0ox")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_kehsy"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("83_wtbuy")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_erivw"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("94_ijrho")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ro8j4"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("76_foh11")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_j3gvf"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("95_tbd50")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_81gne"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("97_wagvf")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ixoi8"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("96_r47mx")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_ecut8"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("98_p46r1")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_4fetl"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("59_2y8bl")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_88l8x"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("60_pnbvq")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_gcrwd"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("61_rfs3g")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_yu33w"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("62_8k4ek")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_x4ngh"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("99_6ph15")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_1rtkg"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("100_klmdj")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_byaj6"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("78_75fbh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_i33tu"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("77_yph64")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_fa5ng"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("81_1bsfh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_qjtia"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("79_gx4fb")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_nli8l"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("82_gsxyt")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_0dx4d"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("63_6gy3x")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_a2vqx"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("64_cbd58")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_35b0v"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("65_pakgh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_qsyrq"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("66_62vhj")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_mtaxs"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("67_qx3gx")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_8glu8"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("68_a2akh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_xnlxt"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("69_b27xs")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_jomyo"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("70_7lf65")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_j1ayq"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("71_xgq18")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_i126b"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("72_1gh2g")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_fn6fb"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("73_f5eaw")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_dahdj"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("74_27ofu")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_0lvr6"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("101_dnfsv")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_vt8ex"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("93_fqc1i")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_esmy6"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("84_6yfr7")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_jjupj"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("92_fbwlk")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_c2ytk"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("102_80piu")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_7xo0p"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("23_63wns")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_egnfl"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("24_uvrxd")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_w2po2"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("25_yv2ju")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_hahce"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("26_dmbsc")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_2u2bd"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("27_gnvwy")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_xfou8"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("28_fhx6b")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_rknx8"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("29_7ia5x")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_715v3"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("30_gengf")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_4ij1l"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("31_f8reh")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[sub_resource type="Resource" id="Resource_v0ua2"]
+script = ExtResource("1_gs46q")
+icon = ExtResource("32_85uwt")
+metadata/_custom_type_script = "uid://fa8y3v74l3d"
+
+[resource]
+script = ExtResource("2_2n3xe")
+keys = Dictionary[int, ExtResource("1_gs46q")]({
+0: null,
+32: SubResource("Resource_3vqp2"),
+39: SubResource("Resource_o2c5o"),
+44: SubResource("Resource_dneg4"),
+45: SubResource("Resource_ihyna"),
+46: SubResource("Resource_bnujp"),
+47: SubResource("Resource_eodhg"),
+48: SubResource("Resource_2iqhw"),
+49: SubResource("Resource_cbsyy"),
+50: SubResource("Resource_d756e"),
+51: SubResource("Resource_fb7rt"),
+52: SubResource("Resource_47bdi"),
+53: SubResource("Resource_68ull"),
+54: SubResource("Resource_add0j"),
+55: SubResource("Resource_g1082"),
+56: SubResource("Resource_p67v6"),
+57: SubResource("Resource_q3ph5"),
+59: SubResource("Resource_300ka"),
+61: SubResource("Resource_lij5o"),
+65: SubResource("Resource_ebttg"),
+66: SubResource("Resource_rlo3x"),
+67: SubResource("Resource_blg4n"),
+68: SubResource("Resource_j4ylp"),
+69: SubResource("Resource_ludpy"),
+70: SubResource("Resource_65egr"),
+71: SubResource("Resource_2mr4q"),
+72: SubResource("Resource_1tce6"),
+73: SubResource("Resource_e6f1b"),
+74: SubResource("Resource_wbcbh"),
+75: SubResource("Resource_kgqey"),
+76: SubResource("Resource_6pqh4"),
+77: SubResource("Resource_5sg5r"),
+78: SubResource("Resource_du867"),
+79: SubResource("Resource_nk21c"),
+80: SubResource("Resource_vk7h3"),
+81: SubResource("Resource_tgknm"),
+82: SubResource("Resource_qnyng"),
+83: SubResource("Resource_yaibq"),
+84: SubResource("Resource_pl1l5"),
+85: SubResource("Resource_hg3im"),
+86: SubResource("Resource_15atr"),
+87: SubResource("Resource_uqu2k"),
+88: SubResource("Resource_av6c2"),
+89: SubResource("Resource_vys1p"),
+90: SubResource("Resource_dq6uv"),
+91: SubResource("Resource_lypsj"),
+92: SubResource("Resource_r178i"),
+93: SubResource("Resource_g64mp"),
+4194305: SubResource("Resource_uvbah"),
+4194306: SubResource("Resource_kehsy"),
+4194308: SubResource("Resource_erivw"),
+4194309: SubResource("Resource_ro8j4"),
+4194311: SubResource("Resource_j3gvf"),
+4194312: SubResource("Resource_81gne"),
+4194317: SubResource("Resource_ixoi8"),
+4194318: SubResource("Resource_ecut8"),
+4194319: SubResource("Resource_4fetl"),
+4194320: SubResource("Resource_88l8x"),
+4194321: SubResource("Resource_gcrwd"),
+4194322: SubResource("Resource_yu33w"),
+4194323: SubResource("Resource_x4ngh"),
+4194324: SubResource("Resource_1rtkg"),
+4194325: SubResource("Resource_byaj6"),
+4194326: SubResource("Resource_i33tu"),
+4194327: SubResource("Resource_fa5ng"),
+4194328: SubResource("Resource_qjtia"),
+4194329: SubResource("Resource_nli8l"),
+4194332: SubResource("Resource_0dx4d"),
+4194333: SubResource("Resource_a2vqx"),
+4194334: SubResource("Resource_35b0v"),
+4194335: SubResource("Resource_qsyrq"),
+4194336: SubResource("Resource_mtaxs"),
+4194337: SubResource("Resource_8glu8"),
+4194338: SubResource("Resource_xnlxt"),
+4194339: SubResource("Resource_jomyo"),
+4194340: SubResource("Resource_j1ayq"),
+4194341: SubResource("Resource_i126b"),
+4194342: SubResource("Resource_fn6fb"),
+4194343: SubResource("Resource_dahdj"),
+4194433: SubResource("Resource_0lvr6"),
+4194434: SubResource("Resource_vt8ex"),
+4194435: SubResource("Resource_esmy6"),
+4194436: SubResource("Resource_jjupj"),
+4194437: SubResource("Resource_c2ytk"),
+4194438: SubResource("Resource_7xo0p"),
+4194439: SubResource("Resource_egnfl"),
+4194440: SubResource("Resource_w2po2"),
+4194441: SubResource("Resource_hahce"),
+4194442: SubResource("Resource_2u2bd"),
+4194443: SubResource("Resource_xfou8"),
+4194444: SubResource("Resource_rknx8"),
+4194445: SubResource("Resource_715v3"),
+4194446: SubResource("Resource_4ij1l"),
+4194447: SubResource("Resource_v0ua2")
+})
+joy_sticks = Dictionary[int, ExtResource("1_gs46q")]({
+0: SubResource("Resource_pkeww"),
+1: SubResource("Resource_snofx"),
+2: SubResource("Resource_18vwj"),
+3: SubResource("Resource_v1rsn"),
+4: SubResource("Resource_qau0x"),
+5: SubResource("Resource_8itn7")
+})
+joy_buttons = Dictionary[int, ExtResource("1_gs46q")]({
+0: SubResource("Resource_ftkx4"),
+1: SubResource("Resource_biqmd"),
+2: SubResource("Resource_d56wn"),
+3: SubResource("Resource_fohq1"),
+4: SubResource("Resource_n821v"),
+6: SubResource("Resource_xl67j"),
+7: SubResource("Resource_7iy2d"),
+8: SubResource("Resource_dihql"),
+9: SubResource("Resource_h7ban"),
+10: SubResource("Resource_mklye"),
+11: SubResource("Resource_wou0p"),
+12: SubResource("Resource_lwbdu"),
+13: SubResource("Resource_qb77p"),
+14: SubResource("Resource_7wo68")
+})
+metadata/_custom_type_script = "uid://cs8nn1u4ud575"
