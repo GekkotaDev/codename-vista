@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bcpf22ei6335x"]
+
+[ext_resource type="Script" uid="uid://cnsviq5sn3e5b" path="res://screens/settings_menu/scenes/keymap_array/keymap_array.gd" id="1_fqtxa"]
+
+[node name="KeymapArray" type="VBoxContainer" unique_id=756859914]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fqtxa")

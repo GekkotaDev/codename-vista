@@ -4,35 +4,37 @@
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="2_0kubn"]
 [ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="2_rkyh1"]
 [ext_resource type="PackedScene" uid="uid://dfepxjl44fyqo" path="res://ggs/components/reset_btn/component_reset_btn.tscn" id="3_0kubn"]
-[ext_resource type="Resource" uid="uid://cr4px1ojxxd72" path="res://ggs/game_settings/audio.volume_global.tres" id="3_a6bvn"]
-[ext_resource type="PackedScene" uid="uid://cxvsxljruj5cy" path="res://screens/settings_menu/scenes/setting_selector.tscn" id="3_ctt8j"]
+[ext_resource type="Resource" uid="uid://cr4px1ojxxd72" path="res://ggs/game_settings/audio/audio.volume_global.tres" id="3_a6bvn"]
+[ext_resource type="PackedScene" uid="uid://cxvsxljruj5cy" path="res://screens/settings_menu/scenes/setting_selector/setting_selector.tscn" id="3_ctt8j"]
 [ext_resource type="PackedScene" uid="uid://cww37aayk8gj6" path="res://ggs/components/apply_btn/component_apply_btn.tscn" id="4_alic8"]
 [ext_resource type="Resource" uid="uid://cgh6m88woqluf" path="res://screens/settings_menu/data/descriptions/audio/global_volume.tres" id="4_u032h"]
 [ext_resource type="PackedScene" uid="uid://bhkyf3l4ee800" path="res://ggs/components/checkbox/component_checkbox.tscn" id="4_wjgle"]
 [ext_resource type="Resource" uid="uid://5ur0okbohdov" path="res://screens/settings_menu/data/descriptions/audio/music_volume.tres" id="5_5fsjx"]
 [ext_resource type="Resource" uid="uid://cgib3avg27fk3" path="res://screens/settings_menu/data/descriptions/audio/sfx_volume.tres" id="6_efypw"]
-[ext_resource type="Resource" uid="uid://bx0ff3efi05up" path="res://ggs/game_settings/audio.volume_music.tres" id="6_l46rb"]
+[ext_resource type="Resource" uid="uid://bx0ff3efi05up" path="res://ggs/game_settings/audio/audio.volume_music.tres" id="6_l46rb"]
 [ext_resource type="Resource" uid="uid://vd138lrqr8g7" path="res://screens/settings_menu/data/descriptions/audio/dialog_volume.tres" id="7_wyyax"]
-[ext_resource type="Resource" uid="uid://gkivktwbvl0n" path="res://ggs/game_settings/audio.volume_sfx.tres" id="8_b240a"]
-[ext_resource type="Resource" uid="uid://1vnktg2pat6o" path="res://ggs/game_settings/audio.volume_ambient.tres" id="10_8vkf2"]
+[ext_resource type="Resource" uid="uid://gkivktwbvl0n" path="res://ggs/game_settings/audio/audio.volume_sfx.tres" id="8_b240a"]
+[ext_resource type="Resource" uid="uid://1vnktg2pat6o" path="res://ggs/game_settings/audio/audio.volume_ambient.tres" id="10_8vkf2"]
 [ext_resource type="Resource" uid="uid://sbg04oip2eyk" path="res://screens/settings_menu/data/descriptions/audio/muted.tres" id="11_mns7g"]
-[ext_resource type="Resource" uid="uid://ct6bbwwb8fqio" path="res://ggs/game_settings/audio.muted.tres" id="13_ekwq5"]
+[ext_resource type="Resource" uid="uid://ct6bbwwb8fqio" path="res://ggs/game_settings/audio/audio.muted.tres" id="13_ekwq5"]
 [ext_resource type="Resource" uid="uid://digctuxdoggfh" path="res://screens/settings_menu/data/descriptions/video/reduced_motion.tres" id="13_fmox1"]
 [ext_resource type="Resource" uid="uid://d00xjfu7hyo2s" path="res://screens/settings_menu/data/descriptions/video/resolution.tres" id="15_ypv7y"]
 [ext_resource type="Resource" uid="uid://xw3vykgr2pbb" path="res://screens/settings_menu/data/descriptions/video/frame_rate.tres" id="16_14x7m"]
-[ext_resource type="Resource" uid="uid://52fqovn5wv8n" path="res://ggs/game_settings/video.reduced_motion.tres" id="16_l46rb"]
+[ext_resource type="Resource" uid="uid://52fqovn5wv8n" path="res://ggs/game_settings/video/video.reduced_motion.tres" id="16_l46rb"]
 [ext_resource type="PackedScene" uid="uid://1qpe22ky2s6y" path="res://ggs/components/arrow_list/component_arrow_list.tscn" id="18_8vkf2"]
-[ext_resource type="Resource" uid="uid://b6xqgaxdggus" path="res://ggs/game_settings/video.display_size.tres" id="19_8x8p1"]
+[ext_resource type="Resource" uid="uid://b6xqgaxdggus" path="res://ggs/game_settings/video/video.display_size.tres" id="19_8x8p1"]
 [ext_resource type="Resource" uid="uid://cqbfww77go5ro" path="res://screens/settings_menu/data/descriptions/gameplay/speedrun_timer.tres" id="19_b240a"]
-[ext_resource type="Resource" uid="uid://dveeylu22s4bw" path="res://ggs/game_settings/video.display_mode.tres" id="21_5s53o"]
-[ext_resource type="Resource" uid="uid://bn71o513kq5ov" path="res://ggs/game_settings/video.display_scale.tres" id="21_l46rb"]
+[ext_resource type="Resource" uid="uid://dveeylu22s4bw" path="res://ggs/game_settings/video/video.display_mode.tres" id="21_5s53o"]
+[ext_resource type="Resource" uid="uid://bn71o513kq5ov" path="res://ggs/game_settings/video/video.display_scale.tres" id="21_l46rb"]
 [ext_resource type="Resource" uid="uid://bfiuyyixaieyr" path="res://screens/settings_menu/data/descriptions/gameplay/tutorial_hints.tres" id="22_8x8p1"]
 [ext_resource type="Resource" uid="uid://brdbtl82gil6e" path="res://screens/settings_menu/data/descriptions/gameplay/focus_loss_pause.tres" id="23_5s53o"]
-[ext_resource type="Resource" uid="uid://dh76kakn5bxel" path="res://ggs/game_settings/video.fps.tres" id="23_b240a"]
-[ext_resource type="Resource" uid="uid://46ne52avu2pf" path="res://ggs/game_settings/video.vsync.tres" id="25_8vkf2"]
-[ext_resource type="Resource" uid="uid://b0e712l1jlyat" path="res://ggs/game_settings/gameplay.speedrun_timer.tres" id="26_b240a"]
-[ext_resource type="Resource" uid="uid://cu66obuefxela" path="res://ggs/game_settings/gameplay.tutorial_hints.tres" id="28_8vkf2"]
-[ext_resource type="Resource" uid="uid://c6jdreu0863tb" path="res://ggs/game_settings/gameplay.focus_loss_pause.tres" id="30_ekwq5"]
+[ext_resource type="Resource" uid="uid://dh76kakn5bxel" path="res://ggs/game_settings/video/video.fps.tres" id="23_b240a"]
+[ext_resource type="Resource" uid="uid://46ne52avu2pf" path="res://ggs/game_settings/video/video.vsync.tres" id="25_8vkf2"]
+[ext_resource type="Resource" uid="uid://b0e712l1jlyat" path="res://ggs/game_settings/gameplay/gameplay.speedrun_timer.tres" id="26_b240a"]
+[ext_resource type="PackedScene" uid="uid://cayiumg6r0cd5" path="res://screens/settings_menu/scenes/keymap_entry/keymap_entry.tscn" id="27_8x8p1"]
+[ext_resource type="Resource" uid="uid://p4sq3vie1so8" path="res://data/keymaps/pc.tres" id="27_ekwq5"]
+[ext_resource type="Resource" uid="uid://cu66obuefxela" path="res://ggs/game_settings/gameplay/gameplay.tutorial_hints.tres" id="28_8vkf2"]
+[ext_resource type="Resource" uid="uid://c6jdreu0863tb" path="res://ggs/game_settings/gameplay/gameplay.focus_loss_pause.tres" id="30_ekwq5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_15beq"]
 font_size = 24
@@ -53,8 +55,14 @@ font_color = Color(0, 0, 0, 1)
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_5s53o"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
 [node name="SettingsMenu" type="Control" unique_id=640149932]
-texture_filter = 1
+texture_filter = 6
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,7 +89,7 @@ theme_override_constants/separation = 8
 [node name="TabContainer" type="TabContainer" parent="VBoxContainer" unique_id=1913699046]
 layout_mode = 2
 size_flags_horizontal = 4
-current_tab = 1
+current_tab = 2
 
 [node name="Audio" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=70395123]
 visible = false
@@ -132,7 +140,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Options/ScrollContainer/MarginContainer/Categories/Sliders/VBoxContainer/GlobalVolume" unique_id=2127371064]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 text = "Global
 Volume"
@@ -151,7 +159,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Options/ScrollContainer/MarginContainer/Categories/Sliders/VBoxContainer/MusicVolume" unique_id=2028845593]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 text = "Music
 Volume"
@@ -170,7 +178,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Options/ScrollContainer/MarginContainer/Categories/Sliders/VBoxContainer/SFXVolume" unique_id=914344815]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 text = "SFX
 Volume"
@@ -189,7 +197,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Audio/Options/ScrollContainer/MarginContainer/Categories/Sliders/VBoxContainer/AmbientVolume" unique_id=564421587]
-custom_minimum_size = Vector2(90, 0)
+custom_minimum_size = Vector2(105, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Ambient
@@ -259,6 +267,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wjgle")
 text = "..."
 
 [node name="Video" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=71370764]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -337,13 +346,12 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=1782962001]
-custom_minimum_size = Vector2(128, 0)
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 text = "Resolution"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Resolution" unique_id=1948404448 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("1920 x 1080", "1920 x 1200", "1680 x 1050")
 setting = ExtResource("19_8x8p1")
 
@@ -357,14 +365,13 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=1218863394]
-custom_minimum_size = Vector2(128, 0)
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 text = "Display
 Scale"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/DisplayScale" unique_id=2143402098 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("0", "1", "1.25", "1.5", "1.75", "2", "0.5")
 setting = ExtResource("21_l46rb")
 
@@ -378,14 +385,13 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=553621383]
-custom_minimum_size = Vector2(128, 0)
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 text = "Window
 Mode"
 
 [node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/WindowMode" unique_id=1094411996 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
-size_flags_horizontal = 3
 options = PackedStringArray("Fullscreen", "Borderless", "Windowed")
 setting = ExtResource("21_5s53o")
 
@@ -395,18 +401,18 @@ label = NodePath("../../../../../../../../Description/ScrollContainer/RichTextLa
 node_reference = NodePath("..")
 
 [node name="FrameRate" type="HBoxContainer" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer" unique_id=1389174970]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/FrameRate" unique_id=1719631166]
-custom_minimum_size = Vector2(128, 0)
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 text = "Frame
 Rate"
 
-[node name="Slider" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/FrameRate" unique_id=113789020 groups=["setting"] instance=ExtResource("2_0kubn")]
+[node name="ArrowList" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/FrameRate" unique_id=366420121 instance=ExtResource("18_8vkf2")]
 layout_mode = 2
+options = PackedStringArray("24", "30", "60")
 setting = ExtResource("23_b240a")
 
 [node name="SettingSelector" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/FrameRate" unique_id=777515641 node_paths=PackedStringArray("label", "node_reference") instance=ExtResource("3_ctt8j")]
@@ -419,7 +425,7 @@ layout_mode = 2
 theme_override_constants/separation = 32
 
 [node name="Label" type="Label" parent="VBoxContainer/TabContainer/Video/Options/ScrollContainer/MarginContainer/Categories/Fidelity/VBoxContainer/Vsync" unique_id=1745284803]
-custom_minimum_size = Vector2(128, 0)
+custom_minimum_size = Vector2(145, 0)
 layout_mode = 2
 text = "Vsync"
 
@@ -457,7 +463,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wjgle")
 text = "..."
 
 [node name="Controls" type="HBoxContainer" parent="VBoxContainer/TabContainer" unique_id=1879156393]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -473,9 +478,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 
 [node name="Controller" type="Panel" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer" unique_id=947886436]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -500,8 +506,13 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 64
 
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Controller/ScrollContainer/MarginContainer/Categories" unique_id=973482621]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Controller/ScrollContainer/MarginContainer/Categories/HBoxContainer" unique_id=539145051]
+layout_mode = 2
+
 [node name="Keyboard" type="Panel" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer" unique_id=1174394333]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -525,6 +536,24 @@ theme_override_constants/margin_right = 32
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories" unique_id=1793808995]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer" unique_id=417591994]
+layout_mode = 2
+text = "Sample Text"
+label_settings = SubResource("LabelSettings_5s53o")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer" unique_id=1095053489]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+
+[node name="KeymapEntry" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer/VBoxContainer" unique_id=999785418 instance=ExtResource("27_8x8p1")]
+layout_mode = 2
+keymaps_meta = ExtResource("27_ekwq5")
+input_action = &"player_left"
+label = "Player Left"
 
 [node name="Description" type="Panel" parent="VBoxContainer/TabContainer/Controls" unique_id=1237205328]
 custom_minimum_size = Vector2(360, 500)

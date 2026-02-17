@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cayiumg6r0cd5"]
+
+[ext_resource type="Script" uid="uid://dckqfst4wmswk" path="res://screens/settings_menu/scenes/keymap_entry/keymap_entry.gd" id="1_in33u"]
+[ext_resource type="Texture2D" uid="uid://c52iy4eqs08ps" path="res://assets/lib/Kenney/UI/Input Prompts/Keyboard & Mouse/Default/keyboard_question.png" id="2_ytgjw"]
+
+[node name="KeymapEntry" type="HBoxContainer" unique_id=999785418 node_paths=PackedStringArray("_label", "_input_button", "_input_icon_input", "_input_icon_await")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_in33u")
+_label = NodePath("LabelMargin/Label")
+_input_button = NodePath("KeysMargin/Button")
+_input_icon_input = NodePath("KeysMargin/Button/InputTextureRect")
+_input_icon_await = NodePath("KeysMargin/Button/AwaitingTextureRect")
+
+[node name="LabelMargin" type="MarginContainer" parent="." unique_id=1945532425]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="LabelMargin" unique_id=1450317898]
+layout_mode = 2
+
+[node name="KeysMargin" type="MarginContainer" parent="." unique_id=501561106]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="KeysMargin" unique_id=582879738]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+flat = true
+
+[node name="InputTextureRect" type="TextureRect" parent="KeysMargin/Button" unique_id=1856417254]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AwaitingTextureRect" type="TextureRect" parent="KeysMargin/Button" unique_id=702737219]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ytgjw")
+expand_mode = 1
+stretch_mode = 5
