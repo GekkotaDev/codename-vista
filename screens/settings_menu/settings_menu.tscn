@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://crvja8wk885dj" path="res://data/themes/kenney/ui_pack/kenneyUI.tres" id="1_3gb42"]
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://ggs/components/slider/component_slider.tscn" id="2_0kubn"]
+[ext_resource type="PackedScene" uid="uid://1m5p4gobiwk1" path="res://screens/settings_menu/scenes/rebind_modal/rebind_modal.tscn" id="2_8x8p1"]
 [ext_resource type="FontFile" uid="uid://c5j05dyi853cb" path="res://assets/typefaces/departure_mono/DepartureMono-Regular.otf" id="2_rkyh1"]
 [ext_resource type="PackedScene" uid="uid://dfepxjl44fyqo" path="res://ggs/components/reset_btn/component_reset_btn.tscn" id="3_0kubn"]
 [ext_resource type="Resource" uid="uid://cr4px1ojxxd72" path="res://ggs/game_settings/audio/audio.volume_global.tres" id="3_a6bvn"]
@@ -71,7 +72,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_3gb42")
 
+[node name="RebindModal" parent="." unique_id=372010030 instance=ExtResource("2_8x8p1")]
+layout_mode = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=109548679]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -549,11 +554,17 @@ label_settings = SubResource("LabelSettings_5s53o")
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 
-[node name="KeymapEntry" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer/VBoxContainer" unique_id=999785418 instance=ExtResource("27_8x8p1")]
+[node name="KeymapMoveUo" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer/VBoxContainer" unique_id=999785418 instance=ExtResource("27_8x8p1")]
 layout_mode = 2
 keymaps_meta = ExtResource("27_ekwq5")
-input_action = &"player_left"
-label = "Player Left"
+input_action = &"player_up"
+label = "Move Up"
+
+[node name="KeymapEntry" parent="VBoxContainer/TabContainer/Controls/Options/TabContainer/Keyboard/ScrollContainer/MarginContainer/Categories/VBoxContainer/VBoxContainer" unique_id=197261642 instance=ExtResource("27_8x8p1")]
+layout_mode = 2
+keymaps_meta = ExtResource("27_ekwq5")
+input_action = &"player_down"
+label = "Move Down"
 
 [node name="Description" type="Panel" parent="VBoxContainer/TabContainer/Controls" unique_id=1237205328]
 custom_minimum_size = Vector2(360, 500)

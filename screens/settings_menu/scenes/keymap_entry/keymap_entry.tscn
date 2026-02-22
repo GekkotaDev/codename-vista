@@ -27,7 +27,7 @@ layout_mode = 2
 [node name="KeysMargin" type="MarginContainer" parent="." unique_id=501561106]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 4
 
 [node name="Button" type="Button" parent="KeysMargin" unique_id=582879738]
 modulate = Color(0, 0, 0, 1)
@@ -47,6 +47,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="AwaitingTextureRect" type="TextureRect" parent="KeysMargin/Button" unique_id=702737219]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
