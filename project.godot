@@ -71,6 +71,8 @@ NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 CombatManager="*uid://0d852gmtbwq0"
+CombatUi="*uid://h66mjh7b4joa"
+HealthManager="*uid://c43tqh3u7geh1"
 
 [debug_draw_3d]
 

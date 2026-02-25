@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bmhkvq2m8fwi"]
+
+[ext_resource type="Script" uid="uid://d2uepu8hkqenm" path="res://libraries/Test Combat/Scripts/HPBar.gd" id="1_ohk03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmyvk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohk03"]
+bg_color = Color(0.7058046, 0.025464969, 0.21154389, 1)
+
+[node name="HPSubViewport" type="SubViewport" unique_id=1238646013]
+size = Vector2i(200, 20)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=822652531]
+offset_right = 200.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hmyvk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ohk03")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_ohk03")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://h66mjh7b4joa"]
+
+[ext_resource type="Script" uid="uid://cj0q2e8m48f86" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.gd" id="1_u7k4x"]
+
+[node name="CombatUI" type="CanvasLayer" unique_id=1692147016]
+script = ExtResource("1_u7k4x")
+
+[node name="RollLabel" type="Label" parent="." unique_id=369680687]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -33.5
+offset_right = 87.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "READY?"
