@@ -27,7 +27,7 @@ func _preready():
 	pass
 
 
-## 
+##
 func _postready():
 	pass
 
@@ -78,3 +78,32 @@ func effect(properties: Array[String], callback: Callable) -> Callable:
 	)
 
 	return callback
+
+
+##
+func each_controls(parent: Control, builder: Callable):
+	var new_children: Array[Control] = builder.call()
+	if not (new_children is Array[Control]):
+		return
+
+	var current_children := parent.get_children()
+
+	for child in current_children:
+		parent.remove_child(child)
+
+	for child in new_children:
+		parent.add_child(child)
+
+
+##
+func show_control(parent: Control, child: Control, conditional: Callable):
+	var condition: Variant = conditional.call()
+
+	# Clarity is better than conciseness. See Mathematical notation when conciseness
+	# is prioritized over clarity.
+	if condition == true and not parent.find_child(child.name):
+		parent.add_child(child)
+		return
+
+	if parent.find_child(child.name):
+		parent.remove_child(child)
