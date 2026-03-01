@@ -29,7 +29,7 @@ size = Vector3(100, 0, 100)
 size = Vector3(100, 0, 100)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7rgj"]
-albedo_color = Color(0.6998844, 0.10889288, 0.36600083, 1)
+albedo_color = Color(0.18195605, 0.37441868, 0.7354255, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_geawr"]
 size = Vector3(0.61, 1, 0.63)
@@ -56,6 +56,7 @@ script = ExtResource("1_nevp2")
 [node name="Ground" type="StaticBody3D" parent="." unique_id=1984898943]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1681535532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.017485619, 0, 0.0026454926)
 mesh = SubResource("BoxMesh_q7dt1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1924894019]

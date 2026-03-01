@@ -11,10 +11,11 @@
 size = Vector3(5, 1, 1.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4q842"]
-viewport_path = NodePath("HPSubViewport")
+viewport_path = NodePath("HealthBar")
 
 [node name="Enemy" type="CharacterBody3D" unique_id=702345917]
 script = ExtResource("1_8d338")
+metadata/entity_name = "Enemy"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1061484825]
 mesh = SubResource("BoxMesh_8yi8j")
@@ -31,7 +32,14 @@ shape = SubResource("BoxShape3D_vhvbt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689, 0)
 texture = SubResource("ViewportTexture_4q842")
 
-[node name="HPSubViewport" parent="." unique_id=1238646013 instance=ExtResource("2_aoyxa")]
+[node name="HealthBar" parent="." unique_id=1238646013 instance=ExtResource("2_aoyxa")]
 
-[connection signal="body_entered" from="DetectionRange" to="." method="_on_area_3d_body_entered"]
+[node name="ProgressBar" parent="HealthBar" index="0" unique_id=822652531]
+max_value = 50.0
+value = 50.0
+entity_name = "Enemy"
+
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_area_3d_body_entered"]
+
+[editable path="HealthBar"]

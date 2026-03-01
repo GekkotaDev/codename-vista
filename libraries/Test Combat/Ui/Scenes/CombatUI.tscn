@@ -19,3 +19,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 text = "READY?"
+
+[node name="AttackButton" type="Button" parent="." unique_id=1034324806]
+texture_filter = 1
+offset_left = 107.0
+offset_top = 767.00006
+offset_right = 165.0
+offset_bottom = 798.00006
+scale = Vector2(3.7820702, 3.6879067)
+text = "Attack"

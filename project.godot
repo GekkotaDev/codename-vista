@@ -218,6 +218,7 @@ kenyoni/pot_generation/paths=Array[PackedStringArray]([])
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 gl_compatibility/driver.macos="opengl3_angle"
 global_illumination/gi/use_half_resolution=true

@@ -1,5 +1,12 @@
 extends CharacterBody3D
 
+
+@export var max_health: int = 50
+
+func _ready():
+	# Register with global manager using unique name ---
+	HealthManager.register_entity(self.name, max_health)
+
 # for detection
 func _on_detection_range_body_entered(body):
 	# for debugging to see if detection works
@@ -15,5 +22,9 @@ func _on_detection_range_body_entered(body):
 	else:
 		print("Object detected was not the player")
 
-# Note: You can delete the empty _on_area_3d functions 
+# --- NEW: Death Function ---
+func die():
+	print(self.name, " has been defeated!")
+	queue_free() # Remove enemy from scene
+# Note: You can delete the empty _on_area_3d functions 
 # unless you specifically need multiple detection zones.
