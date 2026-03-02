@@ -8,6 +8,9 @@
 class_name PatternGrid
 extends GridContainer
 
+signal success
+signal failed
+
 @export var model: PatternGridModel
 
 var vertex_models: Array[PatternVertexModel]:
@@ -21,20 +24,64 @@ var vertex_models: Array[PatternVertexModel]:
 				return result
 		)
 
+var vertices: Array[PatternVertex]:
+	get:
+		return get_children().filter(
+			func(node): return node is PatternVertex
+		)
+
 
 func _ready() -> void:
 	rerender_vertices()
 
 
-func observe_vertices():
-	var vertices: Array[PatternVertex] = get_children().filter(
-		func(node): return node is PatternVertex
+func when_target_available(callback: Callable, fallback: Callable = func(..._0): pass):
+	return func(...parameters):
+		if model.target:
+			return callback.callv(parameters)
+		fallback.callv(parameters)
+
+
+func on_selected(vertex: PatternVertex):
+	vertex.selected.connect(
+		func():
+			vertex.timer.start()
+
+			if model.target == null:
+				model.target = vertex.model
+				return
+
+			var result := vertex.model.validate_vertex(model.target)
+			match result:
+				ERR_SKIP:
+					pass
+				ERR_INVALID_DATA:
+					failed.emit(PatternStates.GridError.UNKNOWN)
+				ERR_CANT_CONNECT:
+					failed.emit(PatternStates.GridError.LOOP)
+				OK:
+					model.target = vertex.model
+					vertex_models.all(
+						func(vertex_model: PatternVertexModel):
+							return (
+								vertex_model.status == PatternStates.VertexState.CLOSED or
+								vertex_model.status == PatternStates.VertexState.EMPTY
+							)
+					)
+				_:
+					assert(
+						false,
+						"Unhandled error: {error}".format(
+							{
+								error = error_string(result),
+							},
+						),
+					)
 	)
 
-	vertices.map(
-		func(vertex: PatternVertex):
-			pass
-	)
+
+func observe_vertices():
+	vertices.map(on_selected)
 
 
 ## Re-render all the child vertices of the grid. [br]
@@ -49,11 +96,10 @@ func observe_vertices():
 func rerender_vertices():
 	columns = model.length
 
-	get_children().map(
+	vertices.map(
 		func(child):
-			if child is PatternVertex:
-				remove_child(child)
-				child.queue_free()
+			remove_child(child)
+			child.queue_free()
 	)
 
 	vertex_models.map(
@@ -64,3 +110,5 @@ func rerender_vertices():
 
 			add_child(vertex)
 	)
+
+	observe_vertices()

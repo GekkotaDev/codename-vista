@@ -16,3 +16,8 @@ enum VertexResponse {
 	FAIL,
 	PASS,
 }
+
+enum GridError {
+	LOOP,
+	UNKNOWN,
+}

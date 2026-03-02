@@ -8,6 +8,14 @@
 class_name PatternVertex
 extends Control
 
-signal selected(vertex: PatternVertex)
+signal selected
 
 @export var model: PatternVertexModel
+
+var timer := Timer.new()
+
+
+func _ready() -> void:
+	timer.wait_time = model.timeout
+
+	add_child(timer)
