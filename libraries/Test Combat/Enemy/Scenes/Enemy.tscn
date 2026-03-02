@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c523essl0o4p8"]
 
 [ext_resource type="Script" uid="uid://5s3pijmorx26" path="res://libraries/Test Combat/Scripts/Enemy.gd" id="1_8d338"]
+[ext_resource type="Resource" uid="uid://g7mj81vshcra" path="res://libraries/Test Combat/Resources/Data/EnemyData.tres" id="2_4q842"]
 [ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_aoyxa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8yi8j"]
@@ -8,13 +9,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_8d338"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vhvbt"]
-size = Vector3(5, 2, 1.5)
+size = Vector3(5, 2, 5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_4q842"]
 viewport_path = NodePath("HealthBar")
 
 [node name="Enemy" type="CharacterBody3D" unique_id=702345917]
 script = ExtResource("1_8d338")
+data = ExtResource("2_4q842")
 metadata/entity_name = "Enemy"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1061484825]
@@ -40,7 +42,7 @@ max_value = 50.0
 value = 50.0
 entity_name = "Enemy"
 
-[connection signal="body_entered" from="DetectionRange" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_area_3d_body_entered"]
 
 [editable path="HealthBar"]

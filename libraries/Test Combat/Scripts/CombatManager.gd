@@ -7,7 +7,7 @@ var player_node: CharacterBody3D
 var enemy_node: CharacterBody3D
 var is_in_combat: bool = false
 
-# --- NEW: Flag to track whose turn it is ---
+# Flag to track whose turn it is
 var can_player_act: bool = false
 var can_enemy_act: bool = false
 
@@ -72,21 +72,24 @@ func start_enemy_turn():
 	await get_tree().create_timer(1.5).timeout
 	enemy_attack()
 
-# DAMAGE FUNCTIONSs
-
+# DAMAGE FUNCTIONS
 func player_attack():
 	if not can_player_act: return
 	
 	print(">>> Player Action Started (Instant)")
 	
+	
+	var p_data = HealthManager.get_entity_data("Player")
+	var e_name = enemy_node.data.name
+	
 	# 1. INSTANT DAMAGE (Triggers signal automatically)
-	HealthManager.update_hp(enemy_node.name, -5)
+	HealthManager.update_hp(e_name, -p_data.attack_damage)
 	
 	# 2. LOCK TURN
 	can_player_act = false
 	
 	# 3. Check for death
-	if HealthManager.get_hp(enemy_node.name) <= 0:
+	if HealthManager.get_hp(e_name) <= 0:
 		if enemy_node.has_method("die"):
 			enemy_node.die()
 		end_combat()
@@ -98,8 +101,11 @@ func enemy_attack():
 	
 	print(">>> Enemy Action Started (Instant)")
 	
+
+	var e_data = HealthManager.get_entity_data(enemy_node.data.name)
+	
 	# 1. INSTANT DAMAGE
-	HealthManager.update_hp("Player", -15)
+	HealthManager.update_hp("Player", -e_data.attack_damage)
 	
 	# 2. LOCK TURN
 	can_enemy_act = false

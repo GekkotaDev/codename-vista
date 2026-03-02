@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdb6yvu2std04" path="res://libraries/Test Combat/Scripts/Player.gd" id="1_27vqm"]
 [ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_rym23"]
+[ext_resource type="Resource" uid="uid://ycpwxufjdoro" path="res://libraries/Test Combat/Resources/Data/PlayerData.tres" id="2_v3k30"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hgpx6"]
 size = Vector3(0.61, 1, 0.63)
@@ -14,6 +15,7 @@ viewport_path = NodePath("HealthBar")
 
 [node name="Player" type="CharacterBody3D" unique_id=127769610]
 script = ExtResource("1_27vqm")
+data = ExtResource("2_v3k30")
 metadata/entity_name = "Player"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=869181374]
