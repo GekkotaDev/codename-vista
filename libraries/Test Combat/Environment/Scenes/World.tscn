@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/Scripts/CombatManager.gd" id="1_nevp2"]
 [ext_resource type="PackedScene" uid="uid://h66mjh7b4joa" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.tscn" id="2_j64lb"]
 [ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/Enemy/Scenes/Enemy.tscn" id="3_cm0eb"]
+[ext_resource type="PackedScene" uid="uid://c5h81kx5x1oil" path="res://libraries/Test Combat/Environment/Scenes/ElevatorPlatform.tscn" id="4_kcj7v"]
 [ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player/Scenes/Player.tscn" id="4_uicin"]
 [ext_resource type="PackedScene" uid="uid://w2us70ol5e1u" path="res://libraries/Test Combat/Environment/Scenes/Obstacle.tscn" id="5_kcj7v"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_5w8wf"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_wrctl"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_mhw38"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="9_j64lb"]
+[ext_resource type="PackedScene" uid="uid://c6wvh8d4uw2oy" path="res://libraries/Test Combat/Environment/Scenes/MovingPlatform.tscn" id="10_cm0eb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_au8eq"]
 
@@ -75,18 +77,24 @@ mesh = SubResource("BoxMesh_cm0eb")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Boundary Wall 1" unique_id=1806126986]
 shape = SubResource("BoxShape3D_uicin")
 
+[node name="MovingPlatform" parent="Environment" unique_id=1343964504 instance=ExtResource("10_cm0eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3590517, 1.3922749, 0)
+
+[node name="ElevatorPlatform" parent="Environment" unique_id=121560142 instance=ExtResource("4_kcj7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.358, 0.25, -2.94)
+
 [node name="Enemy" parent="." unique_id=702345917 instance=ExtResource("3_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3582516, 0.5, 0)
 
 [node name="Player" parent="." unique_id=127769610 instance=ExtResource("4_uicin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006516397, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8966627, 0.5, 0)
 
 [node name="Obstacle" parent="." unique_id=876568908 instance=ExtResource("5_kcj7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.5, -0.19)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1909120161]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.9944027, 0.105656475, 0, -0.105656475, 0.9944027, -0.006516397, 1.0906565, 5.2994027)
+transform = Transform3D(1, 0, 0, 0, 0.948163, 0.31778446, 0, -0.31778446, 0.948163, -6.8966627, 2.6877842, 5.2531624)
 top_level = true
 current = true
 
@@ -97,14 +105,14 @@ script = ExtResource("6_5w8wf")
 metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1987642 node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(1, 0, 0, 0, 0.9944027, 0.105656475, 0, -0.105656475, 0.9944027, -0.006516397, 1.0906565, 5.2994027)
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9481622, 0.3177842, 0, -0.3177842, 0.9481623, -6.8966627, 2.6877842, 5.2531624)
 top_level = true
 script = ExtResource("7_wrctl")
 follow_mode = 5
 follow_target = NodePath("../Player")
 tween_resource = SubResource("Resource_ixwe8")
 camera_3d_resource = SubResource("Resource_kcj7v")
-follow_offset = Vector3(0, 0.485, 4.305)
+follow_offset = Vector3(0, 1.87, 4.305)
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
