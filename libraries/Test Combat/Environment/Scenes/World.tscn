@@ -94,7 +94,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.5, -0.19)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1909120161]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.948163, 0.31778446, 0, -0.31778446, 0.948163, -6.8966627, 2.6877842, 5.2531624)
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9481622, 0.3177842, 0, -0.3177842, 0.9481623, -6.8966627, 2.6877842, 5.2531624)
 top_level = true
 current = true
 
