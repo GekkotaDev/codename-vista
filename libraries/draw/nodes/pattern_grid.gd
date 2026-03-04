@@ -3,7 +3,7 @@
 ## [PaternGrid]s manage their [PatternVertex] child nodes by responding acocrdingly
 ## to their signals with appropriate behaviors, and to ensure that they're all
 ## ordered accordingly to the correct grid layout. [br]
-## 
+##
 ## @experimental
 class_name PatternGrid
 extends GridContainer
@@ -12,17 +12,6 @@ signal success
 signal failed
 
 @export var model: PatternGridModel
-
-var vertex_models: Array[PatternVertexModel]:
-	get:
-		return model.vertices \
-		.map(func(row: PatternGridRow): return row.vertices) \
-		.reduce(
-			func(models: Array[PatternVertexModel], slice: Array[PatternVertexModel]):
-				var result := models.duplicate()
-				result.append_array(slice)
-				return result
-		)
 
 var vertices: Array[PatternVertex]:
 	get:
@@ -60,14 +49,12 @@ func on_selected(vertex: PatternVertex):
 				ERR_CANT_CONNECT:
 					failed.emit(PatternStates.GridError.LOOP)
 				OK:
+					model.target.timer.stop()
 					model.target = vertex.model
-					vertex_models.all(
-						func(vertex_model: PatternVertexModel):
-							return (
-								vertex_model.status == PatternStates.VertexState.CLOSED or
-								vertex_model.status == PatternStates.VertexState.EMPTY
-							)
-					)
+
+					if model.is_looped():
+						success.emit()
+						vertex.timer.stop()
 				_:
 					assert(
 						false,
@@ -102,7 +89,7 @@ func rerender_vertices():
 			child.queue_free()
 	)
 
-	vertex_models.map(
+	model.vertex_models.map(
 		func(vertex_model: PatternVertexModel):
 			var vertex := PatternVertex.new()
 
