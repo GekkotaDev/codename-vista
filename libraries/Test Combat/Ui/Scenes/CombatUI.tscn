@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://h66mjh7b4joa"]
 
-[ext_resource type="Script" uid="uid://cj0q2e8m48f86" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.gd" id="1_u7k4x"]
+[ext_resource type="Script" uid="uid://cj0q2e8m48f86" path="res://libraries/Test Combat/Scripts/CombatUI.gd" id="1_u7k4x"]
 
 [node name="CombatUI" type="CanvasLayer" unique_id=1692147016]
 script = ExtResource("1_u7k4x")

@@ -141,7 +141,7 @@ func player_poison_attack():
 		start_enemy_turn()
 
 # function to handle DOT ticks
-func _apply_poison_ticks(e_data: EnemyData, p_data: PlayerData):
+func _apply_poison_ticks(e_data: HostileNPCData, p_data: PlayerData):
 	# Keep track of the current timer instance to prevent overlap issues
 	var current_timer = poison_timer
 	

@@ -1,7 +1,7 @@
 extends Resource
-class_name EnemyData
+class_name HostileNPCData
 
-@export var name: String = "Enemy"
+@export var name: String = "Hostile NPC"
 @export var max_health: int = 50
 @export var current_health: int = 50
 @export var attack_damage: int = 10

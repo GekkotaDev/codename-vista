@@ -2,13 +2,15 @@
 
 [ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/Scripts/CombatManager.gd" id="1_nevp2"]
 [ext_resource type="PackedScene" uid="uid://h66mjh7b4joa" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.tscn" id="2_j64lb"]
-[ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/Enemy/Scenes/Enemy.tscn" id="3_cm0eb"]
+[ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/NPCs/Scenes/NPC.tscn" id="3_cm0eb"]
+[ext_resource type="PackedScene" uid="uid://co3q5xmutb01g" path="res://libraries/Test Combat/Ui/Scenes/DialogUI.tscn" id="3_kcj7v"]
 [ext_resource type="PackedScene" uid="uid://c5h81kx5x1oil" path="res://libraries/Test Combat/Environment/Scenes/ElevatorPlatform.tscn" id="4_kcj7v"]
 [ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player/Scenes/Player.tscn" id="4_uicin"]
 [ext_resource type="PackedScene" uid="uid://w2us70ol5e1u" path="res://libraries/Test Combat/Environment/Scenes/Obstacle.tscn" id="5_kcj7v"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_5w8wf"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_wrctl"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_mhw38"]
+[ext_resource type="Resource" uid="uid://bygfp2vocnf6x" path="res://libraries/Test Combat/Resources/Data/HomelessDialog.tres" id="9_5w8wf"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="9_j64lb"]
 [ext_resource type="PackedScene" uid="uid://c6wvh8d4uw2oy" path="res://libraries/Test Combat/Environment/Scenes/MovingPlatform.tscn" id="10_cm0eb"]
 
@@ -26,16 +28,16 @@ albedo_color = Color(0, 0.8235294, 0.6392157, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7dt1"]
 material = SubResource("StandardMaterial3D_h7ncd")
-size = Vector3(20, 0, 10)
+size = Vector3(50, 0, 30)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_geawr"]
 size = Vector3(100, 0, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_cm0eb"]
-size = Vector3(20, 10, 0.265)
+size = Vector3(50, 10, 0.265)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uicin"]
-size = Vector3(20, 10, 0.265)
+size = Vector3(50, 10, 0.265)
 
 [sub_resource type="Resource" id="Resource_ixwe8"]
 script = ExtResource("8_mhw38")
@@ -58,6 +60,8 @@ script = ExtResource("1_nevp2")
 
 [node name="CombatUI" parent="." unique_id=1692147016 instance=ExtResource("2_j64lb")]
 
+[node name="DialogUI" parent="." unique_id=1467228426 instance=ExtResource("3_kcj7v")]
+
 [node name="Environment" type="Node3D" parent="." unique_id=1283727443]
 
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=1984898943]
@@ -69,7 +73,7 @@ mesh = SubResource("BoxMesh_q7dt1")
 shape = SubResource("BoxShape3D_geawr")
 
 [node name="Boundary Wall 1" type="StaticBody3D" parent="Environment" unique_id=1910703182]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -4.859)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -15.13)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Boundary Wall 1" unique_id=819159484]
 mesh = SubResource("BoxMesh_cm0eb")
@@ -83,14 +87,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3590517, 1.3922749, 0)
 [node name="ElevatorPlatform" parent="Environment" unique_id=121560142 instance=ExtResource("4_kcj7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.358, 0.25, -2.94)
 
-[node name="Enemy" parent="." unique_id=702345917 instance=ExtResource("3_cm0eb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3582516, 0.5, 0)
-
 [node name="Player" parent="." unique_id=127769610 instance=ExtResource("4_uicin")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8966627, 0.5, 0)
 
 [node name="Obstacle" parent="." unique_id=876568908 instance=ExtResource("5_kcj7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.345, 0.5, -0.19)
+
+[node name="NPC" parent="." unique_id=702345917 instance=ExtResource("3_cm0eb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.424692, 0.5, 0)
+dialog_resource = ExtResource("9_5w8wf")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1909120161]
 physics_interpolation_mode = 1
