@@ -24,12 +24,15 @@ offset_bottom = 1.0
 theme_override_font_sizes/font_size = 48
 
 [node name="NPCText" type="Label" parent="NPCDialogBox" unique_id=2006767592]
+custom_minimum_size = Vector2(900, 300)
+layout_direction = 2
 layout_mode = 0
 offset_left = 31.0
 offset_top = 17.0
 offset_right = 931.0
 offset_bottom = 317.0
 theme_override_font_sizes/font_size = 48
+autowrap_mode = 3
 
 [node name="PlayerDialogBox" type="Panel" parent="." unique_id=1724455364]
 offset_top = 745.0

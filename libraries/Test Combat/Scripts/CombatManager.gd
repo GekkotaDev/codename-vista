@@ -14,6 +14,10 @@ var can_enemy_act: bool = false
 # Timer for Poison
 var poison_timer: SceneTreeTimer = null
 
+# --- NEW UPDATED LOGIC (Signal for NPCs) ---
+# This signal will help NPCs know combat is officially over
+signal combat_finished
+
 func start_combat(player, enemy):
 	if is_in_combat: return
 	is_in_combat = true
@@ -47,6 +51,10 @@ func start_combat(player, enemy):
 		start_enemy_turn()
 
 func end_combat():
+	# --- NEW UPDATED LOGIC (Signal Emission) ---
+	# We emit this before cleaning up so nodes can react
+	combat_finished.emit()
+	
 	if current_ui:
 		current_ui.queue_free()
 		current_ui = null
@@ -61,6 +69,14 @@ func end_combat():
 	print("Combat Ended")
 
 func start_player_turn():
+	# --- NEW UPDATED LOGIC (Safety Check) ---
+	# If the enemy died during the turn transition (like from poison), stop here.
+	if not is_instance_valid(enemy_node) or HealthManager.get_hp(enemy_node.entity_name) <= 0:
+		# --- NEW AGGRESSIVE CHECK ---
+		if is_instance_valid(enemy_node) and HealthManager.get_hp(enemy_node.entity_name) <= 0:
+			_force_enemy_death()
+		return
+
 	print("--- Player's Turn ---")
 	can_player_act = true
 	can_enemy_act = false
@@ -69,6 +85,13 @@ func start_player_turn():
 		current_ui.show_action_buttons()
 
 func start_enemy_turn():
+	# --- NEW UPDATED LOGIC (Safety Check) ---
+	if not is_instance_valid(enemy_node) or HealthManager.get_hp(enemy_node.entity_name) <= 0:
+		# --- NEW AGGRESSIVE CHECK ---
+		if is_instance_valid(enemy_node):
+			_force_enemy_death()
+		return
+
 	print("--- Enemy's Turn ---")
 	can_player_act = false
 	can_enemy_act = true
@@ -76,7 +99,10 @@ func start_enemy_turn():
 		current_ui.label.text = "ENEMY TURN\nPreparing to strike..."
 	
 	await get_tree().create_timer(1.5).timeout
-	enemy_attack()
+	
+	# Final check before enemy attacks
+	if is_in_combat:
+		enemy_attack()
 
 # DAMAGE FUNCTIONS
 func player_basic_attack():
@@ -107,8 +133,12 @@ func player_basic_attack():
 	
 	# Check for death
 	if HealthManager.get_hp(e_name) <= 0:
-		if enemy_node.has_method("die"):
-			enemy_node.die()
+		# --- NEW UPDATED LOGIC (Force Cleanup) ---
+		# --- ORIGINAL CODE (Turned into comments) ---
+		# if is_instance_valid(enemy_node) and enemy_node.has_method("die"):
+		# 	enemy_node.die()
+		
+		_force_enemy_death()
 		end_combat()
 	else:
 		start_enemy_turn()
@@ -156,8 +186,12 @@ func player_poison_attack():
 	
 	# Check if initial damage killed them
 	if HealthManager.get_hp(e_name) <= 0:
-		if enemy_node.has_method("die"):
-			enemy_node.die()
+		# --- NEW UPDATED LOGIC (Force Cleanup) ---
+		# --- ORIGINAL CODE (Turned into comments) ---
+		# if is_instance_valid(enemy_node) and enemy_node.has_method("die"):
+		# 	enemy_node.die()
+
+		_force_enemy_death()
 		end_combat()
 	else:
 		start_enemy_turn()
@@ -181,8 +215,12 @@ func _apply_poison_ticks(e_data: Resource, p_data: PlayerData, e_name: String):
 		
 		# Check for death after tick
 		if HealthManager.get_hp(e_name) <= 0:
-			if enemy_node and enemy_node.has_method("die"):
-				enemy_node.die()
+			# --- NEW UPDATED LOGIC (Immediate Resolution) ---
+			# --- ORIGINAL CODE (Turned into comments) ---
+			# if is_instance_valid(enemy_node) and enemy_node.has_method("die"):
+			# 	enemy_node.die()
+			
+			_force_enemy_death()
 			end_combat()
 			return
 
@@ -193,18 +231,16 @@ func _apply_poison_ticks(e_data: Resource, p_data: PlayerData, e_name: String):
 		e_data.set("current_poison_damage", 0)
 
 func enemy_attack():
+	# --- NEW UPDATED LOGIC (Death Check before Attack) ---
+	if not is_in_combat or not is_instance_valid(enemy_node):
+		return
+
 	if not can_enemy_act: return
 	
 	print(">>> Enemy Action Started (Instant)")
 	
 	# Get damage from Enemy Resource
 	var e_data = enemy_node.data
-	
-	# --- ORIGINAL CODE (Turned into comments) ---
-	# var dmg = 0
-	# if e_data.has_method("get"):
-	# 	dmg = e_data.get("attack_damage")
-	# HealthManager.update_hp("Player", -dmg)
 	
 	# --- NEW UPDATED LOGIC (Safe Get with Null-Check) ---
 	var dmg = 0
@@ -226,3 +262,16 @@ func enemy_attack():
 		print("GAME OVER")
 	else:
 		start_player_turn()
+
+# --- NEW NUCLEAR CLEANUP FUNCTION ---
+func _force_enemy_death():
+	if is_instance_valid(enemy_node):
+		print("DEBUG: CombatManager forcing death call on ", enemy_node.name)
+		if enemy_node.has_method("die"):
+			enemy_node.die()
+		else:
+			# If the script swap somehow broke the die() method, we kill it manually
+			print("DEBUG WARNING: NPC missing die() method. Forcing queue_free.")
+			enemy_node.queue_free()
+	else:
+		print("DEBUG ERROR: enemy_node was already invalid, but still exists in scene?")   
