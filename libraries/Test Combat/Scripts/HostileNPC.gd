@@ -1,11 +1,18 @@
 # No class_name needed here since it's loaded dynamically
 extends CharacterBody3D
 
-# Will be passed from the NPC script
-var data: Resource 
+@export var is_hostile: bool = true
+@export var dialog_resource: HomelessDialogData
+@export var data: Resource 
+@export var entity_name: String = "" 
 
 func _ready():
-	# Register for combat
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# # Register for combat
+	# if data:
+	# 	HealthManager.register_entity(data)
+
+	# --- NEW CODE ---
 	if data:
 		HealthManager.register_entity(data)
 	
@@ -22,5 +29,27 @@ func _on_detection_range_body_entered(body):
 		print("Object detected was not the player")
 
 func die():
-	print(data.name, " defeated!")
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# print(data.name, " defeated!")
+
+	# --- NEW UPDATED LOGIC (Safe Get & Cleanup) ---
+	var d_name = "Unknown NPC"
+	if data and data.has_method("get"):
+		var val = data.get("name")
+		if val != null:
+			d_name = val
+	
+	print(d_name, " defeated!")
+
+	# --- LEAK PREVENTION: UNREGISTER FROM MANAGERS ---
+	if data and HealthManager.has_method("unregister_entity"):
+		HealthManager.unregister_entity(data)
+	
+	if dialog_resource and DialogManager.has_method("clear_dialog_ref"):
+		DialogManager.clear_dialog_ref(dialog_resource)
+
+	# Explicitly nullify to drop Reference Count to 0
+	data = null
+	dialog_resource = null
+	
 	queue_free()

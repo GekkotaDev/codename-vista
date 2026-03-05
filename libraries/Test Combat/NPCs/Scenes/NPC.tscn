@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://c523essl0o4p8"]
 
 [ext_resource type="Script" uid="uid://dgae5hechgg7p" path="res://libraries/Test Combat/Scripts/NPC.gd" id="1_jb7e5"]
-[ext_resource type="Resource" uid="uid://g7mj81vshcra" path="res://libraries/Test Combat/Resources/Data/HostileNPCData.tres" id="2_4q842"]
-[ext_resource type="Script" uid="uid://qjfqm37i6q2v" path="res://libraries/Test Combat/Scripts/HomelessDialogData.gd" id="2_4xd3q"]
+[ext_resource type="Resource" uid="uid://g7mj81vshcra" path="res://libraries/Test Combat/Resources/Data/NPCData.tres" id="2_4q842"]
+[ext_resource type="Resource" uid="uid://bygfp2vocnf6x" path="res://libraries/Test Combat/Resources/Data/HomelessDialog.tres" id="2_4xd3q"]
 [ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_aoyxa"]
-[ext_resource type="Script" uid="uid://5wr0ryqops67" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="2_f2fox"]
-
-[sub_resource type="Resource" id="Resource_bggwi"]
-script = ExtResource("2_4xd3q")
-metadata/_custom_type_script = "uid://qjfqm37i6q2v"
 
 [sub_resource type="BoxMesh" id="BoxMesh_8yi8j"]
 
@@ -22,7 +17,7 @@ viewport_path = NodePath("HealthBar")
 
 [node name="NPC" type="CharacterBody3D" unique_id=702345917]
 script = ExtResource("1_jb7e5")
-dialog_resource = SubResource("Resource_bggwi")
+dialog_resource = ExtResource("2_4xd3q")
 data = ExtResource("2_4q842")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1061484825]

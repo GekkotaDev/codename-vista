@@ -35,7 +35,6 @@ func show_action_buttons():
 	poison_button.show()
 
 func _on_attack_pressed():
-
 	_hide_buttons()
 	CombatManager.player_basic_attack()
 

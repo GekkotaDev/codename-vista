@@ -1,6 +1,5 @@
 extends Node
 
-
 var current_ui = null
 
 func start_dialog(dialog_resource: HomelessDialogData, npc_node: Node):
@@ -19,22 +18,20 @@ func start_dialog(dialog_resource: HomelessDialogData, npc_node: Node):
 			get_tree().root.add_child(current_ui)
 			# IMPORTANT: Set the UI to process even when paused via code
 			current_ui.process_mode = Node.PROCESS_MODE_ALWAYS
-			get_tree().root.add_child(current_ui)
+			# get_tree().root.add_child(current_ui) # Removed duplicate call
 		else:
 			print("DialogManager Error: Could not load DialogUI.tscn!")
 			return
 
 	# Get the name from the NPC node. 
-	# This assumes your NPC script has a variable: var entity_name = ""
 	var n_name = "Unknown"
 	if "entity_name" in npc_node:
 		n_name = npc_node.entity_name
 	elif "data" in npc_node and "entity_name" in npc_node.data:
-		# If the name is inside a Resource called 'data'
 		n_name = npc_node.data.entity_name
 
 	# Pass both the resource AND the name to the UI
 	current_ui.setup_dialog(dialog_resource, n_name)
 	
-	# Optional: Pauses everything but make sure that in the inspector process of the root node of DialogUI, the mode is set to Always
+	# Optional: Pauses everything
 	get_tree().paused = true

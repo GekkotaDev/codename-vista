@@ -4,7 +4,14 @@ extends CharacterBody3D
 @onready var interaction_volume = $InteractionVolume # The new Area3D for detecing scenes Player can interact with
 
 func _ready():
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# if data:
+	# 	HealthManager.register_entity(data)
+
+	# --- NEW UPDATED LOGIC ---
 	if data:
+		# Player duplication to ensure they have their own health pool
+		data = data.duplicate(true)
 		HealthManager.register_entity(data)
 
 func _input(event):

@@ -67,7 +67,6 @@ func advance_dialog():
 		step = 2
 		
 	elif step == 3:
-		# --- Logic for Sequential Replies ---
 		npc_sequence_index += 1
 		if npc_sequence_index < npc_reply_sequence.size():
 			npc_text_label.text = npc_reply_sequence[npc_sequence_index]
@@ -83,7 +82,6 @@ func display_options(options_list: Array):
 	for opt in options_list:
 		var btn = option_button_prefab.instantiate()
 		
-		# CHANGE: 'opt' is now a Resource object, not a Dictionary
 		if btn is Button:
 			btn.text = opt.text
 		else:
@@ -93,13 +91,11 @@ func display_options(options_list: Array):
 		btn.mouse_filter = Control.MOUSE_FILTER_STOP
 		options_container.add_child(btn)
 		
-		# Connect the signal passing the Resource object
 		btn.pressed.connect(_on_option_selected.bind(opt))
 	
 	options_container.show()
 
 func _on_option_selected(option_obj: DialogOption):
-	# CHANGE: Accessing properties via dot notation (Resource)
 	npc_reply_sequence = option_obj.npc_reply
 	npc_sequence_index = 0
 	

@@ -73,6 +73,7 @@ PhantomCameraManager="*uid://duq6jhf6unyis"
 HealthManager="*uid://c43tqh3u7geh1"
 DialogManager="*uid://brggpjuvcbu6y"
 CombatManager="*uid://0d852gmtbwq0"
+DuplicateManager="*uid://cn4d5s6h12stv"
 
 [debug_draw_3d]
 

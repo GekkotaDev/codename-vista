@@ -3,21 +3,11 @@
 [ext_resource type="Script" uid="uid://5wr0ryqops67" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="1_8pfk0"]
 [ext_resource type="Script" uid="uid://qjfqm37i6q2v" path="res://libraries/Test Combat/Scripts/HomelessDialogData.gd" id="1_vktxm"]
 
-[sub_resource type="Resource" id="Resource_8teia"]
-script = ExtResource("1_8pfk0")
-text = "What's your name ?"
-npc_reply = Array[String](["Well, my firstname is Nun", "lastname Ya Bizness !"])
-metadata/_custom_type_script = "uid://5wr0ryqops67"
-
 [sub_resource type="Resource" id="Resource_8pfk0"]
 script = ExtResource("1_8pfk0")
-text = "W"
-metadata/_custom_type_script = "uid://5wr0ryqops67"
-
-[sub_resource type="Resource" id="Resource_qvhc1"]
-script = ExtResource("1_8pfk0")
+text = "How are you ?"
 metadata/_custom_type_script = "uid://5wr0ryqops67"
 
 [resource]
 script = ExtResource("1_vktxm")
-player_options = Array[ExtResource("1_8pfk0")]([SubResource("Resource_8teia"), SubResource("Resource_8pfk0"), SubResource("Resource_qvhc1")])
+player_options = Array[ExtResource("1_8pfk0")]([SubResource("Resource_8pfk0")])

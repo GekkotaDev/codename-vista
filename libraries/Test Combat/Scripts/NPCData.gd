@@ -1,5 +1,5 @@
 extends Resource
-class_name HostileNPCData
+class_name NPCData
 
 @export var name: String = "Hostile NPC"
 @export var max_health: int = 50

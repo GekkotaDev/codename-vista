@@ -86,10 +86,21 @@ func player_basic_attack():
 	
 	# Get damage from Resource
 	var p_data = HealthManager.get_entity_data("Player")
-	var e_name = enemy_node.data.name
 	
+	# We use the unique entity_name property from the node to find the specific resource
+	var e_name = "Unknown"
+	if "entity_name" in enemy_node:
+		e_name = enemy_node.entity_name
+
+	# --- NEW UPDATED LOGIC (Safe Get) ---
+	var damage = 0
+	if p_data and p_data.has_method("get"):
+		var val = p_data.get("basic_attack_damage")
+		if val != null:
+			damage = val
+
 	# 1. INSTANT DAMAGE (Triggers signal automatically)
-	HealthManager.update_hp(e_name, -p_data.basic_attack_damage)
+	HealthManager.update_hp(e_name, -damage)
 	
 	# LOCK TURN
 	can_player_act = false
@@ -106,29 +117,40 @@ func player_basic_attack():
 func player_poison_attack():
 	if not can_player_act: return
 	
-	var p_data = HealthManager.get_entity_data("Player") # Added to get player stats
+	var p_data = HealthManager.get_entity_data("Player") 
 	var e_data = enemy_node.data
-	var e_name = e_data.name
+	
+	var e_name = "Unknown"
+	if "entity_name" in enemy_node:
+		e_name = enemy_node.entity_name
 	
 	print(">>> Player used Poison Attack!")
 	
-	# Initial Instant Damage from Player Resource
-	HealthManager.update_hp(e_name, -p_data.poison_attack_initial_damage) 
+	# --- NEW UPDATED LOGIC (Safe Get for Poison) ---
+	var init_dmg = p_data.get("poison_attack_initial_damage") if p_data.get("poison_attack_initial_damage") != null else 0
+	var tick_dmg = p_data.get("poison_damage_per_tick") if p_data.get("poison_damage_per_tick") != null else 0
+	var duration = p_data.get("poison_duration") if p_data.get("poison_duration") != null else 1.0
 	
-	# Handle Poison Stacking and Timer Refresh
-	if e_data.is_poisoned:
+	# Initial Instant Damage
+	HealthManager.update_hp(e_name, -init_dmg) 
+	
+	# Handle Poison Stacking and Timer Refresh (Safe Set/Get)
+	var is_p = e_data.get("is_poisoned") if e_data.get("is_poisoned") != null else false
+	var cur_p_dmg = e_data.get("current_poison_damage") if e_data.get("current_poison_damage") != null else 0
+
+	if is_p:
 		print("Poison Stacked! Timer Refreshed.")
-		e_data.current_poison_damage += p_data.poison_damage_per_tick 
+		e_data.set("current_poison_damage", cur_p_dmg + tick_dmg)
 	else:
 		print("Enemy Poisoned!")
-		e_data.is_poisoned = true
-		e_data.current_poison_damage = p_data.poison_damage_per_tick
+		e_data.set("is_poisoned", true)
+		e_data.set("current_poison_damage", tick_dmg)
 		
 	# Refresh/Start the timer
-	poison_timer = get_tree().create_timer(p_data.poison_duration)
+	poison_timer = get_tree().create_timer(duration)
 	
 	# 3. Apply Damage Over Time
-	_apply_poison_ticks(e_data, p_data) # Passed p_data to check duration/tick rate
+	_apply_poison_ticks(e_data, p_data, e_name) 
 	
 	can_player_act = false
 	
@@ -141,32 +163,34 @@ func player_poison_attack():
 		start_enemy_turn()
 
 # function to handle DOT ticks
-func _apply_poison_ticks(e_data: HostileNPCData, p_data: PlayerData):
+func _apply_poison_ticks(e_data: Resource, p_data: PlayerData, e_name: String):
 	# Keep track of the current timer instance to prevent overlap issues
 	var current_timer = poison_timer
 	
 	while current_timer and current_timer.time_left > 0:
-		await get_tree().create_timer(p_data.poison_tick_rate).timeout
+		var tick_rate = p_data.get("poison_tick_rate") if p_data.get("poison_tick_rate") != null else 1.0
+		await get_tree().create_timer(tick_rate).timeout
 		
 		# If combat ended or timer was replaced, stop this loop
 		if not is_in_combat or current_timer != poison_timer:
 			return
 			
-		print("Poison Tick: ", e_data.current_poison_damage, " damage")
-		HealthManager.update_hp(e_data.name, -e_data.current_poison_damage)
+		var cur_tick_dmg = e_data.get("current_poison_damage") if e_data.get("current_poison_damage") != null else 0
+		print("Poison Tick: ", cur_tick_dmg, " damage on ", e_name)
+		HealthManager.update_hp(e_name, -cur_tick_dmg)
 		
 		# Check for death after tick
-		if HealthManager.get_hp(e_data.name) <= 0:
+		if HealthManager.get_hp(e_name) <= 0:
 			if enemy_node and enemy_node.has_method("die"):
 				enemy_node.die()
 			end_combat()
 			return
 
 	# Poison wore off
-	if e_data.is_poisoned:
+	if e_data.get("is_poisoned"):
 		print("Poison wore off.")
-		e_data.is_poisoned = false
-		e_data.current_poison_damage = 0 
+		e_data.set("is_poisoned", false)
+		e_data.set("current_poison_damage", 0)
 
 func enemy_attack():
 	if not can_enemy_act: return
@@ -176,8 +200,23 @@ func enemy_attack():
 	# Get damage from Enemy Resource
 	var e_data = enemy_node.data
 	
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# var dmg = 0
+	# if e_data.has_method("get"):
+	# 	dmg = e_data.get("attack_damage")
+	# HealthManager.update_hp("Player", -dmg)
+	
+	# --- NEW UPDATED LOGIC (Safe Get with Null-Check) ---
+	var dmg = 0
+	if e_data != null and e_data.has_method("get"):
+		var raw_val = e_data.get("attack_damage")
+		if raw_val != null:
+			dmg = raw_val
+		else:
+			print("CombatManager Error: 'attack_damage' not found on ", enemy_node.name)
+	
 	# INSTANT DAMAGE
-	HealthManager.update_hp("Player", -e_data.attack_damage)
+	HealthManager.update_hp("Player", -dmg)
 	
 	# LOCK TURN
 	can_enemy_act = false
@@ -185,6 +224,5 @@ func enemy_attack():
 	# Check for death
 	if HealthManager.get_hp("Player") <= 0:
 		print("GAME OVER")
-		# Add game over logic here
 	else:
 		start_player_turn()
