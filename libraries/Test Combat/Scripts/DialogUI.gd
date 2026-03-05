@@ -18,6 +18,9 @@ var step: int = 0
 var is_waiting_for_input: bool = false
 var frame_guard: bool = false
 
+# --- NEW LOGIC VARIABLE ---
+var trigger_combat_on_close: bool = false
+
 # --- Sequence Variables ---
 var npc_reply_sequence: Array[String] = []
 var npc_sequence_index: int = 0
@@ -28,7 +31,6 @@ func _ready():
 	pass
 
 # --- UPDATED SETUP_DIALOG ---
-# We now accept player_node as an argument to bypass the group lookup failure
 func setup_dialog(data: Resource, npc_node: Node, player_node: Node = null):
 	if data == null:
 		return
@@ -39,7 +41,6 @@ func setup_dialog(data: Resource, npc_node: Node, player_node: Node = null):
 	current_data = data
 	current_npc_node = npc_node
 	
-	# --- NEW UPDATED LOGIC (Direct Capture with Debug) ---
 	if player_node != null:
 		persistent_player_ref = player_node
 		print("DEBUG: DialogUI persistent_player_ref set to: ", player_node.name)
@@ -58,27 +59,25 @@ func setup_dialog(data: Resource, npc_node: Node, player_node: Node = null):
 		for child in options_container.get_children():
 			child.queue_free()
 	
-	# --- ROBUST CONDITIONAL LOGIC ---
-	var is_aggressive = not ("player_options" in current_data)
+	# --- NEW UPDATED LOGIC (Crazy Dialog Rework) ---
+	# Instead of skipping to combat, we check if it's Crazy data.
+	# If it is, we flag it to trigger combat ONLY when the dialog ends.
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# var is_aggressive = not ("player_options" in current_data)
+	# if is_aggressive:
+	# 	step = 100 
 	
-	if is_aggressive:
-		print("DEBUG: Aggressive Dialog Detected (No player_options found)")
-		if "initiation_dialogs" in current_data and current_data.initiation_dialogs.size() > 0:
-			npc_text_label.text = current_data.initiation_dialogs.pick_random()
-		else:
-			npc_text_label.text = "!!!"
-		step = 100 
+	trigger_combat_on_close = (current_data is CrazyHomelessDialogData)
+	
+	if "initiation_dialogs" in current_data and current_data.initiation_dialogs.size() > 0:
+		npc_text_label.text = current_data.initiation_dialogs.pick_random()
 	else:
-		print("DEBUG: Peaceful Dialog Detected (player_options found)")
-		if "initiation_dialogs" in current_data and current_data.initiation_dialogs.size() > 0:
-			npc_text_label.text = current_data.initiation_dialogs.pick_random()
-		else:
-			npc_text_label.text = "..."
-		step = 0 
+		npc_text_label.text = "..."
+	
+	step = 0 
 	
 	show()
 	if is_inside_tree():
-		# Ensure mouse is visible and not captured by the player camera
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_viewport().set_input_as_handled()
 
@@ -94,34 +93,14 @@ func _process(_delta):
 func advance_dialog():
 	if current_data == null: return
 
-	# CRAZY DIALOG ADVANCE (Combat Trigger)
-	if step == 100:
-		if is_instance_valid(persistent_player_ref) and is_instance_valid(current_npc_node):
-			print("DEBUG: Executing CombatManager.start_combat for ", current_npc_node.name)
-			
-			# --- NEW UPDATED LOGIC (Unpause and Focus Fix) ---
-			# We unpause the tree BEFORE starting combat to ensure the CombatUI
-			# can process the very first click it receives.
-			get_tree().paused = false
-			
-			if is_inside_tree():
-				var focus_owner = get_viewport().gui_get_focus_owner()
-				if focus_owner:
-					focus_owner.release_focus()
-				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	# --- ORIGINAL CODE (Turned into comments) ---
+	# if step == 100:
+	# 	CombatManager.start_combat(persistent_player_ref, current_npc_node)
+	# 	_force_cleanup_dialog()
+	# 	queue_free()
 
-			CombatManager.start_combat(persistent_player_ref, current_npc_node)
-			
-			_force_cleanup_dialog()
-			queue_free() 
-		else:
-			var p_valid = is_instance_valid(persistent_player_ref)
-			var n_valid = is_instance_valid(current_npc_node)
-			print("DEBUG ERROR: Combat failed. PlayerValid: ", p_valid, " NPCValid: ", n_valid)
-			close_dialog()
-
-	# STANDARD DIALOG ADVANCE (Peaceful / Universal)
-	elif step == 0:
+	# STANDARD DIALOG ADVANCE (Now handles Crazy data naturally)
+	if step == 0:
 		if "follow_up_initial" in current_data and current_data.follow_up_initial != "":
 			npc_text_label.text = current_data.follow_up_initial
 			step = 1
@@ -130,7 +109,7 @@ func advance_dialog():
 			advance_dialog()
 		
 	elif step == 1:
-		if "player_options" in current_data:
+		if "player_options" in current_data and current_data.player_options.size() > 0:
 			is_waiting_for_input = false 
 			display_options(current_data.player_options)
 			step = 2
@@ -206,6 +185,20 @@ func _force_cleanup_dialog():
 	persistent_player_ref = null
 
 func close_dialog():
+	# --- NEW UPDATED LOGIC (Delayed Combat Trigger) ---
+	# If this was Crazy data, we trigger combat ONLY now that the UI is closing.
+	if trigger_combat_on_close:
+		print("DEBUG: Dialog finished. Triggering combat for Crazy NPC.")
+		get_tree().paused = false
+		if is_instance_valid(persistent_player_ref) and is_instance_valid(current_npc_node):
+			# --- NEW UPDATED LOGIC (Block Interaction Early) ---
+			# We force the NPC to enter its combat state before the manager starts
+			# to prevent the "double interact" bug during the transition frames.
+			if "is_in_combat" in current_npc_node:
+				current_npc_node.is_in_combat = true
+			
+			CombatManager.start_combat(persistent_player_ref, current_npc_node)
+	
 	if is_inside_tree():
 		var focus_owner = get_viewport().gui_get_focus_owner()
 		if focus_owner:
