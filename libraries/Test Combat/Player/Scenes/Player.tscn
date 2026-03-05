@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdb6yvu2std04" path="res://libraries/Test Combat/Scripts/Player.gd" id="1_27vqm"]
 [ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_rym23"]
+[ext_resource type="Resource" uid="uid://ycpwxufjdoro" path="res://libraries/Test Combat/Resources/Data/PlayerData.tres" id="2_v3k30"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hgpx6"]
 size = Vector3(0.61, 1, 0.63)
@@ -10,10 +11,12 @@ size = Vector3(0.61, 1, 0.63)
 size = Vector3(0.61, 1, 0.63)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_v3k30"]
-viewport_path = NodePath("HPSubViewport")
+viewport_path = NodePath("HealthBar")
 
 [node name="Player" type="CharacterBody3D" unique_id=127769610]
 script = ExtResource("1_27vqm")
+data = ExtResource("2_v3k30")
+metadata/entity_name = "Player"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=869181374]
 mesh = SubResource("BoxMesh_hgpx6")
@@ -25,4 +28,9 @@ shape = SubResource("BoxShape3D_j2jnw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68877697, 0)
 texture = SubResource("ViewportTexture_v3k30")
 
-[node name="HPSubViewport" parent="." unique_id=1238646013 instance=ExtResource("2_rym23")]
+[node name="HealthBar" parent="." unique_id=1238646013 instance=ExtResource("2_rym23")]
+
+[node name="ProgressBar" parent="HealthBar" index="0" unique_id=822652531]
+entity_name = "Player"
+
+[editable path="HealthBar"]

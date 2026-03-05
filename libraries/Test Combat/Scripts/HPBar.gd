@@ -1,18 +1,26 @@
 extends ProgressBar
 
-@export var entity_name: String = "Player" # Set this to "Enemy" in the inspector for enemies
+@export var entity_name: String = "Player" 
 
 func _ready():
-	# Initial set
-	max_value = HealthManager.max_health_data.get(entity_name, 100)
-	value = HealthManager.get_hp(entity_name)
+	# Wait one frame to ensure Player/Enemy have registered their HP first
+	await get_tree().process_frame
 	
-	# Listen for any health changes globally
+	# Fetch from resource stored in HealthManager
+	var data = HealthManager.get_entity_data(entity_name)
+	
+	if data:
+		max_value = data.max_health
+		value = data.current_health
+		print("HPBar Debug: ", entity_name, " initialized with ", value, "/", max_value)
+	
+	# Connect to the global signal
 	HealthManager.hp_changed.connect(_on_hp_changed)
 
-func _on_hp_changed(target_name, new_hp):
-	if target_name == entity_name:
-		
-		# Animate the bar shrinking
-		var tween = create_tween()
-		tween.tween_property(self, "value", new_hp, 0.3).set_trans(Tween.TRANS_SINE)
+func _on_hp_changed(name_of_entity: String, new_hp: int):
+	if name_of_entity == entity_name:
+		# Always check resource for max value
+		var data = HealthManager.get_entity_data(entity_name)
+		if data:
+			max_value = data.max_health
+		value = new_hp
