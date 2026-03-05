@@ -24,6 +24,11 @@ func _ready() -> void:
 	rerender_vertices()
 
 
+func _input() -> void:
+	if Input.is_action_just_released("draw_spell"):
+		failed.emit(PatternStates.GridError.GENERAL)
+
+
 func when_target_available(callback: Callable, fallback: Callable = func(..._0): pass):
 	return func(...parameters):
 		if model.target:
@@ -34,6 +39,11 @@ func when_target_available(callback: Callable, fallback: Callable = func(..._0):
 func on_selected(vertex: PatternVertex):
 	vertex.selected.connect(
 		func():
+			vertex.timeout.connect(
+				func():
+					failed.emit(PatternStates.GridError.GENERAL),
+				CONNECT_ONE_SHOT,
+			)
 			vertex.timer.start()
 
 			if model.target == null:

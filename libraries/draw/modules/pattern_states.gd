@@ -20,4 +20,5 @@ enum VertexResponse {
 enum GridError {
 	LOOP,
 	UNKNOWN,
+	GENERAL,
 }
