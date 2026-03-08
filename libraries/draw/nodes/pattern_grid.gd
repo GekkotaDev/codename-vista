@@ -24,7 +24,7 @@ func _ready() -> void:
 	rerender_vertices()
 
 
-func _input() -> void:
+func _input(_delta) -> void:
 	if Input.is_action_just_released("draw_spell"):
 		failed.emit(PatternStates.GridError.GENERAL)
 
