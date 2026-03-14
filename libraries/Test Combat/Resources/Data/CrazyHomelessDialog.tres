@@ -1,6 +1,0 @@
-[gd_resource type="Resource" script_class="CrazyHomelessDialogData" format=3 uid="uid://0t6hn05vmeue"]
-
-[ext_resource type="Script" uid="uid://dx2kehj2qyuck" path="res://libraries/Test Combat/Scripts/CrazyHomelessDialogData.gd" id="1_wgiuk"]
-
-[resource]
-script = ExtResource("1_wgiuk")
