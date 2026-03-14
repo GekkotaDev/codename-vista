@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c6wvh8d4uw2oy"]
+
+[ext_resource type="Script" uid="uid://bbw8ffyy1h5eg" path="res://libraries/Test Combat/Scripts/XAxisMovingPlatform.gd" id="1_m4lhc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t7klf"]
+size = Vector3(2, 0.5, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m4lhc"]
+size = Vector3(2, 0.5, 1.03)
+
+[node name="MovingPlatform" type="AnimatableBody3D" unique_id=1343964504]
+script = ExtResource("1_m4lhc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=987874485]
+mesh = SubResource("BoxMesh_t7klf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1378103555]
+shape = SubResource("BoxShape3D_m4lhc")

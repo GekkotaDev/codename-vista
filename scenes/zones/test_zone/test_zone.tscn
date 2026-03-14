@@ -16,7 +16,7 @@ size = Vector3(32, 1, 8)
 [node name="ShaderController" type="Node" parent="." unique_id=456259026 node_paths=PackedStringArray("shaders")]
 script = ExtResource("1_gf6xk")
 shaders = {
-"blur": NodePath("")
+"blur": null
 }
 metadata/_custom_type_script = "uid://crevuamtq0x1e"
 
