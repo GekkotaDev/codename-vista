@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="HomelessDialogData" format=3 uid="uid://bygfp2vocnf6x"]
-
-[ext_resource type="Script" uid="uid://5wr0ryqops67" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="1_8pfk0"]
-[ext_resource type="Script" uid="uid://qjfqm37i6q2v" path="res://libraries/Test Combat/Scripts/HomelessDialogData.gd" id="1_vktxm"]
-
-[resource]
-resource_local_to_scene = true
-script = ExtResource("1_vktxm")
