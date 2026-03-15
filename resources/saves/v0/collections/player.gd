@@ -1,0 +1,2 @@
+class_name PersistedV0Player
+extends PersistedResource

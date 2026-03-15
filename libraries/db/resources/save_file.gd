@@ -3,8 +3,7 @@
 class_name SaveFile
 extends Resource
 
-##
-@export var collections: Dictionary[String, PersistedResource]
+@export var id: String
 
 @export_group("Version")
 ##
