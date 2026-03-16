@@ -1,0 +1,2 @@
+class_name PersistedV0UnitHealth
+extends PersistedResource

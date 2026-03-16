@@ -1,2 +1,0 @@
-class_name PersistedV0Stats
-extends PersistedResource
