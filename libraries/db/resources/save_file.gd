@@ -30,23 +30,10 @@ const _SAVE_FLAGS = (
 @abstract func downgrade() -> SaveFile
 
 
-static func load(path: String) -> SaveFile:
-	var file := ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE_DEEP)
-	return file
+var _directory = "user://saves/v{version}/files".format({ version = version })
 
 
-func save():
-	var target := "user://saves/v{version}/{id}.res".format(
-		{
-			version = version,
-			id = id,
-		},
-	)
-
-	ResourceSaver.save(self, target, _SAVE_FLAGS)
-
-
-func serialize_checksum(resource: Resource) -> PackedByteArray:
+static func serialize_checksum(resource: Resource) -> PackedByteArray:
 	const _USAGE_FLAGS = (
 		PROPERTY_USAGE_STORAGE +
 		PROPERTY_USAGE_EDITOR +
@@ -56,5 +43,21 @@ func serialize_checksum(resource: Resource) -> PackedByteArray:
 	return JSON.stringify(
 		resource.get_property_list() \
 		.filter(func(property): return property["usage"] == _USAGE_FLAGS) \
-		.map(func(property): return self[property["name"]]),
+		.map(func(property): return resource[property["name"]]),
 	).sha256_buffer()
+
+
+func invalidate() -> SaveFile:
+	version = -1
+	return self
+
+
+func save():
+	var target := "{directory}/{id}.res".format(
+		{
+			directory = _directory,
+			id = id,
+		},
+	)
+
+	ResourceSaver.save(self, target, _SAVE_FLAGS)
