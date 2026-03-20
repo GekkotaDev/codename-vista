@@ -1,5 +1,5 @@
 @tool
-class_name SettingAudioMute
+class_name SettingAudioChannels
 extends GGSSetting
 ## Sets the mute state of an audio bus.
 

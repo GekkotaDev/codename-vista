@@ -92,11 +92,11 @@
       "source": "zip",
       "subfolder": "milestone-1.1.1.beta/addons/milestone"
     },
-    "net.yarvis.pixel_pen": {
-      "url": "https://github.com/pixelpen-dev/pixelpen/releases/download/v1.1.4/addons_v1.1.4.zip",
-      "source": "zip",
-      "subfolder": "pixel-pen/addons/net.yarvis.pixel_pen"
-    },
+    // "net.yarvis.pixel_pen": {
+    //   "url": "https://github.com/pixelpen-dev/pixelpen/releases/download/v1.1.4/addons_v1.1.4.zip",
+    //   "source": "zip",
+    //   "subfolder": "pixel-pen/addons/net.yarvis.pixel_pen"
+    // },
     "netfox": {
       "url": "https://github.com/foxssake/netfox/releases/download/v1.35.3/netfox.extras.v1.35.3.zip",
       "source": "zip",

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescriptionModel" format=3 uid="uid://cdbjrs52ahepo"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings_menu/resources/setting_description.gd" id="1_6akmi"]
+
+[resource]
+script = ExtResource("1_6akmi")
+description = "Loudness of background sounds (ambience)."
+metadata/_custom_type_script = "uid://d07euhpatotko"

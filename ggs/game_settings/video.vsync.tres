@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingVSync" format=3 uid="uid://46ne52avu2pf"]
+
+[ext_resource type="Script" uid="uid://ilpk4a4xr7v0" path="res://ggs/scripts/video/setting_vsync.gd" id="1_bjogy"]
+
+[resource]
+resource_name = "video.vsync"
+script = ExtResource("1_bjogy")
+key = "video.vsync"
+section = "display"
+default = 1
+metadata/_custom_type_script = "uid://ilpk4a4xr7v0"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="SettingDisplayScale" format=3 uid="uid://bn71o513kq5ov"]
+
+[ext_resource type="Script" uid="uid://p5dvt3a5jrcl" path="res://ggs/scripts/video/setting_display_scale.gd" id="1_lwbd0"]
+
+[resource]
+resource_name = "video.window_scale"
+script = ExtResource("1_lwbd0")
+scales = Array[float]([0.0, 1.0, 1.25, 1.5, 1.75, 2.0, 0.5])
+key = "video.window_scale"
+section = "display"
+default = 0
+metadata/_custom_type_script = "uid://p5dvt3a5jrcl"
