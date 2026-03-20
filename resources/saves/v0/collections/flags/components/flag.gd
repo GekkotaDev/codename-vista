@@ -1,14 +1,14 @@
 extends PersistedV0
 
-const Class := preload("./event.gd")
+const Class := preload("./flag.gd")
 
-signal on_update
+signal updated
 
-@export var name := ""
+var name := ""
 
 
 func _void():
-	on_update.get_name()
+	updated.get_name()
 
 
 class Flag extends Class:
@@ -17,7 +17,7 @@ class Flag extends Class:
 			return activated
 		set(value):
 			activated = value
-			on_update.emit()
+			updated.emit()
 
 
 class Text extends Class:
@@ -26,7 +26,7 @@ class Text extends Class:
 			return text
 		set(value):
 			text = value
-			on_update.emit()
+			updated.emit()
 
 
 class Integer extends Class:
@@ -35,7 +35,7 @@ class Integer extends Class:
 			return integer
 		set(value):
 			integer = value
-			on_update.emit()
+			updated.emit()
 
 
 class Float extends Class:
@@ -44,4 +44,4 @@ class Float extends Class:
 			return number
 		set(value):
 			number = value
-			on_update.emit()
+			updated.emit()

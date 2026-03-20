@@ -9,7 +9,7 @@ const _USAGE_FLAGS = (
 )
 
 ##
-@export var id: String
+@export var id: String = ""
 
 var checksum: PackedByteArray:
 	get:

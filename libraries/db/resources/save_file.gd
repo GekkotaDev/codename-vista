@@ -30,7 +30,13 @@ const _SAVE_FLAGS = (
 @abstract func downgrade() -> SaveFile
 
 
-var _directory = "user://saves/v{version}/files".format({ version = version })
+var _directory := "user://saves/v{version}/files".format({ version = version })
+var _target := "{directory}/{id}.res".format(
+	{
+		directory = _directory,
+		id = id,
+	},
+)
 
 
 static func serialize_checksum(resource: Resource) -> PackedByteArray:
@@ -52,12 +58,10 @@ func invalidate() -> SaveFile:
 	return self
 
 
-func save():
-	var target := "{directory}/{id}.res".format(
-		{
-			directory = _directory,
-			id = id,
-		},
-	)
+func persist(scene_tree: SceneTree, repository: SaveRepository) -> SaveFile:
+	scene_tree.call_group(SavePersistenceClient.GROUP_NAME, "save", self)
 
-	ResourceSaver.save(self, target, _SAVE_FLAGS)
+	ResourceSaver.save(self, _target, _SAVE_FLAGS)
+	repository.push_file(self)
+
+	return self

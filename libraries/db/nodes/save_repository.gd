@@ -47,7 +47,7 @@ class ErrorFile extends SaveFile:
 		return self
 
 
-	func downgrade() -> SaveFile:
+	func downgrade() -> ErrorFile:
 		return self
 
 
@@ -61,6 +61,9 @@ func validate_file(id: String) -> Error:
 		return ERR_FILE_NOT_FOUND
 
 	if file.checksum() != checksums[file.id]:
+		return ERR_FILE_CORRUPT
+
+	if file.version < 0:
 		return ERR_FILE_CORRUPT
 
 	return OK
@@ -82,6 +85,5 @@ func query_file(id: String) -> SaveFile:
 
 
 func push_file(file: SaveFile):
-	file.save()
 	checksums[file.id] = file.checksum()
 	saves[file.id] = file
