@@ -11,24 +11,8 @@ const _SAVE_FLAGS = (
 var checksums: Dictionary[String, PackedByteArray] = { }
 var saves: Dictionary[String, SaveFile] = { }
 
-var checksums_path := "user://saves/v{version}/hash.bin".format({ version = version })
+var hash_path := "user://saves/v{version}/hash.bin".format({ version = version })
 var files_path := "user://saves/v{version}/files".format({ version = version })
-
-
-func _ready() -> void:
-	checksums = bytes_to_var(FileAccess.get_file_as_bytes(checksums_path))
-
-	for path in DirAccess.get_files_at(files_path):
-		var file: SaveFile = ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE_DEEP)
-		saves[file.id] = file
-
-
-func _notification(what: int) -> void:
-	match what:
-		NOTIFICATION_WM_GO_BACK_REQUEST:
-			FileAccess.open(checksums_path, FileAccess.WRITE).store_buffer(var_to_bytes(checksums))
-		NOTIFICATION_WM_CLOSE_REQUEST:
-			FileAccess.open(checksums_path, FileAccess.WRITE).store_buffer(var_to_bytes(checksums))
 
 
 class ErrorFile extends SaveFile:
@@ -51,6 +35,26 @@ class ErrorFile extends SaveFile:
 		return self
 
 
+func _ready() -> void:
+	checksums = bytes_to_var(FileAccess.get_file_as_bytes(hash_path))
+
+	for path in DirAccess.get_files_at(files_path):
+		var file: SaveFile = ResourceLoader.load(path, "", ResourceLoader.CACHE_MODE_IGNORE_DEEP)
+		saves[file.id] = file
+
+	for key in saves:
+		var file := saves[key]
+		file.saved.connect(func(): push_file(file))
+
+
+func _notification(what: int) -> void:
+	match what:
+		NOTIFICATION_WM_GO_BACK_REQUEST:
+			FileAccess.open(hash_path, FileAccess.WRITE).store_buffer(var_to_bytes(checksums))
+		NOTIFICATION_WM_CLOSE_REQUEST:
+			FileAccess.open(hash_path, FileAccess.WRITE).store_buffer(var_to_bytes(checksums))
+
+
 func validate_file(id: String) -> Error:
 	if checksums[id] == null:
 		return ERR_FILE_CANT_OPEN
@@ -69,10 +73,18 @@ func validate_file(id: String) -> Error:
 	return OK
 
 
+## Retrieve a save file.
+##
+## No checks are done to see if it's a valid save file. It will be returned
+## regardless if the file had been tampered, corrupted, or not at all.
 func get_file(id: String) -> SaveFile:
 	return saves[id]
 
 
+## Retrieve a save file.
+##
+## The save file will be validated to check if the checksum is valid, if the
+## save file exists, or if it has been deemed untampered.
 func query_file(id: String) -> SaveFile:
 	var result := validate_file(id)
 

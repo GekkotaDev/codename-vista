@@ -1,4 +1,7 @@
-##
+## Resource intended to be saved to disk
+## [br]
+## It delegates saviong to a [SaveFile] where this provides some metadata that
+## is provided to assist with saving data.
 class_name PersistedResource
 extends Resource
 
@@ -8,9 +11,11 @@ const _USAGE_FLAGS = (
 	PROPERTY_USAGE_SCRIPT_VARIABLE
 )
 
-##
-@export var id: String = ""
+## A unique identifier.
+@export var id: String = generate_scene_unique_id()
 
+## A unique value computed from the resource used to verify the integrity of
+## the data.
 var checksum: PackedByteArray:
 	get:
 		return JSON.stringify(

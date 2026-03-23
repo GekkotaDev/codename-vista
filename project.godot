@@ -198,6 +198,11 @@ menu_dashboard={
 ]
 }
 
+[limbo_ai]
+
+behavior_tree/behavior_tree_default_dir="res://resources/behaviors/trees"
+behavior_tree/user_task_dirs=PackedStringArray("res://resources/behaviors/tasks")
+
 [milestone]
 
 general/achievements_path="res://addons/milestone/demo/achievements/"

@@ -1,0 +1,9 @@
+[gd_resource type="BehaviorTree" format=3 uid="uid://cq785c4yewm77"]
+
+[sub_resource type="BlackboardPlan" id="BlackboardPlan_c1i43"]
+
+[sub_resource type="BTSelector" id="BTSelector_c1i43"]
+
+[resource]
+blackboard_plan = SubResource("BlackboardPlan_c1i43")
+root_task = SubResource("BTSelector_c1i43")

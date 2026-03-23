@@ -1,0 +1,11 @@
+article.md-content__inner > p {
+    text-align: justify;
+    margin-bottom: 2ch;
+}
+
+div.mermaid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    user-select: none;
+}

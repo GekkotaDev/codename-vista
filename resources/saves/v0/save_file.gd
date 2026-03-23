@@ -5,7 +5,7 @@ extends SaveFile
 
 
 func checksum() -> PackedByteArray:
-	return serialize_checksum(query)
+	return generate_checksum(query)
 
 
 func migrate(_storage: SaveFile) -> SaveFile:
