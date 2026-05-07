@@ -27,14 +27,18 @@ func _ready():
 	# If not in editor, ensure we are using the unique copies
 	if not Engine.is_editor_hint():
 		if dialog_resource:
-			dialog_resource = DuplicateManager.get_duplicate_resource(dialog_resource)
+			pass
+			# I have no clue what DuplicateManager does  - gekkotadev
+			#dialog_resource = DuplicateManager.get_duplicate_resource(dialog_resource)
 
 		if data:
-			data = DuplicateManager.get_duplicate_resource(data)
+			#data = DuplicateManager.get_duplicate_resource(data)
+			pass
 			
 			if data.has_method("set"):
 				data.set("name", self.entity_name)
-				data = DuplicateManager.get_duplicate_resource(data)
+				#data = DuplicateManager.get_duplicate_resource(data)
+				pass
 				
 				var unique_name = data.get("name")
 				if unique_name:
