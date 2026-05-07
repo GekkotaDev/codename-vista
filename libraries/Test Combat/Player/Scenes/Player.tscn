@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://bdb6yvu2std04" path="res://libraries/Test Combat/Scripts/Player.gd" id="1_27vqm"]
 [ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_rym23"]
 [ext_resource type="Resource" uid="uid://ycpwxufjdoro" path="res://libraries/Test Combat/Resources/Data/PlayerData.tres" id="2_v3k30"]
+[ext_resource type="Texture2D" uid="uid://dx6k04msc72gw" path="res://assets/characters/violla-standing.png" id="4_jwjm8"]
+[ext_resource type="Texture2D" uid="uid://btu0pgpv1shqj" path="res://assets/characters/violla-walking-1.png" id="5_r48av"]
+[ext_resource type="Texture2D" uid="uid://bewcepylrdp8l" path="res://assets/characters/violla-walking-2.png" id="6_5iyfx"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hgpx6"]
 size = Vector3(0.61, 1, 0.63)
@@ -16,12 +19,55 @@ viewport_path = NodePath("HealthBar")
 [sub_resource type="BoxShape3D" id="BoxShape3D_v3k30"]
 size = Vector3(2, 1, 2)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wy8y"]
+atlas = ExtResource("4_jwjm8")
+region = Rect2(0, 0, 2675, 2010)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tytr4"]
+atlas = ExtResource("5_r48av")
+region = Rect2(0, 0, 2675, 2010)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fojed"]
+atlas = ExtResource("6_5iyfx")
+region = Rect2(0, 0, 2675, 2010)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r48av"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wy8y")
+}],
+"loop": true,
+"name": &"stand_stance_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wy8y")
+}],
+"loop": true,
+"name": &"stand_stance_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tytr4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fojed")
+}],
+"loop": true,
+"name": &"walking_stance",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody3D" unique_id=127769610]
 script = ExtResource("1_27vqm")
 data = ExtResource("2_v3k30")
 metadata/entity_name = "Player"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=869181374]
+visible = false
 mesh = SubResource("BoxMesh_hgpx6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1650777097]
@@ -40,5 +86,10 @@ entity_name = "Player"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionVolume" unique_id=1402289598]
 shape = SubResource("BoxShape3D_v3k30")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=862666184]
+transform = Transform3D(0.068866625, 0, 0, 0, 0.059251223, 0, 0, 0, 1, 0, 0.03515598, 0)
+sprite_frames = SubResource("SpriteFrames_r48av")
+animation = &"walking_stance"
 
 [editable path="HealthBar"]

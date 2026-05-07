@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://cm815gjpo4vxa"]
 
 [ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/Scripts/CombatManager.gd" id="1_nevp2"]
+[ext_resource type="PackedScene" uid="uid://bdmwjqr66e0ff" path="res://assets/skies/stylized/scenes/dynamic_sky.tscn" id="2_ia1th"]
 [ext_resource type="PackedScene" uid="uid://h66mjh7b4joa" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.tscn" id="2_j64lb"]
 [ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/NPCs/Scenes/NPC.tscn" id="3_cm0eb"]
 [ext_resource type="PackedScene" uid="uid://co3q5xmutb01g" path="res://libraries/Test Combat/Ui/Scenes/DialogUI.tscn" id="3_kcj7v"]
 [ext_resource type="PackedScene" uid="uid://c5h81kx5x1oil" path="res://libraries/Test Combat/Environment/Scenes/ElevatorPlatform.tscn" id="4_kcj7v"]
 [ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player/Scenes/Player.tscn" id="4_uicin"]
+[ext_resource type="Texture2D" uid="uid://cn0tafddur5wt" path="res://assets/backgrounds/background_buildings/8.png" id="5_dq17a"]
 [ext_resource type="PackedScene" uid="uid://w2us70ol5e1u" path="res://libraries/Test Combat/Environment/Scenes/Obstacle.tscn" id="5_kcj7v"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_5w8wf"]
+[ext_resource type="Texture2D" uid="uid://r16i6wlg3ppb" path="res://assets/backgrounds/background_buildings/5.png" id="6_ia1th"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="7_wrctl"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_mhw38"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="9_j64lb"]
@@ -17,17 +20,8 @@
 [ext_resource type="Script" uid="uid://dgwamgt5bpd3o" path="res://libraries/Test Combat/Scripts/NPCData.gd" id="15_llf1g"]
 [ext_resource type="Script" uid="uid://dx2kehj2qyuck" path="res://libraries/Test Combat/Scripts/CrazyHomelessDialogData.gd" id="16_kgk2h"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_au8eq"]
-
-[sub_resource type="Sky" id="Sky_h7ncd"]
-sky_material = SubResource("ProceduralSkyMaterial_au8eq")
-
-[sub_resource type="Environment" id="Environment_2xuhx"]
-background_mode = 2
-sky = SubResource("Sky_h7ncd")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ncd"]
-albedo_color = Color(0, 0.8235294, 0.6392157, 1)
+albedo_color = Color(0, 0.03794674, 0.051386796, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_q7dt1"]
 material = SubResource("StandardMaterial3D_h7ncd")
@@ -39,6 +33,9 @@ size = Vector3(100, 0, 100)
 [sub_resource type="BoxMesh" id="BoxMesh_cm0eb"]
 size = Vector3(50, 10, 0.265)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia1th"]
+albedo_texture = ExtResource("5_dq17a")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uicin"]
 size = Vector3(50, 10, 0.265)
 
@@ -49,68 +46,67 @@ script = ExtResource("8_mhw38")
 script = ExtResource("9_j64lb")
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
-[sub_resource type="Resource" id="Resource_kgk2h"]
+[sub_resource type="Resource" id="Resource_ia1th"]
 script = ExtResource("13_mhw38")
 text = "What happened here ?"
 npc_reply = Array[String](["What happened ?", "Clankers happened !"])
 metadata/_custom_type_script = "uid://5wr0ryqops67"
 
-[sub_resource type="Resource" id="Resource_llf1g"]
+[sub_resource type="Resource" id="Resource_d4e5u"]
 resource_local_to_scene = true
 script = ExtResource("14_kgk2h")
-player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_kgk2h")])
+player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_ia1th")])
 
-[sub_resource type="Resource" id="Resource_dq17a"]
+[sub_resource type="Resource" id="Resource_40mt3"]
 script = ExtResource("15_llf1g")
 
-[sub_resource type="Resource" id="Resource_ia1th"]
+[sub_resource type="Resource" id="Resource_07sac"]
 script = ExtResource("13_mhw38")
 text = "Yeah I know, the other guy already told me"
 npc_reply = Array[String](["Then why are you even bothering me for !"])
 metadata/_custom_type_script = "uid://5wr0ryqops67"
 
-[sub_resource type="Resource" id="Resource_d4e5u"]
+[sub_resource type="Resource" id="Resource_mio7s"]
 script = ExtResource("13_mhw38")
 text = "What happened here ?"
 npc_reply = Array[String](["Clankers bro"])
-next_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_ia1th")])
+next_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_07sac")])
 metadata/_custom_type_script = "uid://5wr0ryqops67"
 
-[sub_resource type="Resource" id="Resource_40mt3"]
+[sub_resource type="Resource" id="Resource_mx7r6"]
 resource_local_to_scene = true
 script = ExtResource("14_kgk2h")
-player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_d4e5u")])
+player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_mio7s")])
 
-[sub_resource type="Resource" id="Resource_07sac"]
+[sub_resource type="Resource" id="Resource_seka6"]
 script = ExtResource("15_llf1g")
 
-[sub_resource type="Resource" id="Resource_b33n5"]
+[sub_resource type="Resource" id="Resource_kk88w"]
 script = ExtResource("13_mhw38")
 text = "Stay back or else !?"
 npc_reply = Array[String](["OR WHAT !"])
 metadata/_custom_type_script = "uid://5wr0ryqops67"
 
-[sub_resource type="Resource" id="Resource_kk88w"]
+[sub_resource type="Resource" id="Resource_b33n5"]
 script = ExtResource("16_kgk2h")
-player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_b33n5")])
+player_options = Array[ExtResource("13_mhw38")]([SubResource("Resource_kk88w")])
 
-[sub_resource type="Resource" id="Resource_mio7s"]
+[sub_resource type="Resource" id="Resource_thwgf"]
 script = ExtResource("15_llf1g")
 
-[sub_resource type="Resource" id="Resource_mx7r6"]
+[sub_resource type="Resource" id="Resource_irg4r"]
 script = ExtResource("16_kgk2h")
 
-[sub_resource type="Resource" id="Resource_seka6"]
+[sub_resource type="Resource" id="Resource_ndv6f"]
 script = ExtResource("15_llf1g")
 
 [node name="World" type="Node3D" unique_id=878097969]
 script = ExtResource("1_nevp2")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1461641482]
-environment = SubResource("Environment_2xuhx")
+[node name="DynamicSky" parent="." unique_id=108994629 instance=ExtResource("2_ia1th")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=919040753]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.264296, 12.780855)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.011316, 12.780855)
 
 [node name="CombatManager" type="Node" parent="." unique_id=827569977]
 script = ExtResource("1_nevp2")
@@ -124,6 +120,7 @@ script = ExtResource("1_nevp2")
 [node name="Ground" type="StaticBody3D" parent="Environment" unique_id=1984898943]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Ground" unique_id=1681535532]
+transform = Transform3D(1.9901513, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_q7dt1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Ground" unique_id=1924894019]
@@ -133,10 +130,29 @@ shape = SubResource("BoxShape3D_geawr")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -15.13)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Boundary Wall 1" unique_id=819159484]
+transform = Transform3D(0.99997073, 0, 0, 0, 2.2782516, 0, 0, 0, 0.9386494, 0, 6.3634205, 0)
+visible = false
 mesh = SubResource("BoxMesh_cm0eb")
+surface_material_override/0 = SubResource("StandardMaterial3D_ia1th")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Boundary Wall 1" unique_id=1806126986]
 shape = SubResource("BoxShape3D_uicin")
+
+[node name="Sprite3D" type="Sprite3D" parent="Environment/Boundary Wall 1" unique_id=1119649754]
+transform = Transform3D(9.183379, 0, 0, 0, 6.3058753, 0, 0, 0, 1, 0.0006160736, 5.235691, 0.039445877)
+texture = ExtResource("5_dq17a")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Environment/Boundary Wall 1" unique_id=1672404726]
+transform = Transform3D(11.568214, 0, 0, 0, 7.796772, 0, 0, 0, 1, 0.0006160736, 6.119138, -5.5470476)
+texture = ExtResource("6_ia1th")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Environment/Boundary Wall 1" unique_id=660340250]
+transform = Transform3D(9.183379, 0, 0, 0, 6.3058753, 0, 0, 0, 1, -48.827965, 5.235691, 0.039445877)
+texture = ExtResource("5_dq17a")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Environment/Boundary Wall 1" unique_id=1124531023]
+transform = Transform3D(9.183379, 0, 0, 0, 6.3058753, 0, 0, 0, 1, 49.76431, 5.235691, 0.039445877)
+texture = ExtResource("5_dq17a")
 
 [node name="MovingPlatform" parent="Environment" unique_id=1343964504 instance=ExtResource("10_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.3590517, 1.3922749, 0)
@@ -177,21 +193,21 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="NPC" parent="." unique_id=702345917 instance=ExtResource("3_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.035101, 0.5, 0)
-dialog_resource = SubResource("Resource_llf1g")
-data = SubResource("Resource_dq17a")
+dialog_resource = SubResource("Resource_d4e5u")
+data = SubResource("Resource_40mt3")
 
 [node name="NPC2" parent="." unique_id=153096266 instance=ExtResource("3_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.831566, 0.5, 0)
-dialog_resource = SubResource("Resource_40mt3")
-data = SubResource("Resource_07sac")
+dialog_resource = SubResource("Resource_mx7r6")
+data = SubResource("Resource_seka6")
 
 [node name="NPC4" parent="." unique_id=2105380084 instance=ExtResource("3_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9260979, 0.5, -8.933036)
 is_hostile = true
-dialog_resource = SubResource("Resource_kk88w")
-data = SubResource("Resource_mio7s")
+dialog_resource = SubResource("Resource_b33n5")
+data = SubResource("Resource_thwgf")
 
 [node name="NPC3" parent="." unique_id=816120745 instance=ExtResource("3_cm0eb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.12696, 0.5, -8.989)
-dialog_resource = SubResource("Resource_mx7r6")
-data = SubResource("Resource_seka6")
+dialog_resource = SubResource("Resource_irg4r")
+data = SubResource("Resource_ndv6f")

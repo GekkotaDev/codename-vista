@@ -28,8 +28,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Codename Vista"
-run/main_scene="uid://coga0q87ncbgf"
-config/features=PackedStringArray("4.6", "C#", "Forward Plus")
+run/main_scene="uid://cm815gjpo4vxa"
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
 
@@ -59,13 +59,13 @@ NetworkManager="*uid://dbs0u46m4dojl"
 Panku="*res://addons/panku_console/console.tscn"
 QuestSystem="*uid://b77kvbliweux5"
 SceneManager="*uid://j20v4cg7v8m1"
-Shaker="*uid://cji6djxq64t0y"
-SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
+Shaker="*uid://c34bmuvdmg4vs"
+SignalLens="*uid://85rkx60vm7a7"
 SoundManager="*uid://c3th5bcr2ukh6"
 Pandora="*uid://dpp4cwvoisk5g"
 Dialogic="*uid://ds2q0uclmolvu"
 WindowTiler="*uid://cmqjajhjgffm1"
-AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
+AchievementManager="*uid://dj1bkxbqna8jt"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
@@ -91,6 +91,7 @@ layout/style_directory={}
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=2
 window/size/window_width_override=1080
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"
@@ -102,7 +103,7 @@ project/assembly_name="Codename Vista"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/pandora/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/SphynxMotionBlurToolkit/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/deformablemesh/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/pot_generation/plugin.cfg", "res://addons/keychain/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/net.yarvis.pixel_pen/plugin.cfg", "res://addons/netfox.extras/plugin.cfg", "res://addons/netfox.internals/plugin.cfg", "res://addons/netfox.noray/plugin.cfg", "res://addons/netfox/plugin.cfg", "res://addons/nodot/plugin.cfg", "res://addons/pandora/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/remove_orphan_uid/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/smash_the_mesh/plugin.cfg", "res://addons/sound_manager/plugin.cfg")
 
 [file_customization]
 
@@ -118,6 +119,10 @@ folder_colors={
 "res://tests/": "green",
 "res://views/": "purple"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gdunit4]
 

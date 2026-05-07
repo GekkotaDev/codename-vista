@@ -1,6 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://dfeowineoarly"]
 
-[ext_resource type="Script" uid="uid://mua5cf1x1xw8" path="res://addons/shaderV/rgba/blur/zoomBlur.gd" id="1_xrbkw"]
+[ext_resource type="Script" uid="uid://bf4tt34000iq7" path="res://addons/shaderV/rgba/blur/zoomBlur.gd" id="1_xrbkw"]
 
 [sub_resource type="VisualShaderNodeCustom" id="VisualShaderNodeCustom_4yr1r"]
 default_input_values = [2, -1.0, 3, Vector3(0.5, 0.5, 0), 4, 20.0, 5, 0.005]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdmwjqr66e0ff"]
+[gd_scene format=3 uid="uid://bdmwjqr66e0ff"]
 
 [ext_resource type="Sky" uid="uid://eoyf4fh7b1ml" path="res://assets/skies/stylized/resources/dynamic_sky.tres" id="1_vgtlm"]
 
@@ -20,7 +20,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0.34901962, 0.5882353, 1, 1)]
+"values": [Color(0.28491694, 0.015671853, 0.3548765, 1)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(0, 0.32941177, 0.96862745, 1)]
+"values": [Color(1.7856508e-05, 0.077100955, 0.30016255, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -56,7 +56,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(0.43903613, 0.25713935, 0.18422055, 1)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -334,14 +334,12 @@ _data = {
 &"daylight_cycle": SubResource("Animation_dfoy5")
 }
 
-[node name="DynamicSky" type="WorldEnvironment"]
+[node name="DynamicSky" type="WorldEnvironment" unique_id=108994629]
 environment = SubResource("Environment_dfoy5")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=175208409]
 transform = Transform3D(-1, 8.742277e-08, 3.8213705e-15, 0, -4.3711385e-08, 0.99999994, 8.742278e-08, 0.99999994, 4.3711385e-08, 0, 0, 0)
 shadow_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_f5twe")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1888165673]
+libraries/ = SubResource("AnimationLibrary_f5twe")
