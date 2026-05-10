@@ -213,7 +213,6 @@ grow_vertical = 2
 theme_override_constants/separation = 64
 
 [node name="TextureRect" type="TextureRect" parent="InterfaceViewportContainer/View/MainMenu/MainMenu" unique_id=216960915]
-visible = false
 texture_filter = 2
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 2
