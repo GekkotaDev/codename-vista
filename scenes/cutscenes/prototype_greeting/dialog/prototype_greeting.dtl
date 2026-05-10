@@ -1,0 +1,5 @@
+Greetings[pause=0.5], player\
+[pause=1] (click to continue)
+Welcome to the prototype of CODENAME\: Vista. I hope you enjoy what's on offer so far
+do SceneManager.change_scene("res://scenes/zones/origin_woods/origin_woods.tscn")
+[end_timeline]

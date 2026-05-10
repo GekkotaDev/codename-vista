@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://d0tc5tuwcxyul"]
+
+[ext_resource type="PackedScene" uid="uid://ruextspg3c8f" path="res://assets/skies/stylized/scenes/night_sky.tscn" id="1_p8n0i"]
+[ext_resource type="Texture2D" uid="uid://dqpdl3ni0nu5l" path="res://assets/lib/Kenney/Foliage Pack/PNG/Default size/foliagePack_005.png" id="2_6a4bq"]
+[ext_resource type="Script" uid="uid://culghxdlsot2a" path="res://addons/proton_scatter/src/scatter.gd" id="3_2sc33"]
+[ext_resource type="Script" uid="uid://cmqykas8sl40k" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="4_ix0ow"]
+[ext_resource type="Script" uid="uid://ctw12tsif6yna" path="res://addons/proton_scatter/src/modifiers/base_modifier.gd" id="5_i4uwg"]
+[ext_resource type="Script" uid="uid://2qeoo7o4lhco" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="6_slofh"]
+[ext_resource type="Script" uid="uid://c3t1jmj71feyg" path="res://addons/proton_scatter/src/modifiers/offset_rotation.gd" id="7_men13"]
+[ext_resource type="Script" uid="uid://ci7iso6l5kriw" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="8_fgygc"]
+[ext_resource type="Script" uid="uid://ct7ygg5ry8gr7" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="9_hifil"]
+[ext_resource type="Script" uid="uid://cme1aaurptvbw" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_2qr3d"]
+[ext_resource type="Script" uid="uid://jl4a1jrsgshn" path="res://addons/proton_scatter/src/scatter_item.gd" id="11_vhyfx"]
+[ext_resource type="Script" uid="uid://r2qshnkr3vfl" path="res://addons/proton_scatter/src/scatter_shape.gd" id="12_qfkam"]
+[ext_resource type="Script" uid="uid://bnoo88a8sm3em" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="13_ntwlx"]
+[ext_resource type="Texture2D" uid="uid://chbtmsf74kxkn" path="res://assets/lib/Kenney/Emotes/PNG/Vector/Style 2/emote_exclamation.png" id="14_2sc33"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="14_6inxv"]
+[ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player/Scenes/Player.tscn" id="15_7lip5"]
+[ext_resource type="Script" uid="uid://bvbt67g03x6j7" path="res://scenes/zones/origin_woods/bandaid_hacks/scripts/city_you_go.gd" id="15_ix0ow"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="18_men13"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_fgygc"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="20_hifil"]
+[ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/Scripts/CombatManager.gd" id="21_2qr3d"]
+[ext_resource type="PackedScene" uid="uid://h66mjh7b4joa" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.tscn" id="22_vhyfx"]
+[ext_resource type="PackedScene" uid="uid://co3q5xmutb01g" path="res://libraries/Test Combat/Ui/Scenes/DialogUI.tscn" id="23_qfkam"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfv12"]
+shading_mode = 0
+albedo_color = Color(0.14901961, 0.36078432, 0.25882354, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lvd54"]
+material = SubResource("StandardMaterial3D_qfv12")
+
+[sub_resource type="Resource" id="Resource_qfkam"]
+script = ExtResource("6_slofh")
+amount = 75
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_ntwlx"]
+script = ExtResource("7_men13")
+rotation = Vector3(90, 0, 0)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_6inxv"]
+script = ExtResource("8_fgygc")
+position = Vector3(0.15, 0.15, 0.15)
+scale = Vector3(0.1, 0.1, 0.1)
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_7lip5"]
+script = ExtResource("9_hifil")
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+restrict_height = true
+
+[sub_resource type="Resource" id="Resource_g6g5f"]
+script = ExtResource("10_2qr3d")
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+
+[sub_resource type="Resource" id="Resource_hjtpp"]
+script = ExtResource("4_ix0ow")
+stack = Array[ExtResource("5_i4uwg")]([SubResource("Resource_qfkam"), SubResource("Resource_ntwlx"), SubResource("Resource_6inxv"), SubResource("Resource_7lip5"), SubResource("Resource_g6g5f")])
+
+[sub_resource type="Resource" id="Resource_vp2rt"]
+script = ExtResource("13_ntwlx")
+size = Vector3(32, 1, 1)
+metadata/_custom_type_script = "uid://bnoo88a8sm3em"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt4em"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+specular_mode = 1
+albedo_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+albedo_texture = ExtResource("2_6a4bq")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ob3ks"]
+material = SubResource("StandardMaterial3D_lt4em")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ix0ow"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+specular_mode = 1
+albedo_texture = ExtResource("14_2sc33")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_i4uwg"]
+material = SubResource("StandardMaterial3D_ix0ow")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_slofh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_men13"]
+
+[sub_resource type="Resource" id="Resource_2qr3d"]
+script = ExtResource("19_fgygc")
+
+[sub_resource type="Resource" id="Resource_vhyfx"]
+script = ExtResource("20_hifil")
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[node name="OriginWoods" type="Node3D" unique_id=1033997603]
+
+[node name="DynamicSky" parent="." unique_id=1641182270 instance=ExtResource("1_p8n0i")]
+
+[node name="EnvironmentView" type="Node3D" parent="." unique_id=1063900130]
+
+[node name="TreeSprite3D" type="Sprite3D" parent="EnvironmentView" unique_id=2139073601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8, 0)
+texture = ExtResource("2_6a4bq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="EnvironmentView" unique_id=1405605728]
+transform = Transform3D(15.959999, 0, 0, 0, 1, 0, 0, 0, 4.29, 0, 0, 4)
+mesh = SubResource("PlaneMesh_lvd54")
+skeleton = NodePath("../..")
+
+[node name="ProtonScatter" type="Node3D" parent="EnvironmentView" unique_id=1962649971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
+script = ExtResource("3_2sc33")
+render_mode = 2
+modifier_stack = SubResource("Resource_hjtpp")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+metadata/_custom_type_script = "uid://culghxdlsot2a"
+
+[node name="ScatterItem" type="Node3D" parent="EnvironmentView/ProtonScatter" unique_id=1524121392]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("11_vhyfx")
+source = 0
+path = "../../MeshInstance3D4"
+
+[node name="ScatterShape" type="Node3D" parent="EnvironmentView/ProtonScatter" unique_id=835459320]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("12_qfkam")
+shape = SubResource("Resource_vp2rt")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="EnvironmentView" unique_id=597452715]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -2, 0, 1, -8.742278e-08, 0, -5, 0)
+mesh = SubResource("PlaneMesh_ob3ks")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="EnvironmentView" unique_id=1764515261]
+transform = Transform3D(0.19999999, 0, 0, 0, -4.3711385e-08, -0.19999999, 0, 0.99999994, -8.742277e-09, 15.5, 0.5, 2)
+mesh = SubResource("PlaneMesh_i4uwg")
+
+[node name="EnvironmentCollision" type="Node3D" parent="." unique_id=1979923655]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="EnvironmentCollision" unique_id=1025828309]
+transform = Transform3D(32.190002, 0, 0, 0, 1, 0, 0, 0, 8.200001, 0, -0.6, 4)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnvironmentCollision/StaticBody3D" unique_id=51139846]
+shape = SubResource("BoxShape3D_slofh")
+
+[node name="Area3D" type="Area3D" parent="EnvironmentCollision" unique_id=1510486071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.5, 2)
+script = ExtResource("15_ix0ow")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnvironmentCollision/Area3D" unique_id=1464179778]
+shape = SubResource("BoxShape3D_men13")
+
+[node name="Entities" type="Node3D" parent="." unique_id=507182709]
+
+[node name="Player" parent="Entities" unique_id=127769610 instance=ExtResource("15_7lip5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10333729, 0.5, 5)
+
+[node name="Camera3D" type="Camera3D" parent="Entities" unique_id=1534769301]
+physics_interpolation_mode = 1
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9481622, 0.3177842, 0, -0.3177842, 0.9481623, 0.10333729, 2.6877842, 10.253162)
+top_level = true
+current = true
+
+[node name="PhantomCameraHost" type="Node" parent="Entities/Camera3D" unique_id=199921637]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("14_6inxv")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="PhantomCamera3D" type="Node3D" parent="Entities" unique_id=1242551671 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.99999964, 0, 0, 0, 0.9481622, 0.3177842, 0, -0.3177842, 0.9481623, 0.10333729, 2.6877842, 10.253162)
+top_level = true
+script = ExtResource("18_men13")
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_2qr3d")
+camera_3d_resource = SubResource("Resource_vhyfx")
+follow_offset = Vector3(0, 1.87, 4.305)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="CombatManager" type="Node" parent="." unique_id=1590863899]
+script = ExtResource("21_2qr3d")
+
+[node name="CombatUI" parent="." unique_id=1692147016 instance=ExtResource("22_vhyfx")]
+
+[node name="DialogUI" parent="." unique_id=1467228426 instance=ExtResource("23_qfkam")]

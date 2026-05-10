@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://7y1eyxq8rut7"]
+
+[ext_resource type="Script" uid="uid://b8dd76g1tsygj" path="res://scenes/cutscenes/prototype_greeting/prototype_greeting.gd" id="1_udepp"]
+[ext_resource type="Script" uid="uid://bgi24ggjne3rg" path="res://resources/scene_loader_taget.gd" id="2_yvavy"]
+
+[sub_resource type="Resource" id="Resource_3joan"]
+script = ExtResource("2_yvavy")
+name = "scenes/zones/origin_woods"
+path = "uid://d0tc5tuwcxyul"
+metadata/_custom_type_script = "uid://bgi24ggjne3rg"
+
+[node name="PrototypeGreeting" type="Control" unique_id=200736441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_right = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_udepp")
+target_scene = SubResource("Resource_3joan")
+dialog_path = "uid://3mvk6lm06jbq"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=467013571]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_right = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

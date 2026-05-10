@@ -28,7 +28,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Codename Vista"
-run/main_scene="uid://cm815gjpo4vxa"
+run/main_scene="uid://ctsxekgl0djvv"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -86,7 +86,8 @@ settings/addon_root_folder="res://.addons/godotenv/debug_draw_3d/55549FF5C5EDF45
 
 directories/dch_directory={}
 directories/dtl_directory={
-"init": "res://scenes/cutscenes/visions/polaris_greeting/dialog/init.dtl"
+"init": "res://scenes/cutscenes/visions/polaris_greeting/dialog/init.dtl",
+"prototype_greeting": "res://scenes/cutscenes/prototype_greeting/dialog/prototype_greeting.dtl"
 }
 layout/style_directory={}
 

@@ -5,7 +5,7 @@
 
 [sub_resource type="Resource" id="Resource_c0pt5"]
 script = ExtResource("1_c0pt5")
-path = "res://scenes/cutscenes/visions/polaris_greeting/vision.tscn"
+path = "uid://bmcbhj6ud3w2w"
 metadata/_custom_type_script = "uid://bgi24ggjne3rg"
 
 [resource]

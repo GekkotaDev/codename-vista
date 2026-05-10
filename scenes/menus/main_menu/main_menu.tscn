@@ -183,6 +183,8 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_right = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_uqeha")
@@ -229,6 +231,7 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 
 [node name="SettingsButton" parent="InterfaceViewportContainer/View/MainMenu/MainMenu/VBoxContainer" unique_id=1690463996 instance=ExtResource("3_uqeha")]
+visible = false
 layout_mode = 2
 text = "Settings"
 

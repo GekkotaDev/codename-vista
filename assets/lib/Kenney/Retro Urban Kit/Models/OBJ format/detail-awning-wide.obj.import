@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dks5aq6js6rab"
+path="res://.godot/imported/detail-awning-wide.obj-b4091fdb19d73037e1b1875b2afd0d2b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail-awning-wide.obj-b4091fdb19d73037e1b1875b2afd0d2b.mesh"]
+
+source_file="res://assets/lib/Kenney/Retro Urban Kit/Models/OBJ format/detail-awning-wide.obj"
+dest_files=["res://.godot/imported/detail-awning-wide.obj-b4091fdb19d73037e1b1875b2afd0d2b.mesh", "res://.godot/imported/detail-awning-wide.obj-b4091fdb19d73037e1b1875b2afd0d2b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -15,9 +15,9 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_mhw38"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="9_j64lb"]
 [ext_resource type="PackedScene" uid="uid://c6wvh8d4uw2oy" path="res://libraries/Test Combat/Environment/Scenes/MovingPlatform.tscn" id="10_cm0eb"]
-[ext_resource type="Script" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="13_mhw38"]
-[ext_resource type="Script" path="res://libraries/Test Combat/Scripts/HomelessDialogData.gd" id="14_kgk2h"]
-[ext_resource type="Script" uid="uid://cwrsgvpnjlys7" path="res://libraries/Test Combat/Scripts/EnemyData.gd" id="15_llf1g"]
+[ext_resource type="Script" uid="uid://5wr0ryqops67" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="13_mhw38"]
+[ext_resource type="Script" uid="uid://qjfqm37i6q2v" path="res://libraries/Test Combat/Scripts/HomelessDialogData.gd" id="14_kgk2h"]
+[ext_resource type="Script" uid="uid://dgwamgt5bpd3o" path="res://libraries/Test Combat/Scripts/NPCData.gd" id="15_llf1g"]
 [ext_resource type="Script" uid="uid://dx2kehj2qyuck" path="res://libraries/Test Combat/Scripts/CrazyHomelessDialogData.gd" id="16_kgk2h"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7ncd"]
@@ -112,7 +112,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.011316, 12.780855)
 script = ExtResource("1_nevp2")
 
 [node name="CombatUI" parent="." unique_id=1692147016 instance=ExtResource("2_j64lb")]
-script = null
 
 [node name="DialogUI" parent="." unique_id=1467228426 instance=ExtResource("3_kcj7v")]
 
