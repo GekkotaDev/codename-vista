@@ -21,5 +21,14 @@ script = ExtResource("1_fly3u")
 target_scene = SubResource("Resource_3joan")
 dialog_path = "uid://bcswb6et0ekxd"
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1394829425]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="IntroBackground" parent="." unique_id=1611414010 instance=ExtResource("1_j5bu6")]
 layout_mode = 1

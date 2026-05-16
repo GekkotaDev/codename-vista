@@ -21,8 +21,12 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_fgygc"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="20_hifil"]
 [ext_resource type="Script" uid="uid://0d852gmtbwq0" path="res://libraries/Test Combat/Scripts/CombatManager.gd" id="21_2qr3d"]
+[ext_resource type="PackedScene" uid="uid://c523essl0o4p8" path="res://libraries/Test Combat/NPCs/Scenes/NPC.tscn" id="21_6inxv"]
+[ext_resource type="Script" uid="uid://5wr0ryqops67" path="res://libraries/Test Combat/Scripts/DialogOption.gd" id="22_7lip5"]
 [ext_resource type="PackedScene" uid="uid://h66mjh7b4joa" path="res://libraries/Test Combat/Ui/Scenes/CombatUI.tscn" id="22_vhyfx"]
+[ext_resource type="Script" uid="uid://dx2kehj2qyuck" path="res://libraries/Test Combat/Scripts/CrazyHomelessDialogData.gd" id="23_g6g5f"]
 [ext_resource type="PackedScene" uid="uid://co3q5xmutb01g" path="res://libraries/Test Combat/Ui/Scenes/DialogUI.tscn" id="23_qfkam"]
+[ext_resource type="Script" uid="uid://dgwamgt5bpd3o" path="res://libraries/Test Combat/Scripts/NPCData.gd" id="24_hjtpp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfv12"]
 shading_mode = 0
@@ -31,38 +35,38 @@ albedo_color = Color(0.14901961, 0.36078432, 0.25882354, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_lvd54"]
 material = SubResource("StandardMaterial3D_qfv12")
 
-[sub_resource type="Resource" id="Resource_qfkam"]
+[sub_resource type="Resource" id="Resource_46113"]
 script = ExtResource("6_slofh")
 amount = 75
 restrict_height = true
 reference_frame = 1
 
-[sub_resource type="Resource" id="Resource_ntwlx"]
+[sub_resource type="Resource" id="Resource_g03nc"]
 script = ExtResource("7_men13")
 rotation = Vector3(90, 0, 0)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_6inxv"]
+[sub_resource type="Resource" id="Resource_fr2uv"]
 script = ExtResource("8_fgygc")
 position = Vector3(0.15, 0.15, 0.15)
 scale = Vector3(0.1, 0.1, 0.1)
 reference_frame = 2
 
-[sub_resource type="Resource" id="Resource_7lip5"]
+[sub_resource type="Resource" id="Resource_17jjg"]
 script = ExtResource("9_hifil")
 offset_step = 0.2
 consecutive_step_multiplier = 0.75
 restrict_height = true
 
-[sub_resource type="Resource" id="Resource_g6g5f"]
+[sub_resource type="Resource" id="Resource_lt4em"]
 script = ExtResource("10_2qr3d")
 ray_length = 5.0
 ray_offset = 5.0
 remove_points_on_miss = false
 
-[sub_resource type="Resource" id="Resource_hjtpp"]
+[sub_resource type="Resource" id="Resource_ob3ks"]
 script = ExtResource("4_ix0ow")
-stack = Array[ExtResource("5_i4uwg")]([SubResource("Resource_qfkam"), SubResource("Resource_ntwlx"), SubResource("Resource_6inxv"), SubResource("Resource_7lip5"), SubResource("Resource_g6g5f")])
+stack = Array[ExtResource("5_i4uwg")]([SubResource("Resource_46113"), SubResource("Resource_g03nc"), SubResource("Resource_fr2uv"), SubResource("Resource_17jjg"), SubResource("Resource_lt4em")])
 
 [sub_resource type="Resource" id="Resource_vp2rt"]
 script = ExtResource("13_ntwlx")
@@ -120,6 +124,32 @@ script = ExtResource("19_fgygc")
 script = ExtResource("20_hifil")
 metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
+[sub_resource type="Resource" id="Resource_g2c65"]
+script = ExtResource("22_7lip5")
+text = "Stay back or else !?"
+npc_reply = Array[String](["OR WHAT !"])
+metadata/_custom_type_script = "uid://5wr0ryqops67"
+
+[sub_resource type="Resource" id="Resource_vdfkb"]
+script = ExtResource("23_g6g5f")
+player_options = Array[ExtResource("22_7lip5")]([SubResource("Resource_g2c65")])
+
+[sub_resource type="Resource" id="Resource_wgvxb"]
+script = ExtResource("24_hjtpp")
+
+[sub_resource type="Resource" id="Resource_6inxv"]
+script = ExtResource("22_7lip5")
+text = "Stay back or else !?"
+npc_reply = Array[String](["OR WHAT !"])
+metadata/_custom_type_script = "uid://5wr0ryqops67"
+
+[sub_resource type="Resource" id="Resource_7lip5"]
+script = ExtResource("23_g6g5f")
+player_options = Array[ExtResource("22_7lip5")]([SubResource("Resource_6inxv")])
+
+[sub_resource type="Resource" id="Resource_g6g5f"]
+script = ExtResource("24_hjtpp")
+
 [node name="OriginWoods" type="Node3D" unique_id=1033997603]
 
 [node name="DynamicSky" parent="." unique_id=1641182270 instance=ExtResource("1_p8n0i")]
@@ -139,7 +169,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, 0)
 script = ExtResource("3_2sc33")
 render_mode = 2
-modifier_stack = SubResource("Resource_hjtpp")
+modifier_stack = SubResource("Resource_ob3ks")
 Performance/use_chunks = true
 Performance/chunk_dimensions = Vector3(15, 15, 15)
 metadata/_custom_type_script = "uid://culghxdlsot2a"
@@ -247,6 +277,18 @@ follow_offset = Vector3(0, 1.87, 4.305)
 align_transform_with_view = Callable()
 align_position_with_view = Callable()
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="NPC4" parent="Entities" unique_id=702345917 instance=ExtResource("21_6inxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.073902, 0.5, 2.0669641)
+is_hostile = true
+dialog_resource = SubResource("Resource_vdfkb")
+data = SubResource("Resource_wgvxb")
+
+[node name="NPC5" parent="Entities" unique_id=1107940635 instance=ExtResource("21_6inxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0739021, 0.5, 4.066964)
+is_hostile = true
+dialog_resource = SubResource("Resource_7lip5")
+data = SubResource("Resource_g6g5f")
 
 [node name="CombatManager" type="Node" parent="." unique_id=1590863899]
 script = ExtResource("21_2qr3d")

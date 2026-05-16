@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cig4vu4we6bu1"]
+[gd_scene format=3 uid="uid://cig4vu4we6bu1"]
 
 [ext_resource type="Texture2D" uid="uid://3cfwnq88ipg4" path="res://assets/backgrounds/live/images/monochrome/interlace.png" id="1_im75g"]
 [ext_resource type="Shader" uid="uid://fl77iuir6gti" path="res://assets/shaders/trip/mother.gdshader" id="2_qq0me"]
@@ -18,7 +18,7 @@ shader_parameter/scrolling_speed = 0.08
 shader_parameter/enable_palette_cycling = false
 shader_parameter/palette_speed = 0.1
 
-[node name="ReferenceBackground" type="Control"]
+[node name="ReferenceBackground" type="Control" unique_id=743700076]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="StaticTexture" type="TextureRect" parent="."]
+[node name="StaticTexture" type="TextureRect" parent="." unique_id=166628417]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_im75g")
 
-[node name="WeaveBG" type="TextureRect" parent="."]
+[node name="WeaveBG" type="TextureRect" parent="." unique_id=1462851399]
 material = SubResource("ShaderMaterial_qq0me")
 layout_mode = 1
 anchors_preset = 15
@@ -45,7 +45,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_im75g")
 
-[node name="WeaveFG" type="TextureRect" parent="."]
+[node name="WeaveFG" type="TextureRect" parent="." unique_id=1184649586]
 material = ExtResource("2_rfyqr")
 layout_mode = 1
 anchors_preset = 15
