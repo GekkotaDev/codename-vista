@@ -1,15 +1,8 @@
 [gd_resource type="BehaviorTree" format=3 uid="uid://bqmttsive38fl"]
 
-[ext_resource type="Script" uid="uid://dc134j4ibtuv1" path="res://modules/tasks/actions/to_spot.gd" id="1_qsjr6"]
-
 [sub_resource type="BlackboardPlan" id="BlackboardPlan_wsq2g"]
 
-[sub_resource type="BBNode" id="BBNode_8u081"]
-saved_value = NodePath("")
-
 [sub_resource type="BTAction" id="BTAction_1r2l3"]
-script = ExtResource("1_qsjr6")
-bb_navigation_region = SubResource("BBNode_8u081")
 
 [resource]
 blackboard_plan = SubResource("BlackboardPlan_wsq2g")

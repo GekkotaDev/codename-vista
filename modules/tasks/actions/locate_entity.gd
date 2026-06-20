@@ -1,7 +1,14 @@
+## 
 extends BTAction
 
+##
 @export var bb_detection_area: BBNode
+
+##
 @export var bb_detection_groups: BBStringArray
+
+## 
+@export var bb_target: BBVector3
 
 var detection_area: Area3D
 var detection_groups: PackedStringArray
@@ -11,9 +18,13 @@ var state: Status
 
 func on_body_entered(node: Node3D):
 	for group in detection_groups:
-		if node.is_in_group(group):
-			state = SUCCESS
-			return
+		if not node.is_in_group(group):
+			continue
+
+		state = SUCCESS
+		bb_target.saved_value = node.global_position
+
+		return
 	state = FAILURE
 
 
