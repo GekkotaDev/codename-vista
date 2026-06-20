@@ -98,7 +98,7 @@
 ## export templates, create a symbolic link at the location where these would
 ## normally be at and have it target the drive you wish to put it in.
 [project]
-godot = "4.6-stable-mono" # Which version of Godot does it use.
+godot = "4.7-stable-mono" # Which version of Godot does it use.
 export_templates = true # Automatically install export templates if not installed.
 
 ## https://godotneers.github.io/ggg/docs/reference/commands/sync#automatically-overwriting-engine-managed-files

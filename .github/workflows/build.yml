@@ -21,17 +21,19 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - uses: actions/checkout@v4
-            - name: Set up Python
-              uses: actions/setup-python@v3
-              with:
-                  python-version: ">=3.13"
-            - name: Install uv
-              uses: astral-sh/setup-uv@v6
-              with:
-                  # Install a specific version of uv.
-                  version: 0.9.28
-                  enable-cache: true
+            - name: Install Godot Goodie Grabber
+              run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+            # - uses: actions/checkout@v4
+            # - name: Set up Python
+            #   uses: actions/setup-python@v3
+            #   with:
+            #       python-version: ">=3.13"
+            # - name: Install uv
+            #   uses: astral-sh/setup-uv@v6
+            #   with:
+            #       # Install a specific version of uv.
+            #       version: 0.9.28
+            #       enable-cache: true
             - name: Setup dotNET
               uses: actions/setup-dotnet@v5
               with:
@@ -39,10 +41,7 @@ jobs:
                       8.0.x
                       10.0.x
             - name: Install dependencies
-              run: |
-                  dotnet tool restore
-                  uv sync
-                  uv run tooling sync
+              run: ggg sync
 
     build-windows-x86:
         needs: [setup]
