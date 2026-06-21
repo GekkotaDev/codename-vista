@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="PlayerData" format=3 uid="uid://ycpwxufjdoro"]
-
-[ext_resource type="Script" uid="uid://cqp5b4cglh6em" path="res://libraries/Test Combat/Scripts/PlayerData.gd" id="1_iuodw"]
-
-[resource]
-script = ExtResource("1_iuodw")
-poison_damage_per_tick = 5

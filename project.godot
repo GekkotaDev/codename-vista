@@ -69,11 +69,6 @@ AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
 NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
-PhantomCameraManager="*uid://duq6jhf6unyis"
-CombatManager="*uid://0d852gmtbwq0"
-CombatUi="*uid://h66mjh7b4joa"
-HealthManager="*uid://c43tqh3u7geh1"
-DialogueManager="*uid://c3rodes2l3gxb"
 
 [debug_draw_3d]
 
@@ -220,7 +215,6 @@ general/save_as_json=true
 2d/run_on_separate_thread=true
 3d/run_on_separate_thread=true
 3d/physics_engine="Jolt Physics"
-common/physics_interpolation=true
 
 [plugins]
 
@@ -228,7 +222,6 @@ kenyoni/pot_generation/paths=Array[PackedStringArray]([])
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 gl_compatibility/driver.macos="opengl3_angle"
 global_illumination/gi/use_half_resolution=true
