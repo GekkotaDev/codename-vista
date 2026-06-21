@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SettingFocusLossPause" format=3 uid="uid://c6jdreu0863tb"]
+
+[ext_resource type="Script" uid="uid://bdbflhv4m3t72" path="res://ggs/scripts/gameplay/setting_focus_loss_pause.gd" id="1_fhiii"]
+
+[resource]
+resource_name = "focus_loss_pause"
+script = ExtResource("1_fhiii")
+key = "focus_loss_pause"
+section = "gameplay"
+default = true
+metadata/_custom_type_script = "uid://bdbflhv4m3t72"

@@ -19,24 +19,11 @@
 
 ## 🛠️ Development
 
-<details>
-  <summary>
-    <b>Prerequisites</b>
-  </summary>
+Of course, [Git](https://git-scm.com)
 
-  - Godot 4.5.x+
-  - [`uv`](https://docs.astral.sh/uv/getting-started/installation/)
-    - [Python](https://docs.astral.sh/uv/guides/install-python/)
-  - [.NET SDK](https://dotnet.microsoft.com/en-us/download)
-  - [Git](https://git-scm.com)
+[You'll also need to install Godot Goodie Grabber](https://godotneers.github.io/ggg/docs/installation/) followed by the commands `ggg sync` and `ggg edit`
 
-  You can automatically have this get set up by running the following command
-  in Powershell.
-
-  ```pwsh
-  iex (iwr "https://raw.githubusercontent.com/GekkotaDev/codename-vista/refs/heads/main/install.ps1").Content
-  ```
-</details>
+The project so far does **not need** [.NET SDK](https://dotnet.microsoft.com/en-us/download) or the [Rust](https://godot-rust.github.io) programming language.
 
 <details>
   <summary>

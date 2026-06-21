@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SettingDescription" format=3 uid="uid://bfiuyyixaieyr"]
+
+[ext_resource type="Script" uid="uid://d07euhpatotko" path="res://screens/settings_menu/resources/setting_description.gd" id="1_uwkwm"]
+
+[resource]
+script = ExtResource("1_uwkwm")
+description = "Display in-game tutorials?"
+metadata/_custom_type_script = "uid://d07euhpatotko"

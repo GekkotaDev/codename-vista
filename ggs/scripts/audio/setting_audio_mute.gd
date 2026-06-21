@@ -1,6 +1,6 @@
 @tool
-extends GGSSetting
 class_name SettingAudioMute
+extends GGSSetting
 ## Sets the mute state of an audio bus.
 
 ## Target audio bus.
@@ -11,6 +11,7 @@ func _init() -> void:
 	type = TYPE_BOOL
 	default = false
 	section = "audio"
+	key = "mute"
 
 
 func _get_property_list() -> Array:
@@ -20,7 +21,7 @@ func _get_property_list() -> Array:
 			"type": TYPE_STRING,
 			"hint": PROPERTY_HINT_ENUM,
 			"hint_string": ",".join(_get_audio_bus_list()),
-		}
+		},
 	]
 
 
