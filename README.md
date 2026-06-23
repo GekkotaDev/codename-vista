@@ -41,11 +41,15 @@
 
 ## 🛠️ Development
 
+**2026-06-23**: Major refactoring.
+
 Of course, [Git](https://git-scm.com)
 
 [You'll also need to install Godot Goodie Grabber](https://godotneers.github.io/ggg/docs/installation/) followed by the commands `ggg sync` and `ggg edit`
 
-The project so far does **not need** [.NET SDK](https://dotnet.microsoft.com/en-us/download) or the [Rust](https://godot-rust.github.io) programming language.
+Read through [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+
+Do avoid any misconducts (e.g: harmful stereotypes, usage of slurs, etc.)
 
 <details>
   <summary>
