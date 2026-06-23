@@ -81,7 +81,7 @@ archive_sha = "6a25cf733c3c0ccdf842aa805e25b38ce8c76f0afe1457d3babf21031f2ed9e9"
 [[dependency]]
 name = "remove_orphan_uid"
 url = "https://github.com/kenyoni-software/godot-addons/releases/download/latest/remove_orphan_uid-1_1_0.zip"
-archive_sha = "3645407df016ca5615016526a6f7a7af94dfacbe099857f08618190f86a980e8"
+archive_sha = "f986ffb43ab62440ff26633ab3404ed678af618be38cde06c359973e76eed7d8"
 
 [[dependency]]
 name = "runtime_debug_tools"
@@ -100,8 +100,8 @@ archive_sha = "84657de6ea27062097c0f2ac8962e3b2cc9d3f136fb3770d477a74b35529135e"
 
 [[dependency]]
 name = "scene_manager"
-url = "https://github.com/glass-brick/Scene-Manager/archive/refs/tags/v1.1.1.zip"
-archive_sha = "3e475907054e4646b39ba9bab0f76abe748b9ddda98934c54a68ed91db94b7d9"
+url = "https://github.com/glass-brick/Scene-Manager/archive/refs/tags/v1.2.0.zip"
+archive_sha = "8b494a784af745c5162b71b5529a38678bb10fca1c2c7566304ee7159c193910"
 
 [[dependency]]
 name = "shaker"
@@ -151,3 +151,8 @@ name = "shaderV"
 git = "https://github.com/arkology/ShaderV.git"
 rev = "6325563d702994e33cf01cb967ee490728766593"
 sha = "6325563d702994e33cf01cb967ee490728766593"
+
+[[dependency]]
+name = "GDQuest_GDScript_formatter"
+url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
+archive_sha = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"

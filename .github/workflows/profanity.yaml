@@ -32,6 +32,9 @@ jobs:
       with:
         token: ${{ secrets.PROFANITY_TOKEN }}
 
+        # please.
+        include-confused-reaction: true
+
         # See https://bit.ly/potty-mouth-replacement-strategies
         replacement-strategy: redacted-rectangle
 

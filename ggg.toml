@@ -187,6 +187,15 @@ map = [
     { from = "godot_dialogue_manager-3.10.4/addons/dialogue_manager", to = "addons/dialogue_manager" },
 ]
 
+##
+[[dependency]]
+name = "gdscript_formatter"
+url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
+sha256 = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
+map = [
+    { from = "addons/gdscript_formatter", to = "addons/gdscript_formatter" },
+]
+
 ## Testing framework.
 ##
 ## You could always write tests first to describe and assert how something

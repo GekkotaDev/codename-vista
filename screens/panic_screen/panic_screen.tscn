@@ -36,7 +36,7 @@ bg_color = Color(0, 0.53333336, 0.33333334, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnd8t"]
 bg_color = Color(0.33333334, 0.73333335, 0.2, 1)
 
-[node name="PanicScreen" type="Control" unique_id=56693462 node_paths=PackedStringArray("warning_label", "message_label", "controls")]
+[node name="PanicScreen" type="Control" unique_id=56693462 node_paths=PackedStringArray("warning_label", "message_label", "nodes")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +47,7 @@ theme = ExtResource("1_q8i3h")
 script = ExtResource("2_tnd8t")
 warning_label = NodePath("Panic/MessageRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/WarningLabel")
 message_label = NodePath("Panic/MessageRect/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/DebugLabel")
-controls = {
+nodes = {
 "button.continue": NodePath("Panic/MessageRect/MarginContainer/VBoxContainer/HBoxContainer/ContinueButton"),
 "button.quit": NodePath("Panic/MessageRect/MarginContainer/VBoxContainer/HBoxContainer/QuitButton")
 }

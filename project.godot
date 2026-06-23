@@ -39,35 +39,14 @@ SceneLoader="*res://globals/scene_loader/scene_loader.tscn"
 GGS="*res://addons/ggs/core/global_manager/global_manager.tscn"
 CsgToolkitAutoload="*uid://w8ad8q4lneis"
 InputHelper="*uid://cholww48njaeh"
-Keychain="*uid://dgiia2xg7fsud"
-Noray="*uid://gu4bv4tgms3x"
-PacketHandshake="*uid://tt3j25a05n7c"
-NetworkTimeSynchronizer="*uid://5rmn2ik3kjo8"
-NetworkTime="*uid://cnqdxyjptkfvp"
-NetworkRollback="*uid://gas743comroj"
-NetworkEvents="*uid://bdmobxxptryj0"
-NetworkPerformance="*uid://cqgf7aqmjfoa3"
-VideoManager="*uid://qx67753euta8"
-AudioManager="*uid://divwiwwlc6t1d"
-SaveManager="*uid://b2rsej14f4xjt"
-GlobalSignal="*uid://d0ofdqkesq6wi"
-GlobalStorage="*uid://dpnbcdct1joln"
-PlayerManager="*uid://b73g6c7u7xxci"
-CollectableManager="*uid://d0ln58moqre7l"
-InputManager="*uid://c1fv4vpq8yibq"
-NetworkManager="*uid://dbs0u46m4dojl"
 Panku="*res://addons/panku_console/console.tscn"
 QuestSystem="*uid://b77kvbliweux5"
 SceneManager="*uid://j20v4cg7v8m1"
 Shaker="*uid://c34bmuvdmg4vs"
 SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
 SoundManager="*uid://c3th5bcr2ukh6"
-Pandora="*uid://dpp4cwvoisk5g"
-Dialogic="*uid://ds2q0uclmolvu"
-WindowTiler="*uid://cmqjajhjgffm1"
 AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
 RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
-NetworkSimulator="*uid://1y2ey1e6qjwr"
 DebugMenu="*uid://cggqb75a8w8r"
 
 [debug_draw_3d]
@@ -101,7 +80,7 @@ project/assembly_name="Codename Vista"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/remove_orphan_uid/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/local.main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/spanning_table/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg", "res://addons/godot_resource_groups/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/remove_orphan_uid/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/local.conventions/plugin.cfg", "res://addons/local.editor_settings/plugin.cfg", "res://addons/local.main_screen_buttons/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/proton_scatter/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/resources_spreadsheet_view/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/spanning_table/plugin.cfg")
 
 [file_customization]
 
@@ -200,8 +179,8 @@ menu_dashboard={
 
 [limbo_ai]
 
-behavior_tree/behavior_tree_default_dir="res://resources/behaviors"
-behavior_tree/user_task_dirs=PackedStringArray("res://modules/tasks")
+behavior_tree/behavior_tree_default_dir="res://resources/ai/trees"
+behavior_tree/user_task_dirs=PackedStringArray("res://resources/ai/tasks")
 
 [milestone]
 

@@ -1,19 +1,19 @@
 @abstract class_name SceneView
 extends Control
 
-@export var nodes: Dictionary[String, Control]
+@export var nodes: Dictionary[String, Control] = { }
 @export var resource_model: ResourceModel
 
 var _event_bus := EventBus.new()
 
 
 ##
-func _view(_model: ResourceModel):
+func _view():
 	pass
 
 
 ##
-func _script(_events: EventBus, _model: ResourceModel):
+func _script(_events: EventBus):
 	pass
 
 
@@ -41,8 +41,8 @@ func _ready() -> void:
 	_event_bus.nodes = nodes
 
 	_preready()
-	_script(_event_bus, resource_model)
-	_view(resource_model)
+	_script(_event_bus)
+	_view()
 	_postready()
 
 

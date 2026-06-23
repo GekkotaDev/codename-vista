@@ -1,4 +1,4 @@
-extends UIControllerNode
+extends SceneView
 
 @export var warning_label: Label
 @export var message_label: Label
@@ -11,8 +11,8 @@ func _ready() -> void:
 		},
 	)
 
-	var continue_button: Button = controls.get("button.continue")
-	var quit_button: Button = controls.get("button.quit")
+	var continue_button: Button = nodes.get("button.continue")
+	var quit_button: Button = nodes.get("button.quit")
 
 	continue_button.pressed.connect(
 		func():
