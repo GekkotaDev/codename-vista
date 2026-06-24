@@ -57,6 +57,9 @@ CodeCoverage/
 TestResult.xml
 nunit-*.xml
 
+# Godot
+*.csproj.old
+
 #? Python
 .cache
 .venv

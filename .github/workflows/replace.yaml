@@ -1,0 +1,43 @@
+name: Replace Slurs
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Warning
+        run: "echo 'Yes, this is an actual problem we seek to prevent.'"
+
+      # Mate, you know who you are and why we're doing this.
+      - name: "Slur Replacement: Tarnation"
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "retardation"
+          replace: "tarnation"
+          include: "**/*.{gd,md,tres,tscn}"
+          regex: false
+
+      - name: "Slur Replacement: Silly"
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "retarded"
+          replace: "silly"
+          include: "**/*.{gd,md,tres,tscn}"
+          regex: false
+
+      - name: "Slur Replacement: Goofball"
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "retard"
+          replace: "goofball"
+          include: "**/*.{gd,md,tres,tscn}"
+          regex: false
+
+      - name: "Slur Replacement: Brother"
+        uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "nigg"
+          replace: "broth"
+          include: "**/*.{gd,md,tres,tscn}"
+          regex: false

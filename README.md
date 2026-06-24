@@ -47,9 +47,9 @@ Of course, [Git](https://git-scm.com)
 
 [You'll also need to install Godot Goodie Grabber](https://godotneers.github.io/ggg/docs/installation/) followed by the commands `ggg sync` and `ggg edit`
 
-Read through [`ARCHITECTURE.md`](./ARCHITECTURE.md)
+Reference [`ARCHITECTURE.md`](./ARCHITECTURE.md)
 
-Do avoid any misconducts (e.g: harmful stereotypes, usage of slurs, etc.)
+Do [avoid any misconducts](./CODE_OF_CONDUCT.md)
 
 <details>
   <summary>

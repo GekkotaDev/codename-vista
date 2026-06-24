@@ -161,6 +161,7 @@ assets ~
 ├─ lib :: Assets made by other developers / artists.
 │  ├─ [asset pack]
 │  └─ ...
+├─ materials :: Yes, like in Blender.
 ├─ models
 │  ├─ [model]
 │  │  ├─ textures :: Albedos, UV maps, displacement maps, et cetera.
