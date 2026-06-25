@@ -28,7 +28,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Codename Vista"
-run/main_scene="uid://coga0q87ncbgf"
+run/main_scene="uid://ctsxekgl0djvv"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -36,7 +36,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneLoader="*res://globals/scene_loader/scene_loader.tscn"
-GGS="*res://addons/ggs/core/global_manager/global_manager.tscn"
 CsgToolkitAutoload="*uid://w8ad8q4lneis"
 InputHelper="*uid://cholww48njaeh"
 Panku="*res://addons/panku_console/console.tscn"

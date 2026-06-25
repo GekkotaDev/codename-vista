@@ -2,13 +2,15 @@ extends SceneView
 
 const Model = preload("./ui_model.gd")
 
+var model := Model.new()
+
 @export var router: RouterNode
 
 @export_group("Scenes")
 @export var loading_screen: SceneLoaderTarget
 
 
-func _script(events: EventBus, model: ResourceModel):
+func _script(events: EventBus):
 	events.connect_of(
 		"play_button",
 		&"pressed",

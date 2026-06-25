@@ -1,19 +1,18 @@
-[gd_scene load_steps=17 format=3 uid="uid://38chuk10ugey"]
+[gd_scene format=3 uid="uid://38chuk10ugey"]
 
-[ext_resource type="Script" uid="uid://50qs2x8uwim6" path="res://scenes/menus/splash/splash.gd" id="1_xtuk2"]
+[ext_resource type="Script" uid="uid://50qs2x8uwim6" path="res://areas/menus/splash/splash.gd" id="1_xtuk2"]
 [ext_resource type="Theme" uid="uid://dwfwn8g5gvg5x" path="res://data/themes/default.tres" id="1_y4437"]
-[ext_resource type="Shader" uid="uid://dfeowineoarly" path="res://scenes/menus/splash/shaders/zoom.tres" id="2_jdmxl"]
-[ext_resource type="PackedScene" uid="uid://br0sa0sf4nt1s" path="res://scenes/menus/main_menu/main_menu.tscn" id="2_ncq3u"]
-[ext_resource type="Texture2D" uid="uid://cmknhlagpngq3" path="res://assets/logos/godot/original-large.png" id="2_wwhxh"]
-[ext_resource type="Texture2D" uid="uid://tth53oaa21vo" path="res://assets/logos/godot/made-with-godot-light.png" id="3_a6n0j"]
-[ext_resource type="AudioStream" uid="uid://cb22rw7k8q527" path="res://scenes/menus/splash/audio/sfx/fire.wav" id="3_mulaw"]
-[ext_resource type="Texture2D" uid="uid://2bjscya3sln" path="res://assets/logos/drakenstorm_studio/drakenstorm_icon.png" id="4_a6n0j"]
-[ext_resource type="Shader" uid="uid://d3d4n51npn20h" path="res://scenes/menus/splash/shaders/swirl.tres" id="4_m61hw"]
-[ext_resource type="Texture2D" uid="uid://cf7kknl28fi4j" path="res://assets/logos/drakenstorm_studio/drakenstorm_wordmark.png" id="5_m61hw"]
+[ext_resource type="Shader" uid="uid://dfeowineoarly" path="res://areas/menus/splash/shaders/zoom.tres" id="2_jdmxl"]
+[ext_resource type="PackedScene" uid="uid://br0sa0sf4nt1s" path="res://areas/menus/main_menu/main_menu.tscn" id="2_ncq3u"]
+[ext_resource type="Texture2D" uid="uid://cmknhlagpngq3" path="res://assets/images/icons/logos/godot/original-large.png" id="2_wwhxh"]
+[ext_resource type="Texture2D" uid="uid://tth53oaa21vo" path="res://assets/images/icons/logos/godot/made-with-godot-light.png" id="3_a6n0j"]
+[ext_resource type="AudioStream" uid="uid://cb22rw7k8q527" path="res://areas/menus/splash/audio/sfx/fire.wav" id="3_mulaw"]
+[ext_resource type="Texture2D" uid="uid://2bjscya3sln" path="res://assets/images/icons/logos/drakenstorm_studio/drakenstorm_icon.png" id="4_a6n0j"]
+[ext_resource type="Shader" uid="uid://d3d4n51npn20h" path="res://areas/menus/splash/shaders/swirl.tres" id="4_m61hw"]
+[ext_resource type="Texture2D" uid="uid://cf7kknl28fi4j" path="res://assets/images/icons/logos/drakenstorm_studio/drakenstorm_wordmark.png" id="5_m61hw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ncq3u"]
 shader = ExtResource("2_jdmxl")
-shader_parameter/zoom_scale = 1.0
 
 [sub_resource type="Animation" id="Animation_jdmxl"]
 length = 0.001
@@ -237,11 +236,10 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xtuk2"]
 shader = ExtResource("4_m61hw")
-shader_parameter/twist_strength = 10.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdmxl"]
 
-[node name="Splash" type="Control" node_paths=PackedStringArray("animation_player", "splash_dev_textures")]
+[node name="Splash" type="Control" unique_id=969299686 node_paths=PackedStringArray("animation_player", "splash_dev_textures")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -254,14 +252,12 @@ animation_player = NodePath("AnimationPlayer")
 splash_dev_textures = [NodePath("DevSplash/HBoxContainer/IconMargin/LogoIcon")]
 splash_dev_zoom = 0.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_mulaw")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2050338914]
+libraries/ = SubResource("AnimationLibrary_mulaw")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1917096851]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=170100501]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -270,7 +266,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="UniversitySplash" type="ColorRect" parent="."]
+[node name="UniversitySplash" type="ColorRect" parent="." unique_id=390591669]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -279,7 +275,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UniversitySplash"]
+[node name="VBoxContainer" type="VBoxContainer" parent="UniversitySplash" unique_id=1687001604]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -293,7 +289,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UniversitySplash/VBoxContainer"]
+[node name="Label" type="Label" parent="UniversitySplash/VBoxContainer" unique_id=962482226]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("1_y4437")
@@ -302,7 +298,7 @@ text = "a work in progress
 university thesis"
 horizontal_alignment = 1
 
-[node name="EngineSplash" type="ColorRect" parent="."]
+[node name="EngineSplash" type="ColorRect" parent="." unique_id=662000662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -311,7 +307,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="EngineSplash"]
+[node name="VBoxContainer" type="VBoxContainer" parent="EngineSplash" unique_id=760559908]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -325,7 +321,7 @@ offset_bottom = 98.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="EngineSplash/VBoxContainer"]
+[node name="Label" type="Label" parent="EngineSplash/VBoxContainer" unique_id=1533776089]
 texture_filter = 1
 layout_mode = 2
 theme = ExtResource("1_y4437")
@@ -333,22 +329,22 @@ theme_override_font_sizes/font_size = 24
 text = "a game"
 horizontal_alignment = 1
 
-[node name="LogoIcon" type="TextureRect" parent="EngineSplash/VBoxContainer"]
+[node name="LogoIcon" type="TextureRect" parent="EngineSplash/VBoxContainer" unique_id=988421948]
 texture_filter = 1
-clip_contents = true
 custom_minimum_size = Vector2(128, 128)
+clip_contents = true
 layout_mode = 2
 texture = ExtResource("2_wwhxh")
 stretch_mode = 5
 
-[node name="LogoWordmark" type="TextureRect" parent="EngineSplash/VBoxContainer"]
+[node name="LogoWordmark" type="TextureRect" parent="EngineSplash/VBoxContainer" unique_id=664370853]
 texture_filter = 1
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 texture = ExtResource("3_a6n0j")
 stretch_mode = 5
 
-[node name="DevSplash" type="ColorRect" parent="."]
+[node name="DevSplash" type="ColorRect" parent="." unique_id=1219806410]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -357,7 +353,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="DevSplash"]
+[node name="HBoxContainer" type="HBoxContainer" parent="DevSplash" unique_id=1537263338]
 material = SubResource("ShaderMaterial_xtuk2")
 layout_mode = 1
 anchors_preset = 8
@@ -367,29 +363,29 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -613.0
 offset_top = -315.0
-offset_right = -227.0
+offset_right = -226.99976
 offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 32
 
-[node name="IconMargin" type="MarginContainer" parent="DevSplash/HBoxContainer"]
+[node name="IconMargin" type="MarginContainer" parent="DevSplash/HBoxContainer" unique_id=1574732006]
 layout_mode = 2
 
-[node name="LogoIcon" type="TextureRect" parent="DevSplash/HBoxContainer/IconMargin"]
+[node name="LogoIcon" type="TextureRect" parent="DevSplash/HBoxContainer/IconMargin" unique_id=1210311089]
 material = SubResource("ShaderMaterial_ncq3u")
 custom_minimum_size = Vector2(170, 270)
 layout_mode = 2
 texture = ExtResource("4_a6n0j")
 expand_mode = 1
 
-[node name="WordmarkMargin" type="MarginContainer" parent="DevSplash/HBoxContainer"]
+[node name="WordmarkMargin" type="MarginContainer" parent="DevSplash/HBoxContainer" unique_id=1135663219]
 clip_contents = true
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
 
-[node name="LogoWordmark" type="TextureRect" parent="DevSplash/HBoxContainer/WordmarkMargin"]
+[node name="LogoWordmark" type="TextureRect" parent="DevSplash/HBoxContainer/WordmarkMargin" unique_id=1051593903]
 material = SubResource("ShaderMaterial_jdmxl")
 custom_minimum_size = Vector2(184, 226)
 layout_mode = 2

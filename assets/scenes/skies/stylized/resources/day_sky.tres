@@ -1,8 +1,8 @@
 [gd_resource type="Sky" format=3 uid="uid://cbl4hplw151w5"]
 
-[ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/skies/stylized/shaders/stylized_sky.gdshader" id="1_dwg1m"]
-[ext_resource type="Texture2D" uid="uid://dfbnikfkeltpi" path="res://assets/skies/stylized/sun.png" id="2_8c1sw"]
-[ext_resource type="Texture2D" uid="uid://cnj11ljjj03yq" path="res://assets/skies/stylized/resources/cloud_noise.tres" id="2_ptc2d"]
+[ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/scenes/skies/stylized/shaders/stylized_sky.gdshader" id="1_dwg1m"]
+[ext_resource type="Texture2D" uid="uid://dfbnikfkeltpi" path="res://assets/scenes/skies/stylized/sun.png" id="2_8c1sw"]
+[ext_resource type="Texture2D" uid="uid://cnj11ljjj03yq" path="res://assets/scenes/skies/stylized/resources/cloud_noise.tres" id="2_ptc2d"]
 
 [sub_resource type="Curve" id="Curve_8c1sw"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15168539, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.75280905), 0.0, 0.0, 0, 0]

@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" format=3 uid="uid://d3d4n51npn20h"]
 
 [ext_resource type="Texture2D" uid="uid://2bjscya3sln" path="res://assets/logos/drakenstorm_studio/drakenstorm_icon.png" id="1_8pqva"]
-[ext_resource type="Script" uid="uid://8gscwps50lk7" path="res://addons/shaderV/uv/animated/swirlUV.gd" id="2_txeq7"]
+[ext_resource type="Script" uid="uid://ewartvrpeu02" path="res://addons/shaderV/uv/animated/swirlUV.gd" id="2_txeq7"]
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_8pqva"]
 parameter_name = "raster"
