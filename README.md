@@ -54,7 +54,7 @@ flowchart TB
         AI1 -->|I can't do it without AI| End_Slacker
         AI1 -->|I need AI assistance| AI2{Do I have an attention span}
         AI2 -->|No| End_Slacker
-        AI2 -->|Yes| AI3{Are my reading and listening skills good}
+        AI2 -->|Yes| AI3{I will use my reading and listening skills}
         AI3 -->|No| End_Slacker
         AI3 -->|Yes| AI4{I'll follow and observe the conventions set within the code base}
         AI4 -->|No| End_Slacker
