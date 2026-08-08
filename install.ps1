@@ -47,7 +47,7 @@ function Write-Log {
     else { Write-Host " $($Output)" }
 }
 
-function Enter-Host {
+function Enter-HostOutput {
     param (
         [Parameter(Mandatory = $true)]
         [String]
@@ -74,23 +74,19 @@ function Enter-Host {
     return $false
 }
 
-function Test-Command($Command) {
+function Test-Absent($Command) {
     $Result = [bool](Get-Command -Name $Command -ErrorAction Ignore)
     return $Result -eq $false
 }
-
 
 
 Write-Log "If working on the codebase is a bit too much, there's also the lore" -Type Info
 Write-Log "document (different from documentation/thesis paper) and the game" -Type Info
 Write-Log "assets that need to be worked on." -Type Info
 Write-Log " "
-Write-Log " "
-Write-Log " "
 
 
-
-if (Test-Command "scoop") {
+if (Test-Absent "scoop") {
     Write-Log "An additional dependency needs to be manually installed before continuing." -Type Warn
     Write-Log "It is necessary in order to automatically install other necessary tooling." -Type Warn
     Write-Log " "
@@ -109,13 +105,13 @@ else {
 
 
 
-if (Test-Command "git") { 
+if (Test-Absent "git") { 
     Write-Log "Installing Git." -Type Info
     scoop install git
     Write-Log "Git installed." -Type Info
 }
 
-if (Test-Command "dotnet") {
+if (Test-Absent "dotnet") {
     Write-Log "Installing C#." -Type Info
     scoop install dotnet-sdk
     Write-Log "C# installed." -Type Info
@@ -124,33 +120,21 @@ if (Test-Command "dotnet") {
     dotnet tool restore
 }
 
-if (Test-Command "uv") { 
+if (Test-Absent "uv") { 
     Write-Log "Installing uv." -Type Info
     scoop install uv
     uv python install "3.15"
     Write-Log "uv successfully set up." -Type Info
 
     Write-Log "This project uses a bunch of addons" -Type Info
-    uv run tooling sync
-
-    Write-Log " "
-    Write-Log "We use addons as to not code things from scratch" -Type Info
-    Write-Log "https://godotengine.org/asset-library/asset"
-    Write-Log " "
+    uv run tooling setup
 }
 
-if (Test-Command "godot-mono") {
-    $Installed = Enter-Host "Is Godot (.NET) installed?"
-
-    if ($Installed) {
-        Write-Log "🫡"
-    }
-    else {
-        Write-Log "Installing Godot ${GodotVersion}" -Type Info
-        scoop install "godot-mono@${GodotVersion}"
-        Write-Log "Godot ${GodotVersion} installed." -Type Info
-        Write-Log "HINT: Enter 'godot-mono' to open Godot from the terminal."
-    }
+if (Test-Command "ggg") {
+    Write-Log "Installing Godot Goodie Grabber"
+    irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
+    ggg sync
+    Write-Log "Godot Goodie Grabber installed"
 }
 
 
@@ -211,7 +195,7 @@ Write-Log "own discretion/as needed."
 Write-Log " "
 Write-Log "If you ever add an addon to addons.jsonc, remember to run this command"
 Write-Log " "
-Write-Log "uv run tooling sync"
+Write-Log "ggg sync"
 Write-Log " "
 Write-Log "And if it's a new plugin not used yet before to enable it in Godot."
 Write-Log " "
@@ -427,3 +411,5 @@ Write-Log " "
 # Write-Log "git stash"
 # Write-Log " "
 # Write-Log "I think that's all you need to know about Git. Happy programming!" -Type Info
+
+ggg edit
