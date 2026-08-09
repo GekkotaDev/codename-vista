@@ -6,6 +6,7 @@ jobs:
   conventions:
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: write
 
     steps:
@@ -17,7 +18,7 @@ jobs:
         with:
           runtime: node@lts
       - name: Build Tasks
-        run: pnpm -r build; pnpm i
+        run: pnpm -r build; pnpm ci
       - name: Scan Folders
         run: pnpm exec actions scan
 
