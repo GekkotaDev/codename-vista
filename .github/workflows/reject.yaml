@@ -16,7 +16,7 @@ jobs:
       - name: Build Tasks
         run: pnpm -r build; pnpm i
       - name: Scan Folders
-        run: pnpm actions scan
+        run: pnpm exec actions scan
 
   revert:
     runs-on: ubuntu-latest
