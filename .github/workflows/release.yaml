@@ -15,6 +15,9 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Install Godot Goodie Grabber
         run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
       - name: Install pnpm
