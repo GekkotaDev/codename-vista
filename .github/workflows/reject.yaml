@@ -13,7 +13,6 @@ jobs:
         uses: pnpm/setup@v2
         with:
           runtime: node@lts
-          cache: true
       - name: Build Tasks
         run: pnpm -r build; pnpm i
       - name: Scan Folders
