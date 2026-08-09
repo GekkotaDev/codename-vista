@@ -15,7 +15,7 @@ jobs:
           runtime: node@lts
           cache: true
       - name: Build Tasks
-        run: pnpm -r build
+        run: pnpm -r build; pnpm i
       - name: Scan Folders
         run: pnpm actions scan
 
