@@ -13,7 +13,7 @@ jobs:
         uses: pnpm/setup@v2
         with:
           runtime: node@lts
-          version: ^11
+          cache: true
       - name: Setup Tasks
         run: |
           pnpm i
