@@ -14,13 +14,10 @@ jobs:
         with:
           runtime: node@lts
           cache: true
-      - name: Setup Tasks
-        run: |
-          pnpm i
-          pnpm -r build
+      - name: Build Tasks
+        run: pnpm -r build
       - name: Scan Folders
-        run: |
-          pnpm actions scan
+        run: pnpm actions scan
 
   revert:
     runs-on: ubuntu-latest
