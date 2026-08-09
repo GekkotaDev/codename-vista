@@ -9,7 +9,6 @@ jobs:
       - name: Install pnpm
         uses: pnpm/setup@v2
         with:
-          cache: true
           runtime: node@lts
           version: ^11
       - name: Setup Tasks
