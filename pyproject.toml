@@ -12,7 +12,4 @@ dev = [
     "mkdocs-material>=9.7.0",
     "mkdocs-minify-plugin>=0.8.0",
     "mkdocs-rss-plugin>=1.17.7",
-    "pyjson5>=2.0.0",
-    "ruff>=0.14.9",
-    "typer>=0.20.0",
 ]
