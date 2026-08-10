@@ -99,6 +99,9 @@ jobs:
           restore-keys: |
             godot-templates-
 
+      - name: Restore Addons
+        run: ggg sync
+
       - name: Ensure LFS objects are present
         working-directory: ${{ github.workspace }}
         run: |
