@@ -35,6 +35,8 @@ func _get_input_port_name(port: int):
 			return "colorTint"
 		3:
 			return "alphaTint"
+		_:
+			return ""
 
 func _get_input_port_type(port: int):
 	match port:
@@ -46,6 +48,8 @@ func _get_input_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_VECTOR_3D
 		3:
 			return VisualShaderNode.PORT_TYPE_SCALAR
+		_:
+			return -1
 
 func _get_output_port_count() -> int:
 	return 2
@@ -56,6 +60,8 @@ func _get_output_port_name(port: int):
 			return "col"
 		1:
 			return "alpha"
+		_:
+			return ""
 
 func _get_output_port_type(port: int):
 	match port:
@@ -63,6 +69,8 @@ func _get_output_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_VECTOR_3D
 		1:
 			return VisualShaderNode.PORT_TYPE_SCALAR
+		_:
+			return -1
 
 func _get_code(input_vars, output_vars, mode, type):
 	return """%s = %s * %s;

@@ -56,6 +56,8 @@ func _get_input_port_name(port: int):
 			return "use_F2"
 		10:
 			return "time"
+		_:
+			return ""
 
 func _get_input_port_type(port: int):
 	match port:
@@ -81,6 +83,8 @@ func _get_input_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_BOOLEAN
 		10:
 			return VisualShaderNode.PORT_TYPE_SCALAR
+		_:
+			return -1
 
 func _get_output_port_count() -> int:
 	return 1

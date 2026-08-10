@@ -13,6 +13,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ncq3u"]
 shader = ExtResource("2_jdmxl")
+shader_parameter/zoom_scale = 1.0
 
 [sub_resource type="Animation" id="Animation_jdmxl"]
 length = 0.001
@@ -236,6 +237,7 @@ _data = {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xtuk2"]
 shader = ExtResource("4_m61hw")
+shader_parameter/twist_strength = 10.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jdmxl"]
 

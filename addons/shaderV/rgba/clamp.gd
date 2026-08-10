@@ -26,6 +26,8 @@ func _get_input_port_name(port: int):
 			return "alpha"
 		1:
 			return "uv"
+		_:
+			return ""
 
 func _get_input_port_type(port: int):
 	match port:
@@ -33,6 +35,8 @@ func _get_input_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_SCALAR
 		1:
 			return VisualShaderNode.PORT_TYPE_VECTOR_3D
+		_:
+			return -1
 
 func _get_output_port_count() -> int:
 	return 1

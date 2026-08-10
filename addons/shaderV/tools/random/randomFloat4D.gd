@@ -31,6 +31,8 @@ func _get_input_port_name(port: int):
 			return "scale"
 		2:
 			return "offset"
+		_:
+			return ""
 
 func _get_input_port_type(port: int):
 	match port:
@@ -40,6 +42,8 @@ func _get_input_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_SCALAR
 		2:
 			return VisualShaderNode.PORT_TYPE_VECTOR_4D
+		_:
+			return -1
 
 func _get_output_port_count() -> int:
 	return 1

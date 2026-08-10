@@ -53,6 +53,8 @@ func _get_input_port_name(port: int):
 			return "jitter"
 		9:
 			return "use_F2"
+		_:
+			return ""
 
 func _get_input_port_type(port: int):
 	match port:
@@ -76,6 +78,8 @@ func _get_input_port_type(port: int):
 			return VisualShaderNode.PORT_TYPE_SCALAR
 		9:
 			return VisualShaderNode.PORT_TYPE_BOOLEAN
+		_:
+			return -1
 
 func _get_output_port_count() -> int:
 	return 1

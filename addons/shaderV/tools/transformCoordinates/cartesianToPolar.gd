@@ -50,4 +50,3 @@ func _get_code(input_vars, output_vars, mode, type):
 		uv = input_vars[0]
 	
 	return "%s = vec3(_cartesianToPolarFunc(%s.xy), %s.z);" % [output_vars[0], uv, uv]
-
