@@ -45,5 +45,5 @@ jobs:
         with:
           find: ${{ matrix.find }}
           replace: ${{ matrix.replace }}
-          include: "**/*.{cs,css,gd,js,json,md,py,rs,toml,tres,ts,tscn,yaml,yml}"
+          include: "**/*.{cs,css,gd,js,json,md,py,rs,toml,tres,ts,tscn}"
           regex: ${{ matrix.regex }}
