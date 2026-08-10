@@ -16,13 +16,9 @@ permissions:
   pull-requests: write
 
 jobs:
-  # Name the job whatever you'd like
-  apply-filter:
-
+  filter:
     runs-on: ubuntu-latest
-
     steps:
-
     # Name the step anything that makes sense to you
     - name: Scan issue or pull request for profanity
       # Conditionally run the step if the actor isn't a bot

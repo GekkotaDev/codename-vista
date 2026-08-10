@@ -2,42 +2,48 @@ name: Replace Slurs
 on: [push, pull_request]
 
 jobs:
-  build:
+  replace:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # Mate, you know who you are and why we're doing this. We really can't
+        # let you sneak in slurs and controversial ideas within the codebase.
+        include:
+          - find: retardation
+            replace: tarnation
+            regex: false
+          - find: retarded
+            replace: silly
+            regex: false
+          - find: retard
+            replace: goofball
+            regex: false
+          - find: trann
+            replace: brand
+            regex: false
+          - find: fag
+            replace: fly
+            regex: false
+          - find: dyk
+            replace: tik
+            regex: false
+          - find: nigg
+            replace: broth
+            regex: false
+          - find: Grok
+            replace: Wik
+            regex: false
+
+          - find: "holier[ -]than[ -]thou"
+            replace: \"I'm wrong\"
+            regex: true
+
     steps:
       - uses: actions/checkout@v2
-      - name: Warning
-        run: "echo 'Yes, this is an actual problem we seek to prevent.'"
-
-      # Mate, you know who you are and why we're doing this.
-      - name: "Slur Replacement: Tarnation"
+      - name: "Slur Replacement: ${{ matrix.replace }}"
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "retardation"
-          replace: "tarnation"
-          include: "**/*.{gd,md,tres,tscn}"
-          regex: false
-
-      - name: "Slur Replacement: Silly"
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "retarded"
-          replace: "silly"
-          include: "**/*.{gd,md,tres,tscn}"
-          regex: false
-
-      - name: "Slur Replacement: Goofball"
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "retard"
-          replace: "goofball"
-          include: "**/*.{gd,md,tres,tscn}"
-          regex: false
-
-      - name: "Slur Replacement: Brother"
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "nigg"
-          replace: "broth"
-          include: "**/*.{gd,md,tres,tscn}"
-          regex: false
+          find: ${{ matrix.find }}
+          replace: ${{ matrix.replace }}
+          include: "**/*.{cs,css,gd,js,json,md,py,rs,toml,tres,ts,tscn,yaml,yml}"
+          regex: ${{ matrix.regex }}
