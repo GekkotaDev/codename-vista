@@ -31,7 +31,7 @@ jobs:
           find: "godot = .*"
           replace: "#"
           include: "ggg.toml"
-          regex: false
+          regex: true
 
       - uses: jacobtomlinson/gha-find-replace@v3
         with:
