@@ -5,6 +5,7 @@ on:
       game_title:
         type: string
         description: Title of the game.
+        required: true
 
 env:
   GODOT_VERSION: "4.7"
@@ -59,17 +60,30 @@ jobs:
         with:
           submodules: recursive
       
-      - uses: awalsh128/cache-apt-pkgs-action@v1
+      - name: Cache APT Packages
+        id: apt-cache
+        uses: actions/cache@v4
         with:
-          packages: blender
-          version: 1.0
+          path: /var/cache/apt/archives
+          key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }} # Or use a hardcoded string
+          restore-keys: |
+            ${{ runner.os }}-apt-
+
+      - name: Install APT packages
+        run: |
+          sudo apt-get update
+          # Install your packages
+          sudo apt-get install -y blender
+
+          # Change ownership of the archives so actions/cache can save them
+          sudo chown -R runner:docker /var/cache/apt/archives
           
       - name: Configure Godot Editor Settings for Headless Mode
         run: |
           mkdir -p ~/.config/godot
           cat <<EOF > ~/.config/godot/editor_settings-4.tres
           [gd_resource type="EditorSettings" format=3]
-          
+
           [resource]
           filesystem/import/blender/blender_path = "/usr/bin/blender"
           filesystem/import/blender/blender3_path = "/usr/bin/blender"
