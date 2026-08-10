@@ -28,13 +28,6 @@ jobs:
 
       - uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "godot = .*"
-          replace: "#"
-          include: "ggg.toml"
-          regex: true
-
-      - uses: jacobtomlinson/gha-find-replace@v3
-        with:
           find: "export_templates = .*"
           replace: "#"
           include: "ggg.toml"
@@ -43,6 +36,7 @@ jobs:
       - name: Install Godot Goodie Grabber
         run: |
           curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+          mkdir -p ~/.local/share/ggg/4.7.1-stable-mono
           ggg sync
 
       - name: Install pnpm
