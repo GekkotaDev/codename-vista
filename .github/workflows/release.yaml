@@ -58,6 +58,22 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: recursive
+      
+      - uses: awalsh128/cache-apt-pkgs-action@v1
+        with:
+          packages: blender
+          version: 1.0
+          
+      - name: Configure Godot Editor Settings for Headless Mode
+        run: |
+          mkdir -p ~/.config/godot
+          cat <<EOF > ~/.config/godot/editor_settings-4.tres
+          [gd_resource type="EditorSettings" format=3]
+          
+          [resource]
+          filesystem/import/blender/blender_path = "/usr/bin/blender"
+          filesystem/import/blender/blender3_path = "/usr/bin/blender"
+          EOF
 
       - name: Restore Godot editor cache
         uses: actions/cache@v4
