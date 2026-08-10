@@ -20,6 +20,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install and Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: blender # Replace with your packages
+          version: 1.0 # Bump this to force a cache bust
+
       - name: Install Godot Goodie Grabber
         run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
       - name: Install pnpm
@@ -33,22 +39,22 @@ jobs:
             dotnet-version: |
                 10.0.x
       
-      - name: Cache APT Packages
-        id: apt-cache
-        uses: actions/cache@v4
-        with:
-          path: /var/cache/apt/archives
-          key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }} # Or use a hardcoded string
-          restore-keys: |
-            ${{ runner.os }}-apt-
-      - name: Install APT packages
-        run: |
-          sudo apt-get update
-          # Install your packages
-          sudo apt-get install -y blender
+      # - name: Cache APT Packages
+      #   id: apt-cache
+      #   uses: actions/cache@v4
+      #   with:
+      #     path: /var/cache/apt/archives
+      #     key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }} # Or use a hardcoded string
+      #     restore-keys: |
+      #       ${{ runner.os }}-apt-
+      # - name: Install APT packages
+      #   run: |
+      #     sudo apt-get update
+      #     # Install your packages
+      #     sudo apt-get install -y blender
 
-          # Change ownership of the archives so actions/cache can save them
-          sudo chown -R runner:docker /var/cache/apt/archives
+      #     # Change ownership of the archives so actions/cache can save them
+      #     sudo chown -R runner:docker /var/cache/apt/archives
 
   build:
     name: Build Binaries
