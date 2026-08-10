@@ -79,7 +79,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
+
+      - run: sudo apt install curl
 
       - name: Restore Godot editor cache
         uses: actions/cache@v4
