@@ -13,55 +13,11 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Install and Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: blender # Replace with your packages
-          version: 1.0 # Bump this to force a cache bust
-
-      - name: Install Godot Goodie Grabber
-        run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
-      - name: Install pnpm
-        uses: pnpm/setup@v2
-        with:
-          runtime: node@lts
-          cache: true
-      - name: Install dotNET
-        uses: actions/setup-dotnet@v5
-        with:
-            dotnet-version: |
-                10.0.x
-      
-      # - name: Cache APT Packages
-      #   id: apt-cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: /var/cache/apt/archives
-      #     key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }} # Or use a hardcoded string
-      #     restore-keys: |
-      #       ${{ runner.os }}-apt-
-      # - name: Install APT packages
-      #   run: |
-      #     sudo apt-get update
-      #     # Install your packages
-      #     sudo apt-get install -y blender
-
-      #     # Change ownership of the archives so actions/cache can save them
-      #     sudo chown -R runner:docker /var/cache/apt/archives
-
   build:
     name: Build Binaries
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:4.7
-    needs: [setup]
     strategy:
       fail-fast: true
       matrix:
@@ -83,6 +39,30 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Install and Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: blender # Replace with your packages
+          version: 1.0 # Bump this to force a cache bust
+
+      - name: Install Godot Goodie Grabber
+        run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+
+      - name: Install pnpm
+        uses: pnpm/setup@v2
+        with:
+          runtime: node@lts
+          cache: true
+
+      - name: Install dotNET
+        uses: actions/setup-dotnet@v5
+        with:
+            dotnet-version: |
+                10.0.x
+      
+      - name: Restore add-ons
+        run: ggg sync
+
       - name: Restore Godot editor cache
         uses: actions/cache@v4
         with:
@@ -98,9 +78,6 @@ jobs:
           key: godot-templates-${{ env.GODOT_VERSION }}
           restore-keys: |
             godot-templates-
-
-      - name: Restore Addons
-        run: ggg sync
 
       - name: Ensure LFS objects are present
         working-directory: ${{ github.workspace }}
