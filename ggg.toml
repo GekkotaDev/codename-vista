@@ -98,7 +98,7 @@
 ## export templates, create a symbolic link at the location where these would
 ## normally be at and have it target the drive you wish to put it in.
 [project]
-godot = "4.7-stable-mono" # Which version of Godot does it use.
+godot = "4.7.1-stable-mono" # Which version of Godot does it use.
 export_templates = true # Automatically install export templates if not installed.
 
 ## https://godotneers.github.io/ggg/docs/reference/commands/sync#automatically-overwriting-engine-managed-files
@@ -193,7 +193,7 @@ name = "gdscript_formatter"
 url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
 sha256 = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
 map = [
-    { from = "addons/gdscript_formatter", to = "addons/gdscript_formatter" },
+    { from = "addons/GDQuest_GDScript_formatter", to = "addons/gdscript_formatter" },
 ]
 
 ## Testing framework.
@@ -388,11 +388,11 @@ rev = "3363e0d2136c432c989ac1f249aa8aaa634e84e9"
 map = [{ from = "addons/resources_spreadsheet_view" }]
 
 ## Additional shader nodes.
-[[dependency]]
-name = "shaderV"
-git = "https://github.com/arkology/ShaderV.git"
-rev = "6325563d702994e33cf01cb967ee490728766593"
-map = [
-    { from = "addons/shaderV" },
-    { from = "addons/shaderV/examples", to = "examples/shaderV" },
-]
+# [[dependency]]
+# name = "shaderV"
+# git = "https://github.com/arkology/ShaderV.git"
+# rev = "6325563d702994e33cf01cb967ee490728766593"
+# map = [
+#     { from = "addons/shaderV" },
+#     { from = "addons/shaderV/examples", to = "examples/shaderV" },
+# ]

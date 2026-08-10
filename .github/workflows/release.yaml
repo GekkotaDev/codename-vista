@@ -63,7 +63,7 @@ jobs:
     name: Build Binaries
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:4.7
+      image: barichello/godot-ci:mono-4.7
     needs: [setup]
     strategy:
       fail-fast: true
@@ -115,8 +115,8 @@ jobs:
           mkdir -v -p ~/.local/share/godot/export_templates/
           mkdir -v -p ~/.config/
           mv /root/.config/godot ~/.config/godot || true
-          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable \
-             ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable || true
+          mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono \
+             ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono || true
 
       - name: Import project assets
         run: |
