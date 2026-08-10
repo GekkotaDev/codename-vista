@@ -25,6 +25,11 @@ jobs:
         with:
           packages: blender curl # Replace with your packages
           version: 1.0 # Bump this to force a cache bust
+      
+      - name: Install Godot Goodie Grabber
+        run: |
+          curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+          ggg sync
 
       - name: Install pnpm
         uses: pnpm/setup@v2
@@ -97,11 +102,6 @@ jobs:
           key: godot-templates-${{ env.GODOT_VERSION }}
           restore-keys: |
             godot-templates-
-
-      - name: Install Godot Goodie Grabber
-        run: |
-          curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
-          ggg sync
 
       - name: Ensure LFS objects are present
         working-directory: ${{ github.workspace }}
