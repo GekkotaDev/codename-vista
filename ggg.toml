@@ -247,6 +247,11 @@ name = "limboai"
 url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
 map = [{ from = "addons/limboai" }]
 
+[[dependency]]
+name = "locker"
+url = "https://github.com/locker-godot/locker/releases/download/v1.1.2/locker_v1.1.2.zip"
+map = [{ from = "locker_v1.1.2/addons/locker", to = "addons/lockr" }]
+
 ## Achivements.
 [[dependency]]
 name = "milestone"
@@ -294,6 +299,11 @@ map = [
     { from = "GodotRuntimeDebugTools-1.1.1/addons/runtime_debug_tools", to = "addons/runtime_debug_tools" },
     { from = "GodotRuntimeDebugTools-1.1.1/addons/runtime_debug_tools/examples", to = "examples/runtime_debug_tools" },
 ]
+
+[[dependency]]
+name = "spark"
+url = "https://github.com/CosmoMyzrailGorynych/spark/archive/refs/heads/main.zip"
+map = [{ from = "spark-main", to = "addons/spark" }]
 
 ## Off the shelf quest system.
 [[dependency]]

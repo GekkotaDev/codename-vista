@@ -161,3 +161,13 @@ archive_sha = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
 name = "gdscript_formatter"
 url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
 archive_sha = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
+
+[[dependency]]
+name = "locker"
+url = "https://github.com/locker-godot/locker/releases/download/v1.1.2/locker_v1.1.2.zip"
+archive_sha = "dd107b60ca78212940714b0bfb59f5b4d72a7b22c9419d842e218581dd3f141e"
+
+[[dependency]]
+name = "spark"
+url = "https://github.com/CosmoMyzrailGorynych/spark/archive/refs/heads/main.zip"
+archive_sha = "ac5e2fda125b8cdbe0e9931231237e0de84fdec49fba57f8831d37682ca536f1"
