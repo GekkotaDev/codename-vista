@@ -28,13 +28,6 @@ jobs:
 
       - uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "[project]"
-          replace: "#"
-          include: "ggg.toml"
-          regex: false
-
-      - uses: jacobtomlinson/gha-find-replace@v3
-        with:
           find: "godot = .*"
           replace: "#"
           include: "ggg.toml"
