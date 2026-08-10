@@ -23,7 +23,7 @@ jobs:
       - name: Install and Cache APT packages
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: blender # Replace with your packages
+          packages: blender curl # Replace with your packages
           version: 1.0 # Bump this to force a cache bust
 
       - name: Install pnpm
@@ -81,8 +81,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
-
-      - run: sudo apt install curl
 
       - name: Restore Godot editor cache
         uses: actions/cache@v4
