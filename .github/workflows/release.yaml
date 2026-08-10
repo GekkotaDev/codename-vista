@@ -43,12 +43,12 @@ jobs:
             ${{ runner.os }}-apt-
       - name: Install APT packages
         run: |
-          apt-get update
+          sudo apt-get update
           # Install your packages
-          apt-get install -y blender
+          sudo apt-get install -y blender
 
           # Change ownership of the archives so actions/cache can save them
-          chown -R runner:docker /var/cache/apt/archives
+          sudo chown -R runner:docker /var/cache/apt/archives
 
   build:
     name: Build Binaries
