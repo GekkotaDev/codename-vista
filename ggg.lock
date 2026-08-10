@@ -156,3 +156,8 @@ sha = "6325563d702994e33cf01cb967ee490728766593"
 name = "GDQuest_GDScript_formatter"
 url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
 archive_sha = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
+
+[[dependency]]
+name = "gdscript_formatter"
+url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
+archive_sha = "c133b4a542ae5cbaf7a8c6dd1b5b38898fd8b3e3589539d109d5fdf3fe918d5e"
