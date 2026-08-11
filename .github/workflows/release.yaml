@@ -154,12 +154,12 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: blender
-          path: ${{ github.workspace }}/.blender/
+          path: ~/.local/blender
       
       - name: Mark Blender as executable
         run: |
-          chmod +x ${{ github.workspace }}/.blender/blender
-          ${{ github.workspace }}/.blender/blender --version
+          chmod +x ~/.local/blender/blender
+          ~/.local/blender/blender --version
 
       - name: Restore Godot editor cache
         uses: actions/cache@v6
@@ -206,8 +206,8 @@ jobs:
           [gd_resource type="EditorSettings" format=3]
 
           [resource]
-          filesystem/import/blender/blender_path = "${{ github.workspace }}/.blender"
-          filesystem/import/blender/blender3_path = "${{ github.workspace }}/.blender"
+          filesystem/import/blender/blender_path = "~/.local/blender/blender"
+          filesystem/import/blender/blender3_path = "~/.local/blender/blender"
           EOF
 
       - name: Export build
