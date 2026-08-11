@@ -21,7 +21,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Godot Goodie Grabber
-        run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+        run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
 
       - name: Sync dependencies
         run: ggg sync
