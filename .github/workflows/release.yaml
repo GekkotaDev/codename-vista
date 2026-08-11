@@ -16,15 +16,15 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install and Cache APT packages
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: blender # Replace with your packages
-          version: 1.0 # Bump this to force a cache bust
+          packages: blender
+          version: 1.0
 
       - uses: jacobtomlinson/gha-find-replace@v3
         with:
@@ -90,7 +90,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive

@@ -20,8 +20,9 @@ jobs:
           cache: true
       - name: Build Tasks
         run: pnpm -r build; pnpm ci
-      - name: Scan Folders
-        run: pnpm exec actions scan
+
+      - name: Naming Conventions
+        run: pnpm exec actions conventions
 
   revert:
     if: ${{ failure() }}
