@@ -42,7 +42,7 @@ const messages = {
 };
 
 export default command({
-  name: "scan",
+  name: "conventions",
 
   handler() {
     const workspaceDirectory = loop(process.cwd())((directory, callback): string => {
