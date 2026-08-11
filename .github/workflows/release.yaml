@@ -9,11 +9,6 @@ on:
         description: Game title.
         required: true
 
-      blender_url:
-        type: string
-        description: Blender download URL
-        default: https://download.blender.org/release/Blender5.2/blender-5.2.0-linux-x64.tar.xz
-
       cache_invalidate:
         type: boolean
         description: Rebuild cache from scratch.
@@ -62,6 +57,7 @@ jobs:
      
 
   dependencies:
+    name: Install Dependencies
     ## ggg sync doesn't work on ubuntu-latest.
     runs-on: windows-latest
     steps:
