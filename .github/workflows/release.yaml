@@ -73,8 +73,33 @@ jobs:
       - name: Install Godot Goodie Grabber
         run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
 
+      - name: Cache packages
+        uses: actions/cache@v6
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/ggg.lock') }}
+          path: |
+            addons
+      - name: Cache editor
+        uses: actions/cache@v6
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/ggg.toml') }}
+          path: |
+            %APPDATA%\ggg\godot
+      - name: Cache templates
+        uses: actions/cache@v6
+        with:
+          key: ${{ runner.os }}-${{ hashFiles('**/ggg.toml') }}
+          path: |
+            %APPDATA%\ggg\export_templates
+
       - name: Sync dependencies
         run: ggg sync --force
+
+      - name: Upload dependencies
+        uses: actions/upload-artifact@v7
+        with:
+          name: dependencies-artifact
+          path: addons/
 
   build:
     name: Build Binaries
@@ -104,10 +129,14 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
 
-      - run: ggg sync
+      - name: Download dependencies
+        uses: actions/download-artifact@v8
+        with:
+          name: dependencies-artifact
+          path: addons/
 
       - name: Restore Godot editor cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ${{ env.PROJECT_PATH }}/.godot/
           key: godot-editor-${{ env.GODOT_VERSION }}-${{ hashFiles(format('{0}/**/*.tscn', env.PROJECT_PATH), format('{0}/**/*.gd', env.PROJECT_PATH), format('{0}/**/*.import', env.PROJECT_PATH)) }}
@@ -115,7 +144,7 @@ jobs:
             godot-editor-${{ env.GODOT_VERSION }}-
 
       - name: Restore Godot export templates
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.local/share/godot/export_templates/
           key: godot-templates-${{ env.GODOT_VERSION }}
@@ -160,7 +189,7 @@ jobs:
             "$EXPORT_DIR/${{ matrix.export_name }}/${{ inputs.game_title }}.${{ matrix.extension }}"
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.export_name }}
           path: ${{ matrix.output_directory }}

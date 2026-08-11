@@ -99,7 +99,7 @@
 ## normally be at and have it target the drive you wish to put it in.
 [project]
 godot = "4.7-stable-mono" # Which version of Godot does it use.
-export_templates = true # Automatically install export templates if not installed.
+export_templates = false  # We were so close to GitHub Actions working.
 
 ## https://godotneers.github.io/ggg/docs/reference/commands/sync#automatically-overwriting-engine-managed-files
 [sync]
