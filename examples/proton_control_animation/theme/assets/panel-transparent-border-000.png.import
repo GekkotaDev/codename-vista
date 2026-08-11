@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b32bfsv75aw25"
-path="res://.godot/imported/panel-transparent-border-000.png-3d7fc876fc53815ee559b77eef588d35.ctex"
+path="res://.godot/imported/panel-transparent-border-000.png-909ec52dd50e8e32cbdc3611dc7df451.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://examples/proton_control_animation/theme/assets/panel-transparent-border-000.png"
-dest_files=["res://.godot/imported/panel-transparent-border-000.png-3d7fc876fc53815ee559b77eef588d35.ctex"]
+source_file="res://addons/proton_control_animation/examples/theme/assets/panel-transparent-border-000.png"
+dest_files=["res://.godot/imported/panel-transparent-border-000.png-909ec52dd50e8e32cbdc3611dc7df451.ctex"]
 
 [params]
 

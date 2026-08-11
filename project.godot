@@ -36,17 +36,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneLoader="*res://globals/scene_loader/scene_loader.tscn"
-CsgToolkitAutoload="*uid://w8ad8q4lneis"
-InputHelper="*uid://cholww48njaeh"
 Panku="*res://addons/panku_console/console.tscn"
-QuestSystem="*uid://b77kvbliweux5"
-SceneManager="*uid://j20v4cg7v8m1"
-Shaker="*uid://c34bmuvdmg4vs"
 SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
-SoundManager="*uid://c3th5bcr2ukh6"
 AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
-RuntimeDebugTools="*res://addons/runtime_debug_tools/scenes/remote_inspector.tscn"
-DebugMenu="*uid://cggqb75a8w8r"
 
 [debug_draw_3d]
 

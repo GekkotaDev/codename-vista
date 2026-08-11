@@ -108,7 +108,7 @@ force_overwrite = ["**/*.import", "**/*.uid"]
 ## Software dependencies
 ##
 ## This section lists external or third party assets and/or code made by other
-## developers or artists that YOUR game is dependent on.
+## developers or artists that the game is dependent on.
 ##
 ## You should stick with Zip releases with SHA256 hashes specified for
 ## validating if the dependency hasn't been tampered with and/or sourcing it
@@ -117,6 +117,10 @@ force_overwrite = ["**/*.import", "**/*.uid"]
 ## Using the ID from the Godot Asset Library (not to be confused with the
 ## newer Asset Store) is not advisable. It is impossible to pin to a specific
 ## version or to validate the asset hasn't been tampered with a virus.
+##
+## It's fine if a hash isn't provided on Github, sometimes it isn't there. It's
+## not ideal since we can't verify if the zip has been tampered with but
+## sometimes it just isn't there in an obvious place.
 ##
 ## Examples why one should 📌 pin their versions.
 ## https://securitylabs.datadoghq.com/articles/node-ipc-npm-malware-analysis/
@@ -145,6 +149,9 @@ url = "https://github.com/kenyoni-software/godot-addons/releases/download/aspect
 map = [{ from = "addons/aspect_ratio_resize_container" }]
 sha256 = "980c0300e334288a192046ea9445658f7cec1658356a9869e696429a159aa145"
 
+## Helper addon for modeling levels using CSGs.
+##
+## like building with Amazing Digital Legos /lh
 [[dependency]]
 name = "csg_toolkit"
 url = "https://github.com/IIFabixn/CSG_Toolkit/archive/refs/tags/1.6.1.zip"
@@ -187,7 +194,9 @@ map = [
     { from = "godot_dialogue_manager-3.10.4/addons/dialogue_manager", to = "addons/dialogue_manager" },
 ]
 
+## It formats your GDScript code. Less bikeshedding, yay.
 ##
+## https://en.wikipedia.org/wiki/Law_of_triviality#Example
 [[dependency]]
 name = "gdscript_formatter"
 url = "https://github.com/GDQuest/GDScript-formatter/releases/download/0.20.1/godot-addon.zip"
@@ -205,6 +214,10 @@ name = "gdUnit4"
 url = "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.0.0.zip"
 map = [{ from = "gdUnit4-6.0.0/addons/gdUnit4", to = "addons/gdUnit4" }]
 
+## Query resources dynamically.
+##
+## Perhaps it's too inconvenient to manually specify resources. This helps with
+## that.
 [[dependency]]
 name = "godot_resource_groups"
 url = "https://github.com/derkork/godot-resource-groups/archive/refs/tags/v0.4.2.zip"
@@ -214,7 +227,8 @@ map = [
 
 ## Hide properties that are only internal to the scene.
 ##
-## This tends to be less fragile than by referencing through [NodePath]s
+## This tends to be less fragile than by referencing through [NodePath]s and
+## more maintainable than binding signals directly to a function.
 [[dependency]]
 name = "hide_private_properties"
 url = "https://github.com/kenyoni-software/godot-addons/releases/download/hide_private_properties-1.4.0/hide_private_properties-1_4_0.zip"
@@ -242,17 +256,22 @@ map = [{ from = "addons/licenses" }]
 ## A behavior tree helps to model the behaviors of an AI agent (e.g: non-player
 ## characters) in a way that is manageable to parse. Such systems may be able
 ## to be more succinctly implemented by finite state machines however.
+##
+## Alternatives: Beehave
 [[dependency]]
 name = "limboai"
 url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
 map = [{ from = "addons/limboai" }]
 
+## Save system library.
+##
+## Resources can be used to enforce type safety as dictionaries lack them.
 [[dependency]]
 name = "locker"
 url = "https://github.com/locker-godot/locker/releases/download/v1.1.2/locker_v1.1.2.zip"
 map = [{ from = "locker_v1.1.2/addons/locker", to = "addons/lockr" }]
 
-## Achivements.
+## Achievements.
 [[dependency]]
 name = "milestone"
 url = "https://github.com/jelolul/milestone/archive/refs/tags/v1.1.1.beta.zip"
@@ -268,6 +287,7 @@ map = [
     { from = "PankuConsole-1.7.9/addons/panku_console", to = "addons/panku_console" },
 ]
 
+## Ever worked with promises in Javascript?
 [[dependency]]
 name = "promise"
 url = "https://github.com/TheWalruzz/godot-promise/releases/download/2.0.1/GdPromise-2.0.1.zip"
@@ -300,6 +320,19 @@ map = [
     { from = "GodotRuntimeDebugTools-1.1.1/addons/runtime_debug_tools/examples", to = "examples/runtime_debug_tools" },
 ]
 
+## Reactive UI library inspired by Svelte.
+##
+## Data binding in Godot is difficult the moment it involves dynamic UIs. Not
+## only do you need to make sure the script doesn't run on every frame to make
+## sure the user's hardware isn't being hammered, it would be difficult to
+## describe it as step by step instructions rather than the intent.
+##
+## How does Roblox of all things have done UI right? See:
+## - Roact
+## - Fusion
+## - Vide
+##
+## Could be better if Godot has generics and *maybe* traits.
 [[dependency]]
 name = "spark"
 url = "https://github.com/CosmoMyzrailGorynych/spark/archive/refs/heads/main.zip"
@@ -341,11 +374,14 @@ url = "https://github.com/Eneskp3441/Shaker/archive/refs/tags/v1.0.7.zip"
 map = [{ from = "Shaker-1.0.7/addons/shaker", to = "addons/shaker" }]
 
 ## This helps inspect signals.
+##
+## https://docs.godotengine.org/en/stable/getting_started/step_by_step/signals.html
 [[dependency]]
 name = "signal_lens"
 url = "https://github.com/yannlemos/Signal-Lens/releases/download/v1.4.1/signal_lens.zip"
 map = [{ from = "signal_lens", to = "addons/signal_lens" }]
 
+## UI.
 [[dependency]]
 name = "SmoothScroll"
 url = "https://github.com/SpyrexDE/SmoothScroll/archive/refs/tags/godot4-v1.4.0.zip"
