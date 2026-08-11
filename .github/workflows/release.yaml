@@ -24,7 +24,7 @@ jobs:
         run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
 
       - name: Sync dependencies
-        run: ggg sync
+        run: ggg sync --force
 
   setup:
     runs-on: ubuntu-latest
