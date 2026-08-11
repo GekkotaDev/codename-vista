@@ -20,30 +20,12 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install and Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: blender
-          version: 1.0
-
       - uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "export_templates = .*"
           replace: "#"
           include: "ggg.toml"
           regex: true
-
-      - name: Install pnpm
-        uses: pnpm/setup@v2
-        with:
-          runtime: node@lts
-          cache: true
-
-      - name: Install dotNET
-        uses: actions/setup-dotnet@v5
-        with:
-            dotnet-version: |
-                10.0.x
       
       # - name: Cache APT Packages
       #   id: apt-cache
@@ -128,6 +110,18 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
+
+      - name: Install and Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
+        with:
+          packages: blender
+          version: 1.0
+
+      - name: Install dotNET
+        uses: actions/setup-dotnet@v5
+        with:
+            dotnet-version: |
+                10.0.x
 
       - name: Download dependencies
         uses: actions/download-artifact@v8
