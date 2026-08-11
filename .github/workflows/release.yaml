@@ -9,6 +9,11 @@ on:
         description: Game title.
         required: true
 
+      blender_url:
+        type: string
+        description: Blender download URL
+        default: https://download.blender.org/release/Blender5.2/blender-5.2.0-linux-x64.tar.xz
+
       cache_invalidate:
         type: boolean
         description: Rebuild cache from scratch.
@@ -20,80 +25,39 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
+  ## It was originally considered to use this workflow job
   ## https://github.com/nutti/blender-daily-build/blob/main/.github/workflows/blender-daily-build.yaml
+  ## but then I - @gekkotadev - realized this took too long.
   blender:
     name: Build Blender
     runs-on: ubuntu-latest
+  
     steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m')"
-      - name: Cache Blender
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      # - name: Get current date
+      #   id: date
+      #   run: echo "::set-output name=date::$(date +'%Y-%m')"
+      
+      - name: Cache Blender installation
         id: cache-blender
         uses: actions/cache@v6
         with:
-          key: ${{ runner.os }}-${{ steps.date.outputs.date }}
-          path: |
-            release
+          path: ~/.local/blender
+          key: blender-${{ runner.os }}-${{ inputs.blender_url }}
 
-      - name: Checkout Blender source code from Blender official repository
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+      - name: Download and extract Blender
+        if: steps.cache-blender.outputs.cache-hit != 'true'
         run: |
-          mkdir -p blender-build
-          cd blender-build
-          git clone https://projects.blender.org/blender/blender.git
-      - name: Setup Python
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.13
-      - name: Install initial packages
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          sudo apt update
-          sudo apt install git git-lfs
-          # Blender is requiring gcc 14, while Ubuntu 24.04 runner has gcc 13.
-          sudo apt install gcc-14 g++-14
-          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
-          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
-      - name: Install basic building environment
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          cd blender-build/blender
-          ./build_files/linux/install_linux_packages.py
-      - name: Download libraries
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          cd blender-build/blender
-          ./build_files/utils/make_update.py --use-linux-libraries
-      - name: Build Blender
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          cd blender-build/blender
-          make update
-          make
-      - name: Test Blender Binary
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          ./blender-build/build_linux/bin/blender --background --factory-startup -noaudio
-      - name: Compress Blender for the artifacts
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          mkdir release
-          cp -r blender-build/build_linux/bin release/blender
-          cd release
-          tar Jcf blender.tar.xz blender
-          rm -rf blender
-      - name: Create MD5 checksum file
-        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          cd release
-          md5sum blender.tar.xz > blender.tar.xz.md5
-      - name: Upload artifact 
+          mkdir -p ~/.local/blender
+          curl -sSL ${{ inputs.blender_url }} | tar -xJ --strip-components=1 -C ~/.local/blender
+
+      - name: Upload Blender as artifact
         uses: actions/upload-artifact@v7
         with:
           name: blender
-          path: "release"
+          path: ~/.local/blender/
+     
 
   dependencies:
     ## ggg sync doesn't work on ubuntu-latest.
@@ -197,6 +161,11 @@ jobs:
         with:
           name: blender
           path: .blender/
+      
+      - name: Mark Blender as executable
+        run: |
+          chmod +x ${{ github.workspace }}/.blender/blender
+          ${{ github.workspace }}/.blender/blender --version
 
       - name: Restore Godot editor cache
         uses: actions/cache@v6
