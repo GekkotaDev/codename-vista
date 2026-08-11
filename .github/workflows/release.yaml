@@ -13,8 +13,22 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
+  ggg:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Godot Goodie Grabber
+        run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
+
+      - name: Sync dependencies
+        run: ggg sync
+
   setup:
     runs-on: ubuntu-latest
+    needs: [ggg]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -33,17 +47,12 @@ jobs:
           include: "ggg.toml"
           regex: true
 
-      - name: Install Godot Goodie Grabber
-        run: curl -fsSL https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.sh | sh
-
-      - name: Sync dependencies
-        run: ggg sync
-
       - name: Install pnpm
         uses: pnpm/setup@v2
         with:
           runtime: node@lts
           cache: true
+
       - name: Install dotNET
         uses: actions/setup-dotnet@v5
         with:
