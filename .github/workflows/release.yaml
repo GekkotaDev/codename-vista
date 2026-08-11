@@ -9,12 +9,92 @@ on:
         description: Game title.
         required: true
 
+      cache_invalidate:
+        type: boolean
+        description: Rebuild cache from scratch.
+        default: false
+
 env:
   GODOT_VERSION: "4.7"
   PROJECT_PATH: godot
   WINEPREFIX: /tmp/.wine
 
 jobs:
+  ## https://github.com/nutti/blender-daily-build/blob/main/.github/workflows/blender-daily-build.yaml
+  blender:
+    name: Build Blender
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m')"
+      - name: Cache Blender
+        id: cache-blender
+        uses: actions/cache@v6
+        with:
+          key: ${{ runner.os }}-${{ steps.date.outputs.date }}
+          path: |
+            release
+
+      - name: Checkout Blender source code from Blender official repository
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p blender-build
+          cd blender-build
+          git clone https://projects.blender.org/blender/blender.git
+      - name: Setup Python
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13
+      - name: Install initial packages
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          sudo apt update
+          sudo apt install git git-lfs
+          # Blender is requiring gcc 14, while Ubuntu 24.04 runner has gcc 13.
+          sudo apt install gcc-14 g++-14
+          sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-14 100
+          sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-14 100
+      - name: Install basic building environment
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          cd blender-build/blender
+          ./build_files/linux/install_linux_packages.py
+      - name: Download libraries
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          cd blender-build/blender
+          ./build_files/utils/make_update.py --use-linux-libraries
+      - name: Build Blender
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          cd blender-build/blender
+          make update
+          make
+      - name: Test Blender Binary
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          ./blender-build/build_linux/bin/blender --background --factory-startup -noaudio
+      - name: Compress Blender for the artifacts
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          mkdir release
+          cp -r blender-build/build_linux/bin release/blender
+          cd release
+          tar Jcf blender.tar.xz blender
+          rm -rf blender
+      - name: Create MD5 checksum file
+        if: inputs.cache_invalidate || steps.cache-blender.outputs.cache-hit != 'true'
+        run: |
+          cd release
+          md5sum blender.tar.xz > blender.tar.xz.md5
+      - name: Upload artifact 
+        uses: actions/upload-artifact@v7
+        with:
+          name: blender
+          path: "release"
+
   dependencies:
     ## ggg sync doesn't work on ubuntu-latest.
     runs-on: windows-latest
@@ -46,10 +126,10 @@ jobs:
             ~\.cargo\bin
 
       - name: Install Godot Goodie Grabber
-        if: steps.cache-ggg.outputs.cache-hit != 'true'
+        if: inputs.cache_invalidate || steps.cache-ggg.outputs.cache-hit != 'true'
         run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
       - name: Sync dependencies
-        if: steps.cache-packages.outputs.cache-hit != 'true'
+        if: inputs.cache_invalidate || steps.cache-packages.outputs.cache-hit != 'true'
         run: ggg sync --force
 
       ## Artifacts are Github Actions' mechanism for uploading and downloading
@@ -66,7 +146,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-4.7
-    needs: [dependencies]  # dependencies-artifacts needed.
+    needs: [blender, dependencies]  # dependencies-artifacts needed.
     strategy:
       fail-fast: true
       matrix:
@@ -107,12 +187,16 @@ jobs:
           dotnet-version: |
             10.0.x
 
-      ## 
       - name: Download dependencies
         uses: actions/download-artifact@v8
         with:
           name: dependencies-artifact
           path: addons/
+      - name: Download Blender
+        uses: actions/download-artifact@v8
+        with:
+          name: blender
+          path: .blender/
 
       - name: Restore Godot editor cache
         uses: actions/cache@v6
@@ -159,8 +243,8 @@ jobs:
           [gd_resource type="EditorSettings" format=3]
 
           [resource]
-          filesystem/import/blender/blender_path = "/usr/bin/blender"
-          filesystem/import/blender/blender3_path = "/usr/bin/blender"
+          filesystem/import/blender/blender_path = "${{ github.workspace }}/.blender"
+          filesystem/import/blender/blender3_path = "${{ github.workspace }}/.blender"
           EOF
 
       - name: Export build
