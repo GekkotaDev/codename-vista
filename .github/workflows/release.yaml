@@ -13,29 +13,8 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
-  ggg:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "export_templates = .*"
-          replace: "#"
-          include: "ggg.toml"
-          regex: true
-
-      - name: Install Godot Goodie Grabber
-        run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
-
-      - name: Sync dependencies
-        run: ggg sync --force
-
   setup:
     runs-on: ubuntu-latest
-    needs: [ggg]
     steps:
       - uses: actions/checkout@v7
         with:
@@ -46,6 +25,13 @@ jobs:
         with:
           packages: blender
           version: 1.0
+
+      - uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "export_templates = .*"
+          replace: "#"
+          include: "ggg.toml"
+          regex: true
 
       - name: Install pnpm
         uses: pnpm/setup@v2
@@ -76,12 +62,26 @@ jobs:
       #     # Change ownership of the archives so actions/cache can save them
       #     sudo chown -R runner:docker /var/cache/apt/archives
 
+  dependencies:
+    runs-on: windows-latest
+    needs: [setup]
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Godot Goodie Grabber
+        run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
+
+      - name: Sync dependencies
+        run: ggg sync --force
+
   build:
     name: Build Binaries
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-4.7
-    needs: [setup]
+    needs: [dependencies]
     strategy:
       fail-fast: true
       matrix:
