@@ -25,38 +25,40 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
+  #! no blender.
+
   ## It was originally considered to use this workflow job
   ## https://github.com/nutti/blender-daily-build/blob/main/.github/workflows/blender-daily-build.yaml
   ## but then I - @gekkotadev - realized this took too long.
-  blender:
-    name: Build Blender
-    runs-on: ubuntu-latest
+  # blender:
+  #   name: Build Blender
+  #   runs-on: ubuntu-latest
   
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      # - name: Get current date
-      #   id: date
-      #   run: echo "::set-output name=date::$(date +'%Y-%m')"
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+  #     # - name: Get current date
+  #     #   id: date
+  #     #   run: echo "::set-output name=date::$(date +'%Y-%m')"
       
-      - name: Cache Blender installation
-        id: cache-blender
-        uses: actions/cache@v6
-        with:
-          path: ~/.local/blender
-          key: blender-${{ runner.os }}-${{ inputs.blender_url }}
+  #     - name: Cache Blender installation
+  #       id: cache-blender
+  #       uses: actions/cache@v6
+  #       with:
+  #         path: ~/.local/blender
+  #         key: blender-${{ runner.os }}-${{ inputs.blender_url }}
 
-      - name: Download and extract Blender
-        if: steps.cache-blender.outputs.cache-hit != 'true'
-        run: |
-          mkdir -p ~/.local/blender
-          curl -sSL ${{ inputs.blender_url }} | tar -xJ --strip-components=1 -C ~/.local/blender
+  #     - name: Download and extract Blender
+  #       if: steps.cache-blender.outputs.cache-hit != 'true'
+  #       run: |
+  #         mkdir -p ~/.local/blender
+  #         curl -sSL ${{ inputs.blender_url }} | tar -xJ --strip-components=1 -C ~/.local/blender
 
-      - name: Upload Blender as artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: blender
-          path: ~/.local/blender/
+  #     - name: Upload Blender as artifact
+  #       uses: actions/upload-artifact@v7
+  #       with:
+  #         name: blender
+  #         path: ~/.local/blender/
      
 
   dependencies:
@@ -110,7 +112,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-4.7
-    needs: [blender, dependencies]  # dependencies-artifacts needed.
+    needs: [dependencies]  # dependencies-artifacts needed.
     strategy:
       fail-fast: true
       matrix:
@@ -150,16 +152,16 @@ jobs:
         with:
           name: dependencies-artifact
           path: ${{ github.workspace }}/addons/
-      - name: Download Blender
-        uses: actions/download-artifact@v8
-        with:
-          name: blender
-          path: ~/.local/blender
+      # - name: Download Blender
+      #   uses: actions/download-artifact@v8
+      #   with:
+      #     name: blender
+      #     path: ~/.local/blender
       
-      - name: Mark Blender as executable
-        run: |
-          chmod +x ~/.local/blender/blender
-          ~/.local/blender/blender --version
+      # - name: Mark Blender as executable
+      #   run: |
+      #     chmod +x ~/.local/blender/blender
+      #     ~/.local/blender/blender --version
 
       - name: Restore Godot editor cache
         uses: actions/cache@v6
@@ -199,16 +201,16 @@ jobs:
         run: |
           godot --headless --import || true
 
-      - name: Configure Godot Editor Settings for Headless Mode
-        run: |
-          mkdir -p ~/.config/godot
-          cat <<EOF > ~/.config/godot/editor_settings-4.tres
-          [gd_resource type="EditorSettings" format=3]
+      # - name: Configure Godot Editor Settings for Headless Mode
+      #   run: |
+      #     mkdir -p ~/.config/godot
+      #     cat <<EOF > ~/.config/godot/editor_settings-4.tres
+      #     [gd_resource type="EditorSettings" format=3]
 
-          [resource]
-          filesystem/import/blender/blender_path = "~/.local/blender/blender"
-          filesystem/import/blender/blender3_path = "~/.local/blender/blender"
-          EOF
+      #     [resource]
+      #     filesystem/import/blender/blender_path = "~/.local/blender/blender"
+      #     filesystem/import/blender/blender3_path = "~/.local/blender/blender"
+      #     EOF
 
       - name: Export build
         run: |

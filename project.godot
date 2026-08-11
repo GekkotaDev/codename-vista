@@ -39,6 +39,13 @@ SceneLoader="*res://globals/scene_loader/scene_loader.tscn"
 Panku="*res://addons/panku_console/console.tscn"
 SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
 AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
+CsgToolkitAutoload="*uid://w8ad8q4lneis"
+DebugMenu="*uid://cggqb75a8w8r"
+InputHelper="*uid://cholww48njaeh"
+QuestSystem="*uid://b77kvbliweux5"
+SceneManager="*uid://j20v4cg7v8m1"
+Shaker="*uid://c34bmuvdmg4vs"
+SoundManager="*uid://c3th5bcr2ukh6"
 
 [debug_draw_3d]
 
@@ -87,6 +94,10 @@ folder_colors={
 "res://tests/": "green",
 "res://views/": "purple"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [gdunit4]
 
