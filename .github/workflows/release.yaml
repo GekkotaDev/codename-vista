@@ -149,12 +149,12 @@ jobs:
         uses: actions/download-artifact@v8
         with:
           name: dependencies-artifact
-          path: addons/
+          path: ${{ github.workspace }}/addons/
       - name: Download Blender
         uses: actions/download-artifact@v8
         with:
           name: blender
-          path: .blender/
+          path: ${{ github.workspace }}/.blender/
       
       - name: Mark Blender as executable
         run: |
