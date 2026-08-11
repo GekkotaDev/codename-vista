@@ -19,6 +19,13 @@ jobs:
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - uses: jacobtomlinson/gha-find-replace@v3
+        with:
+          find: "export_templates = .*"
+          replace: "#"
+          include: "ggg.toml"
+          regex: true
 
       - name: Install Godot Goodie Grabber
         run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
@@ -39,13 +46,6 @@ jobs:
         with:
           packages: blender
           version: 1.0
-
-      - uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "export_templates = .*"
-          replace: "#"
-          include: "ggg.toml"
-          regex: true
 
       - name: Install pnpm
         uses: pnpm/setup@v2
