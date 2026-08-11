@@ -138,12 +138,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
 
-      ## The cost of having Blender support during development.
-      - name: Install Blender
-        uses: bradyajohnston/setup-blender@v5
-        with:
-          version: latest
-
       ## Yes, we use the C# enabled version of Godot.
       - name: Install dotNET
         uses: actions/setup-dotnet@v5
