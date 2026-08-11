@@ -1,0 +1,75 @@
+name: Bug Report
+description: Report a bug in the game.
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        When reporting bugs, follow the guidelines in this template. This helps identify the problem precisely and thus enables the team to fix it faster.
+
+        - **If it's suspected Generative AI / Large Language Models were used, the team may exercise caution around reports from you.**
+        - Search if there is an existing [open](https://github.com/godotengine/godot/issues) or [closed](https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aclosed) issue for your bug. If you're unsure, file the bug report.
+        - Write a descriptive title (above).
+        - **One issue per bug**; if there are multiple bugs please create a new issue for each distinct bug.
+        - It's better to include too much information than not enough information to fix a bug.
+        - Please understand we are not capable of telepathy, we can not read your mind.
+
+  - type: input
+    attributes:
+      label: Build Version
+      description: What version of the game did the bug happen in?
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating System
+      description: What OS were you playing the game on? Which version of the OS? There is the possibility the bug is specific to this OS.
+      placeholder: Windows 10 20H2
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: System Information
+      description: |
+        At the bare minimum, please report the following hardware requirements:
+
+        - CPU architecture
+        - GPU model and driver version
+        - RAM configuration
+
+        This information helps to pin down if the bug in question may be specific to your particular hardware configuration; the developers may exercise the right to close this report if it's intentionally omitted when needed. You may specify additional hardware if it you find that it can help fix the bug.
+
+      placeholder: |
+        - Intel® Core™ 7 processor 360 CPU
+        - dedicated Intel® Arc™ B580 Graphics
+        - 16 GB RAM
+        - SAMSUNG 2TB 990 PRO M.2 PCIe NVMe SSD
+
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Bug Description
+      description: |
+        Describe the bug. What isn't working, and how do you expect it to work? You may include screenshots and video recordings.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction Steps
+      description: |
+        Either a list of steps or the code that reproduces the issue. This is a hard requirement.
+    validations:
+      required: true
+  
+  - type: checkboxes
+    attributes:
+      label: Acknowledgement
+      description: Have you read the guidelines in full?
+      options:
+        - label: "Yes"
+          required: false

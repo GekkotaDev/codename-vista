@@ -1,0 +1,92 @@
+name: Bug Report (Developers)
+description: For developers. Report a bug in the game.
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        As a rule of thumb:
+
+        - If you suspect it's a bug with an addon, file the report there instead following their procedures.
+        - **One issue per bug**; if there are multiple bugs please create a new issue for each distinct bug.
+        - It's better to include too much information than not enough information to fix a bug.
+        - **This is not an essay. Avoid using ChatGPT / Gemini / Deepseek / Claude / Grok / et cetera.**
+
+  - type: textarea
+    attributes:
+      label: Tested Godot Version/s
+      description: |
+        While it's not guaranteed it's a bug related to an update of Godot, it's good to rule out any related possibilities such as:
+
+        - A regression introduced into a later update not present in older versions of Godot.
+        - A bug fix present in later Godot updates but not in the project's current version.
+        - An addon that hasn't been updated to the offending version.
+
+      placeholder: |
+        - Reproducible in: Godot 4.7 .NET
+        - Not reproducible in: Godot 4.6
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Operating System
+      description: What OS are you using? Which OS version (if applicable)? There is the possibility the bug is specific to this OS.
+      placeholder: openSUSE Tumbleweed
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: System Information
+      description: |
+        At the bare minimum, please report the following hardware requirements:
+
+        - CPU architecture
+        - GPU model and driver version
+        - RAM configuration
+
+        This information helps to pin down if the bug in question may be specific to your particular hardware configuration, and the team may exercise the right to close this report if it's intentionally omitted when needed. You may specify additional hardware if it you find that it can help fix the bug.
+
+      placeholder: |
+        - Intel® Core™ 7 processor 360 CPU
+        - dedicated Intel® Arc™ B580 Graphics
+        - 16 GB RAM
+        - SAMSUNG 2TB 990 PRO M.2 PCIe NVMe SSD
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Bug Description
+      description: |
+        Describe the bug. What isn't working, and how do you expect it to work?
+
+        You can include screenshots and video recordings to provide additional context related to the bug. When pasting debug logs or other forms of text do not under any circumstance screenshot it, instead paste it as text inside a code block.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Reproduction Steps
+      description: |
+        Either a list of steps or the code that reproduces the issue. If no means to reproduce the bug are included then this report will be dismissed.
+      placeholder: |
+        ```gdscript
+        class_name Foo
+        extends Node
+
+        func _process(_delta):
+            pass
+        ```
+    validations:
+      required: true
+  
+  - type: textarea
+    attributes:
+      label: Minimum Reproduction Project
+      description: |
+        - A branch, fork, or a zip file that reproduces the issue. If uploading a zip file, be sure **not** to include the `.godot`, `.venv`, `addons` and `node_modules` folders so that developers may be able to debug it faster or open it in the first place on less capable hardware; if you included those folders anyways, your bug will be fixed slower.
+        - Having a Minimum Reproduction Project is very important so that the developers may be able to reproduce your bug in the same way that you're experiencing it. This also help when applying a potential fix.
+    validations:
+      required: true

@@ -1,10 +1,12 @@
+## TODO
+## - [ ] Create AppImage
 name: Release
 on:
   workflow_dispatch:
     inputs:
       game_title:
         type: string
-        description: Title of the game.
+        description: Game title.
         required: true
 
 env:
@@ -13,70 +15,46 @@ env:
   WINEPREFIX: /tmp/.wine
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "export_templates = .*"
-          replace: "#"
-          include: "ggg.toml"
-          regex: true
-      
-      # - name: Cache APT Packages
-      #   id: apt-cache
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: /var/cache/apt/archives
-      #     key: ${{ runner.os }}-apt-${{ hashFiles('**/apt-packages.txt') }} # Or use a hardcoded string
-      #     restore-keys: |
-      #       ${{ runner.os }}-apt-
-      # - name: Install APT packages
-      #   run: |
-      #     sudo apt-get update
-      #     # Install your packages
-      #     sudo apt-get install -y blender
-
-      #     # Change ownership of the archives so actions/cache can save them
-      #     sudo chown -R runner:docker /var/cache/apt/archives
-
   dependencies:
+    ## ggg sync doesn't work on ubuntu-latest.
     runs-on: windows-latest
-    needs: [setup]
     steps:
+      ## By default, Github Actions doesn't have access to the code base.
+      ##
+      ## By "checking it out" the job can receive a copy of the code base while
+      ## it's busy doing it's thing. This tends to be why it's the first step
+      ## when a job NEEDS the repository (which isn't all the time).
       - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Godot Goodie Grabber
-        run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
-
+      ## Have whatever's installed persist through workflow runs so it doesn't
+      ## need to be reinstalled in the future. Cheaper and faster.
       - name: Cache packages
+        id: cache-packages
         uses: actions/cache@v6
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/ggg.lock') }}
           path: |
             addons
-      - name: Cache editor
+      - name: Cache ggg
+        id: cache-ggg
         uses: actions/cache@v6
         with:
           key: ${{ runner.os }}-${{ hashFiles('**/ggg.toml') }}
           path: |
-            %APPDATA%\ggg\godot
-      - name: Cache templates
-        uses: actions/cache@v6
-        with:
-          key: ${{ runner.os }}-${{ hashFiles('**/ggg.toml') }}
-          path: |
-            %APPDATA%\ggg\export_templates
+            ~\.cargo\bin
 
+      - name: Install Godot Goodie Grabber
+        if: steps.cache-ggg.outputs.cache-hit != 'true'
+        run: irm https://github.com/godotneers/ggg/releases/latest/download/ggg-installer.ps1 | iex
       - name: Sync dependencies
+        if: steps.cache-packages.outputs.cache-hit != 'true'
         run: ggg sync --force
 
+      ## Artifacts are Github Actions' mechanism for uploading and downloading
+      ## the results of jobs. Here we upload the installed addons as an artifact
+      ## so that it may be used in building the game.
       - name: Upload dependencies
         uses: actions/upload-artifact@v7
         with:
@@ -88,21 +66,26 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: barichello/godot-ci:mono-4.7
-    needs: [dependencies]
+    needs: [dependencies]  # dependencies-artifacts needed.
     strategy:
       fail-fast: true
       matrix:
         include:
-          - export: Windows
-            extension: exe
-            godot_export: Windows Desktop x86_64
-            output_directory: dist/windows_x64
-            export_name: windows_x64
+          ## Linux support should be prioritized attributed to a combination of
+          ## the Steam Deck's popularity and being a far less hostile Operating
+          ## System both for developers and end-users.
           - export: Linux
             extension: x64
             godot_export: Linux x86_64
             output_directory: dist/linux_x64
             export_name: linux_x64
+
+          ## Builds for Windows should be provided but have lesser priority
+          - export: Windows
+            extension: exe
+            godot_export: Windows Desktop x86_64
+            output_directory: dist/windows_x64
+            export_name: windows_x64
 
     steps:
       - name: Checkout
@@ -111,18 +94,20 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           submodules: recursive
 
-      - name: Install and Cache APT packages
-        uses: awalsh128/cache-apt-pkgs-action@latest
+      ## The cost of having Blender support during development.
+      - name: Install Blender
+        uses: bradyajohnston/setup-blender@v5
         with:
-          packages: blender
-          version: 1.0
+          version: latest
 
+      ## Yes, we use the C# enabled version of Godot.
       - name: Install dotNET
         uses: actions/setup-dotnet@v5
         with:
-            dotnet-version: |
-                10.0.x
+          dotnet-version: |
+            10.0.x
 
+      ## 
       - name: Download dependencies
         uses: actions/download-artifact@v8
         with:
@@ -145,6 +130,9 @@ jobs:
           restore-keys: |
             godot-templates-
 
+      ## LFS = Large File Storage
+      ##
+      ## For assets. They tend to be large.
       - name: Ensure LFS objects are present
         working-directory: ${{ github.workspace }}
         run: |
