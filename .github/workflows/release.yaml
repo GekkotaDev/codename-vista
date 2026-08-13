@@ -14,6 +14,10 @@ on:
         description: Rebuild cache from scratch.
         default: false
 
+      test:
+        type: boolean
+        default: true
+
 env:
   GODOT_VERSION: "4.7"
   PROJECT_PATH: godot
@@ -208,6 +212,17 @@ jobs:
       #     filesystem/import/blender/blender3_path = "~/.local/blender/blender"
       #     EOF
 
+      - uses: godot-gdunit-labs/gdUnit4-action@v1
+        if: inputs.test
+        with:
+          godot-version: 4.7
+          godot-net: true
+          godot-force-mono: true
+          paths: |
+              res://tests
+          timeout: 5
+          version: installed
+
       - name: Export build
         run: |
           mkdir -v -p ${{ matrix.output_directory }}
@@ -254,6 +269,8 @@ jobs:
         uses: actions/download-artifact@v5
         with:
           name: windows_x64
+
+      # TODO: AppImage.
       
       - name: Create Release
         id: create_release
