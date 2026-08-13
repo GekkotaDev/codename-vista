@@ -341,9 +341,9 @@ map = [{ from = "spark-main", to = "addons/spark" }]
 ## Off the shelf quest system.
 [[dependency]]
 name = "quest_system"
-url = "https://github.com/shomykohai/quest-system/archive/refs/tags/2.0.1.4_4.zip"
+url = "https://github.com/shomykohai/quest-system/archive/refs/tags/2.0.2.4_4.zip"
 map = [
-    { from = "quest-system-2.0.1.4_4/addons/quest_system", to = "addons/quest_system" },
+    { from = "quest-system-2.0.2.4_4/addons/quest_system", to = "addons/quest_system" },
 ]
 
 ## Securely load resources.
