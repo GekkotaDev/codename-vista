@@ -1,0 +1,10 @@
+name: Detect Slop
+on: [pull_request]
+
+jobs:
+  detection:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: chaoss/disclosure/action@main
+        with:
+          label: potential-slop
