@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://biakm1venwdgv"
+path="res://.godot/imported/hedge.obj-2e2b26997439f796322b15e5d4ae7260.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hedge.obj-2e2b26997439f796322b15e5d4ae7260.mesh"]
+
+source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/OBJ format/hedge.obj"
+dest_files=["res://.godot/imported/hedge.obj-2e2b26997439f796322b15e5d4ae7260.mesh", "res://.godot/imported/hedge.obj-2e2b26997439f796322b15e5d4ae7260.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -5,8 +5,8 @@ archive_sha = "980c0300e334288a192046ea9445658f7cec1658356a9869e696429a159aa145"
 
 [[dependency]]
 name = "csg_toolkit"
-url = "https://github.com/IIFabixn/CSG_Toolkit/archive/refs/tags/1.6.1.zip"
-archive_sha = "2b66f55ffde7310a6ae7e8aabecf0eb98b2911e6cbc2b600a3ef28f8f31db378"
+url = "https://github.com/fabian-becker/CSG_Toolkit/releases/download/1.7.0/csg_toolkit_1.7.0.zip"
+archive_sha = "34bfdb0e61cc804201201e0df02b6465ad615a838ae28bca2667a6f47a2e3a7f"
 
 [[dependency]]
 name = "custom_theme_overrides"
@@ -25,8 +25,8 @@ archive_sha = "2a3ff055adde209acf32f819b66d06a364e7d258e3da76e134f1ae3b69b65b6c"
 
 [[dependency]]
 name = "dialogue_manager"
-url = "https://github.com/nathanhoad/godot_dialogue_manager/archive/refs/tags/v3.10.4.zip"
-archive_sha = "3b31f7b23655b98cb6ef943fe531a92a9c7e53c12898cf0c25566ba577c971a7"
+url = "https://github.com/nathanhoad/godot_dialogue_manager/archive/refs/tags/v4.0.3.zip"
+archive_sha = "2ed1123fe511d71f9e68ce1bbe398954f3a6366796383bde589accb17ce6a230"
 
 [[dependency]]
 name = "gdUnit4"
@@ -50,8 +50,8 @@ archive_sha = "f52a74a2399c48a2dd90356ddd87478358b33088655509a1e95baf2ff411f3bd"
 
 [[dependency]]
 name = "licenses"
-url = "https://github.com/kenyoni-software/godot-addons/releases/download/licenses-1.11.0/licenses-1_11_0.zip"
-archive_sha = "63b936e1ffea3aea683cce54ad0c8f9e23f894c8150664773087c1d847e4069a"
+url = "https://github.com/kenyoni-software/godot-addons/releases/download/licenses-1.11.2/licenses-1_11_2.zip"
+archive_sha = "7c497cdc1066e93386bfba98b6868cbeadb1fdf5f5da30dddb84a167c0012235"
 
 [[dependency]]
 name = "limboai"
@@ -90,8 +90,8 @@ archive_sha = "1610dbe06297ec37f4e13d7c789a4b3ea91b6fca49dc7656a815873b6abab200"
 
 [[dependency]]
 name = "quest_system"
-url = "https://github.com/shomykohai/quest-system/archive/refs/tags/2.0.1.4_4.zip"
-archive_sha = "af875c5cd555e5e1584ecf7881bb2ac48436c6bfc3247a4c0ce097065644b18f"
+url = "https://github.com/shomykohai/quest-system/archive/refs/tags/2.0.2.4_4.zip"
+archive_sha = "b7abf82e1664f6c90d4df9d6809fc7bf35c010d94fd98797a5480baded90a81e"
 
 [[dependency]]
 name = "safe_resource_loader"
@@ -171,3 +171,8 @@ archive_sha = "dd107b60ca78212940714b0bfb59f5b4d72a7b22c9419d842e218581dd3f141e"
 name = "spark"
 url = "https://github.com/CosmoMyzrailGorynych/spark/archive/refs/heads/main.zip"
 archive_sha = "ac5e2fda125b8cdbe0e9931231237e0de84fdec49fba57f8831d37682ca536f1"
+
+[[dependency]]
+name = "beehave"
+url = "https://github.com/bitbrain/beehave/archive/refs/tags/v2.9.3.zip"
+archive_sha = "6299d8c42a29c2a44fabb2a43113067997fac5908c7748645da6958329c9951c"

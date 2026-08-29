@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3xnju2osx8un"
+path="res://.godot/imported/flag.obj-6f9de92411f1c2b428a59fd15d8d069a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/flag.obj-6f9de92411f1c2b428a59fd15d8d069a.mesh"]
+
+source_file="res://assets/lib/Kenney/3D/Mini Forest/Models/OBJ format/flag.obj"
+dest_files=["res://.godot/imported/flag.obj-6f9de92411f1c2b428a59fd15d8d069a.mesh", "res://.godot/imported/flag.obj-6f9de92411f1c2b428a59fd15d8d069a.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

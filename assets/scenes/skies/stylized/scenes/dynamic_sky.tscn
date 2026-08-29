@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdmwjqr66e0ff"]
+[gd_scene format=3 uid="uid://bdmwjqr66e0ff"]
 
-[ext_resource type="Sky" uid="uid://eoyf4fh7b1ml" path="res://assets/skies/stylized/resources/dynamic_sky.tres" id="1_vgtlm"]
+[ext_resource type="Sky" uid="uid://eoyf4fh7b1ml" path="res://assets/scenes/skies/stylized/resources/dynamic_sky.tres" id="1_vgtlm"]
+[ext_resource type="Script" uid="uid://yopquda5gkhs" path="res://assets/scenes/skies/stylized/scenes/dynamic_sky.gd" id="2_ekptv"]
 
 [sub_resource type="Environment" id="Environment_dfoy5"]
 background_mode = 2
@@ -334,14 +335,14 @@ _data = {
 &"daylight_cycle": SubResource("Animation_dfoy5")
 }
 
-[node name="DynamicSky" type="WorldEnvironment"]
+[node name="DynamicSky" type="WorldEnvironment" unique_id=508707110 node_paths=PackedStringArray("animation_player")]
 environment = SubResource("Environment_dfoy5")
+script = ExtResource("2_ekptv")
+animation_player = NodePath("AnimationPlayer")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1735480256]
 transform = Transform3D(-1, 8.742277e-08, 3.8213705e-15, 0, -4.3711385e-08, 0.99999994, 8.742278e-08, 0.99999994, 4.3711385e-08, 0, 0, 0)
 shadow_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_f5twe")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=938399275]
+libraries/ = SubResource("AnimationLibrary_f5twe")

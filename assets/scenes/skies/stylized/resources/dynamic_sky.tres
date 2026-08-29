@@ -1,6 +1,6 @@
-[gd_resource type="Sky" load_steps=11 format=3 uid="uid://eoyf4fh7b1ml"]
+[gd_resource type="Sky" format=3 uid="uid://eoyf4fh7b1ml"]
 
-[ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/skies/stylized/shaders/stylized_sky.gdshader" id="1_37qgr"]
+[ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/scenes/skies/stylized/shaders/stylized_sky.gdshader" id="1_37qgr"]
 
 [sub_resource type="Curve" id="Curve_856ki"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15168539, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.75280905), 0.0, 0.0, 0, 0]

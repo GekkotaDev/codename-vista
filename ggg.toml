@@ -149,15 +149,25 @@ url = "https://github.com/kenyoni-software/godot-addons/releases/download/aspect
 map = [{ from = "addons/aspect_ratio_resize_container" }]
 sha256 = "980c0300e334288a192046ea9445658f7cec1658356a9869e696429a159aa145"
 
+[[dependency]]
+name = "beehave"
+url = "https://github.com/bitbrain/beehave/archive/refs/tags/v2.9.3.zip"
+map = [
+    { from = "beehave-2.9.3/addons/beehave", to = "addons/beehave" },
+    { from = "beehave-2.9.3/script_templates", to = "script_templates" },
+]
+
 ## Helper addon for modeling levels using CSGs.
 ##
 ## like building with Amazing Digital Legos /lh
 [[dependency]]
 name = "csg_toolkit"
-url = "https://github.com/IIFabixn/CSG_Toolkit/archive/refs/tags/1.6.1.zip"
+url = "https://github.com/fabian-becker/CSG_Toolkit/releases/download/1.7.0/csg_toolkit_1.7.0.zip"
 map = [
-    { from = "CSG_Toolkit-1.6.1/addons/csg_toolkit", to = "addons/csg_toolkit" },
+    { from = "csg_toolkit", to = "addons/csg_toolkit" },
+    { from = "csg_toolkit/demo", to = "examples/csg_toolkit" },
 ]
+sha256 = "34bfdb0e61cc804201201e0df02b6465ad615a838ae28bca2667a6f47a2e3a7f"
 
 ## This addon provides a way to further customize the User Interface aside from
 ## the use of theme files or scripts.
@@ -189,9 +199,9 @@ map = [
 ## Characters of course need to speak.
 [[dependency]]
 name = "dialogue_manager"
-url = "https://github.com/nathanhoad/godot_dialogue_manager/archive/refs/tags/v3.10.4.zip"
+url = "https://github.com/nathanhoad/godot_dialogue_manager/archive/refs/tags/v4.0.3.zip"
 map = [
-    { from = "godot_dialogue_manager-3.10.4/addons/dialogue_manager", to = "addons/dialogue_manager" },
+    { from = "godot_dialogue_manager-4.0.3/addons/dialogue_manager", to = "addons/dialogue_manager" },
 ]
 
 ## It formats your GDScript code. Less bikeshedding, yay.
@@ -233,6 +243,7 @@ map = [
 name = "hide_private_properties"
 url = "https://github.com/kenyoni-software/godot-addons/releases/download/hide_private_properties-1.4.0/hide_private_properties-1_4_0.zip"
 map = [{ from = "addons/hide_private_properties" }]
+sha256 = "c4ca720c9a5534b232fe146a400828e8a9cb64065c486ff81a3d64831dd969eb"
 
 ## Additional utilities for managing user inputs.
 [[dependency]]
@@ -248,8 +259,9 @@ map = [
 ## the assets are provided under.
 [[dependency]]
 name = "licenses"
-url = "https://github.com/kenyoni-software/godot-addons/releases/download/licenses-1.11.0/licenses-1_11_0.zip"
+url = "https://github.com/kenyoni-software/godot-addons/releases/download/licenses-1.11.2/licenses-1_11_2.zip"
 map = [{ from = "addons/licenses" }]
+sha256 = "7c497cdc1066e93386bfba98b6868cbeadb1fdf5f5da30dddb84a167c0012235"
 
 ## Behavior Trees and Finite State Machines.
 ##
@@ -258,10 +270,10 @@ map = [{ from = "addons/licenses" }]
 ## to be more succinctly implemented by finite state machines however.
 ##
 ## Alternatives: Beehave
-[[dependency]]
-name = "limboai"
-url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
-map = [{ from = "addons/limboai" }]
+# [[dependency]]
+# name = "limboai"
+# url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
+# map = [{ from = "addons/limboai" }]
 
 ## Save system library.
 ##

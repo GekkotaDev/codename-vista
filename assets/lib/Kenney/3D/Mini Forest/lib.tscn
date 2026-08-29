@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://dy3pwent65nri"]
+
+[ext_resource type="PackedScene" uid="uid://chc5i8a4jt5n1" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/bridge.glb" id="1_2jl7l"]
+[ext_resource type="PackedScene" uid="uid://551vyexaskbf" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/building-platform.glb" id="2_hi7vp"]
+[ext_resource type="PackedScene" uid="uid://cm55rn0t6itna" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/building-roof.glb" id="3_2xkgd"]
+[ext_resource type="PackedScene" uid="uid://dvug325i6chmp" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/building-structure.glb" id="4_ed11x"]
+[ext_resource type="PackedScene" uid="uid://boj08pjsdnuto" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/character-archer.glb" id="5_75g65"]
+[ext_resource type="PackedScene" uid="uid://cr033o0fxqctm" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/fence.glb" id="6_s71jn"]
+[ext_resource type="PackedScene" uid="uid://b0wtwvuhpudul" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/flag.glb" id="7_bw138"]
+[ext_resource type="PackedScene" uid="uid://84ohdetxw5kw" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/ladder.glb" id="8_c0hj8"]
+[ext_resource type="PackedScene" uid="uid://44qyucnof87a" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/patch-dirt.glb" id="9_y4qx0"]
+[ext_resource type="PackedScene" uid="uid://nkiv7wqn6kyw" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/patch-grass.glb" id="10_6btmc"]
+[ext_resource type="PackedScene" uid="uid://b11i8km8chji5" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/plant.glb" id="11_mr5cv"]
+[ext_resource type="PackedScene" uid="uid://bgy2un5tc2bnr" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/platform.glb" id="12_5i4hv"]
+[ext_resource type="PackedScene" uid="uid://dtbmq6sgo8dof" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/rocks-high.glb" id="13_or0fh"]
+[ext_resource type="PackedScene" uid="uid://btout8pj0e4rq" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/rocks-low.glb" id="14_gaac6"]
+[ext_resource type="PackedScene" uid="uid://gyfyu3pgvcs4" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/rocks-ramp.glb" id="15_m367l"]
+[ext_resource type="PackedScene" uid="uid://dolgklcrmqfju" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/stones.glb" id="16_d0d6i"]
+[ext_resource type="PackedScene" uid="uid://ock4k8d1pbdp" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/target.glb" id="17_2uvmj"]
+[ext_resource type="PackedScene" uid="uid://b7l6cxe1d3mfr" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/tent.glb" id="18_rxlcf"]
+[ext_resource type="PackedScene" uid="uid://tenjodxg3pkr" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/tree-high.glb" id="19_gegil"]
+[ext_resource type="PackedScene" uid="uid://b6fifywyna87e" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/tree.glb" id="20_hqr13"]
+[ext_resource type="PackedScene" uid="uid://re2pv44vavwy" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/weapon-arrow.glb" id="21_8rm13"]
+[ext_resource type="PackedScene" uid="uid://8flo7xmi31p7" path="res://assets/lib/Kenney/3D/Mini Forest/Models/GLB format/weapon-bow.glb" id="22_bl4gk"]
+
+[node name="Lib" type="Node3D" unique_id=414384606]
+
+[node name="bridge2" parent="." unique_id=1042873523 instance=ExtResource("1_2jl7l")]
+
+[node name="building-platform2" parent="." unique_id=1307593351 instance=ExtResource("2_hi7vp")]
+
+[node name="building-roof2" parent="." unique_id=1609662899 instance=ExtResource("3_2xkgd")]
+
+[node name="building-structure2" parent="." unique_id=1140168192 instance=ExtResource("4_ed11x")]
+
+[node name="character-archer2" parent="." unique_id=1032961527 instance=ExtResource("5_75g65")]
+
+[node name="fence2" parent="." unique_id=2142221052 instance=ExtResource("6_s71jn")]
+
+[node name="flag2" parent="." unique_id=361624713 instance=ExtResource("7_bw138")]
+
+[node name="ladder2" parent="." unique_id=1901075856 instance=ExtResource("8_c0hj8")]
+
+[node name="patch-dirt2" parent="." unique_id=351043297 instance=ExtResource("9_y4qx0")]
+
+[node name="patch-grass2" parent="." unique_id=1959489798 instance=ExtResource("10_6btmc")]
+
+[node name="plant2" parent="." unique_id=1024043410 instance=ExtResource("11_mr5cv")]
+
+[node name="platform2" parent="." unique_id=640082731 instance=ExtResource("12_5i4hv")]
+
+[node name="rocks-high2" parent="." unique_id=1493016059 instance=ExtResource("13_or0fh")]
+
+[node name="rocks-low2" parent="." unique_id=234763366 instance=ExtResource("14_gaac6")]
+
+[node name="rocks-ramp2" parent="." unique_id=859621895 instance=ExtResource("15_m367l")]
+
+[node name="stones2" parent="." unique_id=522150355 instance=ExtResource("16_d0d6i")]
+
+[node name="target2" parent="." unique_id=1574558359 instance=ExtResource("17_2uvmj")]
+
+[node name="tent2" parent="." unique_id=462274656 instance=ExtResource("18_rxlcf")]
+
+[node name="tree-high2" parent="." unique_id=1260203778 instance=ExtResource("19_gegil")]
+
+[node name="tree2" parent="." unique_id=26768728 instance=ExtResource("20_hqr13")]
+
+[node name="weapon-arrow2" parent="." unique_id=297522469 instance=ExtResource("21_8rm13")]
+
+[node name="weapon-bow2" parent="." unique_id=274581070 instance=ExtResource("22_bl4gk")]

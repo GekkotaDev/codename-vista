@@ -13,7 +13,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ncq3u"]
 shader = ExtResource("2_jdmxl")
-shader_parameter/zoom_scale = 1.0
+shader_parameter/zoom_scale = 0.07865113
 
 [sub_resource type="Animation" id="Animation_jdmxl"]
 length = 0.001
@@ -365,7 +365,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -613.0
 offset_top = -315.0
-offset_right = -226.99976
+offset_right = -226.99988
 offset_bottom = -45.0
 grow_horizontal = 2
 grow_vertical = 2

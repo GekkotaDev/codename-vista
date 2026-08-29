@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dqu7eaatssrma"]
+
+[ext_resource type="Script" uid="uid://pa2d2syjd5hb" path="res://nodes/concurrent_subtree.gd" id="1_okkxo"]
+
+[node name="ConcurrentScene" type="Node" unique_id=1616584542]
+script = ExtResource("1_okkxo")

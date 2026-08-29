@@ -58,7 +58,7 @@ TestResult.xml
 nunit-*.xml
 
 # Godot
-*.csproj.old
+*.csproj.old*
 
 #? Python
 .cache
