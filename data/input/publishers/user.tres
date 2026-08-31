@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="InputPublisherUser3D" format=3 uid="uid://cmvf5j22wvppf"]
+
+[ext_resource type="Script" uid="uid://6df4ipfnsxh0" path="res://resources/input/publishers/user_publisher.gd" id="1_l3uer"]
+
+[resource]
+script = ExtResource("1_l3uer")
+metadata/_custom_type_script = "uid://6df4ipfnsxh0"

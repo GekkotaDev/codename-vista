@@ -228,12 +228,12 @@ map = [{ from = "gdUnit4-6.0.0/addons/gdUnit4", to = "addons/gdUnit4" }]
 ##
 ## Perhaps it's too inconvenient to manually specify resources. This helps with
 ## that.
-[[dependency]]
-name = "godot_resource_groups"
-url = "https://github.com/derkork/godot-resource-groups/archive/refs/tags/v0.4.2.zip"
-map = [
-    { from = "godot-resource-groups-0.4.2/addons/godot_resource_groups", to = "addons/godot_resource_groups" },
-]
+# [[dependency]]
+# name = "godot_resource_groups"
+# url = "https://github.com/derkork/godot-resource-groups/archive/refs/tags/v0.4.2.zip"
+# map = [
+#     { from = "godot-resource-groups-0.4.2/addons/godot_resource_groups", to = "addons/godot_resource_groups" },
+# ]
 
 ## Hide properties that are only internal to the scene.
 ##
@@ -297,6 +297,13 @@ name = "panku_console"
 url = "https://github.com/Ark2000/PankuConsole/archive/refs/tags/v1.7.9.zip"
 map = [
     { from = "PankuConsole-1.7.9/addons/panku_console", to = "addons/panku_console" },
+]
+
+[[dependency]]
+name = "phantom_camera"
+url = "https://github.com/ramokz/phantom-camera/archive/refs/tags/v0.11.0.3.zip"
+map = [
+    { from = "phantom-camera-0.11.0.3/addons/phantom_camera", to = "addons/phantom_camera" }
 ]
 
 ## Ever worked with promises in Javascript?
@@ -421,6 +428,13 @@ map = [
     { from = "SpanningTableContainer-1.1.0/addons/spanning_table", to = "addons/spanning_table" },
 ]
 
+[[dependency]]
+name = "yard"
+url = "https://github.com/elliotfontaine/yard-godot/releases/download/v1.2.0/yard-godot.zip"
+map = [
+    { from = "addons/yard", to = "addons/yard" }
+]
+
 ## Convenience helpers for node animation.
 [[dependency]]
 name = "proton_control_animation"
@@ -439,11 +453,11 @@ rev = "be6cd9fd9865a27528541e383f6d3254e2e77d64"
 map = [{ from = "addons/quick_layout_changer" }]
 
 ## View resources in a spreadsheet like UI.
-[[dependency]]
-name = "resources_spreadsheet_view"
-git = "https://github.com/don-tnowe/godot-resources-as-sheets-plugin.git"
-rev = "3363e0d2136c432c989ac1f249aa8aaa634e84e9"
-map = [{ from = "addons/resources_spreadsheet_view" }]
+# [[dependency]]
+# name = "resources_spreadsheet_view"
+# git = "https://github.com/don-tnowe/godot-resources-as-sheets-plugin.git"
+# rev = "3363e0d2136c432c989ac1f249aa8aaa634e84e9"
+# map = [{ from = "addons/resources_spreadsheet_view" }]
 
 ## Additional shader nodes.
 # [[dependency]]

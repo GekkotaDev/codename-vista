@@ -3,6 +3,23 @@
 [ext_resource type="Script" uid="uid://pa2d2syjd5hb" path="res://nodes/concurrent_subtree.gd" id="1_67au1"]
 [ext_resource type="PackedScene" uid="uid://bdmwjqr66e0ff" path="res://assets/scenes/skies/stylized/scenes/dynamic_sky.tscn" id="1_702bc"]
 [ext_resource type="MeshLibrary" uid="uid://cs12syxr64ngc" path="res://assets/lib/Kenney/3D/Nature Kit/nature.meshlib" id="2_3d8kh"]
+[ext_resource type="PackedScene" uid="uid://dw2rjehrq8e6m" path="res://assets/scenes/characters/violla/violla.tscn" id="2_c33iw"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_px7ms"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="6_delwx"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_5s1ne"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="8_delwx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nup64"]
+
+[sub_resource type="Resource" id="Resource_wthop"]
+script = ExtResource("7_5s1ne")
+
+[sub_resource type="Resource" id="Resource_nup64"]
+script = ExtResource("8_delwx")
+projection = 1
+size = 8.0
+near = 0.001
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [node name="GymAlpha" type="Node" unique_id=641491964]
 
@@ -24,6 +41,26 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
+[node name="World3D" type="Node3D" parent="WorldViewportContainer/WorldViewport" unique_id=814821104]
+
+[node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/WorldViewport/World3D" unique_id=901360599]
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071067, 0, -0.7071067, 0.7071068, 0, 5, 4)
+top_level = true
+projection = 1
+current = true
+size = 8.0
+near = 0.001
+
+[node name="PhantomCameraHost" type="Node" parent="WorldViewportContainer/WorldViewport/World3D/Camera3D" unique_id=495505614]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_px7ms")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="DynamicSky" parent="WorldViewportContainer/WorldViewport/World3D" unique_id=508707110 instance=ExtResource("1_702bc")]
+cycle = true
+
 [node name="Level3D" type="Node3D" parent="WorldViewportContainer/WorldViewport" unique_id=1253939646]
 
 [node name="GridMap" type="GridMap" parent="WorldViewportContainer/WorldViewport/Level3D" unique_id=732506415]
@@ -35,14 +72,33 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="World3D" type="Node3D" parent="WorldViewportContainer/WorldViewport" unique_id=814821104]
+[node name="StaticBody3D" type="StaticBody3D" parent="WorldViewportContainer/WorldViewport/Level3D/GridMap" unique_id=284179625]
 
-[node name="DynamicSky" parent="WorldViewportContainer/WorldViewport/World3D" unique_id=508707110 instance=ExtResource("1_702bc")]
-cycle = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldViewportContainer/WorldViewport/Level3D/GridMap/StaticBody3D" unique_id=2103434068]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 12, 0, -0.5, -2)
+shape = SubResource("BoxShape3D_nup64")
+debug_color = Color(0, 0.6, 0.7019608, 1)
 
-[node name="Camera3D" type="Camera3D" parent="WorldViewportContainer/WorldViewport/World3D" unique_id=901360599]
-transform = Transform3D(-3.090862e-08, -0.7071068, 0.7071068, -3.090862e-08, 0.7071068, 0.7071068, -1, 0, -4.3711392e-08, 3, 2, 0)
-current = true
+[node name="Entities3D" type="Node3D" parent="WorldViewportContainer/WorldViewport" unique_id=1506353614]
+
+[node name="Violla" parent="WorldViewportContainer/WorldViewport/Entities3D" unique_id=1749351327 instance=ExtResource("2_c33iw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="PhantomCamera3D" type="Node3D" parent="WorldViewportContainer/WorldViewport/Entities3D/Violla" unique_id=409625012 node_paths=PackedStringArray("follow_target", "look_at_target")]
+transform = Transform3D(0.9995319, 0, 0, 0, 0.70709723, 0.7071065, 0, -0.7070971, 0.7071066, 0, 5, 4)
+top_level = true
+script = ExtResource("6_delwx")
+follow_mode = 2
+follow_target = NodePath("..")
+look_at_mode = 2
+look_at_target = NodePath("..")
+tween_resource = SubResource("Resource_wthop")
+camera_3d_resource = SubResource("Resource_nup64")
+follow_offset = Vector3(0, 4, 4)
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+align_rotation_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="UIViewportContainer" type="SubViewportContainer" parent="." unique_id=1753681161]
 anchors_preset = 15

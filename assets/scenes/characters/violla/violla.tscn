@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dw2rjehrq8e6m"]
+
+[ext_resource type="Script" uid="uid://dbxkr2o7c67hl" path="res://assets/scenes/characters/violla/violla.gd" id="1_0v34p"]
+[ext_resource type="Script" uid="uid://btwmg1k6vf6rb" path="res://modules/bodies/services/input_publisher.gd" id="2_65njw"]
+[ext_resource type="Resource" uid="uid://cmvf5j22wvppf" path="res://data/input/publishers/user.tres" id="3_i4djm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nup64"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nup64"]
+
+[node name="Violla" type="CharacterBody3D" unique_id=1749351327]
+script = ExtResource("1_0v34p")
+sources = Array[ExtResource("2_65njw")]([ExtResource("3_i4djm")])
+metadata/_custom_type_script = "uid://bnqxablop8iwa"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2128127431]
+mesh = SubResource("CapsuleMesh_nup64")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2020237946]
+shape = SubResource("CapsuleShape3D_nup64")

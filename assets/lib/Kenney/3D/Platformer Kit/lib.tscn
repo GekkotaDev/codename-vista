@@ -461,3 +461,5 @@
 [node name="tree-snow2" parent="." unique_id=1386242161 instance=ExtResource("152_080wt")]
 
 [node name="tree2" parent="." unique_id=1333501481 instance=ExtResource("153_3e52m")]
+
+[editable path="arrow2"]
