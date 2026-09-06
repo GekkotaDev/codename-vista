@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bim1ehh5pih0r"
-path="res://.godot/imported/stump_round.glb-0f6e72f6173b0d79146e4bb68da3edac.scn"
+path="res://.godot/imported/stump_round.glb-0f6e72f6173b0d79146e4bb68da3edac.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/stump_round.glb"
-dest_files=["res://.godot/imported/stump_round.glb-0f6e72f6173b0d79146e4bb68da3edac.scn"]
+dest_files=["res://.godot/imported/stump_round.glb-0f6e72f6173b0d79146e4bb68da3edac.res"]
 
 [params]
 

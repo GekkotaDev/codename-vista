@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://xsu6yw5alwbj"
-path="res://.godot/imported/ground_pathEnd.glb-a1bc5a4fd272a55f8e1465091f9d52cb.scn"
+path="res://.godot/imported/ground_pathEnd.glb-a1bc5a4fd272a55f8e1465091f9d52cb.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_pathEnd.glb"
-dest_files=["res://.godot/imported/ground_pathEnd.glb-a1bc5a4fd272a55f8e1465091f9d52cb.scn"]
+dest_files=["res://.godot/imported/ground_pathEnd.glb-a1bc5a4fd272a55f8e1465091f9d52cb.res"]
 
 [params]
 

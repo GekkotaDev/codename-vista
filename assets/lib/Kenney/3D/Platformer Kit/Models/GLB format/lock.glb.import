@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://yoh18y2nw6tp"
-path="res://.godot/imported/lock.glb-10fcb0d0bcb891c368279ad4ae5cf764.scn"
+type="ArrayMesh"
+uid="uid://celugveq2uj7b"
+path="res://.godot/imported/lock.glb-10fcb0d0bcb891c368279ad4ae5cf764.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/lock.glb"
-dest_files=["res://.godot/imported/lock.glb-10fcb0d0bcb891c368279ad4ae5cf764.scn"]
+dest_files=["res://.godot/imported/lock.glb-10fcb0d0bcb891c368279ad4ae5cf764.res"]
 
 [params]
 

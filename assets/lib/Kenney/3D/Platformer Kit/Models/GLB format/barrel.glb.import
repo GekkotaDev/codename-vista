@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b2s7gtsj4q4st"
-path="res://.godot/imported/barrel.glb-a6ce24cc131aa95f5aa84d57ed3505e7.scn"
+type="ArrayMesh"
+uid="uid://bihdwxrg16kw7"
+path="res://.godot/imported/barrel.glb-a6ce24cc131aa95f5aa84d57ed3505e7.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/barrel.glb"
-dest_files=["res://.godot/imported/barrel.glb-a6ce24cc131aa95f5aa84d57ed3505e7.scn"]
+dest_files=["res://.godot/imported/barrel.glb-a6ce24cc131aa95f5aa84d57ed3505e7.res"]
 
 [params]
 

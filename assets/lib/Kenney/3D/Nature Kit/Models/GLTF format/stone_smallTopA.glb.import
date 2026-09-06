@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bxnxa7v2a4gpc"
-path="res://.godot/imported/stone_smallTopA.glb-a68dca36b74fc9507b5a2f870901bd79.scn"
+path="res://.godot/imported/stone_smallTopA.glb-a68dca36b74fc9507b5a2f870901bd79.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/stone_smallTopA.glb"
-dest_files=["res://.godot/imported/stone_smallTopA.glb-a68dca36b74fc9507b5a2f870901bd79.scn"]
+dest_files=["res://.godot/imported/stone_smallTopA.glb-a68dca36b74fc9507b5a2f870901bd79.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b0uijce55soue"
-path="res://.godot/imported/stone_tallE.glb-b9302e3508b1bd3c96fe2b53833f272f.scn"
+path="res://.godot/imported/stone_tallE.glb-b9302e3508b1bd3c96fe2b53833f272f.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/stone_tallE.glb"
-dest_files=["res://.godot/imported/stone_tallE.glb-b9302e3508b1bd3c96fe2b53833f272f.scn"]
+dest_files=["res://.godot/imported/stone_tallE.glb-b9302e3508b1bd3c96fe2b53833f272f.res"]
 
 [params]
 

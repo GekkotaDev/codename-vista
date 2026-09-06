@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://f50rxjy4vskj"
-path="res://.godot/imported/ground_pathCross.glb-1403d8dc515781242fed1570d6b7f679.scn"
+path="res://.godot/imported/ground_pathCross.glb-1403d8dc515781242fed1570d6b7f679.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_pathCross.glb"
-dest_files=["res://.godot/imported/ground_pathCross.glb-1403d8dc515781242fed1570d6b7f679.scn"]
+dest_files=["res://.godot/imported/ground_pathCross.glb-1403d8dc515781242fed1570d6b7f679.res"]
 
 [params]
 

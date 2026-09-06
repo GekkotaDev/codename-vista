@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://ucf6jm711iu1"
-path="res://.godot/imported/crop_melon.glb-4ed5e9855a92fb8554f18123b1bdf5a8.scn"
+path="res://.godot/imported/crop_melon.glb-4ed5e9855a92fb8554f18123b1bdf5a8.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crop_melon.glb"
-dest_files=["res://.godot/imported/crop_melon.glb-4ed5e9855a92fb8554f18123b1bdf5a8.scn"]
+dest_files=["res://.godot/imported/crop_melon.glb-4ed5e9855a92fb8554f18123b1bdf5a8.res"]
 
 [params]
 

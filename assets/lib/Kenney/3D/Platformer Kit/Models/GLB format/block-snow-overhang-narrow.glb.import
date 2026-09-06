@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cwlsnqn7cqht4"
-path="res://.godot/imported/block-snow-overhang-narrow.glb-2a11acdd8fd4b5b3e59418ed10369709.scn"
+type="ArrayMesh"
+uid="uid://7mf0g6tip02r"
+path="res://.godot/imported/block-snow-overhang-narrow.glb-2a11acdd8fd4b5b3e59418ed10369709.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-overhang-narrow.glb"
-dest_files=["res://.godot/imported/block-snow-overhang-narrow.glb-2a11acdd8fd4b5b3e59418ed10369709.scn"]
+dest_files=["res://.godot/imported/block-snow-overhang-narrow.glb-2a11acdd8fd4b5b3e59418ed10369709.res"]
 
 [params]
 

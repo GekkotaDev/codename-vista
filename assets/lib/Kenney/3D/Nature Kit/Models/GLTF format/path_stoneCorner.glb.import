@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://c4f3ok3fmrgxe"
-path="res://.godot/imported/path_stoneCorner.glb-07b0d915bed7113b53b80b0af54b53c9.scn"
+path="res://.godot/imported/path_stoneCorner.glb-07b0d915bed7113b53b80b0af54b53c9.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/path_stoneCorner.glb"
-dest_files=["res://.godot/imported/path_stoneCorner.glb-07b0d915bed7113b53b80b0af54b53c9.scn"]
+dest_files=["res://.godot/imported/path_stoneCorner.glb-07b0d915bed7113b53b80b0af54b53c9.res"]
 
 [params]
 

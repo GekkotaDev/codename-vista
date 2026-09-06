@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://xii7pqln5h0j"
-path="res://.godot/imported/cactus_tall.glb-fb60a22cc99b66fc2bef266bac93bd9a.scn"
+path="res://.godot/imported/cactus_tall.glb-fb60a22cc99b66fc2bef266bac93bd9a.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cactus_tall.glb"
-dest_files=["res://.godot/imported/cactus_tall.glb-fb60a22cc99b66fc2bef266bac93bd9a.scn"]
+dest_files=["res://.godot/imported/cactus_tall.glb-fb60a22cc99b66fc2bef266bac93bd9a.res"]
 
 [params]
 

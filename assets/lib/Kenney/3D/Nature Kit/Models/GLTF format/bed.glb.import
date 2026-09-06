@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://s8n34ikjpo3d"
-path="res://.godot/imported/bed.glb-9bf39bb1795137bda9e5576a300face0.scn"
+path="res://.godot/imported/bed.glb-9bf39bb1795137bda9e5576a300face0.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/bed.glb"
-dest_files=["res://.godot/imported/bed.glb-9bf39bb1795137bda9e5576a300face0.scn"]
+dest_files=["res://.godot/imported/bed.glb-9bf39bb1795137bda9e5576a300face0.res"]
 
 [params]
 

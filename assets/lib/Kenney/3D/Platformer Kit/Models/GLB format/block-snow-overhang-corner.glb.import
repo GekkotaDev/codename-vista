@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cium7stw21vra"
-path="res://.godot/imported/block-snow-overhang-corner.glb-1fb4b7f3930095049239139890f0f4d2.scn"
+type="ArrayMesh"
+uid="uid://c5l3tjhdh0xju"
+path="res://.godot/imported/block-snow-overhang-corner.glb-1fb4b7f3930095049239139890f0f4d2.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-overhang-corner.glb"
-dest_files=["res://.godot/imported/block-snow-overhang-corner.glb-1fb4b7f3930095049239139890f0f4d2.scn"]
+dest_files=["res://.godot/imported/block-snow-overhang-corner.glb-1fb4b7f3930095049239139890f0f4d2.res"]
 
 [params]
 

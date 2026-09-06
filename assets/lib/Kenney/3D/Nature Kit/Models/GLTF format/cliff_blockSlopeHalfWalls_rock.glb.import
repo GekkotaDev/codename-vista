@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cbtr0k2irtha"
-path="res://.godot/imported/cliff_blockSlopeHalfWalls_rock.glb-6d4869f2500718dfe8884498c3c95d8f.scn"
+path="res://.godot/imported/cliff_blockSlopeHalfWalls_rock.glb-6d4869f2500718dfe8884498c3c95d8f.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_blockSlopeHalfWalls_rock.glb"
-dest_files=["res://.godot/imported/cliff_blockSlopeHalfWalls_rock.glb-6d4869f2500718dfe8884498c3c95d8f.scn"]
+dest_files=["res://.godot/imported/cliff_blockSlopeHalfWalls_rock.glb-6d4869f2500718dfe8884498c3c95d8f.res"]
 
 [params]
 

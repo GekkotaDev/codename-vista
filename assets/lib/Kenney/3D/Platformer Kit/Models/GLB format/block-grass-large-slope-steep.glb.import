@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://84hhrabxkmom"
-path="res://.godot/imported/block-grass-large-slope-steep.glb-8ae308e48726ad9f53aef938cb4a322c.scn"
+type="ArrayMesh"
+uid="uid://bqoiheyijgxyc"
+path="res://.godot/imported/block-grass-large-slope-steep.glb-8ae308e48726ad9f53aef938cb4a322c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-grass-large-slope-steep.glb"
-dest_files=["res://.godot/imported/block-grass-large-slope-steep.glb-8ae308e48726ad9f53aef938cb4a322c.scn"]
+dest_files=["res://.godot/imported/block-grass-large-slope-steep.glb-8ae308e48726ad9f53aef938cb4a322c.res"]
 
 [params]
 

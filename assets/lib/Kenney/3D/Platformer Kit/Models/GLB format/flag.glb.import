@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://dox4a86svo3hs"
-path="res://.godot/imported/flag.glb-00e12a3c7f1db13fb1628035ec749593.scn"
+type="ArrayMesh"
+uid="uid://dc1ojfpmahbyd"
+path="res://.godot/imported/flag.glb-00e12a3c7f1db13fb1628035ec749593.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/flag.glb"
-dest_files=["res://.godot/imported/flag.glb-00e12a3c7f1db13fb1628035ec749593.scn"]
+dest_files=["res://.godot/imported/flag.glb-00e12a3c7f1db13fb1628035ec749593.res"]
 
 [params]
 

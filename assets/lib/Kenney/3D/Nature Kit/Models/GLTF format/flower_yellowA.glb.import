@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dt5r4a5fo75mg"
-path="res://.godot/imported/flower_yellowA.glb-8b1674f80490b04ae9206f131a0826d1.scn"
+path="res://.godot/imported/flower_yellowA.glb-8b1674f80490b04ae9206f131a0826d1.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/flower_yellowA.glb"
-dest_files=["res://.godot/imported/flower_yellowA.glb-8b1674f80490b04ae9206f131a0826d1.scn"]
+dest_files=["res://.godot/imported/flower_yellowA.glb-8b1674f80490b04ae9206f131a0826d1.res"]
 
 [params]
 

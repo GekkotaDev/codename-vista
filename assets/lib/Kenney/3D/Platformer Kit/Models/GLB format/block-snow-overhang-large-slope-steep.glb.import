@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cou8ro6lwvs3q"
-path="res://.godot/imported/block-snow-overhang-large-slope-steep.glb-4b985d0180927e4145ae26aa25806714.scn"
+type="ArrayMesh"
+uid="uid://du527ikqk1kcq"
+path="res://.godot/imported/block-snow-overhang-large-slope-steep.glb-4b985d0180927e4145ae26aa25806714.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-overhang-large-slope-steep.glb"
-dest_files=["res://.godot/imported/block-snow-overhang-large-slope-steep.glb-4b985d0180927e4145ae26aa25806714.scn"]
+dest_files=["res://.godot/imported/block-snow-overhang-large-slope-steep.glb-4b985d0180927e4145ae26aa25806714.res"]
 
 [params]
 

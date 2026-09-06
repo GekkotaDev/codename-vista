@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://v7ke0efi5a4m"
-path="res://.godot/imported/button-round.glb-bd198034830185ec63f5104b73d9795f.scn"
+type="ArrayMesh"
+uid="uid://c2jntbhvd6f3p"
+path="res://.godot/imported/button-round.glb-bd198034830185ec63f5104b73d9795f.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/button-round.glb"
-dest_files=["res://.godot/imported/button-round.glb-bd198034830185ec63f5104b73d9795f.scn"]
+dest_files=["res://.godot/imported/button-round.glb-bd198034830185ec63f5104b73d9795f.res"]
 
 [params]
 

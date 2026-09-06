@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://d28rijkwqrbs7"
-path="res://.godot/imported/cliff_steps_rock.glb-65a0165973447870e965e54438781b75.scn"
+path="res://.godot/imported/cliff_steps_rock.glb-65a0165973447870e965e54438781b75.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_steps_rock.glb"
-dest_files=["res://.godot/imported/cliff_steps_rock.glb-65a0165973447870e965e54438781b75.scn"]
+dest_files=["res://.godot/imported/cliff_steps_rock.glb-65a0165973447870e965e54438781b75.res"]
 
 [params]
 

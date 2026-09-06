@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cddwdqsmaprt3"
-path="res://.godot/imported/tree_palmDetailedShort.glb-dd645cf9707238d1d2967fa7ba6aab84.scn"
+path="res://.godot/imported/tree_palmDetailedShort.glb-dd645cf9707238d1d2967fa7ba6aab84.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_palmDetailedShort.glb"
-dest_files=["res://.godot/imported/tree_palmDetailedShort.glb-dd645cf9707238d1d2967fa7ba6aab84.scn"]
+dest_files=["res://.godot/imported/tree_palmDetailedShort.glb-dd645cf9707238d1d2967fa7ba6aab84.res"]
 
 [params]
 

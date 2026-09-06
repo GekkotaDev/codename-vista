@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://wgg382xswl8h"
-path="res://.godot/imported/fence-corner-curved.glb-47bf7cbfa9f51931ec3b28b848ff1285.scn"
+type="ArrayMesh"
+uid="uid://bclnmvc0fkenx"
+path="res://.godot/imported/fence-corner-curved.glb-47bf7cbfa9f51931ec3b28b848ff1285.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/fence-corner-curved.glb"
-dest_files=["res://.godot/imported/fence-corner-curved.glb-47bf7cbfa9f51931ec3b28b848ff1285.scn"]
+dest_files=["res://.godot/imported/fence-corner-curved.glb-47bf7cbfa9f51931ec3b28b848ff1285.res"]
 
 [params]
 

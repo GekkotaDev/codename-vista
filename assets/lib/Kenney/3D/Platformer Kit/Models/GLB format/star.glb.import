@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://ddb8cy62nl5ka"
-path="res://.godot/imported/star.glb-313b2c714dbcf187f2a06593e3652c20.scn"
+type="ArrayMesh"
+uid="uid://c60kqp3sb4axc"
+path="res://.godot/imported/star.glb-313b2c714dbcf187f2a06593e3652c20.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/star.glb"
-dest_files=["res://.godot/imported/star.glb-313b2c714dbcf187f2a06593e3652c20.scn"]
+dest_files=["res://.godot/imported/star.glb-313b2c714dbcf187f2a06593e3652c20.res"]
 
 [params]
 

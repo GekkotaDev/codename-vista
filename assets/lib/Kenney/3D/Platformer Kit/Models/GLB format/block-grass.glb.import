@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b73g8v0mol5bo"
-path="res://.godot/imported/block-grass.glb-f6d4006aa5b01f11a0338f332c59c10c.scn"
+type="ArrayMesh"
+uid="uid://g233lcrxdqka"
+path="res://.godot/imported/block-grass.glb-f6d4006aa5b01f11a0338f332c59c10c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-grass.glb"
-dest_files=["res://.godot/imported/block-grass.glb-f6d4006aa5b01f11a0338f332c59c10c.scn"]
+dest_files=["res://.godot/imported/block-grass.glb-f6d4006aa5b01f11a0338f332c59c10c.res"]
 
 [params]
 

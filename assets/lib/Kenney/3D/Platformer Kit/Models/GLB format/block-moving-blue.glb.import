@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bhuxnrqdlyico"
-path="res://.godot/imported/block-moving-blue.glb-8185b477a570da46036fc19b6b35eca1.scn"
+type="ArrayMesh"
+uid="uid://vvwofl5xj23n"
+path="res://.godot/imported/block-moving-blue.glb-8185b477a570da46036fc19b6b35eca1.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-moving-blue.glb"
-dest_files=["res://.godot/imported/block-moving-blue.glb-8185b477a570da46036fc19b6b35eca1.scn"]
+dest_files=["res://.godot/imported/block-moving-blue.glb-8185b477a570da46036fc19b6b35eca1.res"]
 
 [params]
 

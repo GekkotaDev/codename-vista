@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bhos6h6l3ruv1"
-path="res://.godot/imported/lever.glb-61c31de243c5a27919c2061ad36b30d0.scn"
+type="ArrayMesh"
+uid="uid://cd6vig7tb3age"
+path="res://.godot/imported/lever.glb-61c31de243c5a27919c2061ad36b30d0.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/lever.glb"
-dest_files=["res://.godot/imported/lever.glb-61c31de243c5a27919c2061ad36b30d0.scn"]
+dest_files=["res://.godot/imported/lever.glb-61c31de243c5a27919c2061ad36b30d0.res"]
 
 [params]
 

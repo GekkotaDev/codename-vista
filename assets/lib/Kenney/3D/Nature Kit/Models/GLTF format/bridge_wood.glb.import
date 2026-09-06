@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cjlw4bm5tv814"
-path="res://.godot/imported/bridge_wood.glb-ea49b0a240b18e6f30b9eb39382cfd34.scn"
+path="res://.godot/imported/bridge_wood.glb-ea49b0a240b18e6f30b9eb39382cfd34.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/bridge_wood.glb"
-dest_files=["res://.godot/imported/bridge_wood.glb-ea49b0a240b18e6f30b9eb39382cfd34.scn"]
+dest_files=["res://.godot/imported/bridge_wood.glb-ea49b0a240b18e6f30b9eb39382cfd34.res"]
 
 [params]
 

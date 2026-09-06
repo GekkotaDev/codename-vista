@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bbk5h1cncxg5d"
-path="res://.godot/imported/crops_wheatStageB.glb-42b19de42b0fc47a06933d4889c7dec3.scn"
+path="res://.godot/imported/crops_wheatStageB.glb-42b19de42b0fc47a06933d4889c7dec3.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crops_wheatStageB.glb"
-dest_files=["res://.godot/imported/crops_wheatStageB.glb-42b19de42b0fc47a06933d4889c7dec3.scn"]
+dest_files=["res://.godot/imported/crops_wheatStageB.glb-42b19de42b0fc47a06933d4889c7dec3.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://vgryjnw2bne2"
-path="res://.godot/imported/tree-snow.glb-f4c542c647246ef2e322ac04abcd6245.scn"
+type="ArrayMesh"
+uid="uid://dyrvgkui34y4x"
+path="res://.godot/imported/tree-snow.glb-f4c542c647246ef2e322ac04abcd6245.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/tree-snow.glb"
-dest_files=["res://.godot/imported/tree-snow.glb-f4c542c647246ef2e322ac04abcd6245.scn"]
+dest_files=["res://.godot/imported/tree-snow.glb-f4c542c647246ef2e322ac04abcd6245.res"]
 
 [params]
 

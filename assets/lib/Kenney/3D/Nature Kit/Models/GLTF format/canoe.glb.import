@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://c1mepc1iwpjpm"
-path="res://.godot/imported/canoe.glb-674a1a5024fc1cd4609b5c584af88381.scn"
+path="res://.godot/imported/canoe.glb-674a1a5024fc1cd4609b5c584af88381.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/canoe.glb"
-dest_files=["res://.godot/imported/canoe.glb-674a1a5024fc1cd4609b5c584af88381.scn"]
+dest_files=["res://.godot/imported/canoe.glb-674a1a5024fc1cd4609b5c584af88381.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b0snjg2awqock"
-path="res://.godot/imported/mushroom_tanGroup.glb-276a08fdaa8e0381165af284b712ae6b.scn"
+path="res://.godot/imported/mushroom_tanGroup.glb-276a08fdaa8e0381165af284b712ae6b.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/mushroom_tanGroup.glb"
-dest_files=["res://.godot/imported/mushroom_tanGroup.glb-276a08fdaa8e0381165af284b712ae6b.scn"]
+dest_files=["res://.godot/imported/mushroom_tanGroup.glb-276a08fdaa8e0381165af284b712ae6b.res"]
 
 [params]
 

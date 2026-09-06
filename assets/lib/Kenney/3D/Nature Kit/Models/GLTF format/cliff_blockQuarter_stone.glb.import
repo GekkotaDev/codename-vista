@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dyqa5hgjxu2tu"
-path="res://.godot/imported/cliff_blockQuarter_stone.glb-ac790d923ce88fc4951bc8d2ffe46798.scn"
+path="res://.godot/imported/cliff_blockQuarter_stone.glb-ac790d923ce88fc4951bc8d2ffe46798.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_blockQuarter_stone.glb"
-dest_files=["res://.godot/imported/cliff_blockQuarter_stone.glb-ac790d923ce88fc4951bc8d2ffe46798.scn"]
+dest_files=["res://.godot/imported/cliff_blockQuarter_stone.glb-ac790d923ce88fc4951bc8d2ffe46798.res"]
 
 [params]
 

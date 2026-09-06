@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://kxggcrsf3hcm"
-path="res://.godot/imported/tree_oak_fall.glb-f6fee1714cc369e8e5363e843e169ce0.scn"
+path="res://.godot/imported/tree_oak_fall.glb-f6fee1714cc369e8e5363e843e169ce0.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_oak_fall.glb"
-dest_files=["res://.godot/imported/tree_oak_fall.glb-f6fee1714cc369e8e5363e843e169ce0.scn"]
+dest_files=["res://.godot/imported/tree_oak_fall.glb-f6fee1714cc369e8e5363e843e169ce0.res"]
 
 [params]
 

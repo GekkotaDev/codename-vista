@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://sn2wv5libxwa"
-path="res://.godot/imported/lily_small.glb-373b7ccae01eba94ec479aae9d376c9f.scn"
+path="res://.godot/imported/lily_small.glb-373b7ccae01eba94ec479aae9d376c9f.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/lily_small.glb"
-dest_files=["res://.godot/imported/lily_small.glb-373b7ccae01eba94ec479aae9d376c9f.scn"]
+dest_files=["res://.godot/imported/lily_small.glb-373b7ccae01eba94ec479aae9d376c9f.res"]
 
 [params]
 

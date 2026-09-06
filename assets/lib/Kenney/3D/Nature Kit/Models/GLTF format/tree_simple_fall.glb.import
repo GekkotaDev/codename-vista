@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bjo0iq5j7ba06"
-path="res://.godot/imported/tree_simple_fall.glb-4ed0fa112d169c8eff43ef9fcc83bc98.scn"
+path="res://.godot/imported/tree_simple_fall.glb-4ed0fa112d169c8eff43ef9fcc83bc98.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_simple_fall.glb"
-dest_files=["res://.godot/imported/tree_simple_fall.glb-4ed0fa112d169c8eff43ef9fcc83bc98.scn"]
+dest_files=["res://.godot/imported/tree_simple_fall.glb-4ed0fa112d169c8eff43ef9fcc83bc98.res"]
 
 [params]
 

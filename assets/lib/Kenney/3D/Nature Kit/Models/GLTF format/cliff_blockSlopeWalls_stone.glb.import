@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dm0nkynp7ayo6"
-path="res://.godot/imported/cliff_blockSlopeWalls_stone.glb-6bf4ed7c764eb6f2bad5bd07ef49eb06.scn"
+path="res://.godot/imported/cliff_blockSlopeWalls_stone.glb-6bf4ed7c764eb6f2bad5bd07ef49eb06.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_blockSlopeWalls_stone.glb"
-dest_files=["res://.godot/imported/cliff_blockSlopeWalls_stone.glb-6bf4ed7c764eb6f2bad5bd07ef49eb06.scn"]
+dest_files=["res://.godot/imported/cliff_blockSlopeWalls_stone.glb-6bf4ed7c764eb6f2bad5bd07ef49eb06.res"]
 
 [params]
 

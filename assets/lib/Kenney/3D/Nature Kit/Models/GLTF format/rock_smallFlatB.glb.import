@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://d4dr7qdole610"
-path="res://.godot/imported/rock_smallFlatB.glb-7aca0deb5cc46b88d39df11ec6d6f1a9.scn"
+path="res://.godot/imported/rock_smallFlatB.glb-7aca0deb5cc46b88d39df11ec6d6f1a9.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/rock_smallFlatB.glb"
-dest_files=["res://.godot/imported/rock_smallFlatB.glb-7aca0deb5cc46b88d39df11ec6d6f1a9.scn"]
+dest_files=["res://.godot/imported/rock_smallFlatB.glb-7aca0deb5cc46b88d39df11ec6d6f1a9.res"]
 
 [params]
 

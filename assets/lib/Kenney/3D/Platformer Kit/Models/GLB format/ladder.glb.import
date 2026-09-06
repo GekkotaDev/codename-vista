@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://d0ja34w3pku3l"
-path="res://.godot/imported/ladder.glb-b462f34469e9526adc7e0d77ea6e0075.scn"
+type="ArrayMesh"
+uid="uid://btsguhhb2ybqi"
+path="res://.godot/imported/ladder.glb-b462f34469e9526adc7e0d77ea6e0075.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/ladder.glb"
-dest_files=["res://.godot/imported/ladder.glb-b462f34469e9526adc7e0d77ea6e0075.scn"]
+dest_files=["res://.godot/imported/ladder.glb-b462f34469e9526adc7e0d77ea6e0075.res"]
 
 [params]
 

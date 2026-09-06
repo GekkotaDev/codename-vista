@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://sobkjepamqrm"
-path="res://.godot/imported/log_stack.glb-801f74c9bd03e354766cc4aba07f7d42.scn"
+path="res://.godot/imported/log_stack.glb-801f74c9bd03e354766cc4aba07f7d42.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/log_stack.glb"
-dest_files=["res://.godot/imported/log_stack.glb-801f74c9bd03e354766cc4aba07f7d42.scn"]
+dest_files=["res://.godot/imported/log_stack.glb-801f74c9bd03e354766cc4aba07f7d42.res"]
 
 [params]
 

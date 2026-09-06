@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b1gnckwimg00y"
-path="res://.godot/imported/trap-spikes.glb-77d3155896f87f1a1e9535a4d3d39060.scn"
+type="ArrayMesh"
+uid="uid://dlc820emi5uvm"
+path="res://.godot/imported/trap-spikes.glb-77d3155896f87f1a1e9535a4d3d39060.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/trap-spikes.glb"
-dest_files=["res://.godot/imported/trap-spikes.glb-77d3155896f87f1a1e9535a4d3d39060.scn"]
+dest_files=["res://.godot/imported/trap-spikes.glb-77d3155896f87f1a1e9535a4d3d39060.res"]
 
 [params]
 

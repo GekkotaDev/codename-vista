@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bfknvgox3eb30"
-path="res://.godot/imported/plant_bushSmall.glb-eab115e1467dfaa7a3387c19215486d0.scn"
+path="res://.godot/imported/plant_bushSmall.glb-eab115e1467dfaa7a3387c19215486d0.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/plant_bushSmall.glb"
-dest_files=["res://.godot/imported/plant_bushSmall.glb-eab115e1467dfaa7a3387c19215486d0.scn"]
+dest_files=["res://.godot/imported/plant_bushSmall.glb-eab115e1467dfaa7a3387c19215486d0.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bw3uy471xe7er"
-path="res://.godot/imported/tent_detailedOpen.glb-04e5d667e14b7e891ca8aafb82eb7362.scn"
+path="res://.godot/imported/tent_detailedOpen.glb-04e5d667e14b7e891ca8aafb82eb7362.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tent_detailedOpen.glb"
-dest_files=["res://.godot/imported/tent_detailedOpen.glb-04e5d667e14b7e891ca8aafb82eb7362.scn"]
+dest_files=["res://.godot/imported/tent_detailedOpen.glb-04e5d667e14b7e891ca8aafb82eb7362.res"]
 
 [params]
 

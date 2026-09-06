@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bp5jpu562f2md"
-path="res://.godot/imported/flower_purpleB.glb-7c6a891d3b99b0f91ea80b3f0410017e.scn"
+path="res://.godot/imported/flower_purpleB.glb-7c6a891d3b99b0f91ea80b3f0410017e.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/flower_purpleB.glb"
-dest_files=["res://.godot/imported/flower_purpleB.glb-7c6a891d3b99b0f91ea80b3f0410017e.scn"]
+dest_files=["res://.godot/imported/flower_purpleB.glb-7c6a891d3b99b0f91ea80b3f0410017e.res"]
 
 [params]
 

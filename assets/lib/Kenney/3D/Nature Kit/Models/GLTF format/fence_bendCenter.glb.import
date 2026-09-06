@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://v8j76vg8mu6j"
-path="res://.godot/imported/fence_bendCenter.glb-723bda5650295334ec5d7a2a5d4e9266.scn"
+path="res://.godot/imported/fence_bendCenter.glb-723bda5650295334ec5d7a2a5d4e9266.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/fence_bendCenter.glb"
-dest_files=["res://.godot/imported/fence_bendCenter.glb-723bda5650295334ec5d7a2a5d4e9266.scn"]
+dest_files=["res://.godot/imported/fence_bendCenter.glb-723bda5650295334ec5d7a2a5d4e9266.res"]
 
 [params]
 

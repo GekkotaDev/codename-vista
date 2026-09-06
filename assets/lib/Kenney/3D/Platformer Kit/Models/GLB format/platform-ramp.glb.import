@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cv48osckxrh4i"
-path="res://.godot/imported/platform-ramp.glb-7d8d43c12a52982b23bdf741db511934.scn"
+type="ArrayMesh"
+uid="uid://ce1sqsucglrg2"
+path="res://.godot/imported/platform-ramp.glb-7d8d43c12a52982b23bdf741db511934.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/platform-ramp.glb"
-dest_files=["res://.godot/imported/platform-ramp.glb-7d8d43c12a52982b23bdf741db511934.scn"]
+dest_files=["res://.godot/imported/platform-ramp.glb-7d8d43c12a52982b23bdf741db511934.res"]
 
 [params]
 

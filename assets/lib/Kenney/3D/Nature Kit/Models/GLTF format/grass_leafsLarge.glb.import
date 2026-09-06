@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bqqbbipre0eg7"
-path="res://.godot/imported/grass_leafsLarge.glb-878f0f8219670d0c209882b4d636ddee.scn"
+path="res://.godot/imported/grass_leafsLarge.glb-878f0f8219670d0c209882b4d636ddee.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/grass_leafsLarge.glb"
-dest_files=["res://.godot/imported/grass_leafsLarge.glb-878f0f8219670d0c209882b4d636ddee.scn"]
+dest_files=["res://.godot/imported/grass_leafsLarge.glb-878f0f8219670d0c209882b4d636ddee.res"]
 
 [params]
 

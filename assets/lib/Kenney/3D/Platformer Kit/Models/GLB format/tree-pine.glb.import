@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://oq0l63pbysm6"
-path="res://.godot/imported/tree-pine.glb-95e40daac0ce968d95dec5db4931adc3.scn"
+type="ArrayMesh"
+uid="uid://bdcfa4yayy478"
+path="res://.godot/imported/tree-pine.glb-95e40daac0ce968d95dec5db4931adc3.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/tree-pine.glb"
-dest_files=["res://.godot/imported/tree-pine.glb-95e40daac0ce968d95dec5db4931adc3.scn"]
+dest_files=["res://.godot/imported/tree-pine.glb-95e40daac0ce968d95dec5db4931adc3.res"]
 
 [params]
 

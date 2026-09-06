@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://wwy771ws27g5"
-path="res://.godot/imported/arrows.glb-9d4c282301184fb0afaf720f55e28a18.scn"
+type="ArrayMesh"
+uid="uid://bv3jmko6xv56e"
+path="res://.godot/imported/arrows.glb-9d4c282301184fb0afaf720f55e28a18.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/arrows.glb"
-dest_files=["res://.godot/imported/arrows.glb-9d4c282301184fb0afaf720f55e28a18.scn"]
+dest_files=["res://.godot/imported/arrows.glb-9d4c282301184fb0afaf720f55e28a18.res"]
 
 [params]
 

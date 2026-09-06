@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dwlxyoi58iipq"
-path="res://.godot/imported/ground_riverOpen.glb-187258a726da71cb5c75febf035e8f0d.scn"
+path="res://.godot/imported/ground_riverOpen.glb-187258a726da71cb5c75febf035e8f0d.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverOpen.glb"
-dest_files=["res://.godot/imported/ground_riverOpen.glb-187258a726da71cb5c75febf035e8f0d.scn"]
+dest_files=["res://.godot/imported/ground_riverOpen.glb-187258a726da71cb5c75febf035e8f0d.res"]
 
 [params]
 

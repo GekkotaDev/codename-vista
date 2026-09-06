@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://e68hcc64ng7c"
-path="res://.godot/imported/ground_pathBendBank.glb-310ca698a7bf5a935cdf8699d38e6eff.scn"
+path="res://.godot/imported/ground_pathBendBank.glb-310ca698a7bf5a935cdf8699d38e6eff.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_pathBendBank.glb"
-dest_files=["res://.godot/imported/ground_pathBendBank.glb-310ca698a7bf5a935cdf8699d38e6eff.scn"]
+dest_files=["res://.godot/imported/ground_pathBendBank.glb-310ca698a7bf5a935cdf8699d38e6eff.res"]
 
 [params]
 

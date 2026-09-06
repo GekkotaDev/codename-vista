@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://75oviiyuwwqt"
-path="res://.godot/imported/crop_pumpkin.glb-68600535b4d0a5f514337f06eb167da9.scn"
+path="res://.godot/imported/crop_pumpkin.glb-68600535b4d0a5f514337f06eb167da9.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crop_pumpkin.glb"
-dest_files=["res://.godot/imported/crop_pumpkin.glb-68600535b4d0a5f514337f06eb167da9.scn"]
+dest_files=["res://.godot/imported/crop_pumpkin.glb-68600535b4d0a5f514337f06eb167da9.res"]
 
 [params]
 

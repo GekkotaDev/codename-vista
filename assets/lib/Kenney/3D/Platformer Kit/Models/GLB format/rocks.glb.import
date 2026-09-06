@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://crib2ex6xqq"
-path="res://.godot/imported/rocks.glb-aeae0afe0459a5522a1cf05e3013f90b.scn"
+type="ArrayMesh"
+uid="uid://dswylumd4anxl"
+path="res://.godot/imported/rocks.glb-aeae0afe0459a5522a1cf05e3013f90b.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/rocks.glb"
-dest_files=["res://.godot/imported/rocks.glb-aeae0afe0459a5522a1cf05e3013f90b.scn"]
+dest_files=["res://.godot/imported/rocks.glb-aeae0afe0459a5522a1cf05e3013f90b.res"]
 
 [params]
 

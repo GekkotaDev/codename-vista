@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cfgovkhilyed5"
-path="res://.godot/imported/block-grass-corner.glb-4950a31f2d6bca52e8ce34476db00ae6.scn"
+type="ArrayMesh"
+uid="uid://cq7nccu1nmyri"
+path="res://.godot/imported/block-grass-corner.glb-4950a31f2d6bca52e8ce34476db00ae6.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-grass-corner.glb"
-dest_files=["res://.godot/imported/block-grass-corner.glb-4950a31f2d6bca52e8ce34476db00ae6.scn"]
+dest_files=["res://.godot/imported/block-grass-corner.glb-4950a31f2d6bca52e8ce34476db00ae6.res"]
 
 [params]
 

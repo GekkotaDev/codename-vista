@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dgiufgrvl61u0"
-path="res://.godot/imported/cliff_blockDiagonal_rock.glb-65e1e18851e24517939bcb6ad2cef881.scn"
+path="res://.godot/imported/cliff_blockDiagonal_rock.glb-65e1e18851e24517939bcb6ad2cef881.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_blockDiagonal_rock.glb"
-dest_files=["res://.godot/imported/cliff_blockDiagonal_rock.glb-65e1e18851e24517939bcb6ad2cef881.scn"]
+dest_files=["res://.godot/imported/cliff_blockDiagonal_rock.glb-65e1e18851e24517939bcb6ad2cef881.res"]
 
 [params]
 

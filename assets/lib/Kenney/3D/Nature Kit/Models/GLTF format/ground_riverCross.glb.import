@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b6qd0ygh682ub"
-path="res://.godot/imported/ground_riverCross.glb-3d18bd329892ed827c3a5527f0dc4526.scn"
+path="res://.godot/imported/ground_riverCross.glb-3d18bd329892ed827c3a5527f0dc4526.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverCross.glb"
-dest_files=["res://.godot/imported/ground_riverCross.glb-3d18bd329892ed827c3a5527f0dc4526.scn"]
+dest_files=["res://.godot/imported/ground_riverCross.glb-3d18bd329892ed827c3a5527f0dc4526.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://ymeqb66nh8by"
-path="res://.godot/imported/poles.glb-504fee7d7ebbad8b0a68e0c6d9d011b3.scn"
+type="ArrayMesh"
+uid="uid://0sw4ie5r4lgp"
+path="res://.godot/imported/poles.glb-504fee7d7ebbad8b0a68e0c6d9d011b3.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/poles.glb"
-dest_files=["res://.godot/imported/poles.glb-504fee7d7ebbad8b0a68e0c6d9d011b3.scn"]
+dest_files=["res://.godot/imported/poles.glb-504fee7d7ebbad8b0a68e0c6d9d011b3.res"]
 
 [params]
 

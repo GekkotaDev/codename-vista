@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://wjc0f8iapiag"
-path="res://.godot/imported/plant_bushLargeTriangle.glb-973188eb7420a5e367623482029c4737.scn"
+path="res://.godot/imported/plant_bushLargeTriangle.glb-973188eb7420a5e367623482029c4737.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/plant_bushLargeTriangle.glb"
-dest_files=["res://.godot/imported/plant_bushLargeTriangle.glb-973188eb7420a5e367623482029c4737.scn"]
+dest_files=["res://.godot/imported/plant_bushLargeTriangle.glb-973188eb7420a5e367623482029c4737.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://ira7ywhv55ck"
-path="res://.godot/imported/rock_largeF.glb-e3d9ec96398299e28d36e63ce68471fa.scn"
+path="res://.godot/imported/rock_largeF.glb-e3d9ec96398299e28d36e63ce68471fa.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/rock_largeF.glb"
-dest_files=["res://.godot/imported/rock_largeF.glb-e3d9ec96398299e28d36e63ce68471fa.scn"]
+dest_files=["res://.godot/imported/rock_largeF.glb-e3d9ec96398299e28d36e63ce68471fa.res"]
 
 [params]
 

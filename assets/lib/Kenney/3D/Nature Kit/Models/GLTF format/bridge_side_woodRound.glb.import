@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://d0h40d8fai6pi"
-path="res://.godot/imported/bridge_side_woodRound.glb-cc64306d0b6053087e3a269beee99b40.scn"
+path="res://.godot/imported/bridge_side_woodRound.glb-cc64306d0b6053087e3a269beee99b40.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/bridge_side_woodRound.glb"
-dest_files=["res://.godot/imported/bridge_side_woodRound.glb-cc64306d0b6053087e3a269beee99b40.scn"]
+dest_files=["res://.godot/imported/bridge_side_woodRound.glb-cc64306d0b6053087e3a269beee99b40.res"]
 
 [params]
 

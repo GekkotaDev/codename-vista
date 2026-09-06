@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://c4lrcf2au6rul"
-path="res://.godot/imported/fence_gate.glb-3556d1abf4fdd9d4482afbbc4db29f59.scn"
+path="res://.godot/imported/fence_gate.glb-3556d1abf4fdd9d4482afbbc4db29f59.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/fence_gate.glb"
-dest_files=["res://.godot/imported/fence_gate.glb-3556d1abf4fdd9d4482afbbc4db29f59.scn"]
+dest_files=["res://.godot/imported/fence_gate.glb-3556d1abf4fdd9d4482afbbc4db29f59.res"]
 
 [params]
 

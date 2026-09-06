@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://r07klplwm2mx"
-path="res://.godot/imported/character-ooli.glb-f10bd0d132b045361ed8df74c3e2f52d.scn"
+type="ArrayMesh"
+uid="uid://bixdct5p44axm"
+path="res://.godot/imported/character-ooli.glb-f10bd0d132b045361ed8df74c3e2f52d.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/character-ooli.glb"
-dest_files=["res://.godot/imported/character-ooli.glb-f10bd0d132b045361ed8df74c3e2f52d.scn"]
+dest_files=["res://.godot/imported/character-ooli.glb-f10bd0d132b045361ed8df74c3e2f52d.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b815knudm3vr6"
-path="res://.godot/imported/crops_dirtSingle.glb-c8a95b28743e51fd2386f57f97cb2f4a.scn"
+path="res://.godot/imported/crops_dirtSingle.glb-c8a95b28743e51fd2386f57f97cb2f4a.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crops_dirtSingle.glb"
-dest_files=["res://.godot/imported/crops_dirtSingle.glb-c8a95b28743e51fd2386f57f97cb2f4a.scn"]
+dest_files=["res://.godot/imported/crops_dirtSingle.glb-c8a95b28743e51fd2386f57f97cb2f4a.res"]
 
 [params]
 

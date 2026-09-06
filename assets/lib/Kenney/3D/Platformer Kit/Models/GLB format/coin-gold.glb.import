@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://dpaavo0c8n1ud"
-path="res://.godot/imported/coin-gold.glb-3c645c83578f5dfc5a6334a985c19cd0.scn"
+type="ArrayMesh"
+uid="uid://oaenj3ug8tko"
+path="res://.godot/imported/coin-gold.glb-3c645c83578f5dfc5a6334a985c19cd0.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/coin-gold.glb"
-dest_files=["res://.godot/imported/coin-gold.glb-3c645c83578f5dfc5a6334a985c19cd0.scn"]
+dest_files=["res://.godot/imported/coin-gold.glb-3c645c83578f5dfc5a6334a985c19cd0.res"]
 
 [params]
 

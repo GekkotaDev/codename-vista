@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://djlmgkm2vjqv6"
-path="res://.godot/imported/pot_large.glb-2e73fac694a789a3353692f43bf0ea58.scn"
+path="res://.godot/imported/pot_large.glb-2e73fac694a789a3353692f43bf0ea58.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/pot_large.glb"
-dest_files=["res://.godot/imported/pot_large.glb-2e73fac694a789a3353692f43bf0ea58.scn"]
+dest_files=["res://.godot/imported/pot_large.glb-2e73fac694a789a3353692f43bf0ea58.res"]
 
 [params]
 

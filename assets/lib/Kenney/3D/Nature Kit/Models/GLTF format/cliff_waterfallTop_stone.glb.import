@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cvi6wyudqxv64"
-path="res://.godot/imported/cliff_waterfallTop_stone.glb-dc7175cb8f2455d1c1d69b12829ff35c.scn"
+path="res://.godot/imported/cliff_waterfallTop_stone.glb-dc7175cb8f2455d1c1d69b12829ff35c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_waterfallTop_stone.glb"
-dest_files=["res://.godot/imported/cliff_waterfallTop_stone.glb-dc7175cb8f2455d1c1d69b12829ff35c.scn"]
+dest_files=["res://.godot/imported/cliff_waterfallTop_stone.glb-dc7175cb8f2455d1c1d69b12829ff35c.res"]
 
 [params]
 

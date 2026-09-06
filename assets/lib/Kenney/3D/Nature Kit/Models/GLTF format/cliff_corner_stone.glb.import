@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://drk5ghagjga7w"
-path="res://.godot/imported/cliff_corner_stone.glb-cc024c09d0ab6c2f5733d34f61adc18a.scn"
+path="res://.godot/imported/cliff_corner_stone.glb-cc024c09d0ab6c2f5733d34f61adc18a.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_corner_stone.glb"
-dest_files=["res://.godot/imported/cliff_corner_stone.glb-cc024c09d0ab6c2f5733d34f61adc18a.scn"]
+dest_files=["res://.godot/imported/cliff_corner_stone.glb-cc024c09d0ab6c2f5733d34f61adc18a.res"]
 
 [params]
 

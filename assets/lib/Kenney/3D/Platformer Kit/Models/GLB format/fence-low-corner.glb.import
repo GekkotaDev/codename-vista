@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://4byyddcidja1"
-path="res://.godot/imported/fence-low-corner.glb-8f40e20e742a875389b4481d53f076ac.scn"
+type="ArrayMesh"
+uid="uid://b61ueyib7evgn"
+path="res://.godot/imported/fence-low-corner.glb-8f40e20e742a875389b4481d53f076ac.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/fence-low-corner.glb"
-dest_files=["res://.godot/imported/fence-low-corner.glb-8f40e20e742a875389b4481d53f076ac.scn"]
+dest_files=["res://.godot/imported/fence-low-corner.glb-8f40e20e742a875389b4481d53f076ac.res"]
 
 [params]
 

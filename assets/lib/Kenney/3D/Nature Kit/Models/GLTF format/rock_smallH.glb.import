@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://deqtvmc01moj2"
-path="res://.godot/imported/rock_smallH.glb-1229d1042bcd893e20731ecf310c6837.scn"
+path="res://.godot/imported/rock_smallH.glb-1229d1042bcd893e20731ecf310c6837.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/rock_smallH.glb"
-dest_files=["res://.godot/imported/rock_smallH.glb-1229d1042bcd893e20731ecf310c6837.scn"]
+dest_files=["res://.godot/imported/rock_smallH.glb-1229d1042bcd893e20731ecf310c6837.res"]
 
 [params]
 

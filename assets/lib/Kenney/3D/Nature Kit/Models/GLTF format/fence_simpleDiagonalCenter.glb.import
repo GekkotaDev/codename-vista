@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dy38h2oqgqh3n"
-path="res://.godot/imported/fence_simpleDiagonalCenter.glb-7098d6263c3a2693f8722456a91984d2.scn"
+path="res://.godot/imported/fence_simpleDiagonalCenter.glb-7098d6263c3a2693f8722456a91984d2.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/fence_simpleDiagonalCenter.glb"
-dest_files=["res://.godot/imported/fence_simpleDiagonalCenter.glb-7098d6263c3a2693f8722456a91984d2.scn"]
+dest_files=["res://.godot/imported/fence_simpleDiagonalCenter.glb-7098d6263c3a2693f8722456a91984d2.res"]
 
 [params]
 

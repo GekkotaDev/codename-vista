@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b8frkatkubpge"
-path="res://.godot/imported/block-grass-corner-overhang-low.glb-18d30024b5c53f26f19a2a8824ef2330.scn"
+type="ArrayMesh"
+uid="uid://bo6ripag1se8q"
+path="res://.godot/imported/block-grass-corner-overhang-low.glb-18d30024b5c53f26f19a2a8824ef2330.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-grass-corner-overhang-low.glb"
-dest_files=["res://.godot/imported/block-grass-corner-overhang-low.glb-18d30024b5c53f26f19a2a8824ef2330.scn"]
+dest_files=["res://.godot/imported/block-grass-corner-overhang-low.glb-18d30024b5c53f26f19a2a8824ef2330.res"]
 
 [params]
 

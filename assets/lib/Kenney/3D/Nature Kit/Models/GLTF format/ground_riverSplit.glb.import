@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://6p6tdmdoopwa"
-path="res://.godot/imported/ground_riverSplit.glb-d3294c054eb846c847bf9e65f7727876.scn"
+path="res://.godot/imported/ground_riverSplit.glb-d3294c054eb846c847bf9e65f7727876.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverSplit.glb"
-dest_files=["res://.godot/imported/ground_riverSplit.glb-d3294c054eb846c847bf9e65f7727876.scn"]
+dest_files=["res://.godot/imported/ground_riverSplit.glb-d3294c054eb846c847bf9e65f7727876.res"]
 
 [params]
 

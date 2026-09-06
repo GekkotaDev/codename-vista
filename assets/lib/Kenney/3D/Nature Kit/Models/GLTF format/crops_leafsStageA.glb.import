@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b52gycp2fqmgk"
-path="res://.godot/imported/crops_leafsStageA.glb-d4770670e1dfe4f6185a669a11b0c9b6.scn"
+path="res://.godot/imported/crops_leafsStageA.glb-d4770670e1dfe4f6185a669a11b0c9b6.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crops_leafsStageA.glb"
-dest_files=["res://.godot/imported/crops_leafsStageA.glb-d4770670e1dfe4f6185a669a11b0c9b6.scn"]
+dest_files=["res://.godot/imported/crops_leafsStageA.glb-d4770670e1dfe4f6185a669a11b0c9b6.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bsdw0uukvlmsf"
-path="res://.godot/imported/block-snow-overhang-low-hexagon.glb-3ab3014984e136f373df7a8f6101dfd9.scn"
+type="ArrayMesh"
+uid="uid://cbnwkw4ye0vr6"
+path="res://.godot/imported/block-snow-overhang-low-hexagon.glb-3ab3014984e136f373df7a8f6101dfd9.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-overhang-low-hexagon.glb"
-dest_files=["res://.godot/imported/block-snow-overhang-low-hexagon.glb-3ab3014984e136f373df7a8f6101dfd9.scn"]
+dest_files=["res://.godot/imported/block-snow-overhang-low-hexagon.glb-3ab3014984e136f373df7a8f6101dfd9.res"]
 
 [params]
 

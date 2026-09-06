@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://c1v1hjwyht777"
-path="res://.godot/imported/statue_block.glb-d6ae67329adc1918b90c22891d22a5d8.scn"
+path="res://.godot/imported/statue_block.glb-d6ae67329adc1918b90c22891d22a5d8.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/statue_block.glb"
-dest_files=["res://.godot/imported/statue_block.glb-d6ae67329adc1918b90c22891d22a5d8.scn"]
+dest_files=["res://.godot/imported/statue_block.glb-d6ae67329adc1918b90c22891d22a5d8.res"]
 
 [params]
 

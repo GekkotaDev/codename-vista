@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://dfulbsgsgmiie"
-path="res://.godot/imported/tree_pineRoundC.glb-a54187baa9788fbe809496aa8b9e2ca7.scn"
+path="res://.godot/imported/tree_pineRoundC.glb-a54187baa9788fbe809496aa8b9e2ca7.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_pineRoundC.glb"
-dest_files=["res://.godot/imported/tree_pineRoundC.glb-a54187baa9788fbe809496aa8b9e2ca7.scn"]
+dest_files=["res://.godot/imported/tree_pineRoundC.glb-a54187baa9788fbe809496aa8b9e2ca7.res"]
 
 [params]
 

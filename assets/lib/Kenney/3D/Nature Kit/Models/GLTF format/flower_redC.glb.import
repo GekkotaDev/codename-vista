@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cxdcivrofb558"
-path="res://.godot/imported/flower_redC.glb-32b2a21c8214be0bbd79669e9fd0de7b.scn"
+path="res://.godot/imported/flower_redC.glb-32b2a21c8214be0bbd79669e9fd0de7b.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/flower_redC.glb"
-dest_files=["res://.godot/imported/flower_redC.glb-32b2a21c8214be0bbd79669e9fd0de7b.scn"]
+dest_files=["res://.godot/imported/flower_redC.glb-32b2a21c8214be0bbd79669e9fd0de7b.res"]
 
 [params]
 

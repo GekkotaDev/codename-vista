@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cinbvuu2yfgal"
-path="res://.godot/imported/plant_flatShort.glb-0a0eb8cc344d0a26e8152e0f6780a5cf.scn"
+path="res://.godot/imported/plant_flatShort.glb-0a0eb8cc344d0a26e8152e0f6780a5cf.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/plant_flatShort.glb"
-dest_files=["res://.godot/imported/plant_flatShort.glb-0a0eb8cc344d0a26e8152e0f6780a5cf.scn"]
+dest_files=["res://.godot/imported/plant_flatShort.glb-0a0eb8cc344d0a26e8152e0f6780a5cf.res"]
 
 [params]
 

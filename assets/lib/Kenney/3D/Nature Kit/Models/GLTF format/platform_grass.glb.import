@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://d24wudhovjiij"
-path="res://.godot/imported/platform_grass.glb-7b03fb7a39bf124fca7744f38f8d9f1b.scn"
+path="res://.godot/imported/platform_grass.glb-7b03fb7a39bf124fca7744f38f8d9f1b.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/platform_grass.glb"
-dest_files=["res://.godot/imported/platform_grass.glb-7b03fb7a39bf124fca7744f38f8d9f1b.scn"]
+dest_files=["res://.godot/imported/platform_grass.glb-7b03fb7a39bf124fca7744f38f8d9f1b.res"]
 
 [params]
 

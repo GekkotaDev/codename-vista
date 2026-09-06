@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://1fmhfi8orlei"
-path="res://.godot/imported/stump_oldTall.glb-d4493cb17f2b1daa1e6f6a8f130c011b.scn"
+path="res://.godot/imported/stump_oldTall.glb-d4493cb17f2b1daa1e6f6a8f130c011b.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/stump_oldTall.glb"
-dest_files=["res://.godot/imported/stump_oldTall.glb-d4493cb17f2b1daa1e6f6a8f130c011b.scn"]
+dest_files=["res://.godot/imported/stump_oldTall.glb-d4493cb17f2b1daa1e6f6a8f130c011b.res"]
 
 [params]
 

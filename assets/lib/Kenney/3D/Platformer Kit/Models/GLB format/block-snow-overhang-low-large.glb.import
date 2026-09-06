@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://dqpy6l6yiwh3b"
-path="res://.godot/imported/block-snow-overhang-low-large.glb-238f0ed7d6bac6ef6ec4c7a780fcffd1.scn"
+type="ArrayMesh"
+uid="uid://ba4mbvt6qd0vc"
+path="res://.godot/imported/block-snow-overhang-low-large.glb-238f0ed7d6bac6ef6ec4c7a780fcffd1.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-overhang-low-large.glb"
-dest_files=["res://.godot/imported/block-snow-overhang-low-large.glb-238f0ed7d6bac6ef6ec4c7a780fcffd1.scn"]
+dest_files=["res://.godot/imported/block-snow-overhang-low-large.glb-238f0ed7d6bac6ef6ec4c7a780fcffd1.res"]
 
 [params]
 

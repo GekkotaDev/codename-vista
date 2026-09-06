@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b3ubpqp4m63o4"
-path="res://.godot/imported/fence-low-straight.glb-822758e3b433dbb58bffb5c3b06a2129.scn"
+type="ArrayMesh"
+uid="uid://bx5k553w8k7ni"
+path="res://.godot/imported/fence-low-straight.glb-822758e3b433dbb58bffb5c3b06a2129.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/fence-low-straight.glb"
-dest_files=["res://.godot/imported/fence-low-straight.glb-822758e3b433dbb58bffb5c3b06a2129.scn"]
+dest_files=["res://.godot/imported/fence-low-straight.glb-822758e3b433dbb58bffb5c3b06a2129.res"]
 
 [params]
 

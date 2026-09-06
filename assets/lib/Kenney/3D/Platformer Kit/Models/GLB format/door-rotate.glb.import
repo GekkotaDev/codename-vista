@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://co0dmcc223ukf"
-path="res://.godot/imported/door-rotate.glb-3fc041a7bc0c1ecb6194df418aec1fcb.scn"
+type="ArrayMesh"
+uid="uid://d0jpubyb5sdu4"
+path="res://.godot/imported/door-rotate.glb-3fc041a7bc0c1ecb6194df418aec1fcb.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/door-rotate.glb"
-dest_files=["res://.godot/imported/door-rotate.glb-3fc041a7bc0c1ecb6194df418aec1fcb.scn"]
+dest_files=["res://.godot/imported/door-rotate.glb-3fc041a7bc0c1ecb6194df418aec1fcb.res"]
 
 [params]
 

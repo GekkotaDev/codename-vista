@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://djk5ajlbwa04s"
-path="res://.godot/imported/block-grass-overhang-long.glb-23f07cc391d067dd0f3f2f9d9a9249c6.scn"
+type="ArrayMesh"
+uid="uid://88rju43a2lxx"
+path="res://.godot/imported/block-grass-overhang-long.glb-23f07cc391d067dd0f3f2f9d9a9249c6.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-grass-overhang-long.glb"
-dest_files=["res://.godot/imported/block-grass-overhang-long.glb-23f07cc391d067dd0f3f2f9d9a9249c6.scn"]
+dest_files=["res://.godot/imported/block-grass-overhang-long.glb-23f07cc391d067dd0f3f2f9d9a9249c6.res"]
 
 [params]
 

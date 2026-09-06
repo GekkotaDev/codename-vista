@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bwabuc17emcx7"
-path="res://.godot/imported/platform.glb-3e0befa2b0c796ebab24719031cc18ba.scn"
+type="ArrayMesh"
+uid="uid://7n7431lstd84"
+path="res://.godot/imported/platform.glb-3e0befa2b0c796ebab24719031cc18ba.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/platform.glb"
-dest_files=["res://.godot/imported/platform.glb-3e0befa2b0c796ebab24719031cc18ba.scn"]
+dest_files=["res://.godot/imported/platform.glb-3e0befa2b0c796ebab24719031cc18ba.res"]
 
 [params]
 

@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://c4m6mc4vf725s"
-path="res://.godot/imported/ground_riverEndClosed.glb-b57b44fe5be69761eaa6be184796932a.scn"
+path="res://.godot/imported/ground_riverEndClosed.glb-b57b44fe5be69761eaa6be184796932a.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverEndClosed.glb"
-dest_files=["res://.godot/imported/ground_riverEndClosed.glb-b57b44fe5be69761eaa6be184796932a.scn"]
+dest_files=["res://.godot/imported/ground_riverEndClosed.glb-b57b44fe5be69761eaa6be184796932a.res"]
 
 [params]
 

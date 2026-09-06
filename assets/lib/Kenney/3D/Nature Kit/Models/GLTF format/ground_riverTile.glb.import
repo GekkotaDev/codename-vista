@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://mel87877pylw"
-path="res://.godot/imported/ground_riverTile.glb-87ad23a3d8c04648bfd1e8891e1f9325.scn"
+path="res://.godot/imported/ground_riverTile.glb-87ad23a3d8c04648bfd1e8891e1f9325.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverTile.glb"
-dest_files=["res://.godot/imported/ground_riverTile.glb-87ad23a3d8c04648bfd1e8891e1f9325.scn"]
+dest_files=["res://.godot/imported/ground_riverTile.glb-87ad23a3d8c04648bfd1e8891e1f9325.res"]
 
 [params]
 

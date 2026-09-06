@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cgkt1ht5oeeq6"
-path="res://.godot/imported/block-snow-hexagon.glb-48fc4d96e0f793aececa89dd507d4139.scn"
+type="ArrayMesh"
+uid="uid://b3dkgcrxh305a"
+path="res://.godot/imported/block-snow-hexagon.glb-48fc4d96e0f793aececa89dd507d4139.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-hexagon.glb"
-dest_files=["res://.godot/imported/block-snow-hexagon.glb-48fc4d96e0f793aececa89dd507d4139.scn"]
+dest_files=["res://.godot/imported/block-snow-hexagon.glb-48fc4d96e0f793aececa89dd507d4139.res"]
 
 [params]
 

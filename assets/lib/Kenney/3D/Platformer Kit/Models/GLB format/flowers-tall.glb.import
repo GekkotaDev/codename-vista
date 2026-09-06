@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://yw7d4qoinw3p"
-path="res://.godot/imported/flowers-tall.glb-762f32334b4016c8796e4737f150a003.scn"
+type="ArrayMesh"
+uid="uid://cggsmmo2ewgbm"
+path="res://.godot/imported/flowers-tall.glb-762f32334b4016c8796e4737f150a003.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/flowers-tall.glb"
-dest_files=["res://.godot/imported/flowers-tall.glb-762f32334b4016c8796e4737f150a003.scn"]
+dest_files=["res://.godot/imported/flowers-tall.glb-762f32334b4016c8796e4737f150a003.res"]
 
 [params]
 

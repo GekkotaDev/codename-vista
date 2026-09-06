@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://biwd7xq4157xv"
-path="res://.godot/imported/tree_fat_fall.glb-5dac8f442685703179803b1848a30ae3.scn"
+path="res://.godot/imported/tree_fat_fall.glb-5dac8f442685703179803b1848a30ae3.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_fat_fall.glb"
-dest_files=["res://.godot/imported/tree_fat_fall.glb-5dac8f442685703179803b1848a30ae3.scn"]
+dest_files=["res://.godot/imported/tree_fat_fall.glb-5dac8f442685703179803b1848a30ae3.res"]
 
 [params]
 

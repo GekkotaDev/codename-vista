@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://1axfg5pkmog7"
-path="res://.godot/imported/ground_riverCornerSmall.glb-89fd96357f6aa2eade62ecce041f8428.scn"
+path="res://.godot/imported/ground_riverCornerSmall.glb-89fd96357f6aa2eade62ecce041f8428.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/ground_riverCornerSmall.glb"
-dest_files=["res://.godot/imported/ground_riverCornerSmall.glb-89fd96357f6aa2eade62ecce041f8428.scn"]
+dest_files=["res://.godot/imported/ground_riverCornerSmall.glb-89fd96357f6aa2eade62ecce041f8428.res"]
 
 [params]
 

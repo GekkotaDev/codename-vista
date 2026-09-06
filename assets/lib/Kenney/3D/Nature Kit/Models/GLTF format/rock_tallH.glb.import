@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bap1gro71lg3t"
-path="res://.godot/imported/rock_tallH.glb-986a8216d7461187d1b33ae40ddec63c.scn"
+path="res://.godot/imported/rock_tallH.glb-986a8216d7461187d1b33ae40ddec63c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/rock_tallH.glb"
-dest_files=["res://.godot/imported/rock_tallH.glb-986a8216d7461187d1b33ae40ddec63c.scn"]
+dest_files=["res://.godot/imported/rock_tallH.glb-986a8216d7461187d1b33ae40ddec63c.res"]
 
 [params]
 

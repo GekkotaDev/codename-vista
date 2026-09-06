@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://djjwvt3svxibb"
-path="res://.godot/imported/bed_floor.glb-815cf288e0e7136959ebfed49c584701.scn"
+path="res://.godot/imported/bed_floor.glb-815cf288e0e7136959ebfed49c584701.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/bed_floor.glb"
-dest_files=["res://.godot/imported/bed_floor.glb-815cf288e0e7136959ebfed49c584701.scn"]
+dest_files=["res://.godot/imported/bed_floor.glb-815cf288e0e7136959ebfed49c584701.res"]
 
 [params]
 

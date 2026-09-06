@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://wp5h7ej752gc"
-path="res://.godot/imported/crops_cornStageA.glb-99807db24b744dd0237e2b245aafff71.scn"
+path="res://.godot/imported/crops_cornStageA.glb-99807db24b744dd0237e2b245aafff71.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/crops_cornStageA.glb"
-dest_files=["res://.godot/imported/crops_cornStageA.glb-99807db24b744dd0237e2b245aafff71.scn"]
+dest_files=["res://.godot/imported/crops_cornStageA.glb-99807db24b744dd0237e2b245aafff71.res"]
 
 [params]
 

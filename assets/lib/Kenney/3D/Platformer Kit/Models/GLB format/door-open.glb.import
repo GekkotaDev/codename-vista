@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cwetw3f35srfd"
-path="res://.godot/imported/door-open.glb-31a9d5c8668deded3e4b9ec52635251c.scn"
+type="ArrayMesh"
+uid="uid://khogbnu5xpux"
+path="res://.godot/imported/door-open.glb-31a9d5c8668deded3e4b9ec52635251c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/door-open.glb"
-dest_files=["res://.godot/imported/door-open.glb-31a9d5c8668deded3e4b9ec52635251c.scn"]
+dest_files=["res://.godot/imported/door-open.glb-31a9d5c8668deded3e4b9ec52635251c.res"]
 
 [params]
 

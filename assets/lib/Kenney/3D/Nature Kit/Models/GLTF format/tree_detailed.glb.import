@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cmrosmvr48hyr"
-path="res://.godot/imported/tree_detailed.glb-77b6c5c1d5a9342c115f3f4b8552825d.scn"
+path="res://.godot/imported/tree_detailed.glb-77b6c5c1d5a9342c115f3f4b8552825d.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_detailed.glb"
-dest_files=["res://.godot/imported/tree_detailed.glb-77b6c5c1d5a9342c115f3f4b8552825d.scn"]
+dest_files=["res://.godot/imported/tree_detailed.glb-77b6c5c1d5a9342c115f3f4b8552825d.res"]
 
 [params]
 

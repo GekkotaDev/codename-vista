@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://b4ap7ub5bxkv"
-path="res://.godot/imported/block-snow-corner-low.glb-25e90b4c15baa1daed3bf4ecfc983530.scn"
+type="ArrayMesh"
+uid="uid://c2j8d2mxwglm"
+path="res://.godot/imported/block-snow-corner-low.glb-25e90b4c15baa1daed3bf4ecfc983530.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-corner-low.glb"
-dest_files=["res://.godot/imported/block-snow-corner-low.glb-25e90b4c15baa1daed3bf4ecfc983530.scn"]
+dest_files=["res://.godot/imported/block-snow-corner-low.glb-25e90b4c15baa1daed3bf4ecfc983530.res"]
 
 [params]
 

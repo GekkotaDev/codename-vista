@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://cb15pj73ags02"
-path="res://.godot/imported/heart.glb-25d4d8da29f92063106c009c4863db53.scn"
+type="ArrayMesh"
+uid="uid://ccix8ypn3bxpf"
+path="res://.godot/imported/heart.glb-25d4d8da29f92063106c009c4863db53.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/heart.glb"
-dest_files=["res://.godot/imported/heart.glb-25d4d8da29f92063106c009c4863db53.scn"]
+dest_files=["res://.godot/imported/heart.glb-25d4d8da29f92063106c009c4863db53.res"]
 
 [params]
 

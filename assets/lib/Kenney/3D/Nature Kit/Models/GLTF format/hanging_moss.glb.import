@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cdrsyyve0xbeh"
-path="res://.godot/imported/hanging_moss.glb-617b28431d85f6ef9bd5824fb9eae9a2.scn"
+path="res://.godot/imported/hanging_moss.glb-617b28431d85f6ef9bd5824fb9eae9a2.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/hanging_moss.glb"
-dest_files=["res://.godot/imported/hanging_moss.glb-617b28431d85f6ef9bd5824fb9eae9a2.scn"]
+dest_files=["res://.godot/imported/hanging_moss.glb-617b28431d85f6ef9bd5824fb9eae9a2.res"]
 
 [params]
 

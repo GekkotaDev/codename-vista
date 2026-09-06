@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://bw1vtord3ivho"
-path="res://.godot/imported/fence_corner.glb-caa633afe87ac6f8b6f6593f7d0a1a26.scn"
+path="res://.godot/imported/fence_corner.glb-caa633afe87ac6f8b6f6593f7d0a1a26.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/fence_corner.glb"
-dest_files=["res://.godot/imported/fence_corner.glb-caa633afe87ac6f8b6f6593f7d0a1a26.scn"]
+dest_files=["res://.godot/imported/fence_corner.glb-caa633afe87ac6f8b6f6593f7d0a1a26.res"]
 
 [params]
 

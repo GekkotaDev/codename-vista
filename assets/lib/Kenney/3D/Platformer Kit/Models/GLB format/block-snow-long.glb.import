@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bggjshsgrfhda"
-path="res://.godot/imported/block-snow-long.glb-eabf3fd5130bdcd35c211a611638b193.scn"
+type="ArrayMesh"
+uid="uid://ctgdlmqfrr3s7"
+path="res://.godot/imported/block-snow-long.glb-eabf3fd5130bdcd35c211a611638b193.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-long.glb"
-dest_files=["res://.godot/imported/block-snow-long.glb-eabf3fd5130bdcd35c211a611638b193.scn"]
+dest_files=["res://.godot/imported/block-snow-long.glb-eabf3fd5130bdcd35c211a611638b193.res"]
 
 [params]
 

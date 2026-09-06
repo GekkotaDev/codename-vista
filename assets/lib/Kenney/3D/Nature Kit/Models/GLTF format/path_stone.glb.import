@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://5nyoqxaajnr6"
-path="res://.godot/imported/path_stone.glb-3f81337409d661b47aab45504b3d1512.scn"
+path="res://.godot/imported/path_stone.glb-3f81337409d661b47aab45504b3d1512.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/path_stone.glb"
-dest_files=["res://.godot/imported/path_stone.glb-3f81337409d661b47aab45504b3d1512.scn"]
+dest_files=["res://.godot/imported/path_stone.glb-3f81337409d661b47aab45504b3d1512.res"]
 
 [params]
 

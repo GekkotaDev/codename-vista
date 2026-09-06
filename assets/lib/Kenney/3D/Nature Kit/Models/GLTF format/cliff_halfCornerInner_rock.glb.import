@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://darkhhxgp6j50"
-path="res://.godot/imported/cliff_halfCornerInner_rock.glb-da31c5331a48b5892064d3ec54016090.scn"
+path="res://.godot/imported/cliff_halfCornerInner_rock.glb-da31c5331a48b5892064d3ec54016090.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_halfCornerInner_rock.glb"
-dest_files=["res://.godot/imported/cliff_halfCornerInner_rock.glb-da31c5331a48b5892064d3ec54016090.scn"]
+dest_files=["res://.godot/imported/cliff_halfCornerInner_rock.glb-da31c5331a48b5892064d3ec54016090.res"]
 
 [params]
 

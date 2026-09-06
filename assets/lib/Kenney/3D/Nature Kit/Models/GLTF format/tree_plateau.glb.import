@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://4sf7fjl48v1f"
-path="res://.godot/imported/tree_plateau.glb-747829a508a140937921e48cdd8086a6.scn"
+path="res://.godot/imported/tree_plateau.glb-747829a508a140937921e48cdd8086a6.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_plateau.glb"
-dest_files=["res://.godot/imported/tree_plateau.glb-747829a508a140937921e48cdd8086a6.scn"]
+dest_files=["res://.godot/imported/tree_plateau.glb-747829a508a140937921e48cdd8086a6.res"]
 
 [params]
 

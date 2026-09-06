@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://cctwofskohmo8"
-path="res://.godot/imported/tree_detailed_dark.glb-cf99b22a169b31e9810afd54ea78609c.scn"
+path="res://.godot/imported/tree_detailed_dark.glb-cf99b22a169b31e9810afd54ea78609c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/tree_detailed_dark.glb"
-dest_files=["res://.godot/imported/tree_detailed_dark.glb-cf99b22a169b31e9810afd54ea78609c.scn"]
+dest_files=["res://.godot/imported/tree_detailed_dark.glb-cf99b22a169b31e9810afd54ea78609c.res"]
 
 [params]
 

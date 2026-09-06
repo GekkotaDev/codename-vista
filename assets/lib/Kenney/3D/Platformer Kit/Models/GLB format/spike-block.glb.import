@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://x7a72dtvpq2d"
-path="res://.godot/imported/spike-block.glb-0f2243fce1a632c9e1a499f1a7cdf3fd.scn"
+type="ArrayMesh"
+uid="uid://bhpgggn5bqc74"
+path="res://.godot/imported/spike-block.glb-0f2243fce1a632c9e1a499f1a7cdf3fd.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/spike-block.glb"
-dest_files=["res://.godot/imported/spike-block.glb-0f2243fce1a632c9e1a499f1a7cdf3fd.scn"]
+dest_files=["res://.godot/imported/spike-block.glb-0f2243fce1a632c9e1a499f1a7cdf3fd.res"]
 
 [params]
 

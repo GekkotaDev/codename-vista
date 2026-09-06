@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://bfsl3l2swfec7"
-path="res://.godot/imported/crate-strong.glb-4baa221c7810bf433c1e3ca4f7d6a759.scn"
+type="ArrayMesh"
+uid="uid://jpqworlmgobp"
+path="res://.godot/imported/crate-strong.glb-4baa221c7810bf433c1e3ca4f7d6a759.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/crate-strong.glb"
-dest_files=["res://.godot/imported/crate-strong.glb-4baa221c7810bf433c1e3ca4f7d6a759.scn"]
+dest_files=["res://.godot/imported/crate-strong.glb-4baa221c7810bf433c1e3ca4f7d6a759.res"]
 
 [params]
 

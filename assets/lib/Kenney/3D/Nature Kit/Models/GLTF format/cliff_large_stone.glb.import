@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://b4int6irw537y"
-path="res://.godot/imported/cliff_large_stone.glb-04118d5c7cab65201efddbf9484da26f.scn"
+path="res://.godot/imported/cliff_large_stone.glb-04118d5c7cab65201efddbf9484da26f.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/cliff_large_stone.glb"
-dest_files=["res://.godot/imported/cliff_large_stone.glb-04118d5c7cab65201efddbf9484da26f.scn"]
+dest_files=["res://.godot/imported/cliff_large_stone.glb-04118d5c7cab65201efddbf9484da26f.res"]
 
 [params]
 

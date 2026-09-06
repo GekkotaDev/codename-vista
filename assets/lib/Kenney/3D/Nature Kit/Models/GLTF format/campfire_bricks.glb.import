@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
+type="ArrayMesh"
 uid="uid://1i3v6yke5vty"
-path="res://.godot/imported/campfire_bricks.glb-1ee15d723482effafb5ab2ef2ff7407c.scn"
+path="res://.godot/imported/campfire_bricks.glb-1ee15d723482effafb5ab2ef2ff7407c.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Nature Kit/Models/GLTF format/campfire_bricks.glb"
-dest_files=["res://.godot/imported/campfire_bricks.glb-1ee15d723482effafb5ab2ef2ff7407c.scn"]
+dest_files=["res://.godot/imported/campfire_bricks.glb-1ee15d723482effafb5ab2ef2ff7407c.res"]
 
 [params]
 

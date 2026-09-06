@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="ArrayMesh"
 importer_version=1
-type="PackedScene"
-uid="uid://dpjrjuer61dh7"
-path="res://.godot/imported/block-snow-curve-low.glb-6c8e294968f146f88c4fabff8831056a.scn"
+type="ArrayMesh"
+uid="uid://cev7r4a5rp0sj"
+path="res://.godot/imported/block-snow-curve-low.glb-6c8e294968f146f88c4fabff8831056a.res"
 
 [deps]
 
 source_file="res://assets/lib/Kenney/3D/Platformer Kit/Models/GLB format/block-snow-curve-low.glb"
-dest_files=["res://.godot/imported/block-snow-curve-low.glb-6c8e294968f146f88c4fabff8831056a.scn"]
+dest_files=["res://.godot/imported/block-snow-curve-low.glb-6c8e294968f146f88c4fabff8831056a.res"]
 
 [params]
 
