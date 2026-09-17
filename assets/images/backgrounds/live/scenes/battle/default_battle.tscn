@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bptrn145f1chg"]
+
+[ext_resource type="PackedScene" uid="uid://10neawd6ayqk" path="res://views/live_background/live_background.tscn" id="1_g1khs"]
+[ext_resource type="Material" uid="uid://lo2grt723bok" path="res://assets/images/backgrounds/live/materials/y_reversed.tres" id="2_oaf3w"]
+[ext_resource type="Texture2D" uid="uid://dpwmvdwygome" path="res://assets/images/backgrounds/live/images/vivid/fire.png" id="3_peuvo"]
+[ext_resource type="Material" uid="uid://cpqqmgiu4g0eo" path="res://assets/images/backgrounds/live/materials/x.tres" id="4_4sjxa"]
+
+[node name="DefaultBattle" type="Control" unique_id=1355872413]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=816454024]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_peuvo")
+
+[node name="LiveBackground" parent="." unique_id=389687178 instance=ExtResource("1_g1khs")]
+layout_mode = 1
+background_shader = ExtResource("2_oaf3w")
+background_texture = ExtResource("3_peuvo")
+foreground_shader = ExtResource("4_4sjxa")
+foreground_texture = ExtResource("3_peuvo")

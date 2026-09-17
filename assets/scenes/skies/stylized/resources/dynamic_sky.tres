@@ -1,6 +1,7 @@
 [gd_resource type="Sky" format=3 uid="uid://eoyf4fh7b1ml"]
 
 [ext_resource type="Shader" uid="uid://3ljvryay7dke" path="res://assets/scenes/skies/stylized/shaders/stylized_sky.gdshader" id="1_37qgr"]
+[ext_resource type="Texture2D" uid="uid://dfbnikfkeltpi" path="res://assets/scenes/skies/stylized/sun.png" id="2_u7x8c"]
 
 [sub_resource type="Curve" id="Curve_856ki"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.15168539, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.75280905), 0.0, 0.0, 0, 0]
@@ -45,6 +46,7 @@ shader_parameter/top_color = Color(0.34901962, 0.5882353, 1, 1)
 shader_parameter/bottom_color = Color(0, 0.32941177, 0.96862745, 1)
 shader_parameter/sun_scatter = Color(0.29803923, 0.29803923, 0.29803923, 1)
 shader_parameter/astro_tint = Color(0.90588236, 0.7882353, 0.627451, 1)
+shader_parameter/astro_sampler = ExtResource("2_u7x8c")
 shader_parameter/astro_scale = 9.000000134110799
 shader_parameter/astro_intensity = 3.0
 shader_parameter/stars_intensity = 0.0

@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://jgyvehvc7skr"]
+
+[ext_resource type="Script" uid="uid://pa2d2syjd5hb" path="res://nodes/concurrent_subtree.gd" id="1_ithj3"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_g6luk"]
+[ext_resource type="PackedScene" uid="uid://bptrn145f1chg" path="res://assets/images/backgrounds/live/scenes/battle/default_battle.tscn" id="3_slxew"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="4_t4fri"]
+[ext_resource type="Script" uid="uid://7h5q8yxktbuf" path="res://nodes/note.gd" id="5_o6bc5"]
+[ext_resource type="Script" uid="uid://cxn2romkfpakm" path="res://resources/comments/scene_comment.gd" id="6_ndd0p"]
+[ext_resource type="Script" uid="uid://1n1o04n5itse" path="res://resources/comments/scene_note.gd" id="7_rgyjr"]
+
+[sub_resource type="Resource" id="Resource_nup64"]
+script = ExtResource("7_rgyjr")
+note = "- FFS DO NOT USE GROK / GEMINI / ETC I DO NOT NEED TO CLEAN UP AFTER MORE MESSES
+- Player character has an entirely different behavior tree
+- Exit when there are no more enemy participants OR when you die OR when you flee"
+metadata/_custom_type_script = "uid://1n1o04n5itse"
+
+[sub_resource type="PrismMesh" id="PrismMesh_nup64"]
+
+[sub_resource type="Resource" id="Resource_ndd0p"]
+script = ExtResource("7_rgyjr")
+note = "Each participant type in the battle has their own unique behavior tree. Each actor has a reference to a resource database which is where the Machine Learning part comes from."
+
+[node name="Arena" type="Node3D" unique_id=306052815]
+
+[node name="SubtreeComments" type="Node" parent="." unique_id=1211730231]
+script = ExtResource("5_o6bc5")
+notes = Array[ExtResource("6_ndd0p")]([SubResource("Resource_nup64")])
+metadata/_custom_type_script = "uid://7h5q8yxktbuf"
+
+[node name="ConcurrentSubtree" type="Node" parent="." unique_id=534446180]
+script = ExtResource("1_ithj3")
+metadata/_custom_type_script = "uid://pa2d2syjd5hb"
+
+[node name="BackgroundViewportContainer" type="SubViewportContainer" parent="." unique_id=932788862]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+stretch_shrink = 2
+
+[node name="SubViewport" type="SubViewport" parent="BackgroundViewportContainer" unique_id=1837514721]
+handle_input_locally = false
+size = Vector2i(960, 540)
+render_target_update_mode = 4
+
+[node name="DefaultBattle" parent="BackgroundViewportContainer/SubViewport" unique_id=1355872413 instance=ExtResource("3_slxew")]
+
+[node name="ArenaViewportContainer" type="SubViewportContainer" parent="." unique_id=1635092017]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="ArenaViewport" type="SubViewport" parent="ArenaViewportContainer" unique_id=2128586500]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="World3D" type="Node3D" parent="ArenaViewportContainer/ArenaViewport" unique_id=909535717]
+
+[node name="Camera3D" type="Camera3D" parent="ArenaViewportContainer/ArenaViewport/World3D" unique_id=1994932764]
+
+[node name="PhantomCameraHost" type="Node" parent="ArenaViewportContainer/ArenaViewport/World3D/Camera3D" unique_id=1345433238]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_g6luk")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
+
+[node name="Stage3D" type="Node3D" parent="ArenaViewportContainer/ArenaViewport" unique_id=1547370171]
+
+[node name="Participants3D" type="Node3D" parent="ArenaViewportContainer/ArenaViewport" unique_id=1163807874]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ArenaViewportContainer/ArenaViewport/Participants3D" unique_id=1827756887]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0.49999997, 0.70710677, 0.49999997, 0.49999997, -0.70710677, 0.49999997, 0, 0, -3)
+mesh = SubResource("PrismMesh_nup64")
+
+[node name="BeehaveTree" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=306474494 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("4_t4fri")
+blackboard = NodePath("@Node@21879")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="SubtreeComments" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=2049513926]
+script = ExtResource("5_o6bc5")
+notes = Array[ExtResource("6_ndd0p")]([SubResource("Resource_ndd0p")])
+metadata/_custom_type_script = "uid://7h5q8yxktbuf"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2141572469]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=59898818]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport" unique_id=1010596652]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=22806633]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="SubViewportContainer/SubViewport/Control/MarginContainer" unique_id=92692998]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1217576527]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/MarginContainer2" unique_id=292860489]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control/MarginContainer2/HBoxContainer" unique_id=1503578688]
+layout_mode = 2
+text = "EEE"

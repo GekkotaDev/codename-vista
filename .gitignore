@@ -1,5 +1,6 @@
 __ignore*
 .void
+*.zip
 
 #? .NET
 ## A streamlined .gitignore for modern .NET projects
