@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://mcleib8f4y3t"
+path="res://.godot/imported/switch12.ogg-df38a6584171f42e89f840c91602c64a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/lib/Kenney/3D/UI Audio/Audio/switch12.ogg"
+dest_files=["res://.godot/imported/switch12.ogg-df38a6584171f42e89f840c91602c64a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

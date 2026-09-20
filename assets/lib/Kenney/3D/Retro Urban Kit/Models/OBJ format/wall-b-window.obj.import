@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cj1526hwej6j8"
+path="res://.godot/imported/wall-b-window.obj-15970173f2341b87fec8c7beb26cd830.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall-b-window.obj-15970173f2341b87fec8c7beb26cd830.mesh"]
+
+source_file="res://assets/lib/Kenney/3D/Retro Urban Kit/Models/OBJ format/wall-b-window.obj"
+dest_files=["res://.godot/imported/wall-b-window.obj-15970173f2341b87fec8c7beb26cd830.mesh", "res://.godot/imported/wall-b-window.obj-15970173f2341b87fec8c7beb26cd830.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
