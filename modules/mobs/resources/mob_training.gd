@@ -1,13 +1,14 @@
 class_name MobTraining
 extends Resource
 
-@export var id: StringName
-@export var priority: Dictionary[StringName, float]
+@export var score: int = 0
 
 
-func next():
-	for move in priority:
-		if priority[move] < 0:
-			priority[move] += 0.1
-		if priority[move] > 0:
-			priority[move] -= 0.1
+func train(move: MobMove, target: MobStats) -> MobStats:
+	var clone: MobStats = target.duplicate()
+
+	for _x in range(move.lifespan):
+		move.inflict_effect(clone)
+
+	score = target.current_health - clone.current_health
+	return clone

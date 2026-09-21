@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnu54rk1scrwj" path="res://areas/init/init.gd" id="1_mbfq6"]
 [ext_resource type="PackedScene" uid="uid://38chuk10ugey" path="res://areas/menus/splash/splash.tscn" id="2_b5ra7"]
-[ext_resource type="PackedScene" uid="uid://da15agboh7j0x" path="res://areas/documentation/gyms/alpha/gym_alpha.tscn" id="3_fioc6"]
+[ext_resource type="PackedScene" uid="uid://d0tc5tuwcxyul" path="res://areas/zones/origin_woods/origin_woods.tscn" id="3_fioc6"]
 
 [node name="Init" type="Control" unique_id=1640033708]
 layout_mode = 3

@@ -5,9 +5,11 @@ extends Resource
 @export var priority: Dictionary[StringName, float]
 
 
-func next():
-	for move in priority:
-		if priority[move] < 0:
-			priority[move] += 0.1
-		if priority[move] > 0:
-			priority[move] -= 0.1
+func query_priorities() -> PackedStringArray:
+	var move_names: Array[StringName] = priority.keys()
+	move_names.sort_custom(
+		func(a: StringName, b: StringName):
+			return priority[a] > priority[b],
+	)
+
+	return move_names

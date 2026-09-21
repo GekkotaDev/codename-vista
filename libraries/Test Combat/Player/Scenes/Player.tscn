@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dcgc4xl2tahe2"]
 
 [ext_resource type="Script" uid="uid://bdb6yvu2std04" path="res://libraries/Test Combat/Scripts/Player.gd" id="1_27vqm"]
-[ext_resource type="PackedScene" uid="uid://bmhkvq2m8fwi" path="res://libraries/Test Combat/Ui/Scenes/HealthBar.tscn" id="2_rym23"]
 [ext_resource type="Resource" uid="uid://ycpwxufjdoro" path="res://libraries/Test Combat/Resources/Data/PlayerData.tres" id="2_v3k30"]
 [ext_resource type="Texture2D" uid="uid://dx6k04msc72gw" path="res://assets/characters/violla-standing.png" id="4_jwjm8"]
 [ext_resource type="Texture2D" uid="uid://btu0pgpv1shqj" path="res://assets/characters/violla-walking-1.png" id="5_r48av"]
@@ -37,7 +36,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2wy8y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stand_stance_left",
 "speed": 5.0
 }, {
@@ -45,7 +44,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2wy8y")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stand_stance_right",
 "speed": 5.0
 }, {
@@ -56,7 +55,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fojed")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walking_stance",
 "speed": 5.0
 }]
@@ -77,11 +76,6 @@ shape = SubResource("BoxShape3D_j2jnw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68877697, 0)
 texture = SubResource("ViewportTexture_v3k30")
 
-[node name="HealthBar" parent="." unique_id=1238646013 instance=ExtResource("2_rym23")]
-
-[node name="ProgressBar" parent="HealthBar" index="0" unique_id=822652531]
-entity_name = "Player"
-
 [node name="InteractionVolume" type="Area3D" parent="." unique_id=430806358]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionVolume" unique_id=1402289598]
@@ -91,5 +85,3 @@ shape = SubResource("BoxShape3D_v3k30")
 transform = Transform3D(0.068866625, 0, 0, 0, 0.059251223, 0, 0, 0, 1, 0, 0.03515598, 0)
 sprite_frames = SubResource("SpriteFrames_r48av")
 animation = &"walking_stance"
-
-[editable path="HealthBar"]

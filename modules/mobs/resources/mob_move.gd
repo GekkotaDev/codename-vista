@@ -8,10 +8,4 @@ static var name: StringName
 
 
 @abstract
-func inflict_effect(participant: BattleParticipant3D)
-
-
-func tick(participant: BattleParticipant3D):
-	if lifespan > 0:
-		lifespan = lifespan - 1
-	inflict_effect(participant)
+func inflict_effect(stats: MobStats)

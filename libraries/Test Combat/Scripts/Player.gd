@@ -3,16 +3,18 @@ extends CharacterBody3D
 @export var data: PlayerData # Assign PlayerData.tres here
 @onready var interaction_volume = $InteractionVolume # The new Area3D for detecing scenes Player can interact with
 
+# We do not need this nasty vibe coded bullshit
 func _ready():
+	pass
 	# --- ORIGINAL CODE (Turned into comments) ---
 	# if data:
 	# 	HealthManager.register_entity(data)
 
 	# --- NEW UPDATED LOGIC ---
-	if data:
-		# Player duplication to ensure they have their own health pool
-		data = data.duplicate(true)
-		HealthManager.register_entity(data)
+	#if data:
+		## Player duplication to ensure they have their own health pool
+		#data = data.duplicate(true)
+		#HealthManager.register_entity(data)
 
 func _input(event):
 	# Check for the interact key
