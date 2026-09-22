@@ -20,6 +20,7 @@ func _of(actor: BattleParticipant3D):
 	for move in moves:
 		var training := MobTraining.new()
 		var stats := training.train(move, actor.target.stats.duplicate())
+		memory[move.name] = stats.current_health
 
 	var priority := memory.query_priorities()
 
@@ -28,7 +29,7 @@ func _of(actor: BattleParticipant3D):
 
 	for move in moves:
 		if move.name == priority[0]:
-			move.inflict_effect()
+			move.inflict_effect(actor.target.stats)
 			return SUCCESS
 
 	return FAILURE

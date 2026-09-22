@@ -10,7 +10,6 @@ func _ready() -> void:
 	for child in get_children():
 		if child is BattleParticipant3D:
 			participants.append(child)
-
 	queue = participants.duplicate()
 	sort_queue()
 
@@ -26,4 +25,8 @@ func sort_queue() -> BattleVisitor3D:
 func next() -> BattleParticipant3D:
 	var next_participant: BattleParticipant3D = queue.pop_back()
 	sort_queue()
+
+	while next_participant.tick():
+		pass
+
 	return next_participant

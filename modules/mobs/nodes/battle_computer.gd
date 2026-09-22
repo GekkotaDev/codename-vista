@@ -1,1 +1,0 @@
-class_name BattleComputer3D extends BattleParticipant3D

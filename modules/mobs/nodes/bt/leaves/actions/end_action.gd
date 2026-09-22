@@ -9,5 +9,5 @@ func tick(actor: Node, _blackboard: Blackboard) -> int:
 
 
 func _of(actor: BattleParticipant3D):
-	actor.active = false
+	actor.tree.disable()
 	return SUCCESS

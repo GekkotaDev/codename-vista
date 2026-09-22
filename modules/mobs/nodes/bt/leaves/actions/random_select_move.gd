@@ -12,3 +12,4 @@ func tick(actor: Node, blackboard: Blackboard) -> int:
 
 func _of(actor: BattleParticipant3D):
 	var move: MobMove = actor.moves.pick_random()
+	move.inflict_effect(actor.target.stats)
