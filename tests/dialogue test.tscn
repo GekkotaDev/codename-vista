@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ba71rv7xkx2ds"]
+
+[ext_resource type="Texture2D" uid="uid://cv3jsy2qfguup" path="res://assets/images/textures/UI/Dialogue UI2.png" id="1_d3n1r"]
+
+[node name="DialogueTest" type="Node2D" unique_id=13690859]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1166681944]
+offset_left = 263.0
+offset_top = 86.0
+offset_right = 3463.0
+offset_bottom = 3286.0
+texture = ExtResource("1_d3n1r")
+region_rect = Rect2(117.17529, 5.090317, 4549.176, 4788.0234)
+patch_margin_left = 1600
+patch_margin_top = 1600
+patch_margin_right = 1600
+patch_margin_bottom = 1600
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1

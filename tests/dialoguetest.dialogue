@@ -1,0 +1,8 @@
+~ start
+Viola: [[Where am I?|Sir, I think this is the wrong place|What?]] Am I supposed to be here? I think I got off the wrong stop.
+Viola: Anyways, since I'm already here, I might as well take a look at this place
+- Let's take a look around 
+	=> END
+- Let's wait for the bus again
+	Viola: Nope. Let's take a look around
+=> END

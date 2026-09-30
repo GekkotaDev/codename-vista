@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://cybhnp0lbp8s0"]
+
+[ext_resource type="Script" uid="uid://dkdbhwh5dk0bu" path="res://areas/zones/Prologue/prologue.gd" id="1_b1apr"]
+[ext_resource type="Script" uid="uid://s2q83gbqk4yf" path="res://areas/zones/Prologue/camera_3d.gd" id="2_ba24n"]
+[ext_resource type="Script" uid="uid://bp0swvxuiui5r" path="res://areas/zones/Prologue/sprite_3d.gd" id="3_7sdof"]
+[ext_resource type="Texture2D" uid="uid://b0t1l25bhqiyh" path="res://assets/images/backgrounds/prologue/thesis1_bg.png" id="3_h03m6"]
+[ext_resource type="Texture2D" uid="uid://b2iyvxbdt7q4o" path="res://assets/images/backgrounds/prologue/bench.png" id="4_qgb3h"]
+[ext_resource type="PackedScene" uid="uid://bqr6vghf141nd" path="res://assets/3D/bus.tscn" id="4_u4b6d"]
+[ext_resource type="Texture2D" uid="uid://c8io7b6syb3eh" path="res://assets/images/backgrounds/prologue/Lamppost.png" id="5_h7omf"]
+[ext_resource type="Texture2D" uid="uid://ci62yysbo25xd" path="res://assets/characters/Viola animation na.png" id="6_qgb3h"]
+
+[sub_resource type="Environment" id="Environment_v67xs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7omf"]
+albedo_texture = ExtResource("3_h03m6")
+backlight = Color(1, 1, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v67xs"]
+material = SubResource("StandardMaterial3D_h7omf")
+size = Vector2(0.657, 0.275)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omkhw"]
+transparency = 4
+albedo_texture = ExtResource("4_qgb3h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sfnki"]
+material = SubResource("StandardMaterial3D_omkhw")
+size = Vector2(3.965, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnqlo"]
+transparency = 1
+albedo_texture = ExtResource("5_h7omf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8cpyy"]
+material = SubResource("StandardMaterial3D_mnqlo")
+size = Vector2(1.61, 5.425)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v67xs"]
+size = Vector3(1.39, 4.23, 0.485)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h03m6"]
+albedo_color = Color(0.187513, 0.21432352, 0.18385825, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1apr"]
+size = Vector3(89.54, 1, 13.605)
+
+[node name="Prologue" type="Node3D" unique_id=105803006]
+script = ExtResource("1_b1apr")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=245086817]
+environment = SubResource("Environment_v67xs")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="WorldEnvironment" unique_id=2007189222]
+transform = Transform3D(1, 0, 0, 0, 0.9329566, 0.359989, 0, -0.359989, 0.9329566, 12.15419, 9.995635, 65.58867)
+area_range = 74.07
+area_attenuation = 0.074
+area_size = Vector2(6.605, 6.605)
+
+[node name="AreaLight3D2" type="AreaLight3D" parent="WorldEnvironment" unique_id=1003807167]
+transform = Transform3D(1, 0, 0, 0, 0.9453978, 0.32591876, 0, -0.32591876, 0.9453978, 4.352276, 25.776453, -55.157135)
+light_size = 0.292
+area_range = 96.949
+area_attenuation = 0.207
+area_size = Vector2(6.605, 6.605)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment" unique_id=1538397960]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5645804, 4.1496816, -8.061455)
+light_energy = 1.792
+light_indirect_energy = 1.792
+light_volumetric_fog_energy = 1.32
+spot_range = 142.496
+spot_attenuation = 0.36
+spot_angle = 175.1
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2067765461 node_paths=PackedStringArray("target")]
+transform = Transform3D(0.9972502, 0.0032325564, 0.07403776, -0.012569536, 0.99195117, 0.12599564, -0.073034555, -0.12657979, 0.98926413, -6.876545, 11.347668, 47.092247)
+fov = 15.0
+script = ExtResource("2_ba24n")
+target = NodePath("../LevelGeometry/FloorSection/Viola/Sprite3D")
+follow_speed = 5.255
+
+[node name="Background" type="MeshInstance3D" parent="." unique_id=455253213]
+transform = Transform3D(190.5, 0, 0, 0, -8.32702e-06, -190.5, 0, 190.5, -8.32702e-06, 0, 5.3251514, -111.60263)
+mesh = SubResource("PlaneMesh_v67xs")
+
+[node name="Bench3D" type="MeshInstance3D" parent="." unique_id=638042542]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 3.6555882, 0.58427477, -9.548561)
+mesh = SubResource("PlaneMesh_sfnki")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1219215264]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6.714595, 2.278722, -10.458246)
+mesh = SubResource("PlaneMesh_8cpyy")
+
+[node name="LevelGeometry" type="Node3D" parent="." unique_id=902612859]
+
+[node name="FloorSection" type="Node3D" parent="LevelGeometry" unique_id=1351837494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3734813)
+
+[node name="Viola" type="CharacterBody3D" parent="LevelGeometry/FloorSection" unique_id=2038599631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.76116, 0.48065162, 6.1947517)
+disable_mode = 2
+script = ExtResource("3_7sdof")
+
+[node name="Sprite3D" type="Sprite3D" parent="LevelGeometry/FloorSection/Viola" unique_id=637975162]
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, -7.7910194, 1.9852986, -1.0582995)
+texture = ExtResource("6_qgb3h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/FloorSection/Viola" unique_id=285086248]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8850746, 1.9184892, -1.1202729)
+shape = SubResource("BoxShape3D_v67xs")
+debug_color = Color(0.053811856, 0.029229296, 0.13574883, 0.41960785)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="LevelGeometry/FloorSection" unique_id=1065522555]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LevelGeometry/FloorSection/CSGCombiner3D" unique_id=355758208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.623465, 0, 3.761959)
+size = Vector3(89.54, 1, 13.605)
+material = SubResource("StandardMaterial3D_h03m6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="LevelGeometry/FloorSection" unique_id=302027958]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelGeometry/FloorSection/StaticBody3D" unique_id=1445651924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.650975, 0, 3.7941117)
+shape = SubResource("BoxShape3D_b1apr")
+debug_color = Color(0.3298753, 0.16049859, 0.32034075, 1)
+
+[node name="BackgroundCollision" type="CollisionShape3D" parent="LevelGeometry/FloorSection/StaticBody3D" unique_id=388099821]
+transform = Transform3D(0.9999761, 0.006911023, -3.020904e-10, 0, -4.371139e-08, -1, -0.006911023, 0.9999761, -4.3710344e-08, 21.2646, 5.627, -1.5402398)
+shape = SubResource("BoxShape3D_b1apr")
+debug_color = Color(0.3298753, 0.16049859, 0.32034075, 1)
+
+[node name="ForegroundCollision" type="CollisionShape3D" parent="LevelGeometry/FloorSection/StaticBody3D" unique_id=1156735586]
+transform = Transform3D(0.9999761, 0.006911023, -3.020904e-10, 0, -4.371139e-08, -1, -0.006911023, 0.9999761, -4.3710344e-08, 21.2646, 5.627, 10.824095)
+shape = SubResource("BoxShape3D_b1apr")
+debug_color = Color(0.3298753, 0.16049859, 0.32034075, 1)
+
+[node name="Bus" parent="." unique_id=45874024 instance=ExtResource("4_u4b6d")]
+transform = Transform3D(1.2235651, -0.05347293, 0.3889138, 0.015434042, 1.2785916, 0.12724023, -0.3922692, -0.11648575, 1.2181054, -22.93158, 1.0711741, 4)
