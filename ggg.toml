@@ -224,6 +224,14 @@ name = "gdUnit4"
 url = "https://github.com/MikeSchulze/gdUnit4/archive/refs/tags/v6.0.0.zip"
 map = [{ from = "gdUnit4-6.0.0/addons/gdUnit4", to = "addons/gdUnit4" }]
 
+[[dependency]]
+name = "gesture_recognizer"
+git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot"
+rev = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"
+map = [
+    { from = "addons/gesture_recognizer", to = "addons/gesture_recognizer" }
+]
+
 ## Query resources dynamically.
 ##
 ## Perhaps it's too inconvenient to manually specify resources. This helps with

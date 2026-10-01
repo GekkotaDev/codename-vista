@@ -1,8 +1,14 @@
 class_name BattleVisitor3D
 extends Node3D
 
-@export var participants: Array[BattleParticipant3D] = []
+signal on_next()
 
+@export var participants: Array[BattleParticipant3D] = []
+@export var participant: BattleParticipant3D:
+	get:
+		return _participant
+
+var _participant: BattleParticipant3D
 var queue: Array[BattleParticipant3D]
 
 
@@ -23,10 +29,11 @@ func sort_queue() -> BattleVisitor3D:
 
 
 func next() -> BattleParticipant3D:
-	var next_participant: BattleParticipant3D = queue.pop_back()
+	_participant = queue.pop_back()
 	sort_queue()
+	on_next.emit()
 
-	while next_participant.tick():
+	while _participant.tick():
 		pass
 
-	return next_participant
+	return _participant

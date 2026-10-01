@@ -28,7 +28,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Codename Vista"
-run/main_scene="uid://cybhnp0lbp8s0"
+run/main_scene="uid://ctsxekgl0djvv"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -37,8 +37,8 @@ config/icon="res://icon.svg"
 
 SceneLoader="*res://globals/scene_loader/scene_loader.tscn"
 Panku="*res://addons/panku_console/console.tscn"
-SignalLens="*res://addons/signal_lens/autoload/signal_lens_autoload.gd"
-AchievementManager="*res://addons/milestone/autoload/achievement_manager.gd"
+SignalLens="*uid://85rkx60vm7a7"
+AchievementManager="*uid://dj1bkxbqna8jt"
 CsgToolkitAutoload="*uid://w8ad8q4lneis"
 DebugMenu="*uid://cggqb75a8w8r"
 InputHelper="*uid://cholww48njaeh"
@@ -49,9 +49,10 @@ SoundManager="*uid://c3th5bcr2ukh6"
 RuntimeDebugTools="*uid://c6bkea7amdoay"
 BeehaveGlobalMetrics="*uid://c3ktl6ontsdt7"
 BeehaveGlobalDebugger="*uid://bl3ma400hpvsh"
-LokGlobalStorageManager="*uid://cx78ih6o8l2yg"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 DialogueManager="*uid://c3rodes2l3gxb"
+LokGlobalStorageManager="*uid://cx78ih6o8l2yg"
+CloudRecognizer="*uid://dxihbt2m676gc"
 
 [debug_draw_3d]
 
@@ -85,11 +86,12 @@ project/assembly_name="Codename Vista"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/local.editor_settings/plugin.cfg", "res://addons/local.main_screen_buttons/plugin.cfg")
+enabled=PackedStringArray("res://addons/ScatterShot/plugin.cfg", "res://addons/SmoothScroll/plugin.cfg", "res://addons/aspect_ratio_resize_container/plugin.cfg", "res://addons/beehave/plugin.cfg", "res://addons/csg_toolkit/plugin.cfg", "res://addons/custom_theme_overrides/plugin.cfg", "res://addons/debug_menu/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/gdUnit4/plugin.cfg", "res://addons/gdscript_formatter/plugin.cfg", "res://addons/gesture_recognizer/plugin.cfg", "res://addons/hide_private_properties/plugin.cfg", "res://addons/input_helper/plugin.cfg", "res://addons/kenyoni/remove_orphan_uid/plugin.cfg", "res://addons/licenses/plugin.cfg", "res://addons/local.editor_settings/plugin.cfg", "res://addons/local.main_screen_buttons/plugin.cfg", "res://addons/locker/plugin.cfg", "res://addons/milestone/plugin.cfg", "res://addons/panku_console/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg", "res://addons/quest_system/plugin.cfg", "res://addons/quick_layout_changer/plugin.cfg", "res://addons/runtime_debug_tools/plugin.cfg", "res://addons/safe_resource_loader/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/shaker/plugin.cfg", "res://addons/signal_lens/plugin.cfg", "res://addons/sound_manager/plugin.cfg", "res://addons/spanning_table/plugin.cfg", "res://addons/spark/plugin.cfg", "res://addons/yard/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
+"res://areas/": "pink",
 "res://areas/zones/Prologue/": "gray",
 "res://assets/": "blue",
 "res://data/": "blue",

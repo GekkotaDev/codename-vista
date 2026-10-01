@@ -186,3 +186,9 @@ archive_sha = "5f4674b9de97b471c23185c554f077b1229de14103274479a21b076d6cea49b7"
 name = "phantom_camera"
 url = "https://github.com/ramokz/phantom-camera/archive/refs/tags/v0.11.0.3.zip"
 archive_sha = "42b4bbd7ce6efa726abc6e927328d349887c9343fe53900a5083860c1848749b"
+
+[[dependency]]
+name = "gesture_recognizer"
+git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot"
+rev = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"
+sha = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"

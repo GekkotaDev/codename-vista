@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dwu4ksccywnv5"]
+
+[ext_resource type="Script" uid="uid://cvp4v7us056mk" path="res://addons/gesture_recognizer/scripts/ControlGesture.gd" id="1_okql8"]
+[ext_resource type="Script" uid="uid://4ew7avauxd0q" path="res://views/gestures/register_gesture.gd" id="1_s0ra6"]
+
+[sub_resource type="Curve" id="Curve_nfv54"]
+_data = [Vector2(0.169355, 0.406593), 0.0, 0.0, 0, 0, Vector2(0.487903, 0.626374), 0.0, 0.0, 0, 0, Vector2(0.959677, 0.351648), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nup64"]
+size = Vector2(1920, 1080)
+
+[node name="RegisterGesture" type="Node2D" unique_id=550631101]
+position = Vector2(960, 540)
+script = ExtResource("1_s0ra6")
+
+[node name="Gesture" type="Area2D" parent="." unique_id=983799637]
+script = ExtResource("1_okql8")
+lineWidth = 8
+lineColor = Color(0.9490196, 0.7176471, 0.88235295, 1)
+widthCurve = SubResource("Curve_nfv54")
+outlineWidth = 4
+buttonForClassify = true
+buttonForClassifyUI = "ui_accept"
+metadata/_custom_type_script = "uid://cvp4v7us056mk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gesture" unique_id=1487187699]
+shape = SubResource("RectangleShape2D_nup64")
+
+[connection signal="on_draw_exit" from="Gesture" to="." method="_on_gesture_on_draw_exit"]
