@@ -9,7 +9,7 @@ func calculate(stats: MobStats) -> float:
 	return float(stats.current_health) / stats.current_defense
 
 
-func query_priorities() -> PackedStringArray:
+func sorted_priorities() -> PackedStringArray:
 	var move_names: Array[StringName] = priority.keys()
 
 	move_names.sort_custom(

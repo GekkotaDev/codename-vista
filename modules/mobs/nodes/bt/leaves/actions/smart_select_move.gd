@@ -22,7 +22,7 @@ func _of(actor: BattleParticipant3D):
 		var stats := training.train(move, actor.target.stats.duplicate())
 		memory[move.name] = stats.current_health
 
-	var priority := memory.query_priorities()
+	var priority := memory.sorted_priorities()
 
 	if priority.size() <= 0:
 		return FAILURE

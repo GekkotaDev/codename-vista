@@ -9,8 +9,6 @@
 [ext_resource type="Script" uid="uid://1n1o04n5itse" path="res://resources/comments/scene_note.gd" id="7_rgyjr"]
 [ext_resource type="Script" uid="uid://cumu7o7nrm4el" path="res://areas/documentation/zoos/arena/ui.gd" id="8_rgyjr"]
 [ext_resource type="Script" uid="uid://bpoitqmwox7fw" path="res://areas/documentation/zoos/arena/actions_container.gd" id="9_teu0j"]
-[ext_resource type="Script" uid="uid://0mbiv6mbq0r3" path="res://addons/spanning_table/spanning_table_container.gd" id="10_0ebbr"]
-[ext_resource type="Script" uid="uid://dy4d8cij87sa2" path="res://addons/spanning_table/spanning_cell_container.gd" id="11_tfqfj"]
 [ext_resource type="Script" uid="uid://88uggwa0evca" path="res://areas/documentation/zoos/arena/party_container.gd" id="12_0ebbr"]
 [ext_resource type="Script" uid="uid://cvp4v7us056mk" path="res://addons/gesture_recognizer/scripts/ControlGesture.gd" id="13_tfqfj"]
 
@@ -29,6 +27,9 @@ note = "Each participant type in the battle has their own unique behavior tree. 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nup64"]
 size = Vector2(1920, 1080)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nup64"]
+font_size = 20
 
 [sub_resource type="Resource" id="Resource_a7g22"]
 script = ExtResource("7_rgyjr")
@@ -85,6 +86,7 @@ render_target_update_mode = 4
 [node name="World3D" type="Node3D" parent="ArenaViewportContainer/ArenaViewport" unique_id=909535717]
 
 [node name="Camera3D" type="Camera3D" parent="ArenaViewportContainer/ArenaViewport/World3D" unique_id=1994932764]
+top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="ArenaViewportContainer/ArenaViewport/World3D/Camera3D" unique_id=1345433238]
 process_priority = 300
@@ -102,7 +104,7 @@ mesh = SubResource("PrismMesh_nup64")
 
 [node name="BeehaveTree" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=306474494 node_paths=PackedStringArray("blackboard", "actor")]
 script = ExtResource("4_t4fri")
-blackboard = NodePath("@Node@21870")
+blackboard = NodePath("@Node@21865")
 actor = NodePath("..")
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
@@ -134,6 +136,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_rgyjr")
 
+[node name="BeehaveTree" type="Node" parent="SubViewportContainer/SubViewport/Control" unique_id=160284903 node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("4_t4fri")
+blackboard = NodePath("@Node@84920")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="AttackContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1294465148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Control/AttackContainer" unique_id=472837203]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Gesture" type="Area2D" parent="SubViewportContainer/SubViewport/Control/AttackContainer/Control" unique_id=737313560]
+script = ExtResource("13_tfqfj")
+metadata/_custom_type_script = "uid://cvp4v7us056mk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Control/AttackContainer/Control/Gesture" unique_id=1119615987]
+shape = SubResource("RectangleShape2D_nup64")
+
 [node name="DialogContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=2037130653]
 layout_mode = 1
 anchors_preset = 5
@@ -147,77 +176,38 @@ theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
 
-[node name="PanelContainer" type="PanelContainer" parent="SubViewportContainer/SubViewport/Control/DialogContainer" unique_id=1957800563]
-layout_mode = 2
-
-[node name="SpanningTableContainer" type="Container" parent="SubViewportContainer/SubViewport/Control/DialogContainer" unique_id=1470869372]
-layout_mode = 2
-script = ExtResource("10_0ebbr")
-metadata/_custom_type_script = "uid://0mbiv6mbq0r3"
-
-[node name="SpanningCellContainer" type="Container" parent="SubViewportContainer/SubViewport/Control/DialogContainer/SpanningTableContainer" unique_id=310114136]
-layout_mode = 2
-script = ExtResource("11_tfqfj")
-metadata/_custom_type_script = "uid://dy4d8cij87sa2"
-
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/DialogContainer/SpanningTableContainer/SpanningCellContainer" unique_id=495889391]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Control/DialogContainer/SpanningTableContainer/SpanningCellContainer/MarginContainer" unique_id=1744869833]
-layout_mode = 2
-text = "aaaaaa"
-
-[node name="SpanningCellContainer2" type="Container" parent="SubViewportContainer/SubViewport/Control/DialogContainer/SpanningTableContainer" unique_id=1018043349]
-layout_mode = 2
-script = ExtResource("11_tfqfj")
-metadata/_custom_type_script = "uid://dy4d8cij87sa2"
-
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Control/DialogContainer/SpanningTableContainer/SpanningCellContainer2" unique_id=2079162420]
-layout_mode = 2
-text = "aaaaaa"
-
 [node name="ActionsContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=22806633]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 32.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 64
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 64
 script = ExtResource("9_teu0j")
 
-[node name="PanelContainer" type="PanelContainer" parent="SubViewportContainer/SubViewport/Control/ActionsContainer" unique_id=92692998]
+[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Control/ActionsContainer" unique_id=1908281159]
+custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="SpanningTableContainer" type="Container" parent="SubViewportContainer/SubViewport/Control/ActionsContainer" unique_id=132591111]
-layout_mode = 2
-script = ExtResource("10_0ebbr")
-metadata/_custom_type_script = "uid://0mbiv6mbq0r3"
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/Panel" unique_id=792728648]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="SpanningCellContainer" type="Container" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/SpanningTableContainer" unique_id=828587450]
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/Panel/HBoxContainer" unique_id=1978972557]
 layout_mode = 2
-script = ExtResource("11_tfqfj")
-metadata/_custom_type_script = "uid://dy4d8cij87sa2"
+text = "ACT"
 
-[node name="MarginContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/SpanningTableContainer/SpanningCellContainer" unique_id=1051054423]
+[node name="Button2" type="Button" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/Panel/HBoxContainer" unique_id=1703767575]
 layout_mode = 2
-
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/SpanningTableContainer/SpanningCellContainer/MarginContainer" unique_id=1587280048]
-layout_mode = 2
-text = "aaaaaa"
-
-[node name="SpanningCellContainer2" type="Container" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/SpanningTableContainer" unique_id=1935600783]
-layout_mode = 2
-script = ExtResource("11_tfqfj")
-metadata/_custom_type_script = "uid://dy4d8cij87sa2"
-
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/Control/ActionsContainer/SpanningTableContainer/SpanningCellContainer2" unique_id=1237481410]
-layout_mode = 2
-text = "aaaaaa"
+text = "RUN"
 
 [node name="PartyContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1217576527]
 layout_mode = 1
@@ -235,11 +225,11 @@ script = ExtResource("12_0ebbr")
 [node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/Control/PartyContainer" unique_id=292860489]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer" unique_id=1503578688]
+[node name="Panel" type="Panel" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer" unique_id=1310669765]
+custom_minimum_size = Vector2(128, 200)
 layout_mode = 2
-text = "EEE"
 
-[node name="AttackContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1294465148]
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer/Panel" unique_id=112215931]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -247,17 +237,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Control" parent="SubViewportContainer/SubViewport/Control/AttackContainer" unique_id=472837203]
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer/Panel/VBoxContainer" unique_id=2136347837]
+custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="Gesture" type="Area2D" parent="SubViewportContainer/SubViewport/Control/AttackContainer/Control" unique_id=737313560]
-script = ExtResource("13_tfqfj")
-metadata/_custom_type_script = "uid://cvp4v7us056mk"
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer/Panel/VBoxContainer" unique_id=2121801087]
+layout_mode = 2
+text = "NAME"
+horizontal_alignment = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SubViewportContainer/SubViewport/Control/AttackContainer/Control/Gesture" unique_id=1119615987]
-shape = SubResource("RectangleShape2D_nup64")
+[node name="Label2" type="Label" parent="SubViewportContainer/SubViewport/Control/PartyContainer/HBoxContainer/Panel/VBoxContainer" unique_id=182816641]
+layout_mode = 2
+text = "24 ❤️"
+label_settings = SubResource("LabelSettings_nup64")
+horizontal_alignment = 1
 
 [node name="SubtreeComments" type="Node" parent="SubViewportContainer/SubViewport" unique_id=278744997]
 script = ExtResource("5_o6bc5")
