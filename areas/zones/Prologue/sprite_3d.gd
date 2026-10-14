@@ -1,14 +1,17 @@
 extends CharacterBody3D
 
 @export var speed: float = 5.0
-@export var jump_velocity: float = 4.5
-@export var gravity: float = 3.75
+@export var jump_velocity: float = 8
+@export var gravity: float = 15
 @onready var sprite: Sprite3D = $Sprite3D
-
+@export var fall_multiplier: float = 2.0
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		if velocity.y < 0:
+			velocity.y -= gravity * fall_multiplier * delta
+		else:
+			velocity.y -= gravity * delta
 
 	if Input.is_action_just_pressed("player_jump") and is_on_floor():
 		velocity.y = jump_velocity
