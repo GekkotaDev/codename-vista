@@ -9,8 +9,8 @@
 default_font = ExtResource("2_2wa81")
 default_font_size = 20
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gah4x"]
-load_path = "res://.godot/imported/Dialogue_UI-px.png-f919f0782b7d50a440a88a081b04718e.ctex"
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2wa81"]
+load_path = "res://.godot/imported/1Dialogue_UI-px.png-f894819ad20cc75f9c1c38e638bee668.ctex"
 
 [sub_resource type="Animation" id="Animation_nlsx6"]
 length = 0.001
@@ -88,11 +88,12 @@ grow_vertical = 0
 texture_filter = 1
 custom_minimum_size = Vector2(72, 72)
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_gah4x")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+texture = SubResource("CompressedTexture2D_2wa81")
+region_rect = Rect2(4, 4, 64, 64)
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
@@ -118,12 +119,12 @@ size_flags_horizontal = 3
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1867683141]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.501961)
-self_modulate = Color(0.65455985, 0.055770375, 0.070022695, 1)
+self_modulate = Color(0.26458195, 0.08680902, 0.27092215, 1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_constants/line_separation = 13
 theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 28
+theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "Character"
 fit_content = true
@@ -131,10 +132,10 @@ scroll_active = false
 
 [node name="DialogueLabel" parent="Balloon/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1739101537 instance=ExtResource("2_a8ve6")]
 unique_name_in_owner = true
-modulate = Color(0.5427177, 0.24565667, 0.08502927, 1)
+modulate = Color(0.29920176, 0.00026221634, 0.37332425, 1)
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/normal_font_size = 40
 text = "Dialogue..."
 
 [node name="Control" type="Control" parent="Balloon/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer" unique_id=534060310]
@@ -144,9 +145,9 @@ size_flags_vertical = 8
 
 [node name="Progress" type="Polygon2D" parent="Balloon/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/Control" unique_id=838836721]
 unique_name_in_owner = true
-position = Vector2(-62.00003, 0)
+position = Vector2(-61.00003, 0)
 scale = Vector2(3.2399917, 3.599992)
-color = Color(0.47843137, 0.13333334, 0.13333334, 1)
+color = Color(0.7160224, 0.6385772, 0.8575621, 1)
 polygon = PackedVector2Array(0, 0, 10, 10, 20, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Balloon/MarginContainer/NinePatchRect/MarginContainer/HBoxContainer/Control" unique_id=473539640]
@@ -156,14 +157,14 @@ autoplay = &"progress"
 [node name="CenterContainer" type="CenterContainer" parent="Balloon" unique_id=473552711]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.647
-anchor_top = 0.156
+anchor_left = 0.643
+anchor_top = -0.44500002
 anchor_right = 0.97800004
-anchor_bottom = 0.56100005
-offset_left = 12.0789795
-offset_top = -12.028
-offset_right = 11.702881
-offset_bottom = -11.909027
+anchor_bottom = 0.046000004
+offset_left = -0.54901123
+offset_top = 0.035003662
+offset_right = -0.45410156
+offset_bottom = -0.09800148
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -178,9 +179,9 @@ ResponseTemplate = NodePath("ResponseExample")
 
 [node name="ResponseExample" type="Button" parent="Balloon/CenterContainer/ResponsesMenu" unique_id=1595872767]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.9498202, 0.7334909, 0.49300075, 1)
-theme_override_colors/font_focus_color = Color(0.9490196, 0.73333335, 0.49411765, 1)
-theme_override_colors/font_hover_color = Color(0.47843137, 0.13333334, 0.13333334, 1)
+theme_override_colors/font_color = Color(0.7218954, 0.56196654, 0.7392248, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.7762617, 0.6135952, 0.961476, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Response example"
 
