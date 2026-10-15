@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://pa2d2syjd5hb" path="res://nodes/concurrent_subtree.gd" id="1_ithj3"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_g6luk"]
 [ext_resource type="PackedScene" uid="uid://bptrn145f1chg" path="res://assets/images/backgrounds/live/scenes/battle/default_battle.tscn" id="3_slxew"]
-[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="4_t4fri"]
 [ext_resource type="Script" uid="uid://7h5q8yxktbuf" path="res://nodes/note.gd" id="5_o6bc5"]
 [ext_resource type="Script" uid="uid://cxn2romkfpakm" path="res://resources/comments/scene_comment.gd" id="6_ndd0p"]
 [ext_resource type="Script" uid="uid://1n1o04n5itse" path="res://resources/comments/scene_note.gd" id="7_rgyjr"]
@@ -102,10 +101,7 @@ metadata/_custom_type_script = "uid://bd046eokvcnu2"
 transform = Transform3D(0.70710677, 0, -0.70710677, 0.49999997, 0.70710677, 0.49999997, 0.49999997, -0.70710677, 0.49999997, 0, 0, -3)
 mesh = SubResource("PrismMesh_nup64")
 
-[node name="BeehaveTree" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=306474494 node_paths=PackedStringArray("blackboard", "actor")]
-script = ExtResource("4_t4fri")
-blackboard = NodePath("@Node@21865")
-actor = NodePath("..")
+[node name="BeehaveTree" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=306474494]
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
 [node name="SubtreeComments" type="Node" parent="ArenaViewportContainer/ArenaViewport/Participants3D/MeshInstance3D" unique_id=2049513926]
@@ -136,10 +132,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("8_rgyjr")
 
-[node name="BeehaveTree" type="Node" parent="SubViewportContainer/SubViewport/Control" unique_id=160284903 node_paths=PackedStringArray("blackboard", "actor")]
-script = ExtResource("4_t4fri")
-blackboard = NodePath("@Node@84920")
-actor = NodePath("..")
+[node name="BeehaveTree" type="Node" parent="SubViewportContainer/SubViewport/Control" unique_id=160284903]
 metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
 [node name="AttackContainer" type="MarginContainer" parent="SubViewportContainer/SubViewport/Control" unique_id=1294465148]

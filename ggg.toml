@@ -258,6 +258,11 @@ map = [
     { from = "addons/gesture_recognizer", to = "addons/gesture_recognizer" }
 ]
 
+[[dependency]]
+name = "goactions"
+url = "https://github.com/wokidoo/GoActions/archive/refs/tags/v1.1.zip"
+map = [{ from = "GoActions-1.1/addons/goactions", to = "addons/goactions" }]
+
 ## Query resources dynamically.
 ##
 ## Perhaps it's too inconvenient to manually specify resources. This helps with

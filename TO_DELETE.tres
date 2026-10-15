@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://djqkcdoysfxw8"]
+
+[ext_resource type="Texture2D" uid="uid://b0t1l25bhqiyh" path="res://assets/images/backgrounds/prologue/thesis1_bg.png" id="1_alp52"]
+
+[resource]
+albedo_texture = ExtResource("1_alp52")
+backlight = Color(1, 1, 1, 1)
