@@ -55,8 +55,8 @@ archive_sha = "7c497cdc1066e93386bfba98b6868cbeadb1fdf5f5da30dddb84a167c0012235"
 
 [[dependency]]
 name = "limboai"
-url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
-archive_sha = "52634c8521e7ad1546d375992d00619d040d0ad67c2555a70aedb6e7c92a80a9"
+url = "https://github.com/limbonaut/limboai/releases/download/v1.8.1/limboai+v1.8.1.gdextension-4.6.zip"
+archive_sha = "0910411f8dbc0da8920f6c8bbbb6397c347cd9f2f193942468a702dfb11d5f0e"
 
 [[dependency]]
 name = "milestone"
@@ -189,6 +189,83 @@ archive_sha = "42b4bbd7ce6efa726abc6e927328d349887c9343fe53900a5083860c1848749b"
 
 [[dependency]]
 name = "gesture_recognizer"
-git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot"
+git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot.git"
 rev = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"
 sha = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"
+
+[[dependency]]
+name = "at-icons"
+url = "https://github.com/Voxybuns/at-icons/releases/download/v1.5.0/at-icons_v1.5.0.zip"
+archive_sha = "e5a80cef70aa0da4c7ee786e9c548fee2f97266bf086946f09bb2a355ff9e90a"
+
+[[dependency]]
+name = "controller_icons"
+url = "https://github.com/rsubtil/controller_icons/releases/download/v3.1.8/ControllerIcons-v3.1.8.zip"
+archive_sha = "8cd188e837f845ca941d0a52226759ffcae4207626458a9343ceb8eb6c4b26f9"
+
+[[dependency]]
+name = "csg_blockout"
+url = "https://github.com/qwqzhanqwq/Godot-CSG-Blockout/releases/download/v3.0.0/csg_blockout-3.0.0.zip"
+archive_sha = "12241fb6af07370c58d603c70b7c0e44a47616854f4ed1e347e82d79bd919d30"
+
+[[dependency]]
+name = "expose_them_properties"
+url = "https://github.com/Xesa/expose-them-properties/archive/refs/tags/v0.2.1.zip"
+archive_sha = "588b0dbc4354592ea8a11333f904e300393b30720c4a6a4af2120208a1134395"
+
+[[dependency]]
+name = "inspector_tabs"
+url = "https://github.com/PiCode9560/Godot-Inspector-Tabs/archive/refs/tags/v0.10-stable.zip"
+archive_sha = "69ead019018e20698e8a606eeb7b2c8d010b430bdd0055ff52f9dd8511a291f1"
+
+[[dependency]]
+name = "instance-dock"
+url = "https://github.com/KoBeWi/Godot-Instance-Dock/archive/9e7f9664f8a020c0b31220901c06a49012135f40.zip"
+archive_sha = "98140cda5971c6d9706d647a8dacfc6274528d0f2ff9088620e1c63a89260d71"
+asset_id = 1421
+asset_version = 10
+
+[[dependency]]
+name = "gloot"
+url = "https://github.com/peter-kish/gloot/archive/refs/tags/v3.0.2.zip"
+archive_sha = "d4d08157860abbd0ccee9fc8657ebf79fdbe1ecb10f986343a3bfea417ff6937"
+
+[[dependency]]
+name = "guide"
+url = "https://github.com/godotneers/G.U.I.D.E/archive/refs/tags/v0.14.0.zip"
+archive_sha = "9c16b7e5dc9f39bd75a4946b8c1fbb297d909802b5cc1271fb4a482f4f416971"
+
+[[dependency]]
+name = "log"
+url = "https://github.com/russmatney/log.gd/archive/refs/tags/v0.2.2.zip"
+archive_sha = "dafd25ae50c74e8974e4cca7cd9dc35067d69b748b6584698b1a67dea03d18a3"
+
+[[dependency]]
+name = "rich_text_3d"
+git = "https://github.com/mszylkowski/rich-text-3d-godot.git"
+rev = "ac618d0b3989fd9797f1ac653c2a899b2fcd0d45"
+sha = "ac618d0b3989fd9797f1ac653c2a899b2fcd0d45"
+
+[[dependency]]
+name = "road-generator"
+url = "https://github.com/TheDuckCow/godot-road-generator/archive/refs/tags/0.9.5.zip"
+archive_sha = "ff19ee8c364c4a23a437211d542ce52bf23525e8c950c3e46213249c836472ec"
+
+[[dependency]]
+name = "TweenFX"
+git = "https://github.com/EvilBunnyMan/TweenFX.git"
+rev = "392f24450ce6da4748a0e1340675afd6de6c3742"
+sha = "392f24450ce6da4748a0e1340675afd6de6c3742"
+
+[[dependency]]
+name = "TweenSuite"
+git = "https://github.com/KoBeWi/Godot-Tween-Suite.git"
+rev = "a60fc246ae112e46e46876ccdf663d8231e31ff3"
+sha = "a60fc246ae112e46e46876ccdf663d8231e31ff3"
+
+[[dependency]]
+name = "wcsaferesourceformat"
+url = "https://gitlab.com/worstconcept/wcsaferesourceformat/-/archive/12b2e0c72d7604db40d47c89b29d02b90ebb2d63.zip"
+archive_sha = "7b887738552d60e593b1a41a1481118b4e12aec1f7ebd205d76a3f9a71c545a8"
+asset_id = 4718
+asset_version = 5

@@ -150,24 +150,43 @@ map = [{ from = "addons/aspect_ratio_resize_container" }]
 sha256 = "980c0300e334288a192046ea9445658f7cec1658356a9869e696429a159aa145"
 
 [[dependency]]
-name = "beehave"
-url = "https://github.com/bitbrain/beehave/archive/refs/tags/v2.9.3.zip"
+name = "at-icons"
+url = "https://github.com/Voxybuns/at-icons/releases/download/v1.5.0/at-icons_v1.5.0.zip"
+map = [{ from = "addons/at-icons", to = "addons/at-icons" }]
+
+# [[dependency]]
+# name = "beehave"
+# url = "https://github.com/bitbrain/beehave/archive/refs/tags/v2.9.3.zip"
+# map = [
+#     { from = "beehave-2.9.3/addons/beehave", to = "addons/beehave" },
+#     { from = "beehave-2.9.3/script_templates", to = "script_templates" },
+# ]
+
+[[dependency]]
+name = "controller_icons"
+url = "https://github.com/rsubtil/controller_icons/releases/download/v3.1.8/ControllerIcons-v3.1.8.zip"
 map = [
-    { from = "beehave-2.9.3/addons/beehave", to = "addons/beehave" },
-    { from = "beehave-2.9.3/script_templates", to = "script_templates" },
+    { from = "controller_icons-master/addons/controller_icons", to = "addons/controller_icons" },
+    { from = "controller_icons-master/demo", to = "examples/controller_icons" },
 ]
+
+[[dependency]]
+name = "csg_blockout"
+url = "https://github.com/qwqzhanqwq/Godot-CSG-Blockout/releases/download/v3.0.0/csg_blockout-3.0.0.zip"
+sha = "12241fb6af07370c58d603c70b7c0e44a47616854f4ed1e347e82d79bd919d30"
+map = [{ from = "addons/csg_blockout" }]
 
 ## Helper addon for modeling levels using CSGs.
 ##
 ## like building with Amazing Digital Legos /lh
-[[dependency]]
-name = "csg_toolkit"
-url = "https://github.com/fabian-becker/CSG_Toolkit/releases/download/1.7.0/csg_toolkit_1.7.0.zip"
-map = [
-    { from = "csg_toolkit", to = "addons/csg_toolkit" },
-    { from = "csg_toolkit/demo", to = "examples/csg_toolkit" },
-]
-sha256 = "34bfdb0e61cc804201201e0df02b6465ad615a838ae28bca2667a6f47a2e3a7f"
+# [[dependency]]
+# name = "csg_toolkit"
+# url = "https://github.com/fabian-becker/CSG_Toolkit/releases/download/1.7.0/csg_toolkit_1.7.0.zip"
+# map = [
+#     { from = "csg_toolkit", to = "addons/csg_toolkit" },
+#     { from = "csg_toolkit/demo", to = "examples/csg_toolkit" },
+# ]
+# sha256 = "34bfdb0e61cc804201201e0df02b6465ad615a838ae28bca2667a6f47a2e3a7f"
 
 ## This addon provides a way to further customize the User Interface aside from
 ## the use of theme files or scripts.
@@ -204,6 +223,13 @@ map = [
     { from = "godot_dialogue_manager-4.0.3/addons/dialogue_manager", to = "addons/dialogue_manager" },
 ]
 
+[[dependency]]
+name = "expose_them_properties"
+url = "https://github.com/Xesa/expose-them-properties/archive/refs/tags/v0.2.1.zip"
+map = [
+    { from = "expose-them-properties-0.2.1/addons/xesa", to = "addons/xesa" },
+]
+
 ## It formats your GDScript code. Less bikeshedding, yay.
 ##
 ## https://en.wikipedia.org/wiki/Law_of_triviality#Example
@@ -226,7 +252,7 @@ map = [{ from = "gdUnit4-6.0.0/addons/gdUnit4", to = "addons/gdUnit4" }]
 
 [[dependency]]
 name = "gesture_recognizer"
-git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot"
+git = "https://github.com/Pecesitooo/Gesture-Recognizer-Godot.git"
 rev = "460d99e06e1edcd6df6e112646d2e0f94d2b4902"
 map = [
     { from = "addons/gesture_recognizer", to = "addons/gesture_recognizer" }
@@ -261,6 +287,30 @@ map = [
     { from = "godot_input_helper-4.7.0/addons/input_helper", to = "addons/input_helper" },
 ]
 
+[[dependency]]
+name = "inspector_tabs"
+url = "https://github.com/PiCode9560/Godot-Inspector-Tabs/archive/refs/tags/v0.10-stable.zip"
+map = [
+    { from = "Godot-Inspector-Tabs-0.10-stable/addons/inspector_tabs", to = "addons/inspector_tabs" },
+]
+
+[[dependency]]
+name = "instance-dock"
+asset_id = 1421
+
+[[dependency]]
+name = "gloot"
+url = "https://github.com/peter-kish/gloot/archive/refs/tags/v3.0.2.zip"
+map = [{ from = "gloot-3.0.2/addons/gloot", to = "addons/gloot" }]
+
+[[dependency]]
+name = "guide"
+url = "https://github.com/godotneers/G.U.I.D.E/archive/refs/tags/v0.14.0.zip"
+map = [
+    { from = "G.U.I.D.E-0.14.0/addons/guide", to = "addons/guide" },
+    { from = "G.U.I.D.E-0.14.0/guide_examples", to = "examples/guide" },
+]
+
 ## Manage the licenses associated with the third party assets used.
 ##
 ## This helps to ensure we are not legally violating the terms and conditions
@@ -278,18 +328,29 @@ sha256 = "7c497cdc1066e93386bfba98b6868cbeadb1fdf5f5da30dddb84a167c0012235"
 ## to be more succinctly implemented by finite state machines however.
 ##
 ## Alternatives: Beehave
-# [[dependency]]
-# name = "limboai"
-# url = "https://github.com/limbonaut/limboai/releases/download/v1.5.0/limboai+v1.5.0.gdextension-4.4.zip"
-# map = [{ from = "addons/limboai" }]
+[[dependency]]
+name = "limboai"
+url = "https://github.com/limbonaut/limboai/releases/download/v1.8.1/limboai+v1.8.1.gdextension-4.6.zip"
+map = [
+    { from = "addons/limboai", to = "addons/limboai" },
+    { from = "demo", to = "examples/limboai" },
+]
 
 ## Save system library.
 ##
 ## Resources can be used to enforce type safety as dictionaries lack them.
+# [[dependency]]
+# name = "locker"
+# url = "https://github.com/locker-godot/locker/releases/download/v1.1.2/locker_v1.1.2.zip"
+# map = [{ from = "locker_v1.1.2/addons/locker", to = "addons/locker" }]
+
 [[dependency]]
-name = "locker"
-url = "https://github.com/locker-godot/locker/releases/download/v1.1.2/locker_v1.1.2.zip"
-map = [{ from = "locker_v1.1.2/addons/locker", to = "addons/locker" }]
+name = "log"
+url = "https://github.com/russmatney/log.gd/archive/refs/tags/v0.2.2.zip"
+map = [
+    { from = "log.gd-0.2.2/addons/log", to = "addons/log" },
+    { from = "log.gd-0.2.2/addons/reload_current_scene", to = "addons/reload_current_scene" },
+]
 
 ## Achievements.
 [[dependency]]
@@ -337,6 +398,20 @@ map = [
 name = "remove_orphan_uid"
 url = "https://github.com/kenyoni-software/godot-addons/releases/download/latest/remove_orphan_uid-1_1_0.zip"
 map = [{ from = "addons/kenyoni/remove_orphan_uid" }]
+
+[[dependency]]
+name = "rich_text_3d"
+git = "https://github.com/mszylkowski/rich-text-3d-godot.git"
+rev = "ac618d0b3989fd9797f1ac653c2a899b2fcd0d45"
+map = [{ from = "addons/rich_text_3d" }]
+
+[[dependency]]
+name = "road-generator"
+url = "https://github.com/TheDuckCow/godot-road-generator/archive/refs/tags/0.9.5.zip"
+map = [
+    { from = "godot-road-generator-0.9.5/addons/road-generator", to = "addons/road-generator" },
+    { from = "godot-road-generator-0.9.5/road_demos", to = "examples/road-generator" },
+]
 
 ## Debug camera and node highlighter.
 [[dependency]]
@@ -437,6 +512,22 @@ map = [
 ]
 
 [[dependency]]
+name = "TweenFX"
+git = "https://github.com/EvilBunnyMan/TweenFX.git"
+rev = "392f24450ce6da4748a0e1340675afd6de6c3742"
+map = [{ from = "addons/TweenFX" }]
+
+[[dependency]]
+name = "TweenSuite"
+git = "https://github.com/KoBeWi/Godot-Tween-Suite.git"
+rev = "a60fc246ae112e46e46876ccdf663d8231e31ff3"
+map = [{ from = "addons/TweenSuite" }]
+
+[[dependency]]
+name = "wcsaferesourceformat"
+asset_id = 4718
+
+[[dependency]]
 name = "yard"
 url = "https://github.com/elliotfontaine/yard-godot/releases/download/v1.2.0/yard-godot.zip"
 map = [
@@ -444,14 +535,14 @@ map = [
 ]
 
 ## Convenience helpers for node animation.
-[[dependency]]
-name = "proton_control_animation"
-git = "https://github.com/HungryProton/proton_control_animation.git"
-rev = "8e5ff34be60e3c0a6253e6dd968834178fa369d0"
-map = [
-    { from = "addons/proton_control_animation" },
-    { from = "addons/proton_control_animation/examples", to = "examples/proton_control_animation" },
-]
+# [[dependency]]
+# name = "proton_control_animation"
+# git = "https://github.com/HungryProton/proton_control_animation.git"
+# rev = "8e5ff34be60e3c0a6253e6dd968834178fa369d0"
+# map = [
+#     { from = "addons/proton_control_animation" },
+#     { from = "addons/proton_control_animation/examples", to = "examples/proton_control_animation" },
+# ]
 
 ## Quickly change the layout of your editor.
 [[dependency]]
