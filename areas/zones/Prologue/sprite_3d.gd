@@ -5,8 +5,15 @@ extends CharacterBody3D
 @export var gravity: float = 15
 @onready var sprite: Sprite3D = $Sprite3D
 @export var fall_multiplier: float = 2.0
+signal health_changed(current_hp)
 
-func _physics_process(delta: float) -> void:
+var hp = 100
+
+func take_damage(amount):
+	hp -= amount
+	emit_signal("health_changed", hp)
+
+func _physics_process(delta):
 	if not is_on_floor():
 		if velocity.y < 0:
 			velocity.y -= gravity * fall_multiplier * delta
@@ -32,3 +39,6 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = false
 	
 	move_and_slide()
+
+	var desired_x = clamp(position.x, 3, 44)
+	$Camera_controller.position.x = lerp($Camera_controller.position.x, float(desired_x), 0.5)

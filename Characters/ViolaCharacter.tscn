@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://nq7r6ff0pa5e"]
+
+[ext_resource type="Script" uid="uid://bp0swvxuiui5r" path="res://areas/zones/Prologue/sprite_3d.gd" id="1_4snwj"]
+[ext_resource type="Texture2D" uid="uid://ci62yysbo25xd" path="res://assets/characters/Viola animation na.png" id="2_0q2qy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vcst8"]
+size = Vector3(1.39, 4.23, 0.485)
+
+[node name="ViolaCharacter" type="CharacterBody3D" unique_id=688107338]
+script = ExtResource("1_4snwj")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1065484474]
+transform = Transform3D(0.395, 0, 0, 0, 0.395, 0, 0, 0, 0.395, 0, 0, 0)
+texture = ExtResource("2_0q2qy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1416605]
+shape = SubResource("BoxShape3D_vcst8")
+debug_color = Color(0.053811856, 0.029229296, 0.13574883, 0.41960785)
+
+[node name="Camera_controller" type="Node3D" parent="." unique_id=350446280]
+top_level = true
+
+[node name="Camera_target" type="Node3D" parent="Camera_controller" unique_id=1888204586]
+transform = Transform3D(1, 0, 0, 0, 0.9700723, 0.24281563, 0, -0.24281563, 0.9700723, 0, 8.352309, 27.77043)
+
+[node name="Camera3D" type="Camera3D" parent="Camera_controller/Camera_target" unique_id=440219887]
+transform = Transform3D(1, 0, 0, 0, 0.9965417, -0.08309388, 0, 0.08309388, 0.9965417, 0, -2.0100896, 7.579491)
+fov = 14.9

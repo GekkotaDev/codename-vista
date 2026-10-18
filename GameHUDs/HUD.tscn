@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://s2fe4llisxfe"]
+
+[ext_resource type="Script" uid="uid://bmu725c1eogtf" path="res://GameHUDs/hud.gd" id="1_dsv20"]
+
+[node name="Hud" type="Control" unique_id=1282004703]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dsv20")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2005393400]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" unique_id=2125548580]
+offset_right = 669.0
+offset_bottom = 111.0
+tint_under = Color(0.69125926, 0.42953688, 0.5339493, 1)

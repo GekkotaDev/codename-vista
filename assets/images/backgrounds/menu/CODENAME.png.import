@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bewcepylrdp8l"
-path="res://.godot/imported/violla-walking-2.png-177dbefa1b159ebd425c8b26682b7a0b.ctex"
+uid="uid://ctdgkpvvhxklj"
+path="res://.godot/imported/CODENAME.png-5f264adfd8e14ae8857916ed8d1ef1d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/violla-walking-2.png"
-dest_files=["res://.godot/imported/violla-walking-2.png-177dbefa1b159ebd425c8b26682b7a0b.ctex"]
+source_file="res://assets/images/backgrounds/menu/CODENAME.png"
+dest_files=["res://.godot/imported/CODENAME.png-5f264adfd8e14ae8857916ed8d1ef1d5.ctex"]
 
 [params]
 
