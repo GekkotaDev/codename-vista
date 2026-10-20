@@ -5,13 +5,15 @@ extends CharacterBody3D
 @export var gravity: float = 15
 @onready var sprite: Sprite3D = $Sprite3D
 @export var fall_multiplier: float = 2.0
+@export var maxHealth = 100
+@onready var currentHealth: int = maxHealth
+
 signal health_changed(current_hp)
 
-var hp = 100
 
 func take_damage(amount):
-	hp -= amount
-	emit_signal("health_changed", hp)
+	maxHealth -= amount
+	emit_signal("health_changed", maxHealth)
 
 func _physics_process(delta):
 	if not is_on_floor():
