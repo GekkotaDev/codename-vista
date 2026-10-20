@@ -10,7 +10,6 @@ extends CharacterBody3D
 
 signal health_changed(current_hp)
 
-
 func take_damage(amount):
 	maxHealth -= amount
 	emit_signal("health_changed", maxHealth)

@@ -39,6 +39,10 @@ albedo_color = Color(0.187513, 0.21432352, 0.18385825, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1apr"]
 size = Vector3(89.54, 1, 13.605)
 
+[sub_resource type="BoxMesh" id="BoxMesh_v67xs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v67xs"]
+
 [node name="Prologue" type="Node3D" unique_id=105803006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.211212, -2.4653387, -5.908947)
 script = ExtResource("1_b1apr")
@@ -114,3 +118,14 @@ debug_color = Color(0.3298753, 0.16049859, 0.32034075, 1)
 
 [node name="Bus" parent="." unique_id=45874024 instance=ExtResource("4_u4b6d")]
 transform = Transform3D(1.2235651, -0.05347293, 0.3889138, 0.015434042, 1.2785916, 0.12724023, -0.3922692, -0.11648575, 1.2181054, -22.93158, 1.0711741, 4)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1036449294]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.025374, 1.5000939, 3.3988872)
+mesh = SubResource("BoxMesh_v67xs")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D2" unique_id=1331507330]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6534953, 0.6300087, -0.37557507)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D" unique_id=739200489]
+transform = Transform3D(3.085, 0, 0, 0, 3.085, 0, 0, 0, 3.085, 1.2709794, -0.8912191, 1.0947666)
+shape = SubResource("BoxShape3D_v67xs")
