@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cpi8jeaypdqfl"]
+
+[ext_resource type="Script" uid="uid://bt41a3hit4h12" path="res://areas/menus/main_menu/main_menu.gd" id="1_csham"]
+[ext_resource type="VideoStream" uid="uid://bujob07v2e4t7" path="res://assets/Main Menu/MainMenu_11.ogv" id="2_rpnwf"]
+[ext_resource type="FontFile" uid="uid://dps3dxxg1jw2l" path="res://assets/Fonts/CormorantGaramond-Italic-VariableFont_wght.ttf" id="3_3tpiv"]
+
+[node name="MainMenu" type="Node2D" unique_id=1510552807]
+script = ExtResource("1_csham")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1218389198]
+offset_right = 1841.0
+offset_bottom = 921.0
+stream = ExtResource("2_rpnwf")
+autoplay = true
+loop = true
+
+[node name="Button_Manager" type="Control" parent="." unique_id=532346250]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Button_Manager" unique_id=1622697718]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 316.465
+offset_right = 1563.0
+offset_bottom = 507.4658
+theme_override_colors/font_hover_color = Color(0.19133568, 0.030517578, 0.3125, 1)
+theme_override_fonts/font = ExtResource("3_3tpiv")
+theme_override_font_sizes/font_size = 150
+text = "Play"
+flat = true
+
+[node name="Quit" type="Button" parent="Button_Manager" unique_id=746438417]
+layout_mode = 0
+offset_left = 1307.0
+offset_top = 734.0
+offset_right = 1563.0
+offset_bottom = 925.00037
+theme_override_colors/font_hover_color = Color(0.19133568, 0.030517578, 0.3125, 1)
+theme_override_fonts/font = ExtResource("3_3tpiv")
+theme_override_font_sizes/font_size = 150
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="Button_Manager/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Button_Manager/Quit" to="." method="_on_quit_pressed"]

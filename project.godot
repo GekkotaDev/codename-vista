@@ -28,7 +28,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Codename Vista"
-run/main_scene="uid://cybhnp0lbp8s0"
+run/main_scene="uid://cpi8jeaypdqfl"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
@@ -54,6 +54,7 @@ DialogueManager="*uid://c3rodes2l3gxb"
 LokGlobalStorageManager="*uid://cx78ih6o8l2yg"
 CloudRecognizer="*uid://dxihbt2m676gc"
 Hud="*uid://s2fe4llisxfe"
+SceneTransition="*uid://du0hrmgq8afit"
 
 [debug_draw_3d]
 
@@ -95,8 +96,8 @@ folder_colors={
 "res://Characters/": "teal",
 "res://GameHUDs/": "teal",
 "res://areas/": "pink",
-"res://areas/menus/main_menu/Alex-test menu/": "yellow",
-"res://areas/zones/Prologue/": "gray",
+"res://areas/Levels/1-TheForest/": "blue",
+"res://areas/Levels/2-RavensideHill/": "blue",
 "res://assets/": "blue",
 "res://data/": "blue",
 "res://libraries/": "pink",
@@ -125,6 +126,10 @@ characters/player=""
 [godot_resource_groups]
 
 auto_rebuild=true
+
+[gui]
+
+theme/default_theme_scale=2.0
 
 [input]
 

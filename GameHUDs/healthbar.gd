@@ -4,28 +4,36 @@ extends TextureProgressBar
 var current_health: int = max_health
 var tween: Tween = null
 
-func _ready():
+func _ready() -> void:
 	max_value = max_health
 	value = current_health
 	print("Progress bar ready. Current health:", current_health)
+	
+	# Connect to scene changes and check immediately
+	get_tree().tree_changed.connect(_on_tree_changed)
+	call_deferred("_check_scene")
 
-	#simulate_damage()
+func _on_tree_changed() -> void:
+	if is_inside_tree():
+		call_deferred("_check_scene")
 
-#func simulate_damage():
-	#for i in range(5):
-		#await get_tree().create_timer(1.0).timeout
-		#apply_damage(15)
+func _check_scene() -> void:
+	var current_scene = get_tree().current_scene
+	if current_scene == null:
+		return
+		
+	# Make sure "MainMenu" matches the exact name of your menu's root node
+	if current_scene.name == "MainMenu":
+		hide()
+	else:
+		show()
 
-#func apply_damage(amount: int):
-	#var old_health = current_health
-	#current_health = clamp(current_health - amount, 0, max_health)
-
-	# If a tween exists, stop it safely
+# Call this function from your player or enemy scripts when taking damage
+func update_health(new_health: int) -> void:
+	current_health = clamp(new_health, 0, max_health)
+	
 	if tween and tween.is_valid():
 		tween.kill()
 
-	# Create a new tween
 	tween = create_tween()
 	tween.tween_property(self, "value", current_health, 0.5)
-
-	#print("Damage applied:", amount, " | Health:", current_health)

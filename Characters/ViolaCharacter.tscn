@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://nq7r6ff0pa5e"]
 
-[ext_resource type="Script" uid="uid://bp0swvxuiui5r" path="res://areas/zones/Prologue/sprite_3d.gd" id="1_4snwj"]
+[ext_resource type="Script" uid="uid://bp0swvxuiui5r" path="res://areas/Levels/1-TheForest/sprite_3d.gd" id="1_4snwj"]
 [ext_resource type="Texture2D" uid="uid://ci62yysbo25xd" path="res://assets/characters/Viola animation na.png" id="2_0q2qy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vcst8"]

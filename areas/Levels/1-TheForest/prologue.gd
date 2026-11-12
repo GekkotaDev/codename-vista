@@ -5,6 +5,7 @@ func _ready():
 	randomize()
 	DialogueManager.show_dialogue_balloon(load("res://tests/dialoguetest.dialogue"), "start")
 
+			
 func _on_dialogue_ended(resource):
 	_enter_3d_space()
 

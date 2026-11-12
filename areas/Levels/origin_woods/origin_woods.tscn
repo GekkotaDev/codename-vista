@@ -3,12 +3,12 @@
 [ext_resource type="PackedScene" uid="uid://ruextspg3c8f" path="res://assets/scenes/skies/stylized/scenes/night_sky.tscn" id="1_p8n0i"]
 [ext_resource type="Texture2D" uid="uid://dqpdl3ni0nu5l" path="res://assets/lib/Kenney/3D/Foliage Pack/PNG/Default size/foliagePack_005.png" id="2_6a4bq"]
 [ext_resource type="Texture2D" uid="uid://chbtmsf74kxkn" path="res://assets/lib/Kenney/Emotes/PNG/Vector/Style 2/emote_exclamation.png" id="14_2sc33"]
-[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="14_6inxv"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="14_6inxv"]
 [ext_resource type="PackedScene" uid="uid://dcgc4xl2tahe2" path="res://libraries/Test Combat/Player/Scenes/Player.tscn" id="15_7lip5"]
-[ext_resource type="Script" uid="uid://bvbt67g03x6j7" path="res://areas/zones/origin_woods/bandaid_hacks/scripts/city_you_go.gd" id="15_ix0ow"]
-[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="18_men13"]
-[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_fgygc"]
-[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="20_hifil"]
+[ext_resource type="Script" uid="uid://bvbt67g03x6j7" path="res://areas/Levels/origin_woods/bandaid_hacks/scripts/city_you_go.gd" id="15_ix0ow"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="18_men13"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="19_fgygc"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="20_hifil"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfv12"]
 shading_mode = 0

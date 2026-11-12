@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cybhnp0lbp8s0"]
 
-[ext_resource type="Script" uid="uid://dkdbhwh5dk0bu" path="res://areas/zones/Prologue/prologue.gd" id="1_b1apr"]
-[ext_resource type="Texture2D" uid="uid://b0t1l25bhqiyh" path="res://assets/images/backgrounds/prologue/thesis1_bg.png" id="3_h03m6"]
-[ext_resource type="Texture2D" uid="uid://b2iyvxbdt7q4o" path="res://assets/images/backgrounds/prologue/bench.png" id="4_qgb3h"]
-[ext_resource type="PackedScene" uid="uid://bqr6vghf141nd" path="res://assets/3D/bus.tscn" id="4_u4b6d"]
-[ext_resource type="Texture2D" uid="uid://c8io7b6syb3eh" path="res://assets/images/backgrounds/prologue/Lamppost.png" id="5_h7omf"]
-[ext_resource type="PackedScene" uid="uid://nq7r6ff0pa5e" path="res://Characters/ViolaCharacter.tscn" id="8_omkhw"]
+[ext_resource type="Script" uid="uid://dkdbhwh5dk0bu" path="res://areas/Levels/1-TheForest/prologue.gd" id="1_sbn1s"]
+[ext_resource type="Texture2D" uid="uid://b0t1l25bhqiyh" path="res://assets/images/backgrounds/prologue/thesis1_bg.png" id="2_2486g"]
+[ext_resource type="Texture2D" uid="uid://b2iyvxbdt7q4o" path="res://assets/images/backgrounds/prologue/bench.png" id="3_0lfp3"]
+[ext_resource type="Texture2D" uid="uid://c8io7b6syb3eh" path="res://assets/images/backgrounds/prologue/Lamppost.png" id="4_ng6pe"]
+[ext_resource type="PackedScene" uid="uid://nq7r6ff0pa5e" path="res://Characters/ViolaCharacter.tscn" id="5_ehilq"]
+[ext_resource type="PackedScene" uid="uid://bqr6vghf141nd" path="res://assets/3D/bus.tscn" id="6_hop44"]
 
 [sub_resource type="Environment" id="Environment_v67xs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7omf"]
-albedo_texture = ExtResource("3_h03m6")
+albedo_texture = ExtResource("2_2486g")
 backlight = Color(1, 1, 1, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v67xs"]
@@ -19,7 +19,7 @@ size = Vector2(0.657, 0.275)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_omkhw"]
 transparency = 4
-albedo_texture = ExtResource("4_qgb3h")
+albedo_texture = ExtResource("3_0lfp3")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sfnki"]
 material = SubResource("StandardMaterial3D_omkhw")
@@ -27,7 +27,7 @@ size = Vector2(3.965, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnqlo"]
 transparency = 1
-albedo_texture = ExtResource("5_h7omf")
+albedo_texture = ExtResource("4_ng6pe")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8cpyy"]
 material = SubResource("StandardMaterial3D_mnqlo")
@@ -39,13 +39,9 @@ albedo_color = Color(0.187513, 0.21432352, 0.18385825, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_b1apr"]
 size = Vector3(89.54, 1, 13.605)
 
-[sub_resource type="BoxMesh" id="BoxMesh_v67xs"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_v67xs"]
-
 [node name="Prologue" type="Node3D" unique_id=105803006]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.211212, -2.4653387, -5.908947)
-script = ExtResource("1_b1apr")
+script = ExtResource("1_sbn1s")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=245086817]
 environment = SubResource("Environment_v67xs")
@@ -89,7 +85,7 @@ mesh = SubResource("PlaneMesh_8cpyy")
 [node name="FloorSection" type="Node3D" parent="LevelGeometry" unique_id=1351837494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3734813)
 
-[node name="ViolaCharacter" parent="LevelGeometry/FloorSection" unique_id=1371006613 instance=ExtResource("8_omkhw")]
+[node name="ViolaCharacter" parent="LevelGeometry/FloorSection" unique_id=1371006613 instance=ExtResource("5_ehilq")]
 top_level = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="LevelGeometry/FloorSection" unique_id=1065522555]
@@ -116,16 +112,5 @@ transform = Transform3D(0.9999761, 0.006911023, -3.020904e-10, 0, -4.371139e-08,
 shape = SubResource("BoxShape3D_b1apr")
 debug_color = Color(0.3298753, 0.16049859, 0.32034075, 1)
 
-[node name="Bus" parent="." unique_id=45874024 instance=ExtResource("4_u4b6d")]
+[node name="Bus" parent="." unique_id=45874024 instance=ExtResource("6_hop44")]
 transform = Transform3D(1.2235651, -0.05347293, 0.3889138, 0.015434042, 1.2785916, 0.12724023, -0.3922692, -0.11648575, 1.2181054, -22.93158, 1.0711741, 4)
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1036449294]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.025374, 1.5000939, 3.3988872)
-mesh = SubResource("BoxMesh_v67xs")
-
-[node name="Area3D" type="Area3D" parent="MeshInstance3D2" unique_id=1331507330]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6534953, 0.6300087, -0.37557507)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/Area3D" unique_id=739200489]
-transform = Transform3D(3.085, 0, 0, 0, 3.085, 0, 0, 0, 3.085, 1.2709794, -0.8912191, 1.0947666)
-shape = SubResource("BoxShape3D_v67xs")
